@@ -1,9 +1,10 @@
-import Image from "next/image";
+import Homebanner from "@/components/banner/banner";
 
 export default function Home() {
+ 
   return (
     <main>
-      <h1 className="font-extrabold text-8xl">home page</h1>
+     <Homebanner/>
     </main>
   );
 }
