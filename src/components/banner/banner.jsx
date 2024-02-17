@@ -1,132 +1,138 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+// src/Banner.js
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const getGreeting = () => {
-  const hour = new Date().getHours();
-  if (hour >= 5 && hour < 12) {
-    return "Good Morning";
-  } else if (hour >= 12 && hour < 18) {
-    return "Good Afternoon";
-  } else {
-    return "Good Evening";
-  }
-};
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 12) {
+      return "Good Morning";
+    } else if (hour >= 12 && hour < 18) {
+      return "Good Afternoon";
+    } else {
+      return "Good Evening";
+    }
+  };
+  
+const banners = [
+  {
+    bgcolor: 'bg-black',
+    color: 'text-white',
+    titles: [`${getGreeting()}`],
+    duration: 2500, // in milliseconds
+  },
+  {
+    bgcolor: 'bg-white',
+    color: 'text-black',
+    titles: ["we are", "DO STUDIO"],
+    duration: 1200,
+  },
+  {
+    bgcolor: 'bg-black',
+    color: 'text-white',
+    titles: ["we do", "BRANDING"],
+    duration: 1200,
+  },
+  {
+    bgcolor: 'bg-white',
+    color: 'text-black',
+    titles: ["we do", "BRANDING"],
+    duration: 1200,
+  },
+  {
+    bgcolor: 'bg-black',
+    color: 'text-white',
+    titles:  ["we do", "WEBSITES"],
+    duration: 1200,
+  },
+  {
+    bgcolor: 'bg-white',
+    color: 'text-black',
+    titles: ["we do", "PHOTOSHOOTS"],
+    duration: 1200,
+  },
+  {
+    bgcolor: 'bg-black',
+    color: 'text-white',
+    titles:  ["we do", "VIDEO PRODUCTION"],
+    duration: 1200,
+  },
+  {
+    bgcolor: 'bg-white',
+    color: 'text-black',
+    titles: ["we do", "PACKAGE DESIGNS"],
+    duration: 1200,
+  },
+  {
+    bgcolor: 'bg-black',
+    color: 'text-white',
+    titles: ["we do", "PRINT DESIGNS"],
+    duration: 1200,
+  },
+  {
+    bgcolor: 'bg-white',
+    color: 'text-black',
+    titles: ["we do", "SOCIAL MEDIA"],
+    duration: 1200,
+  },
+  {
+    bgcolor: 'bg-black',
+    color: 'text-white',
+    titles: ["we do", "GENUINE CLIENT", "RELATIONSHIPS"],
+    duration: 1200,
+  },
+  {
+    bgcolor: 'bg-white',
+    color: 'text-black',
+    titles: ["we do", "COOL S**T"],
+    duration: 1200,
+  },
+  
+];
 
-const Homebanner = () => {
-  const bgcolors = [
-    "#fff",
-    "#000",
-    "#fff",
-    "#000",
-    "#fff",
-    "#000",
-    "#fff",
-    "#000",
-    "#fff",
-    "#000",
-    "#fff",
-    "#000",
-  ];
-  const colors = [
-    "#000",
-    "#fff",
-    "#000",
-    "#fff",
-    "#000",
-    "#fff",
-    "#000",
-    "#fff",
-    "#000",
-    "#fff",
-    "#000",
-    "#fff",
-  ];
-  const timsec = [
-    "2000",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "500",
-    "1000",
-    "500",
-  ];
-  const titles = [
-    [`${getGreeting()}`],
-    ["we are", "DO STUDIO"],
-    ["we do", "BRANDING"],
-    ["we do", "DIGITAL MARKETING"],
-    ["we do", "WEBSITES"],
-    ["we do", "PHOTOSHOOTS"],
-    ["we do", "VIDEO PRODUCTION"],
-    ["we do", "PACKAGE DESIGNS"],
-    ["we do", "PRINT DESIGNS"],
-    ["we do", "SOCIAL MEDIA"],
-    ["we do", "GENUINE CLIENT", "RELATIONSHIPS"],
-    ["we do", "COOL S**T"],
-  ];
-
+const Banner = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % colors.length);
-    }, timsec[index]);
+    const intervalId = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % banners.length);
+    }, banners[index].duration);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(intervalId);
+  }, [index]);
 
   return (
-    <div
-      className=" text-center h-screen flex flex-col justify-center align-middle w-full transition-all ease-in-out"
-      style={{ backgroundColor: bgcolors[index] }}
+    <motion.div
+      className={`w-full h-screen flex text-center items-center justify-center ${banners[index].bgcolor}`}
+      transition={{ ease: 'easeOut', duration: 0.5 }}
     >
-      <AnimatePresence mode="wait">
-        <motion.h1
-          key={titles[index][0]}
-          className="text-4xl lg:text-7xl font-bold"
-          style={{ color: colors[index] }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20, transition: { delay: 0.1 } }}
-          transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 }}
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={index}
+          className="text-4xl text-white"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         >
-          {titles[index][0]}
-        </motion.h1>
+          {banners[index].titles.map((title, idx) => (
+            <motion.div
+            className={`${banners[index].color} ${idx === 0 ? 'text-6xl' : 'text-8xl'} font-bold`}
+              key={idx}
+              initial={{
+                opacity: 0,
+                y: 20,
+                transitionDelay: (idx + index * banners[index].titles.length) * 0.2,
+              }}
+              animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 }}
+            >
+              {title}
+            </motion.div>
+          ))}
+        </motion.div>
       </AnimatePresence>
-      <AnimatePresence mode="wait">
-        <motion.h1
-          key={titles[index][1]}
-          className="text-4xl lg:text-7xl font-extrabold"
-          style={{ color: colors[index] }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20, transition: { delay: 0.1 } }}
-          transition={{ duration: 0.5, ease: "easeIn", delay: 0.2 }}
-        >
-          {titles[index][1]}
-        </motion.h1>
-      </AnimatePresence>
-      <AnimatePresence mode="wait">
-        <motion.h1
-          key={titles[index][2]}
-          className="text-4xl lg:text-7xl font-extrabold"
-          style={{ color: colors[index] }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20, transition: { delay: 0.1 } }}
-          transition={{ duration: 0.5, ease: "easeIn", delay: 0.3 }}
-        >
-          {titles[index][2]}
-        </motion.h1>
-      </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 
-export default Homebanner;
+export default Banner;
