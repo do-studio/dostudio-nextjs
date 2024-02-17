@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 const getGreeting = () => {
   const hour = new Date().getHours();
   if (hour >= 5 && hour < 12) {
-    return "Good morning";
+    return "Good Morning";
   } else if (hour >= 12 && hour < 18) {
-    return "Good afternoon";
+    return "Good Afternoon";
   } else {
-    return "Good evening";
+    return "Good Evening";
   }
 };
 
@@ -93,7 +93,7 @@ const Homebanner = () => {
           style={{ color: colors[index] }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20, transition: { delay: 0.5 } }}
+          exit={{ opacity: 0, y: 20, transition: { delay: 0.1 } }}
           transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 }}
         >
           {titles[index][0]}
@@ -106,7 +106,7 @@ const Homebanner = () => {
           style={{ color: colors[index] }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20, transition: { delay: 0.5 } }}
+          exit={{ opacity: 0, y: 20, transition: { delay: 0.1 } }}
           transition={{ duration: 0.5, ease: "easeIn", delay: 0.2 }}
         >
           {titles[index][1]}
@@ -119,7 +119,7 @@ const Homebanner = () => {
           style={{ color: colors[index] }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20, transition: { delay: 0.5 } }}
+          exit={{ opacity: 0, y: 20, transition: { delay: 0.1 } }}
           transition={{ duration: 0.5, ease: "easeIn", delay: 0.3 }}
         >
           {titles[index][2]}
