@@ -116,7 +116,7 @@ const Banner = () => {
         >
           {banners[index].titles.map((title, idx) => (
             <motion.div
-            className={`${banners[index].color} ${idx === 0 ? 'text-6xl' : 'text-8xl'} font-bold`}
+            className={`${banners[index].color} ${idx === 0 ? 'text-3xl sm:text-3xl lg:text-6xl' : 'text-3xl sm:text-4xl lg:text-8xl'} font-bold`}
               key={idx}
               initial={{
                 opacity: 0,
