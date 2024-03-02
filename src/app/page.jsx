@@ -1,10 +1,14 @@
-import Homebanner from "@/components/banner/banner";
+import {Banner,AnimatPara,About} from '../components'
+
 
 export default function Home() {
  
+
   return (
     <main>
-     <Homebanner/>
+      <Banner/>
+      <AnimatPara/>
+      <About/>
     </main>
   );
 }
