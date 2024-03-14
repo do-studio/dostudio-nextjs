@@ -40,8 +40,8 @@ const AnimatePara = () => {
   return (
 
        <div>
-            <div className="relative overflow-hidden h-32 xl:h-60">
-                <div className="absolute bg-mainbg z-[-1] py-10 xl:py-[50px]">
+            <div className="relative  overflow-hidden h-32 xl:h-60 ">
+                <div className="absolute bg-mainbg  py-10 xl:py-[50px]">
                     <div className="motionpara relative whitespace-nowrap flex text-black" ref={slider}>
                         <p ref={firstText} className=" font-medium text-7xl xl:text-[170px] m-0">Let your brand stand out from the crowd.</p>
                         <p ref={secondText} className=" font-medium text-7xl xl:text-[170px] m-0">Let your brand stand out from the crowd.</p>

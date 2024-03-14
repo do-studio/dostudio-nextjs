@@ -1,4 +1,4 @@
-import {Banner,AnimatPara,About} from '../components'
+import {Banner,AnimatPara,About,Whatwedo,Clients,Testimonials,MovingWords,GetinTouch} from '../components'
 
 
 export default function Home() {
@@ -9,6 +9,11 @@ export default function Home() {
       <Banner/>
       <AnimatPara/>
       <About/>
+      <Whatwedo/>
+      <Clients/>
+      <Testimonials/>
+      <GetinTouch/>
+      {/* <MovingWords/> */}
     </main>
   );
 }

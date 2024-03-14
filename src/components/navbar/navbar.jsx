@@ -7,62 +7,6 @@ import Link from "next/link";
 import {banners} from '../../components/constant/data'
 import { CgArrowLongLeft } from "react-icons/cg";
 
-const items = [
-  {
-    title: `home`,
-    url: `/`,
-    delay: 0.1,
-  },
-  {
-    title: `services`,
-    url: `/services`,
-    delay: 0.2,
-  },
-  {
-    title: `our works`,
-    url: ``,
-    delay: 0.3,
-    ismenu: true,
-  },
-  {
-    title: `blogs`,
-    url: `/blog`,
-    delay: 0.4,
-  },
-  {
-    title: `contact`,
-    url: `/contact`,
-    delay: 0.5,
-  },
-];
-
-const submenu = [
-  {
-    title: `BRANDING`,
-    url: `/service1`,
-    delay: 0.2,
-  },
-  {
-    title: `WEB DESIGN`,
-    url: `/service2`,
-    delay: 0.2,
-  },
-  {
-    title: `DIGITAL MARKETING`,
-    url: `/service3`,
-    delay: 0.2,
-  },
-  {
-    title: `PACKAGE DESIGN`,
-    url: `/service3`,
-    delay: 0.2,
-  },
-  {
-    title: `PRINT DESIGN`,
-    url: `/service3`,
-    delay: 0.2,
-  },
-];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -106,28 +50,91 @@ const Navbar = () => {
     return () => clearInterval(intervalId);
   }, [index]);
 
-  let humbclr = banners[index].humberclr
+  let humbclr = banners[index].humberclr;
+
+
+  const handleMenuItemClick = (event, items) => {
+    event.preventDefault();
+  };
+
+  const items = [
+    {
+      title: `home`,
+      url: `/`,
+      delay: 0.1,
+    },
+    {
+      title: `services`,
+      url: `/services`,
+      delay: 0.2,
+    },
+    {
+      title: `our works`,
+      url: '',
+      delay: 0.3,
+      ismenu: true,
+    },
+    {
+      title: `blogs`,
+      url: `/blog`,
+      delay: 0.4,
+    },
+    {
+      title: `contact`,
+      url: `/contact`,
+      delay: 0.5,
+    },
+  ];
+  
+  const submenu = [
+    {
+      title: `BRANDING`,
+      url: `/service1`,
+      delay: 0.2,
+    },
+    {
+      title: `WEB DESIGN`,
+      url: `/service2`,
+      delay: 0.2,
+    },
+    {
+      title: `DIGITAL MARKETING`,
+      url: `/service3`,
+      delay: 0.2,
+    },
+    {
+      title: `PACKAGE DESIGN`,
+      url: `/service3`,
+      delay: 0.2,
+    },
+    {
+      title: `PRINT DESIGN`,
+      url: `/service3`,
+      delay: 0.2,
+    },
+  ];
+  
 
   return (
     <>
       {/* ===========================================NAVBAR START=========================================== */}
       <nav
-        className={`px-5 fixed top-0 left-0 right-0 flex justify-between items-center w-full h-[4.5rem] transition duration-300 ease-in-out ${
+        className={`px-5 fixed top-0 left-0 right-0 flex justify-between items-center z-50 w-full h-[4.5rem] transition duration-300 ease-in-out ${
           isScrolled ? "navbar" : "bg-transparent"
         }`}
       >
         {/* scroll active header */}
         <div className={`${!isScrolled ? 'hidden':'block'}`}>
           {isScrolled ? (
-            <Image priority className="h-20 w-44" src={Logoblack} alt="Do studio" />
+            <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={Logoblack} alt="Do studio" />
           ) : (
-            <Image priority className="h-20 w-44" src={Logowhite} alt="Do studio" />
+            <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={Logowhite} alt="Do studio" />
           )}
 
         </div>
         {/* changing logo header */}
         <div className={`${isScrolled ? 'hidden':'block'}`}>
-          <Image priority className="h-20 w-44" src={banners[index].logo} alt="Do studio" />
+          <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={banners[index].logo} alt="Do studio" />
         </div>
 
         {/* scroll active humberger */}
@@ -195,7 +202,7 @@ const Navbar = () => {
                     key={index}
                     className="capitalize underline-hover-effect text-3xl xs:text-4xl sm:text-5xl lg:text-7xl xl:text-7xl 2xl:text-8xl h-fit w-fit font-bold"
                   >
-                    <Link href={item.url}>
+                    <Link href={item.url} onClick={(e) => handleMenuItemClick(e, items)}>
                       {item?.ismenu ? (
                         <div onClick={handlesubMenuToggle}>our works</div>
                       ) : (
@@ -282,7 +289,7 @@ const Navbar = () => {
                       delay: item.delay || 0,
                     }}
                     key={index}
-                    className="capitalize underline-hover-effect text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold h-fit w-fit"
+                    className="capitalize underline-hover-effect text-2xl sm:text-3xl md:text-5xl xl:text-6xl font-semibold h-fit w-fit"
                   >
                     <Link href={item.url}>{item.title}</Link>
                   </motion.li>
