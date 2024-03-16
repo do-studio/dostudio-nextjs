@@ -15,7 +15,7 @@ import googlemaplogo from './medias/sociallogo/google-maps.svg'
 import whatsapplogo from './medias/sociallogo/whatsapp.svg'
 
 import clntkurikal from './medias/clients/clientkurukal.webp'
-import clntkmct1 from './medias/clients/clientkmct-.webp'
+import clntkmct1 from './medias/clients/clientkmct.webp'
 import clntimax from './medias/clients/clientimax.webp'
 import clntgava from './medias/clients/clientgava.webp'
 import clntkmct2 from './medias/clients/clientskmct2.webp'

@@ -47,7 +47,7 @@ const Footer = () => {
           {socialMedia?.map((data, i) => (
            <a href={data.href} key={i} target="_blank">
              <Image
-              className="h-10 w-10 object-cover hover:-translate-y-1 duration-150"
+              className="h-8 w-8 lg:h-10 lg:w-10 object-cover hover:-translate-y-1 duration-150"
               src={data.logo}
               alt="do studio"
             />

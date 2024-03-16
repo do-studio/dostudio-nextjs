@@ -13,7 +13,7 @@ export default function Home() {
       <Clients/>
       <Testimonials/>
       <GetinTouch/>
-      {/* <MovingWords/> */}
+      <MovingWords/>
     </main>
   );
 }

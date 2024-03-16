@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Logoblack, Logowhite } from "../../../public/images";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,6 +10,9 @@ import { CgArrowLongLeft } from "react-icons/cg";
 
 
 const Navbar = () => {
+
+  const pathname = usePathname();
+  const [isHome, setIsHome] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [issubMenuOpen, setSubMenuOpen] = useState(false);
@@ -50,12 +54,17 @@ const Navbar = () => {
     return () => clearInterval(intervalId);
   }, [index]);
 
-  let humbclr = banners[index].humberclr;
+
+  // change logo in home
+  useEffect(() => {
+    setIsHome(pathname === '/');
+  }, [pathname]);
 
 
-  const handleMenuItemClick = (event, items) => {
-    event.preventDefault();
-  };
+  // const handleMenuItemClick = (event, items) => {
+  //   event.preventDefault();
+  // };
+  // onClick={(e)=> handleMenuItemClick(e, items) }
 
   const items = [
     {
@@ -76,7 +85,7 @@ const Navbar = () => {
     },
     {
       title: `blogs`,
-      url: `/blog`,
+      url: `/blogs`,
       delay: 0.4,
     },
     {
@@ -89,27 +98,27 @@ const Navbar = () => {
   const submenu = [
     {
       title: `BRANDING`,
-      url: `/service1`,
+      url: `/our-works/branding`,
       delay: 0.2,
     },
     {
       title: `WEB DESIGN`,
-      url: `/service2`,
+      url: `/our-works/web-design`,
       delay: 0.2,
     },
     {
       title: `DIGITAL MARKETING`,
-      url: `/service3`,
+      url: `/our-works/digital-marketing`,
       delay: 0.2,
     },
     {
       title: `PACKAGE DESIGN`,
-      url: `/service3`,
+      url: `/our-works/package-design`,
       delay: 0.2,
     },
     {
       title: `PRINT DESIGN`,
-      url: `/service3`,
+      url: `/our-works/print-design`,
       delay: 0.2,
     },
   ];
@@ -134,7 +143,8 @@ const Navbar = () => {
         </div>
         {/* changing logo header */}
         <div className={`${isScrolled ? 'hidden':'block'}`}>
-          <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={banners[index].logo} alt="Do studio" />
+          <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={isHome ? Logowhite : Logoblack} alt="Do studio" />
+          {/* <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={banners[index].logo} alt="Do studio" /> */}
         </div>
 
         {/* scroll active humberger */}
@@ -150,8 +160,10 @@ const Navbar = () => {
           onClick={handleMenuToggle}
           className={`${isScrolled ? 'hidden':'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
         >
-          <div className={`h-[2.5px] w-8`} style={{backgroundColor:`${humbclr}`}}></div>
-          <div className={`h-[2.5px] w-5`} style={{backgroundColor:`${humbclr}`}}></div>
+          <div className={`h-[2.5px] w-8 ${isHome ? 'bg-white' : 'bg-black'}`}></div>
+          <div className={`h-[2.5px] w-5 ${isHome ? 'bg-white' : 'bg-black'}`}></div>
+          {/* <div className={`h-[2.5px] w-8`} style={{backgroundColor:`${humbclr}`}}></div>
+          <div className={`h-[2.5px] w-5`} style={{backgroundColor:`${humbclr}`}}></div> */}
         </div>
       </nav>
       {/* ===========================================NAVBAR START=========================================== */}
@@ -202,7 +214,7 @@ const Navbar = () => {
                     key={index}
                     className="capitalize underline-hover-effect text-3xl xs:text-4xl sm:text-5xl lg:text-7xl xl:text-7xl 2xl:text-8xl h-fit w-fit font-bold"
                   >
-                    <Link href={item.url} onClick={(e) => handleMenuItemClick(e, items)}>
+                    <Link href={item.url} onClick={()=> setMenuOpen(false) && setSubMenuOpen(false)}>
                       {item?.ismenu ? (
                         <div onClick={handlesubMenuToggle}>our works</div>
                       ) : (
@@ -291,7 +303,7 @@ const Navbar = () => {
                     key={index}
                     className="capitalize underline-hover-effect text-2xl sm:text-3xl md:text-5xl xl:text-6xl font-semibold h-fit w-fit"
                   >
-                    <Link href={item.url}>{item.title}</Link>
+                    <Link href={item.url} onClick={()=> setSubMenuOpen(false) || setMenuOpen(false)}>{item.title}</Link>
                   </motion.li>
                 ))}
               </motion.ul>

@@ -74,7 +74,7 @@ const Movingwords = () => {
     <div className="slide-track">
         {movingText?.map((text,i)=>(
         <div key={i} className="slide">
-            <h3 className='text-lg font-extrabold'>{text.word}</h3>
+            <h3 className='text-base font-semibold'>{text.word}</h3>
         </div>
         ))}
     </div>
