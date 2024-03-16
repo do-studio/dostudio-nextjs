@@ -1,14 +1,9 @@
-"use client"
-import { ReactLenis } from '@studio-freight/react-lenis'
+import React from 'react'
 
-function SmoothScroll({children}) {
-
-
+const SmoothScrolling = () => {
   return (
-    <ReactLenis root options={{lerp:0.001,duration:1.5,smoothWheel:true,syncTouch:true}}>
-        {children}
-    </ReactLenis>
+    <div>SmoothScrolling</div>
   )
 }
 
-export default SmoothScroll;
+export default SmoothScrolling

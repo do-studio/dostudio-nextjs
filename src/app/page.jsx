@@ -9,8 +9,8 @@ export default function Home() {
       <Banner/>
       <AnimatPara/>
       <About/>
-      {/* <Whatwedo/>
-      <Clients/> */}
+      <Whatwedo/>
+      <Clients/>
       <Testimonials/>
       <GetinTouch/>
       <MovingWords/>
