@@ -62,7 +62,7 @@ const GetinTouch = () => {
                         />
                         <input  className='py-2 border-b-2 duration-150 border-gray-300  outline-none w-full bg-transparent [&::-webkit-inner-spin-button]:appearance-none' type="number" inputMode='numeric' name="mobileNumber" value={formData.mobileNumber}  onChange={handleChange} placeholder='Phone Number' required/>
                     </div>
-                    <button className='bg-white  rounded-full text-black w-full h-10 mt-3' type='submit'>Send</button>
+                    <button className='bg-white border border-white hover:bg-black hover:text-white duration-200  rounded-full text-black w-full h-10 mt-3' type='submit'>Send</button>
             </form>
         </div>
     </div>

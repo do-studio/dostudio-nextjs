@@ -55,6 +55,8 @@ import clntsysmantech from './medias/clients/clientsysmantech.webp'
 import clntfixso from './medias/clients/clientfixso.webp'
 import clntlubigen from './medias/clients/clientlubigen.webp'
 
+import serviceBg from './medias/servicebg.webp'
+
 export{
     Logowhite,
     Logoblack,
@@ -108,5 +110,6 @@ export{
     clntbuff,
     clntsysmantech,
     clntfixso,
-    clntlubigen
+    clntlubigen,
+    serviceBg
 }

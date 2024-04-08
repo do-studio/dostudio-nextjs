@@ -133,37 +133,50 @@ const Navbar = () => {
         }`}
       >
         {/* scroll active header */}
-        <div className={`${!isScrolled ? 'hidden':'block'}`}>
-          {isScrolled ? (
-            <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={Logoblack} alt="Do studio" />
-          ) : (
-            <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={Logowhite} alt="Do studio" />
-          )}
 
-        </div>
+          <div className={`${!isScrolled ? 'hidden':'block'}`}>
+            <Link href={'/'}>
+              {isScrolled ? (
+                <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={Logoblack} alt="Do studio" />
+              ) : (
+                <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={Logowhite} alt="Do studio" />
+              )}
+            </Link>
+          </div>
+
         {/* changing logo header */}
-        <div className={`${isScrolled ? 'hidden':'block'}`}>
-          <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={isHome ? Logowhite : Logoblack} alt="Do studio" />
-          {/* <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={banners[index].logo} alt="Do studio" /> */}
-        </div>
+        
+          <div className={`${isScrolled ? 'hidden':'block'}`}>
+            <Link href={'/'}>
+              <Image priority className=" h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={isHome ? Logowhite : Logoblack} alt="Do studio" />
+              {/* <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={banners[index].logo} alt="Do studio" /> */}
+            </Link>
+          </div>
+        {/* Right */}
+        <div className="flex gap-3 items-center">
+            {/* our word button */}
+          <div className="hidden md:block">
+            <Link href={'/our-works/branding'}><button className="nav-btn">our works</button></Link>
+          </div>
 
-        {/* scroll active humberger */}
-        <div
-          onClick={handleMenuToggle}
-          className={`${!isScrolled ? 'hidden':'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
-        >
-          <div className={`h-[2.5px] w-8  ${isScrolled ? 'bg-black' : 'bg-white'}`}></div>
-          <div className={`h-[2.5px] w-5  ${isScrolled ? 'bg-black' : 'bg-white'}`}></div>
-        </div>
-        {/* change color humberger */}
-        <div
-          onClick={handleMenuToggle}
-          className={`${isScrolled ? 'hidden':'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
-        >
-          <div className={`h-[2.5px] w-8 ${isHome ? 'bg-white' : 'bg-black'}`}></div>
-          <div className={`h-[2.5px] w-5 ${isHome ? 'bg-white' : 'bg-black'}`}></div>
-          {/* <div className={`h-[2.5px] w-8`} style={{backgroundColor:`${humbclr}`}}></div>
-          <div className={`h-[2.5px] w-5`} style={{backgroundColor:`${humbclr}`}}></div> */}
+          {/* scroll active humberger */}
+          <div
+            onClick={handleMenuToggle}
+            className={`${!isScrolled ? 'hidden':'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
+          >
+            <div className={`h-[2.5px] w-8  ${isScrolled ? 'bg-black' : 'bg-white'}`}></div>
+            <div className={`h-[2.5px] w-5  ${isScrolled ? 'bg-black' : 'bg-white'}`}></div>
+          </div>
+          {/* change color humberger */}
+          <div
+            onClick={handleMenuToggle}
+            className={`${isScrolled ? 'hidden':'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
+          >
+            <div className={`h-[2.5px] w-8 ${isHome ? 'bg-white' : 'bg-black'}`}></div>
+            <div className={`h-[2.5px] w-5 ${isHome ? 'bg-white' : 'bg-black'}`}></div>
+            {/* <div className={`h-[2.5px] w-8`} style={{backgroundColor:`${humbclr}`}}></div>
+            <div className={`h-[2.5px] w-5`} style={{backgroundColor:`${humbclr}`}}></div> */}
+          </div>
         </div>
       </nav>
       {/* ===========================================NAVBAR START=========================================== */}
@@ -214,7 +227,7 @@ const Navbar = () => {
                     key={index}
                     className="capitalize underline-hover-effect text-3xl xs:text-4xl sm:text-5xl lg:text-7xl xl:text-7xl 2xl:text-8xl h-fit w-fit font-bold"
                   >
-                    <Link href={item.url} onClick={()=> setMenuOpen(false) && setSubMenuOpen(false)}>
+                    <Link href={item.url} onClick={()=> item.ismenu ? setMenuOpen(true) : setMenuOpen(false)}>
                       {item?.ismenu ? (
                         <div onClick={handlesubMenuToggle}>our works</div>
                       ) : (
@@ -224,9 +237,11 @@ const Navbar = () => {
                   </motion.li>
                 ))}
               </motion.ul>
-              <div
+              <motion.div
+              initial={{ opacity: 1, rotate: 45 }}
+              animate={{ opacity: 1, rotate: 0 }}
                 onClick={handleMenuToggle}
-                className=" absolute  top-9 right-5 flex flex-col space-y-1 cursor-pointer"
+                className=" absolute  top-9 right-5 xl:right-8 flex flex-col space-y-1 cursor-pointer"
               >
                 <motion.div
                   initial={{ opacity: 0, rotate: 0 }}
@@ -242,7 +257,7 @@ const Navbar = () => {
                   transition={{ duration: 0.3 }}
                   className="h-[2.5px]  w-6 bg-black"
                 ></motion.div>
-              </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
