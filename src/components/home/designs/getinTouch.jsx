@@ -40,10 +40,9 @@ const GetinTouch = () => {
 
 
   return (
-    <div className='bg-black text-white w-full h-full'>
-        <div className='w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 gap-5 md:grid-cols-6 py-20'>
+        <div className='bg-black rounded-3xl lg:rounded-[2.5rem] text-white p-10 w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 gap-5 md:grid-cols-6 py-20 mb-10'>
             <div className='md:col-span-3 lg:col-span-3 xl:col-span-4 flex items-center'>
-                <h1 className='selection:bg-white selection:text-black text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-bold'>Get in Touch</h1>
+                <h1 className='selection:bg-white selection:text-black text-4xl lg:text-6xl xl:text-8xl font-bold'>Get in Touch</h1>
             </div>
             <form className='selection:bg-white selection:text-black md:col-span-3 lg:col-span-3 xl:col-span-2  flex flex-col gap-y-3' onSubmit={handleSubmit}>
                     <div className='relative'>
@@ -65,7 +64,6 @@ const GetinTouch = () => {
                     <button className='bg-white border border-white hover:bg-black hover:text-white duration-200  rounded-full text-black w-full h-10 mt-3' type='submit'>Send</button>
             </form>
         </div>
-    </div>
   );
 };
 

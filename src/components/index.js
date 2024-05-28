@@ -6,14 +6,18 @@ import Clients from './home/designs/clients';
 import Testimonials from './home/designs/Testimonials';
 import MovingWords from './home/designs/Movingwords';
 import GetinTouch from './home/designs/getinTouch';
+import MarqueeText from './home/designs/marqueText';
+import ClientSlide from './home/designs/clientslider';
 
 export{
     Banner,
+    MarqueeText,
     AnimatPara,
     About,
     Whatwedo,
     Clients,
     Testimonials,
     MovingWords,
-    GetinTouch
+    GetinTouch,
+    ClientSlide
 }

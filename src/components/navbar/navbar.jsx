@@ -78,8 +78,8 @@ const Navbar = () => {
       delay: 0.2,
     },
     {
-      title: `our works`,
-      url: '',
+      title: `works`,
+      url: 'javascript:void(0)',
       delay: 0.3,
       ismenu: true,
     },
@@ -128,7 +128,7 @@ const Navbar = () => {
     <>
       {/* ===========================================NAVBAR START=========================================== */}
       <nav
-        className={`px-5 fixed top-0 left-0 right-0 flex justify-between items-center z-50 w-full h-[4.5rem] transition duration-300 ease-in-out ${
+        className={`px-5 fixed top-0 left-0 right-0 flex justify-between items-center z-50 w-full 2xl:max-w-[1536px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${
           isScrolled ? "navbar" : "bg-transparent"
         }`}
       >
@@ -229,7 +229,7 @@ const Navbar = () => {
                   >
                     <Link href={item.url} onClick={()=> item.ismenu ? setMenuOpen(true) : setMenuOpen(false)}>
                       {item?.ismenu ? (
-                        <div onClick={handlesubMenuToggle}>our works</div>
+                        <div onClick={handlesubMenuToggle}>works</div>
                       ) : (
                         <div>{item.title}</div>
                       )}

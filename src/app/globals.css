@@ -33,7 +33,7 @@ html {
 }
 
 img {
-  max-width: 100%
+  max-width: 100%;
 }
 
 ::-webkit-scrollbar{
@@ -53,7 +53,7 @@ cursor: pointer;
 
 /* main navbar */
 .navbar{
-  background: rgba(255, 255, 255, 0);
+  background: rgba(155, 20, 20, 0);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
@@ -381,72 +381,18 @@ cursor: pointer;
 /* testimonials */
 .swiper-pagination .swiper-pagination-bullet {
   opacity: 1;
-  background-color: rgb(149, 149, 149);
+  background-color: rgba(149, 149, 149, 0.567);
 }
 .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 .swiper-pagination {
   position: relative !important;
-  margin-top: 15px;
-}
-
-/* moving text */
-
-.slider {
-  background-color: #fff;
-  height: 80px;
-  margin: auto;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  width: auto;
-  display: grid;
-  align-items: center;
-}
-
-.slide-track {
-  animation: scroll 20s linear infinite;
-  display: flex;
-  transition: animation-play-state ease 0.3s;
-  width: calc(500px * 20)
-}
-
-/* .slide-track:hover {
-  animation-play-state: paused
-} */
-
-.slide {
-  padding: 0 70px 0 0
-}
-
-.slide-track .slide h3 {
-  color: #000
-}
-
-.slide-track .slide:hover h3 {
-  opacity: 1;
-}
-
-.slide-track .slide h3 {
-  position: relative;
-
-  /* -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(0, 0, 0);
-  -webkit-text-fill-color: #ffffff; */
-
+  margin-top: 10px;
+  text-align: left !important;
 }
 
 
-@keyframes scroll {
-  0% {
-      transform: translateX(0)
-  }
-
-  100% {
-      transform: translateX(calc(-150px * 8))
-  }
-}
 
 /* Get in Touch */
 .phonecode input{
@@ -543,3 +489,9 @@ cursor: pointer;
 .nav-btn:hover::before {
   left: 0
 }
+
+
+
+
+/*  */
+

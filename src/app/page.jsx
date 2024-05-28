@@ -1,19 +1,21 @@
-import {Banner,AnimatPara,About,Whatwedo,Clients,Testimonials,MovingWords,GetinTouch} from '../components'
-
+"use client"
+import React, { useEffect } from 'react';
+import {Banner,ClientSlide,MarqueeText,AnimatPara,About,Whatwedo,Clients,Testimonials,MovingWords,GetinTouch} from '../components'
 
 export default function Home() {
  
-
   return (
     <main>
       <Banner/>
-      <AnimatPara/>
+      <MarqueeText/>
       <About/>
       <Whatwedo/>
-      <Clients/>
+      {/* <AnimatPara/> */}
       <Testimonials/>
-      <GetinTouch/>
-      <MovingWords/>
+      {/* <Clients/> */}
+      <ClientSlide/>
+      {/* <GetinTouch/>
+      <MovingWords/> */}
     </main>
   );
 }

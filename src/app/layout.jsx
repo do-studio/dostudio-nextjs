@@ -22,9 +22,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={poppins.className}>
         <ToastContainer/>
-        <Navbar/>
-            {children}
-        <Footer/>
+        <div className="2xl:max-w-[1536px] mx-auto">
+          <Navbar/>
+              {children}
+          <Footer/>
+        </div>
         </body>
     </html>
   );

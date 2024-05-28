@@ -38,22 +38,18 @@ const socialMedia = [
 
 const Footer = () => {
   return (
-    <footer className="border-t-2">
-      <div className="w-11/12 xl:w-10/12 mx-auto flex flex-col-reverse md:flex-row gap-y-2 justify-center md:justify-between items-center h-24 md:h-14">
-        <div>
-          <p className="text-sm font-medium">Powered By DO Studio.</p>
-        </div>
-        <div className="flex  gap-5">
-          {socialMedia?.map((data, i) => (
-           <a href={data.href} key={i} target="_blank">
-             <Image
-              className="h-8 w-8 lg:h-10 lg:w-10 object-cover hover:-translate-y-1 duration-150"
-              src={data.logo}
-              alt="do studio"
-            />
-           </a>
-          ))}
-        </div>
+    <footer className="bg-black text-white">
+      <div className="py-10 w-11/12 xl:w-10/12 mx-auto  grid grid-cols-1 md:grid-cols-2 gap-y-10">
+        <div className="">
+            <h4 className="text-4xl xl:text-5xl">Want to work with us?</h4>
+            <p className="text-lg pt-5 xl:pt-10 pb-1">Contact us at</p>
+            <a className="underline text-xl" href="mailto:info@dostudio.co.in" target="_blank">info@dostudio.co.in</a>
+          </div>
+          <div className="flex gap-3 md:justify-end items-end">
+              {socialMedia?.map((social,i)=>(
+                <a key={i} href={social.href} target="_blank"><Image className="h-10 w-10 object-cover hover:-translate-y-1 duration-200" placeholder="empty" src={social.logo}/></a>
+              ))}
+          </div>
       </div>
     </footer>
   );

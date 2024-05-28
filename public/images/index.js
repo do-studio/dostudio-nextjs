@@ -57,6 +57,9 @@ import clntlubigen from './medias/clients/clientlubigen.webp'
 
 import serviceBg from './medias/servicebg.webp'
 
+import WRK1 from './medias/wrrk1.webp'
+import WRK2 from './medias/wrrk2.webp'
+
 export{
     Logowhite,
     Logoblack,
@@ -67,6 +70,8 @@ export{
     linkedinlogo,
     insatgramlogo,
     wrk1,
+    WRK1,
+    WRK2,
     wrk2,
     wrk3,
     wrk4,

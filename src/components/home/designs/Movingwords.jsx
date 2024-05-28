@@ -1,85 +1,83 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
+import Marquee from "react-fast-marquee";
 
-const movingText=[
-    {
-        word:`BRANDING`
-    },
-    {
-        word:`BUSINESS CARD`
-    },
-    {
-        word:`MARKETING`
-    },
-    {
-        word:`POSTER`
-    },
-    {
-        word:`PACKAGE DESIGN`
-    },
-    {
-        word:`PHOTOSHOOT`
-    },
-    {
-        word:`PRINT DESIGN`
-    },
-    {
-        word:`BRANDING`
-    },
-    {
-        word:`BUSINESS CARD`
-    },
-    {
-        word:`MARKETING`
-    },
-    {
-        word:`POSTER`
-    },
-    {
-        word:`PACKAGE DESIGN`
-    },
-    {
-        word:`PHOTOSHOOT`
-    },
-    {
-        word:`PRINT DESIGN`
-    },
-    {
-        word:`BRANDING`
-    },
-    {
-        word:`BUSINESS CARD`
-    },
-    {
-        word:`MARKETING`
-    },
-    {
-        word:`POSTER`
-    },
-    {
-        word:`PACKAGE DESIGN`
-    },
-    {
-        word:`PHOTOSHOOT`
-    },
-    {
-        word:`PRINT DESIGN`
-    },
-   
-]
+const movingText = [
+  {
+    word: `BRANDING`,
+  },
+  {
+    word: `BUSINESS CARD`,
+  },
+  {
+    word: `MARKETING`,
+  },
+  {
+    word: `POSTER`,
+  },
+  {
+    word: `PACKAGE DESIGN`,
+  },
+  {
+    word: `PHOTOSHOOT`,
+  },
+  {
+    word: `PRINT DESIGN`,
+  },
+  {
+    word: `BRANDING`,
+  },
+  {
+    word: `BUSINESS CARD`,
+  },
+  {
+    word: `MARKETING`,
+  },
+  {
+    word: `POSTER`,
+  },
+  {
+    word: `PACKAGE DESIGN`,
+  },
+  {
+    word: `PHOTOSHOOT`,
+  },
+  {
+    word: `PRINT DESIGN`,
+  },
+  {
+    word: `BRANDING`,
+  },
+  {
+    word: `BUSINESS CARD`,
+  },
+  {
+    word: `MARKETING`,
+  },
+  {
+    word: `POSTER`,
+  },
+  {
+    word: `PACKAGE DESIGN`,
+  },
+  {
+    word: `PHOTOSHOOT`,
+  },
+  {
+    word: `PRINT DESIGN`,
+  },
+];
 
 const Movingwords = () => {
   return (
-    <div className="slider">
-    <div className="slide-track">
-        {movingText?.map((text,i)=>(
-        <div key={i} className="slide">
-            <h3 className='text-base font-semibold'>{text.word}</h3>
+    <Marquee speed={150} pauseOnHover={true}>
+      {movingText?.map((text, i) => (
+        <div key={i} className="mx-5 xl:mx-10 py-3 xl:py-5">
+          <h3 className="text-base xl:text-lg font-semibold">{text.word}</h3>
         </div>
-        ))}
-    </div>
-  </div>
-  )
-}
+      ))}
+    </Marquee>
+  );
+};
 
-export default Movingwords
+export default Movingwords;
