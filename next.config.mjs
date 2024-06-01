@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
      images:{
+      domains:["http://localhost:1337/",'res.cloudinary.com'],
         // domains:[
         //     "images.pexels.com",
         // ]
@@ -8,6 +9,12 @@ const nextConfig = {
             {
               protocol: 'https',
               hostname: 'images.pexels.com',
+            },
+            {
+              protocol: "http",
+              hostname: "localhost",
+              port: "1337",
+              pathname: "/uploads/**",
             },
           ],
     },
