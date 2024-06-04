@@ -1,44 +1,40 @@
-"use client"
-import Link from 'next/link';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import {testimage} from '../../../public/images/index'
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
 
+async function getData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?&populate=*`,
+    { cache: "no-store"}
+  );
 
-const blogPosts = [
-    {
-      id: 1,
-      title: "Post Title 1",
-      content: "This is the content of the first blog post.",
-      date: "2024-05-06", // Replace with actual date
-    },
-    {
-      id: 2,
-      title: "Post Title 2",
-      content: "This is the content of the second blog post.",
-      date: "2024-05-06", // Replace with actual date
-    },
-    // ... Add more blog posts as needed
-  ];
+  if (!res.ok) {
+    return notFound()
+  }
+ 
+  return res.json()
+}
 
-const Blogpage = () => {
-
+const Blogs = async () => {
+  const blogdata =  await getData()
+  // console.log(blogdata.data);
   return (
-    <div>
-
-<div className='pt-40'>
-      <h1>Blog Posts</h1>
-      <ul>
-        {blogPosts.map((post) => (
-          <li key={post.id}>
-            <h2>{post.title}</h2>
-            <p>{post.date}</p>
-            <a href={`/blogs/${post.id}`}>Read More</a>
-          </li>
+    <main className='min-h-screen w-full bg-white'>
+      <div className='w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-2 gap-8'>
+      {blogdata.data?.map(data=>(
+        <Link href={`/blogs/${data.attributes.slug}`} key={data.attributes.id}>
+            <div className='space-y-5'>
+              <div className='relative h-[500px] w-full space-y-3'>
+                <Image id="lightgallery" src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover'  alt="wrk1"/>
+              </div>     
+              <h1 className='text-2xl font-medium'>{data.attributes.title}</h1>  
+            </div>
+        </Link>
         ))}
-      </ul>
-    </div>
-    </div>
+      </div>
+    </main>
   )
 }
 
-export default Blogpage
+export default Blogs

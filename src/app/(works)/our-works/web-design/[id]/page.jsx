@@ -22,12 +22,12 @@ const Innerpage = async ({params}) => {
   let result = data.data[0]
   // console.log(result.attributes.mockups.data);
   return (
-    <main className=' xl:min-h-screen w-full bg-white'>
+    <main className=' min-h-screen w-full bg-white'>
         <div className='w-11/12 xl:w-10/12 mx-auto pt-32 py-20'>
           <h1 className='text-4xl font-normal capitalize text-center pb-5'>{result.attributes.title}</h1>
             {result.attributes.mockups.data.map(img=>(
               <div className='relative h-60 md:h-96 lg:h-[650px] w-full'>
-                  <Image src={img.attributes.url}  fill={true} className='object-cover'  alt="wrk1"/>
+                  <Image  src={img.attributes.url}  fill={true} className='object-cover'  alt="wrk1"/>
               </div>
             ))}
         </div>
