@@ -396,7 +396,11 @@ cursor: pointer;
 
 /* Get in Touch */
 .phonecode input{
-  background-color: transparent !important;
+  background-color: white !important;
+  outline: none !important;
+}
+.phonecode select{
+  background-color: white !important;
   outline: none !important;
 }
 

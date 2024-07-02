@@ -157,7 +157,7 @@ const Navbar = () => {
         <div className="flex gap-3 items-center">
             {/* our word button */}
           <div className="hidden md:block">
-            <Link href={'/services'}><button className="nav-btn">our works</button></Link>
+            <Link href={'/our-works/branding'}><button className="nav-btn">our works</button></Link>
           </div>
 
           {/* scroll active humberger */}

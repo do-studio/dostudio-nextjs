@@ -11,12 +11,19 @@ import {
   MdKeyboardDoubleArrowRight,
 } from "react-icons/md";
 import { PiQuotesFill } from "react-icons/pi";
-import {TestimonialData} from '../../constant/data'
+import {TestimonialData} from '../../constant/data';
 
-const Testimonials = () => {
+import { getData } from './lib/testimonialApi';
+
+
+
+const Testimonials = async () => {
   const [_, setInit] = useState();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const testimonialdata = await getData();
+ 
 
   return (
     <div className="bg-black text-white">
@@ -59,14 +66,14 @@ const Testimonials = () => {
         className="mySwiper z-10 w-[90%] mx-auto xl:w-full"
       >
         {/* swiper content */}
-        {TestimonialData?.map((data,i)=>(
+        {testimonialdata?.data?.map((data,i)=>(
             <SwiperSlide className="text-left space-y-4 relative py-20" key={i}>
                 <PiQuotesFill className="text-gray-300 text-5xl absolute top-0 left-0 rotate-180"/>
                 <PiQuotesFill className="text-gray-300 text-5xl absolute bottom-0 right-0"/>
-                <h3 className="text-3xl font-medium">{data.title}</h3>
-                <p className="text-2xl font-light">{data.descrption}</p>
-                <p className="text-base">{data.name}</p>
-                <a href={data.link} target="_blank" className="hover:underline"><p className="text-xs">{data.design}</p></a>
+                <h3 className="text-3xl font-medium">{data.attributes.title}</h3>
+                <p className="text-2xl font-light">{data.attributes.content}</p>
+                <p className="text-base">{data.attributes.name}</p>
+                <a href={data.link} target="_blank"><p className="text-xs">{data.attributes.designation}</p></a>
             </SwiperSlide>
         ))}
         {/* swiper content */}

@@ -47,11 +47,11 @@ const Whatwedo = () => {
   return (
     <section className={`bg-white`}>
       <h1 className="text-4xl md:text-7xl xl:text-9xl  font-extrabold  pb-10 text-black text-center">What We DO</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2">
-      <Image className='h-60 xl:h-96' placeholder="blur" src={WRK1} alt="sa"/>
-      <Image className='h-60 xl:h-96' placeholder="blur" src={WRK2} alt="sa"/>
-      <Image className='h-60 xl:h-96' placeholder="blur" src={WRK2} alt="sa"/>
-      <Image className='h-60 xl:h-96' placeholder="blur" src={WRK1} alt="sa"/>
+      <div className="grid grid-cols-2">
+      <Image className='h-40 xl:h-96' placeholder="blur" src={WRK1} alt="sa"/>
+      <Image className='h-40 xl:h-96' placeholder="blur" src={WRK2} alt="sa"/>
+      <Image className='h-40 xl:h-96' placeholder="blur" src={WRK2} alt="sa"/>
+      <Image className='h-40 xl:h-96' placeholder="blur" src={WRK1} alt="sa"/>
       </div>
     </section>
   );

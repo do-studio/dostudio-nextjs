@@ -22,16 +22,22 @@ const Blogs = async () => {
   return (
     <main className='min-h-screen w-full bg-white'>
       <div className='w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-2 gap-8'>
-      {blogdata.data?.map(data=>(
+      {blogdata.data && blogdata.data.length > 0 ? (
+       blogdata.data?.map(data=>(
         <Link href={`/blogs/${data.attributes.slug}`} key={data.attributes.id}>
-            <div className='space-y-5'>
+            <div className='space-y-5 group'>
               <div className='relative h-[500px] w-full space-y-3'>
                 <Image id="lightgallery" src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover'  alt="wrk1"/>
               </div>     
-              <h1 className='text-2xl font-medium'>{data.attributes.title}</h1>  
+              <h1 className='text-2xl font-medium group-hover:underline duration-300 pr-5'>{data.attributes.title}</h1>  
             </div>
         </Link>
-        ))}
+     ))
+     ) : (
+       <div className='text-left text-2xl font-medium animate-bounce'>
+         No data found.
+       </div>
+    )}
       </div>
     </main>
   )
