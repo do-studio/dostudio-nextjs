@@ -6,7 +6,7 @@ import Link from "next/link";
 
 async function getData() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/client-logos?&populate=*`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/client-logos?populate=*`,
     { cache: "no-store" }
   );
 
