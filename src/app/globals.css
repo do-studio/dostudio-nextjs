@@ -154,7 +154,7 @@ cursor: pointer;
   bottom: 0;
   width: 0;
   height: 8px;
-  background-color: #000;
+  background-color: #AFFE00;
   transition: width 0.30s ease-out;
 }
 .underline-hover-effect:hover::before {

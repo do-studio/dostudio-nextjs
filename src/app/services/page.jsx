@@ -45,7 +45,7 @@ const Services = async () => {
                     {data.attributes.title}
                   </h1>
                 </Link>
-                <CgArrowLongRight className="text-2xl xl:text-4xl absolute right-10 md:right-0 top-[20%] opacity-0 group-hover:opacity-100 -translate-x-3 group-hover:translate-x-2 transition-all duration-300" />
+                <CgArrowLongRight className="text-2xl text-primarygreen xl:text-4xl absolute right-10 md:right-0 top-[20%] opacity-0 group-hover:opacity-100 -translate-x-3 group-hover:translate-x-2 transition-all duration-300" />
               </div>
             ))}
           </div>

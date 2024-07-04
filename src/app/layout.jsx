@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <ToastContainer/>
+        <ToastContainer position="bottom-right"/>
         <div className="2xl:max-w-[1536px] mx-auto">
           <Navbar/>
               {children}

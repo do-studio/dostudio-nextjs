@@ -21,11 +21,13 @@ module.exports = {
       'shadow1':'0px 10px 15px 9px rgba(0,0,0,0.1)'
      },
      backgroundColor:{
+
         dashclr:'#232b33',
         mainbg:'rgb(255, 255, 255)'
      },
      colors:{
-      mainclr:'rgb(0, 0, 0)'
+      mainclr:'rgb(0, 0, 0)',
+      primarygreen:'#AFFE00',
      }
     },
   },

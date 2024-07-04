@@ -11,7 +11,7 @@ import {
   MdKeyboardDoubleArrowRight,
 } from "react-icons/md";
 import { PiQuotesFill } from "react-icons/pi";
-import {TestimonialData} from '../../constant/data';
+// import {TestimonialData} from '../../constant/data';
 
 import { getData } from './lib/testimonialApi';
 
@@ -22,7 +22,7 @@ const Testimonials = async () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  const testimonialdata = await getData();
+  const testimonialdataapi = await getData();
  
 
   return (
@@ -66,7 +66,8 @@ const Testimonials = async () => {
         className="mySwiper z-10 w-[90%] mx-auto xl:w-full"
       >
         {/* swiper content */}
-        {testimonialdata?.data?.map((data,i)=>(
+        
+        {testimonialdataapi?.data?.map((data,i)=>(
             <SwiperSlide className="text-left space-y-4 relative py-20" key={i}>
                 <PiQuotesFill className="text-gray-300 text-5xl absolute top-0 left-0 rotate-180"/>
                 <PiQuotesFill className="text-gray-300 text-5xl absolute bottom-0 right-0"/>
