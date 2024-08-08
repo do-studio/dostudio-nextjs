@@ -1,53 +1,69 @@
-import Image from 'next/image'
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import FadeUp from '../../../../components/motions/fadeUp';
 
 async function getData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/works?filters[category][$eq]=web-design&populate=*`,
-    { cache: "no-store"}
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/webdesigns?&populate=*`,
+    { cache: "no-store" }
   );
 
   if (!res.ok) {
-    return notFound()
+    return notFound();
   }
- 
-  return res.json()
+
+  return res.json();
 }
 
-
+let testImage = 'https://res.cloudinary.com/djswkzoth/image/upload/v1706872860/Do%20Studio%20Website/webBanner/long/farookcollege-ac-in_gecais.webp'
 const WebDesign = async () => {
-  const workdata =  await getData()
- 
+  const workdata = await getData();
 
   return (
-    <main className='min-h-screen w-full bg-whit'>
-     
-
-      
-        <div className='w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-1 md:grid-cols-2 gap-0'>
-        {workdata.data && workdata.data.length > 0 ? (
-          workdata.data?.map(data=>(
-            <Link href={`/our-works/web-design/${data.attributes.slug}`} key={data.id}>
-              <div className='relative group'>
-                  <div className='z-20 absolute top-0 left-0 w-full h-full bg-[#00000087] opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer'>
-                    <h3 className='text-white grid place-items-center h-full w-full text-3xl font-medium capitalize'>{data.attributes.title}</h3>
-                  </div>
-                  <div className='relative h-80 md:h-96 lg:h-[450px] xl:h-[550px] w-full'>
-                      <Image src={data.attributes.coverimage.data.attributes.url}  fill={true} className='object-cover '  alt="wrk1"/>
-                  </div>
-                  
-              </div>
-            </Link>
-              ))
-              ) : (
-                <div className='text-left text-2xl font-medium animate-bounce'>
-                  No data found.
-                </div>
-             )}
+    <main className="min-h-screen w-full bg-whit">
+      <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 ">
+        <div className="text-center space-y-2">
+        <FadeUp duration={0.3} delay={0.1}>
+          <h1 className="text-2xl md:text-4xl font-medium">Strategic Web Design Solutions for Your Brand</h1>
+        </FadeUp>
+        <FadeUp duration={0.3} delay={0.2}>
+          <h2 className="text-base md:text-2xl font-light">Responsive and Mobile-Optimized Design</h2>
+        </FadeUp>
         </div>
-    </main>
-  )
-}
 
-export default WebDesign
+        <div className="grid grid-cols-1 gap-y-10 mt-10">
+
+        {workdata.data && workdata.data.length > 0 ? (
+          workdata.data?.map((data,i)=>(
+            <FadeUp duration={0.5} delay={0.5}>
+
+          <div className="website-details group " key={i}>
+            <div className="web-container ">
+              <img className="webimgmov object-top group-hover:object-bottom transition-all duration-[5s] ease-in" src={data.attributes.webimage.data.attributes.url} alt="" />
+              <div className="web-overlay "></div>
+              <div className="web-button ">
+                <a target="_blank" href={data.attributes.siteurl}>
+                  Visit Website
+                </a>
+              </div>
+            </div>
+          </div>
+          </FadeUp>
+
+            ))
+            ) : (
+              <div className='text-left text-2xl font-medium animate-bounce'>
+                No data found.
+              </div>
+            )}
+
+        
+
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default WebDesign;

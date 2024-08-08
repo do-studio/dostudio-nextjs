@@ -8,6 +8,8 @@ import MovingWords from './home/designs/Movingwords';
 import GetinTouch from './home/designs/getinTouch';
 import MarqueeText from './home/designs/marqueText';
 import ClientSlide from './home/designs/clientslider';
+import OurWOrks from './home/designs/ourWorks';
+import WorkWithUs from './home/designs/workWithUs'
 
 export{
     Banner,
@@ -19,5 +21,7 @@ export{
     Testimonials,
     MovingWords,
     GetinTouch,
-    ClientSlide
+    ClientSlide,
+    OurWOrks,
+    WorkWithUs
 }

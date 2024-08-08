@@ -3,58 +3,102 @@ import Image from "next/image";
 import React from "react";
 import { wrk1, wrk2, wrk3, wrk4, wrk5 ,WRK1,WRK2} from "../../../../public/images";
 import Link from "next/link";
-
-const Ourworks = [
+import { IoIosArrowRoundForward } from "react-icons/io";
+const OurService = [
   {
-    image:wrk1,
-    title:`Heading`,
-    url:`#`,
-    color:'green'
+    id:1,
+    title:`Illustration`,
+    link:``,
+    img:wrk1
   },
   {
-    image:wrk2,
-    title:`Heading`,
-    url:`#`,
-    color:'green'
+    id:2,
+    title:`Brand Design`,
+    link:``,
+    img:wrk2
   },
   {
-    image:wrk3,
-    title:`Heading`,
-    url:`#`,
-    color:'green'
+    id:3,
+    title:`UI/UX Design`,
+    link:``,
+    img:wrk3
   },
   {
-    image:wrk4,
-    title:`Heading`,
-    url:`#`,
-    color:'green'
+    id:4,
+    title:`Graphic Design`,
+    link:``,
+    img:wrk4
   },
   {
-    image:wrk5,
-    title:`Heading`,
-    url:`#`,
-    color:'green'
+    id:5,
+    title:`Web Development`,
+    link:``,
+    img:wrk5
   },
   {
-    image:wrk1,
-    title:`Heading`,
-    url:`#`,
-    color:'green'
+    id:1,
+    title:`Illustration`,
+    link:``,
+    img:wrk1
   },
 ]
 
+const ban1 = 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4'
+
+
 const Whatwedo = () => {
   return (
-    <section className={`bg-white`}>
-      <h1 className="text-4xl md:text-7xl xl:text-9xl  font-extrabold  pb-10 text-black text-center">What We DO</h1>
-      <div className="grid grid-cols-2">
-      <Image className='h-40 xl:h-96' placeholder="blur" src={WRK1} alt="sa"/>
-      <Image className='h-40 xl:h-96' placeholder="blur" src={WRK2} alt="sa"/>
-      <Image className='h-40 xl:h-96' placeholder="blur" src={WRK2} alt="sa"/>
-      <Image className='h-40 xl:h-96' placeholder="blur" src={WRK1} alt="sa"/>
+    <section className=' py-20'>
+      <div className="bg-black text-white  w-11/12  overflow-hidden rounded-[3rem] p-10 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-10">
+          <div className="flex flex-col gap-10 text-right">
+            <div className="flex flex-col gap-3 uppercase">
+              <h2 className="text-5xl font-black">branding</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+            </div>
+            <div className="flex flex-col gap-3 uppercase">
+              <h2 className="text-5xl font-black">digital<br/> marketing</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+            </div>
+            <div className="flex flex-col gap-3 uppercase">
+              <h2 className="text-5xl font-black">website development</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+            </div>
+          </div>
+          <div className="flex justify-center items-center">
+              <video
+                    className="aspect-square"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723110687/Do%20Studio%20Website/DO_STUDIO_LOGO_3-1_pevafw.mov' type="video/mp4" />
+                    <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723110686/Do%20Studio%20Website/DO_STUDIO_LOGO_webm_piqdkl.webm' type="video/mp4" />
+                </video>
+          </div>
+          <div className="flex flex-col gap-10 text-left">
+            <div className="flex flex-col gap-3 uppercase">
+              <h2 className="text-5xl font-black">production</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+            </div>
+            <div className="flex flex-col gap-3 uppercase">
+              <h2 className="text-5xl font-black">print<br/> design</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+            </div>
+            <div className="flex flex-col gap-3 uppercase">
+              <h2 className="text-5xl font-black">package<br/> design</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+            </div>
+          </div>
       </div>
+
+      
     </section>
   );
 };
 
 export default Whatwedo;
+
+
+{/* <h2 className="text-6xl font-normal">production</h2>
+<p className="text-xs capitalize text-gray-00">Comprehensive Company Services</p> */}

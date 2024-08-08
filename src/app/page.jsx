@@ -11,6 +11,8 @@ import {
   Testimonials,
   MovingWords,
   GetinTouch,
+  OurWOrks,
+  WorkWithUs
 } from "../components";
 import { Suspense } from "react";
 export default function Home() {
@@ -27,6 +29,9 @@ export default function Home() {
         <About />
       </Suspense>
       <Suspense fallback={<p>Loading data...</p>}>
+        <OurWOrks />
+      </Suspense>
+      <Suspense fallback={<p>Loading data...</p>}>
         <Whatwedo />
       </Suspense>
 
@@ -35,8 +40,11 @@ export default function Home() {
         <Testimonials />
       </Suspense>
       {/* <Clients/> */}
-      <Suspense fallback={<p>Loading data...</p>}>
+      {/* <Suspense fallback={<p>Loading data...</p>}>
         <ClientSlide />
+      </Suspense> */}
+      <Suspense fallback={<p>Loading data...</p>}>
+        <WorkWithUs />
       </Suspense>
       {/* <GetinTouch/>
       <MovingWords/> */}

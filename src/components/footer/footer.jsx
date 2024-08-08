@@ -6,8 +6,10 @@ import {
   googlemaplogo,
   gmaillogo,
   insatgramlogo,
+  Logoblack
 } from "../../../public/images";
 import Image from "next/image";
+import Link from 'next/link'
 
 const socialMedia = [
   {
@@ -38,21 +40,53 @@ const socialMedia = [
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black">
-      <div className="py-5 border-t-2 w-11/12 xl:w-10/12 mx-auto  grid grid-cols-1 md:grid-cols-2 gap-y-10">
-        <div className="">
-            <h4 className="text-2xl xl:text-3xl uppercase">Want to work with us?</h4>
-            <p className="text-lg pt-5 xl:pt-5 pb-1">Contact us at</p>
-            <a className="underline text-xl" href="mailto:info@dostudio.co.in" target="_blank">info@dostudio.co.in</a>
-          </div>
-          <div className="flex gap-3 md:justify-end items-end">
-              {socialMedia?.map((social,i)=>(
-                <a key={i} href={social.href} target="_blank"><Image className="h-10 w-10 object-cover hover:-translate-y-1 opacity-80 hover:opacity-100 duration-200" placeholder="empty" src={social.logo}/></a>
-              ))}
-          </div>
-      </div>
+    <footer className="w-12/12 xl:w-10/12 mx-auto bg-white text-black">
+        <div className="py-10 grid grid-cols-2 xl:grid-cols-5">
+            <div className="xl:col-span-2 flex flex-col gap-2">
+              <Image className="object-cover w-60 -ml-4" src={Logoblack}/>
+              <p className="text-sm font-medium xl:w-[60%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam molestias voluptates quos laborum magnam blanditiis earum fuga dolor consectetur totam vero vitae quasi.</p>
+            </div>
+            <div>
+              <h4 className="text-base font-bold uppercase">pages</h4>
+              <ul className="flex flex-col gap-1 capitalize mt-2">
+                <Link href={'/'}>home</Link>
+                <Link href={'/'}>services</Link>
+                <Link href={'/'}>contact</Link>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-base font-bold uppercase">information</h4>
+              <ul className="flex flex-col gap-1 capitalize mt-2">
+                <Link href={'/'}>blogs</Link>
+                <Link href={'/'}>blogs</Link>
+                <Link href={'/'}>blogs</Link>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-base font-bold uppercase">office address</h4>
+              <p className="font-medium text-sm mt-2">1st Floor, Ramaswami Complex<br/>
+                  Cherooty Rd, Behind Basics,<br/>
+                  Kozhikode, Kerala,<br/>
+                  India - 673001</p>
+                  <ul className="flex justify-start py-5 gap-2 capitalize mt-2">
+                    {socialMedia.map((soc,i)=>(
+                      <a href={soc.href} key={i}>
+                        <Image className="h-8 w-8 object-cover hover:-translate-y-1  duration-200" placeholder="empty" src={soc.logo}/>
+                      </a>
+                    ))}
+                  </ul>
+            </div>
+        </div>
+        
     </footer>
   );
 };
 
 export default Footer;
+{/* <ul className="flex gap-1 capitalize mt-2">
+{socialMedia.map((soc,i)=>(
+  <a href={soc.href} key={i}>
+    <Image className="h-10 w-10 object-cover hover:-translate-y-1 grayscale hover:grayscale-0 duration-200" placeholder="empty" src={soc.logo}/>
+  </a>
+))}
+</ul> */}

@@ -61,8 +61,16 @@ import WRK1 from './medias/wrrk1.webp'
 import WRK2 from './medias/wrrk2.webp'
 import testimage from './medias/test.webp'
 
+import doicn from './logo/do-icon1.png'
+import doicnbl from './logo/do-icon-bl.svg'
+import doicnwh from './logo/do-iconwh.svg'
+
+
 
 export{
+    doicn,
+    doicnbl,
+    doicnwh,
     testimage,
     Logowhite,
     Logoblack,
@@ -119,5 +127,5 @@ export{
     clntsysmantech,
     clntfixso,
     clntlubigen,
-    serviceBg
+    serviceBg,
 }

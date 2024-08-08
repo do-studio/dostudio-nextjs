@@ -10,7 +10,7 @@ const Banner = () => {
 
   return (
     <>
-    <section>
+    <section className=''>
         <video className="banner-video w-full h-full" autoPlay muted loop>
                 <source src={ban1}  type="video/mp4" />
         </video>

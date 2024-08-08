@@ -23,7 +23,7 @@ const ClientsPage = async () => {
         <h1 className="text-4xl lg:text-6xl font-bold capitalize text-center pb-3">
           our clients
         </h1>
-        <div className="grid grid-cols-4 xl:grid-cols-6 gap-2 ">
+        <div className="grid grid-cols-4 xl:grid-cols-6 gap-5">
           {clintsdata.data && clintsdata.data.length > 0 ? (
             clintsdata?.data?.map((data, i) => (
               <div className="h-16 w-16 md:h-32 md:w-32 xl:h-48 xl:w-48 relative"  key={i}>

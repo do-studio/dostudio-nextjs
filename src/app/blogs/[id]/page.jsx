@@ -18,14 +18,16 @@ async function getData(slug) {
 const BlogeDetails = async ({params}) => {
     const data = await getData(params.id);
     // console.log(data);
-    const content = data.data[0].attributes.contents;
+    const content = data?.data[0]?.attributes?.content;
+    // console.log(content);
   return (
     <main className='min-h-screen w-full bg-white'>
+      {/* <h1>{data.data[0].attributes.title}</h1> */}
         <div className='w-11/12 xl:w-10/12 mx-auto pt-32 py-20'>
             <div className='relative h-[500px] w-full mb-10'>
-                <Image src={data.data[0].attributes.image.data.attributes.url}  fill={true} className='object-cover'  alt="wrk1"/>
+                <Image src={data.data[0].attributes.image.data.attributes.url}  fill={true} className='object-cover'  alt="wrk1" loading='lazy'/>
             </div>
-            <div className='prose prose-headings:text-black prose-h1:leading-tight prose-h4:text-3xl prose-h4:font-normal prose-h5:text-xl prose-h4:m-0 prose-h4:mb-2 prose-h5:m-0 prose-p:m-0 prose-h5:font-medium prose-h1:text-3xl prose-h1:m-0 prose-h1:mb-7 prose-p:text-base prose-h1:font-semibold prose-p:text-black'>
+            <div className='prose prose-headings:text-black prose-a:text-blue-600 prose-h1:leading-tight prose-h4:text-3xl prose-h4:font-normal prose-h5:text-xl prose-h4:m-0 prose-h4:mb-2 prose-h5:m-0 prose-p:m-0 prose-h5:font-medium prose-h1:text-3xl prose-h1:m-0 prose-h1:mb-7 prose-p:text-base prose-h1:font-semibold prose-p:text-black'>
                 <BlocksRenderer content={content} />
             </div>
         </div>

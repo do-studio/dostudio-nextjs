@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 
 
 async function getData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/works?filters[category][$eq]=branding&populate=*`,
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/brandings?&populate=*`,
     { cache: "no-store"}
   );
 

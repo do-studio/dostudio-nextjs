@@ -222,10 +222,10 @@ const Navbar = () => {
                   <p>+91 9746155541</p>
                 </div>
                 <div className="text-xl md:text-2xl font-light">
-                  <p>1st Floor, ramaswami</p>
-                  <p>Cherooty Rd, behind Basics,</p>
-                  <p>Vellayil, Kozhikode, Kerala,</p>
-                  <p>India - 673032</p>
+                  <p>1st Floor, Ramaswami Complex</p>
+                  <p>Cherooty Rd, Behind Basics,</p>
+                  <p>Kozhikode, Kerala,</p>
+                  <p>India - 673001</p>
                 </div>
               </motion.div>
               <motion.ul className="text-2xl space-y-3 lg:space-y-2 h-full flex flex-col w-full  justify-end">
@@ -305,10 +305,10 @@ const Navbar = () => {
                   <p>+91 9746155541</p>
                 </div>
                 <div className="text-xl md:text-2xl font-light">
-                  <p>1st Floor, ramaswami</p>
-                  <p>Cherooty Rd, behind Basics,</p>
-                  <p>Vellayil, Kozhikode, Kerala,</p>
-                  <p>India - 673032</p>
+                <p>1st Floor, Ramaswami Complex</p>
+                  <p>Cherooty Rd, Behind Basics,</p>
+                  <p>Kozhikode, Kerala,</p>
+                  <p>India - 673001</p>
                 </div>
               </motion.div>
               <motion.ul className="text-2xl space-y-3 h-full w-full flex flex-col justify-end">

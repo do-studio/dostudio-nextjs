@@ -4,20 +4,20 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-async function getData() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/client-logos?&populate=*`,
-    { cache: "no-store" }
-  );
+// async function getData() {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_API_URL}/api/client-logos?&populate=*`,
+//     { cache: "no-store" }
+//   );
 
-  if (!res.ok) {
-    return notFound();
-  }
-  return res.json();
-}
+//   if (!res.ok) {
+//     return notFound();
+//   }
+//   return res.json();
+// }
 
 const Clientslider = async () => {
-  const clintsdata = await getData();
+  // const clintsdata = await getData();
   // console.log(clintsdata.data);
 
   return (
@@ -27,14 +27,14 @@ const Clientslider = async () => {
       </h1>
 
       <Marquee speed={100}>
-        {clintsdata.data && clintsdata.data.length > 0 ? (
-          clintsdata?.data?.map((data, i) => (
+        {ClientsData && ClientsData.length > 0 ? (
+          ClientsData?.map((data, i) => (
             <div className="h-16 w-16 md:h-32 md:w-32 xl:h-48 xl:w-48 relative">
               <Image
                 key={i}
                 fill={true}
                 className="object-cover grayscale hover:grayscale-0 duration-200"
-                src={data.attributes.image.data.attributes.url}
+                src={data.clt}
                 alt="clients"
               />
             </div>

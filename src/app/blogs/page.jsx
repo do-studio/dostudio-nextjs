@@ -3,6 +3,7 @@ import {testimage} from '../../../public/images/index'
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import FadeUp from '../../components/motions/fadeUp';
 
 async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?&populate=*`,
@@ -24,14 +25,16 @@ const Blogs = async () => {
       <div className='w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-2 gap-8'>
       {blogdata.data && blogdata.data.length > 0 ? (
        blogdata.data?.map(data=>(
+        <FadeUp duration={0.3} delay={0.2}>
         <Link href={`/blogs/${data.attributes.slug}`} key={data.attributes.id}>
             <div className='space-y-5 group'>
               <div className='relative h-[500px] w-full space-y-3'>
                 <Image id="lightgallery" src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover'  alt="wrk1"/>
               </div>     
-              <h1 className='text-2xl font-medium group-hover:underline duration-300 pr-5'>{data.attributes.title}</h1>  
+              <h1 className='text-2xl font-medium capitalize group-hover:underline duration-300 pr-5'>{data.attributes.title}</h1>  
             </div>
         </Link>
+        </FadeUp>
      ))
      ) : (
        <div className='text-left text-2xl font-medium animate-bounce'>

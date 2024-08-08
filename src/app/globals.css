@@ -8,13 +8,13 @@
 }
 
 ::-moz-selection {
-  color: #fff;
-  background: #000
+  color: #000000;
+  background: #AFFE00
 }
 
 ::selection {
-  color: #fff;
-  background: #000
+  color: #000000;
+  background: #AFFE00
 }
 
 *{
@@ -533,3 +533,81 @@ cursor: pointer;
   inset: -5px;
   opacity: 1
 }
+
+/* webdesign */
+.website-details {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.web-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1897 / 905;
+  transition: background-position 5s ease;
+  background-position: 0 0;
+  background-size: 100% auto;
+  overflow: hidden;
+}
+
+.web-container:hover{
+  background-position: 0 100%;
+}
+
+
+
+.web-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease
+}
+
+.web-container:hover .web-overlay {
+  display: block;
+  background: rgba(0, 0, 0, .425)
+}
+
+.web-container img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  flex: 2;
+  left: 0
+}
+
+.web-button {
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease
+}
+
+.web-button a {
+  width: 200px;
+  padding: 12px 48px;
+  text-align: center;
+  background-color: #FFF;
+  color: #000;
+  border: solid 2px #fff;
+  z-index: 1
+}
+
+.web-container:hover .web-button {
+  opacity: 1
+}
+/* webdesign */

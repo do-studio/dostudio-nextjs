@@ -5,13 +5,14 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { IoArrowBack ,IoArrowForward } from "react-icons/io5";
 
 import {
   MdKeyboardDoubleArrowLeft,
   MdKeyboardDoubleArrowRight,
 } from "react-icons/md";
 import { PiQuotesFill } from "react-icons/pi";
-// import {TestimonialData} from '../../constant/data';
+import {TestimonialData} from '../../constant/data';
 
 import { getData } from './lib/testimonialApi';
 
@@ -22,7 +23,7 @@ const Testimonials = async () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  const testimonialdataapi = await getData();
+  // const testimonialdataapi = await getData();
  
 
   return (
@@ -67,25 +68,27 @@ const Testimonials = async () => {
       >
         {/* swiper content */}
         
-        {testimonialdataapi?.data?.map((data,i)=>(
-            <SwiperSlide className="text-left space-y-4 relative py-20" key={i}>
-                <PiQuotesFill className="text-gray-300 text-5xl absolute top-0 left-0 rotate-180"/>
-                <PiQuotesFill className="text-gray-300 text-5xl absolute bottom-0 right-0"/>
-                <h3 className="text-3xl font-medium">{data.attributes.title}</h3>
-                <p className="text-2xl font-light">{data.attributes.content}</p>
-                <p className="text-base">{data.attributes.name}</p>
-                <a href={data.link} target="_blank"><p className="text-xs">{data.attributes.designation}</p></a>
+        {TestimonialData?.map((data,i)=>(
+            <SwiperSlide className="text-left space-y-4 relative" key={i}>
+                {/* <h3 className="text-2xl xl:text-3xl font-medium">{data.title}</h3> */}
+                <div className="relative py-10">
+                  <PiQuotesFill className="text-primarygreen text-4xl absolute top-0 left-0 rotate-180"/>
+                  <PiQuotesFill className="text-primarygreen text-4xl absolute bottom-0 right-0"/>
+                  <p className="text-base xl:text-6xl font-black">{data.descrption}</p>
+                </div>
+                <p className="text-base">{data.name}</p>
+                <a href={data.link} target="_blank"><p className="text-xs">{data.design}</p></a>
             </SwiperSlide>
         ))}
         {/* swiper content */}
       </Swiper>
       {/* Navigations */}
-      {/* <div className="hidden w-full xl:flex justify-between absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-20">
-        <button className="absolute left-5" ref={prevRef}>
-          <MdKeyboardDoubleArrowLeft className="text-2xl" />
+      {/* <div className="hidden w-full xl:flex gap-10 z-20">
+        <button className="bg-white text-black w-10 h-10 grid place-items-center rounded-full" ref={prevRef}>
+          <IoArrowBack className="text-2xl" />
         </button>
-        <button className="absolute right-5" ref={nextRef}>
-          <MdKeyboardDoubleArrowRight className="text-2xl" />
+        <button className="bg-white text-black w-10 h-10 grid place-items-center rounded-full" ref={nextRef}>
+          <IoArrowForward className="text-2xl" />
         </button>
       </div> */}
     </div>
