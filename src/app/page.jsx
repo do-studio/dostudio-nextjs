@@ -29,10 +29,10 @@ export default function Home() {
         <About />
       </Suspense>
       <Suspense fallback={<p>Loading data...</p>}>
-        <OurWOrks />
+        <Whatwedo />
       </Suspense>
       <Suspense fallback={<p>Loading data...</p>}>
-        <Whatwedo />
+        <OurWOrks />
       </Suspense>
 
       {/* <AnimatPara/> */}

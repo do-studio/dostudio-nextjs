@@ -9,7 +9,13 @@ import {
   Logoblack
 } from "../../../public/images";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from 'next/link';
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { BiLogoGmail } from "react-icons/bi";
+import { IoLogoWhatsapp } from "react-icons/io";
+
 
 const socialMedia = [
   {
@@ -44,7 +50,14 @@ const Footer = () => {
         <div className="py-5 xl:py-10 grid grid-cols-1 gap-y-5 xl:grid-cols-5">
             <div className="xl:col-span-2 flex flex-col gap-2">
               <Image className="object-cover w-60 -ml-4" src={Logoblack}/>
-              <p className="text-sm font-medium xl:w-[60%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam molestias voluptates quos laborum magnam blanditiis earum fuga dolor consectetur totam vero vitae quasi.</p>
+              {/* <p className="text-sm font-medium xl:w-[60%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam molestias voluptates quos laborum magnam blanditiis earum fuga dolor consectetur totam vero vitae quasi.</p> */}
+              <ul className="flex justify-start py-5 gap-2 capitalize mt-2">
+                    {socialMedia.map((soc,i)=>(
+                      <a href={soc.href} key={i}>
+                        <Image className="h-8 w-8 object-cover hover:-translate-y-1  duration-200" placeholder="empty" src={soc.logo}/>
+                      </a>
+                    ))}
+                  </ul>
             </div>
             <div>
               <h4 className="text-base font-bold uppercase">pages</h4>
@@ -72,13 +85,7 @@ const Footer = () => {
                   Cherooty Rd, Behind Basics,<br/>
                   Kozhikode, Kerala,<br/>
                   India - 673001</p>
-                  <ul className="flex justify-start py-5 gap-2 capitalize mt-2">
-                    {socialMedia.map((soc,i)=>(
-                      <a href={soc.href} key={i}>
-                        <Image className="h-8 w-8 object-cover hover:-translate-y-1  duration-200" placeholder="empty" src={soc.logo}/>
-                      </a>
-                    ))}
-                  </ul>
+                 
             </div>
         </div>
         

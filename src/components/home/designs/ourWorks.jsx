@@ -1,6 +1,9 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { wrk1, wrk2, wrk3, wrk4, wrk5 ,WRK1,WRK2} from "../../../../public/images";
+import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 const InfiniteScroll = () => {
   const scrollContainerRef = useRef(null);
@@ -27,60 +30,27 @@ const InfiniteScroll = () => {
   }, [controls]);
 
   return (
-    <div className="overflow-hidden whitespace-nowrap" ref={scrollContainerRef}>
-      <motion.div className="flex gap-[500px]" animate={controls}>
-        <div className="p-4 bg-red-500">
-          <h1 className="text-xl font-bold">Title 1</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 1</h2>
-        </div>
-        <div className="p-4 bg-blue-500">
-          <h1 className="text-xl font-bold">Title 2</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 2</h2>
-        </div>
-        <div className="p-4 bg-red-500">
-          <h1 className="text-xl font-bold">Title 3</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 3</h2>
-        </div>
-        <div className="p-4 bg-blue-500">
-          <h1 className="text-xl font-bold">Title 4</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 4</h2>
-        </div>
-        <div className="p-4 bg-red-500">
-          <h1 className="text-xl font-bold">Title 5</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 5</h2>
-        </div>
-        <div className="p-4 bg-blue-500">
-          <h1 className="text-xl font-bold">Title 6</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 6</h2>
-        </div>
-
-        {/* Duplicate the content to ensure seamless scrolling */}
-        <div className="p-4 bg-red-500">
-          <h1 className="text-xl font-bold">Title 1</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 1</h2>
-        </div>
-        <div className="p-4 bg-blue-500">
-          <h1 className="text-xl font-bold">Title 2</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 2</h2>
-        </div>
-        <div className="p-4 bg-red-500">
-          <h1 className="text-xl font-bold">Title 3</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 3</h2>
-        </div>
-        <div className="p-4 bg-blue-500">
-          <h1 className="text-xl font-bold">Title 4</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 4</h2>
-        </div>
-        <div className="p-4 bg-red-500">
-          <h1 className="text-xl font-bold">Title 5</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 5</h2>
-        </div>
-        <div className="p-4 bg-blue-500">
-          <h1 className="text-xl font-bold">Title 6</h1>
-          <h2 className="text-lg text-gray-500">Subtitle 6</h2>
-        </div>
-      </motion.div>
+    <>
+    <div className="overflow-hidden relative py-10 xl:py-20" ref={scrollContainerRef}>
+      <Marquee className="flex bg-white -mt-72 pb-20 z-10">
+            <div className="mx-20 relative h-[300px] rounded-2xl shadow-2xl overflow-hidden px-28 mt-[600px]">
+                  <Image className="object-cover" fill src={wrk1}/>
+            </div>
+            <div className="mx-20 relative h-[300px] rounded-2xl shadow-2xl overflow-hidden px-28 ">
+                  <Image className="object-cover" fill src={wrk2}/>
+            </div>
+            <div className="mx-20 relative h-[300px] rounded-2xl shadow-2xl overflow-hidden px-28 mt-[600px]">
+                  <Image className="object-cover" fill src={wrk3}/>
+            </div>
+            <div className="mx-20 relative h-[300px] rounded-2xl shadow-2xl overflow-hidden px-28 ">
+                  <Image className="object-cover" fill src={wrk4}/>
+            </div>
+        </Marquee>
+        {/*  */}
+        <h1 className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-7xl xl:text-[150px] text-[#2d2d2d]  w-full text-center font-black z-20 uppercase">works</h1>
     </div>
+    
+    </>
   );
 };
 

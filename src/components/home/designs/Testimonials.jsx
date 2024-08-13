@@ -74,7 +74,7 @@ const Testimonials = async () => {
                 <div className="relative py-10">
                   <PiQuotesFill className="text-primarygreen text-4xl absolute top-0 left-0 scale-x-[-1]"/>
                   <PiQuotesFill className="text-primarygreen text-4xl absolute bottom-0 right-0"/>
-                  <p className="text-base xl:text-6xl font-black">{data.descrption}</p>
+                  <p className="text-xl xl:text-6xl font-bold xl:font-black">{data.descrption}</p>
                 </div>
                 <p className="text-base">{data.name}</p>
                 <a href={data.link} target="_blank"><p className="text-xs">{data.design}</p></a>
