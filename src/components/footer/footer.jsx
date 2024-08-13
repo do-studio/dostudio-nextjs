@@ -40,26 +40,30 @@ const socialMedia = [
 
 const Footer = () => {
   return (
-    <footer className="w-12/12 xl:w-10/12 mx-auto bg-white text-black">
-        <div className="py-10 grid grid-cols-2 xl:grid-cols-5">
+    <footer className="w-11/12 xl:w-10/12 mx-auto bg-white text-black">
+        <div className="py-5 xl:py-10 grid grid-cols-1 gap-y-5 xl:grid-cols-5">
             <div className="xl:col-span-2 flex flex-col gap-2">
               <Image className="object-cover w-60 -ml-4" src={Logoblack}/>
               <p className="text-sm font-medium xl:w-[60%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam molestias voluptates quos laborum magnam blanditiis earum fuga dolor consectetur totam vero vitae quasi.</p>
             </div>
             <div>
               <h4 className="text-base font-bold uppercase">pages</h4>
-              <ul className="flex flex-col gap-1 capitalize mt-2">
-                <Link href={'/'}>home</Link>
-                <Link href={'/'}>services</Link>
-                <Link href={'/'}>contact</Link>
+              <ul className="text-sm flex flex-col gap-1 capitalize mt-2">
+                <Link className="text-black hover:text-gray-400 duration-200" href={'/'}>home</Link>
+                <Link className="text-black hover:text-gray-400 duration-200" href={'/services'}>services</Link>
+                <Link className="text-black hover:text-gray-400 duration-200" href={'/contact'}>contact</Link>
+                <Link className="text-black hover:text-gray-400 duration-200" href={'/blogs'}>blogs</Link>
               </ul>
             </div>
             <div>
-              <h4 className="text-base font-bold uppercase">information</h4>
-              <ul className="flex flex-col gap-1 capitalize mt-2">
-                <Link href={'/'}>blogs</Link>
-                <Link href={'/'}>blogs</Link>
-                <Link href={'/'}>blogs</Link>
+              <h4 className="text-base font-bold uppercase">services</h4>
+              <ul className="text-sm flex flex-col gap-1 capitalize mt-2">
+                <Link className="text-black hover:text-gray-400 duration-200" href={'/blogs'}>Branding</Link>
+                <Link className="text-black hover:text-gray-400 duration-200" href={'/blogs'}>Digital Marketing</Link>
+                <Link className="text-black hover:text-gray-400 duration-200" href={'/blogs'}>Web Design</Link>
+                <Link className="text-black hover:text-gray-400 duration-200" href={'/blogs'}>Package Design</Link>
+                <Link className="text-black hover:text-gray-400 duration-200" href={'/blogs'}>Print Design</Link>
+                <Link className="text-black hover:text-gray-400 duration-200" href={'/blogs'}>Production</Link>
               </ul>
             </div>
             <div>
@@ -90,3 +94,10 @@ export default Footer;
   </a>
 ))}
 </ul> */}
+
+// BRANDING
+// DIGITAL MARKETING
+// WEB DESIGN
+// PACKAGE DESIGN
+// PRINT DESIGN
+// PRODUCTION

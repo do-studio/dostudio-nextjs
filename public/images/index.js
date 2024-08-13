@@ -65,9 +65,12 @@ import doicn from './logo/do-icon1.png'
 import doicnbl from './logo/do-icon-bl.svg'
 import doicnwh from './logo/do-iconwh.svg'
 
+import imgarrw from './logo/arrw.png'
+
 
 
 export{
+    imgarrw,
     doicn,
     doicnbl,
     doicnwh,

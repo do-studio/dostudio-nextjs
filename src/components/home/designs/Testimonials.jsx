@@ -72,7 +72,7 @@ const Testimonials = async () => {
             <SwiperSlide className="text-left space-y-4 relative" key={i}>
                 {/* <h3 className="text-2xl xl:text-3xl font-medium">{data.title}</h3> */}
                 <div className="relative py-10">
-                  <PiQuotesFill className="text-primarygreen text-4xl absolute top-0 left-0 rotate-180"/>
+                  <PiQuotesFill className="text-primarygreen text-4xl absolute top-0 left-0 scale-x-[-1]"/>
                   <PiQuotesFill className="text-primarygreen text-4xl absolute bottom-0 right-0"/>
                   <p className="text-base xl:text-6xl font-black">{data.descrption}</p>
                 </div>

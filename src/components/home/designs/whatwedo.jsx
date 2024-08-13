@@ -48,23 +48,23 @@ const ban1 = 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_S
 
 const Whatwedo = () => {
   return (
-    <section className=' py-20'>
-      <div className="bg-black text-white  w-11/12  overflow-hidden rounded-[3rem] p-10 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-10">
-          <div className="flex flex-col gap-10 text-right">
+    <section className='py-10 xl:py-20'>
+      <div className="bg-black text-white  w-11/12  overflow-hidden rounded-[3rem] p-10 mx-auto grid grid-cols-2 xl:grid-cols-3 gap-10">
+          <div className="flex flex-col gap-10 md:text-right">
             <div className="flex flex-col gap-3 uppercase">
-              <h2 className="text-5xl font-black">branding</h2>
-              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">branding</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
             </div>
             <div className="flex flex-col gap-3 uppercase">
-              <h2 className="text-5xl font-black">digital<br/> marketing</h2>
-              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">digital<br className="hidden md:block"/> marketing</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
             </div>
             <div className="flex flex-col gap-3 uppercase">
-              <h2 className="text-5xl font-black">website development</h2>
-              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">website development</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
             </div>
           </div>
-          <div className="flex justify-center items-center">
+          <div className="hidden md:flex justify-center items-center">
               <video
                     className="aspect-square"
                     autoPlay
@@ -78,15 +78,15 @@ const Whatwedo = () => {
           </div>
           <div className="flex flex-col gap-10 text-left">
             <div className="flex flex-col gap-3 uppercase">
-              <h2 className="text-5xl font-black">production</h2>
-              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">production</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
             </div>
             <div className="flex flex-col gap-3 uppercase">
-              <h2 className="text-5xl font-black">print<br/> design</h2>
-              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">print<br className="hidden md:block"/> design</h2>
+              <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
             </div>
             <div className="flex flex-col gap-3 uppercase">
-              <h2 className="text-5xl font-black">package<br/> design</h2>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">package<br className="hidden md:block"/> design</h2>
               <p className="text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
             </div>
           </div>
