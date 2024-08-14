@@ -9,7 +9,7 @@ import GetinTouch from './home/designs/getinTouch';
 import MarqueeText from './home/designs/marqueText';
 import ClientSlide from './home/designs/clientslider';
 import OurWOrks from './home/designs/ourWorks';
-import WorkWithUs from './home/designs/workWithUs'
+import WorkWithUs from './home/designs/workWithUs';
 
 export{
     Banner,

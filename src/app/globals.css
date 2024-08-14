@@ -611,3 +611,23 @@ cursor: pointer;
   opacity: 1
 }
 /* webdesign */
+
+/* Footer menu */
+.foot-underline-hover-effect {
+  position: relative;
+}
+
+.foot-underline-hover-effect::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #AFFE00;
+  transition: width 0.30s ease-out;
+}
+.foot-underline-hover-effect:hover::before {
+  width: 100%;
+}
+/* Footer menu */

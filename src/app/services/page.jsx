@@ -3,6 +3,8 @@ import { serviceBg } from "../../../public/images";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CgArrowLongRight } from "react-icons/cg";
+import { TbArrowBigRightLineFilled } from "react-icons/tb";
+
 
 async function getData() {
   const res = await fetch(
@@ -41,11 +43,11 @@ const Services = async () => {
                 key={data.id}
               >
                 <Link href={`/services/${data.attributes.slug}`}>
-                  <h1 className="text-lg xl:text-xl font-normal uppercase">
+                  <h1 className="text-lg xl:text-2xl font-black uppercase">
                     {data.attributes.title}
                   </h1>
                 </Link>
-                <CgArrowLongRight className="text-2xl text-primarygreen xl:text-4xl absolute right-10 md:right-0 top-[20%] opacity-0 group-hover:opacity-100 -translate-x-3 group-hover:translate-x-2 transition-all duration-300" />
+                <TbArrowBigRightLineFilled className="text-xl text-primarygreen xl:text-4xl absolute right-10 md:right-0 top-3.5 opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-2 transition-all duration-300" />
               </div>
             ))}
           </div>

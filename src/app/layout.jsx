@@ -4,6 +4,7 @@ import Navbar from "../components/navbar/navbar";
 import Footer from "../components/footer/footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -19,7 +20,7 @@ export const metadata = {
     apple: ["/apple-touch-icon.png?v=4"],
     shortcut: ["/apple-touch-icon.png"],
   },
-  manifest: "/site.webmanifest",
+  // manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({ children }) {
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <ToastContainer position="bottom-right" />
         <div className="2xl:max-w-[1536px] mx-auto">
+
           <Navbar />
           {children}
           <Footer />

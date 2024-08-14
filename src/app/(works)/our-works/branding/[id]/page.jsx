@@ -26,8 +26,8 @@ const Innerpage = async ({params}) => {
         <div className='w-11/12 xl:w-10/12 mx-auto pt-32 py-20'>
           {/* <h1 className='text-4xl font-black uppercase text-center pb-5'>{result.attributes.title}</h1> */}
             {result.attributes.mockup.data.map((img,i)=>(
-              <div className='relative h-60 md:h-96 lg:h-[650px] w-full' key={i}>
-                  <Image src={img.attributes.url}  fill={true} className='object-cover'  alt="wrk1"/>
+              <div className='relative aspect-video' key={i}>
+                  <Image src={img.attributes.url}  fill className='object-cover'  alt="wrk1"/>
               </div>
             ))}
         </div>
