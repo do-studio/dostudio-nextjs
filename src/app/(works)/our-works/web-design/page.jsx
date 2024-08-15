@@ -32,13 +32,12 @@ const WebDesign = async () => {
         </FadeUp>
         </div>
 
-        <div className="grid grid-cols-1 gap-y-10 mt-10">
-
+        <div className="grid grid-cols-1 gap-y-14 mt-10">
         {workdata.data && workdata.data.length > 0 ? (
           workdata.data?.map((data,i)=>(
             <FadeUp duration={0.5} delay={0.5}>
 
-          <div className="website-details group " key={i}>
+          <div className="website-details group rounded-[1rem] overflow-hidden shadow-2xl" key={i}>
             <div className="web-container ">
               <img className="webimgmov object-top group-hover:object-bottom transition-all duration-[5s] ease-in" src={data.attributes.webimage.data.attributes.url} alt="" />
               <div className="web-overlay "></div>

@@ -24,14 +24,11 @@ const PrintDesign = async () => {
     <main className='min-h-screen w-full bg-white'>
         <div className='w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-0'>
         {workdata.data && workdata.data.length > 0 ? (
-          workdata.data?.map(data=>(
-   
-              <div className='relative group' >
-                
+          workdata.data?.map((data,i)=>(
+              <div className='relative group' key={i}>
                   <div className='relative h-80 lg:h-[350px] w-full'>
                       <Image src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover '  alt="wrk1"/>
                   </div>
-                  
               </div>
 
               ))

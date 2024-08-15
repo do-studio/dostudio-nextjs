@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-
+import FadeUp from '../../../../../components/motions/fadeUp';
 
 async function getData(slug) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/brandings?filters[slug][$eq]=${slug}&populate=*`,
@@ -27,8 +27,10 @@ const Innerpage = async ({params}) => {
           {/* <h1 className='text-4xl font-black uppercase text-center pb-5'>{result.attributes.title}</h1> */}
             {result.attributes.mockup.data.map((img,i)=>(
               <div className='relative aspect-video' key={i}>
-                  <Image src={img.attributes.url}  fill className='object-cover'  alt="wrk1"/>
-              </div>
+                  <FadeUp duration={0.2}>
+                    <Image src={img.attributes.url}  fill className='object-cover'  alt="wrk1"/>
+              </FadeUp>
+                </div>
             ))}
         </div>
     </main>

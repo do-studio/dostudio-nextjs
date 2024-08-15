@@ -6,7 +6,7 @@ const workWithUs = () => {
     <section className='relative'>
     <div className='absolute right-0 -top-[40%]'>
       <video
-                      className="h-60 w-60 bg-transparent"
+                      className="h-40 w-40 xl:h-60 xl:w-60 bg-transparent"
                       autoPlay
                       loop
                       muted

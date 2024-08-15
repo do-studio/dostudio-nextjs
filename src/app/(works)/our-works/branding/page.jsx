@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-
+import FadeUp from '../../../../components/motions/fadeUp';
 
 async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/brandings?&populate=*`,
@@ -26,6 +26,7 @@ const Branding = async () => {
         {workdata.data && workdata.data.length > 0 ? (
           workdata.data?.map(data=>(
             <Link className='space-y-2' href={`/our-works/branding/${data.attributes.slug}`} key={data.id}>
+              <FadeUp duration={0.5} delay={0.5}>
               <div className='relative group' >
                   {/* <div className='z-20 absolute top-0 left-0 w-full h-full bg-[#00000087] opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer'>
                     <h3 className='text-white grid place-items-center h-full w-full text-3xl font-medium capitalize'>{data.attributes.title}</h3>
@@ -34,7 +35,8 @@ const Branding = async () => {
                       <Image src={data.attributes.coverimage.data.attributes.url}  fill={true} className='object-cover '  alt="wrk1"/>
                   </div>
               </div>
-                <h3 className='text-black font-black text-left text-3xl xl:text-5xl uppercase'>{data.attributes.title}</h3>
+                {/* <h3 className='text-black font-black text-left text-3xl xl:text-5xl uppercase'>{data.attributes.title}</h3> */}
+            </FadeUp>
             </Link>
               ))
               ) : (

@@ -9,43 +9,82 @@ const banmob = 'https://res.cloudinary.com/djswkzoth/video/upload/v1723561320/Do
 const Banner = () => {
 
   const [currentVideo, setCurrentVideo] = useState('');
-
-  const isMobile = () => window.innerWidth <= 768;
-
-  const getVideoForTime = () => {
-    const currentTime = new Date().getHours();
-    const mobile = isMobile();
-
-    if (currentTime >= 5 && currentTime < 12) {
-      return mobile ? banmob : bandesk;
-    } else if (currentTime >= 12 && currentTime < 17) {
-      return mobile ? banmob : bandesk;
-    } else if (currentTime >= 17 && currentTime < 20) {
-      return mobile ? banmob : bandesk;
-    } else {
-      return mobile ? banmob : bandesk;
-    }
-  };
+  const [currentPoster, setCurrentPoster] = useState('');
 
   useEffect(() => {
-    const updateVideo = () => setCurrentVideo(getVideoForTime());
-    updateVideo();
+    const getCurrentVideo = () => {
+      const currentTime = new Date().getHours();
+      const isMobile = window.innerWidth <= 468;
 
-    // Update the video if the window is resized (especially for orientation changes on mobile)
-    window.addEventListener('resize', updateVideo);
+      // URLs for desktop and mobile videos
+      const videos = {
+        desktop: {
+          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4',
+          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4',
+          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4',
+          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4',
+        },
+        mobile: {
+          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723561320/Do%20Studio%20Website/Do_Studio_M2_v5_ug6wqo.mp4',
+          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723561320/Do%20Studio%20Website/Do_Studio_M2_v5_ug6wqo.mp4',
+          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723561320/Do%20Studio%20Website/Do_Studio_M2_v5_ug6wqo.mp4',
+          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723561320/Do%20Studio%20Website/Do_Studio_M2_v5_ug6wqo.mp4',
+        },
+      };
 
-    return () => window.removeEventListener('resize', updateVideo);
+      const posters = {
+        desktop: 'https://via.placeholder.com/1920x1080?text=Desktop+Poster',
+        mobile: 'https://via.placeholder.com/768x1024?text=Mobile+Poster',
+      };
+
+      let videoPath = '';
+      let posterPath = '';
+
+      if (currentTime >= 5 && currentTime < 12) {
+        videoPath = isMobile ? videos.mobile.morning : videos.desktop.morning;
+        posterPath = isMobile ? posters.mobile : posters.desktop;
+      } else if (currentTime >= 12 && currentTime < 17) {
+        videoPath = isMobile ? videos.mobile.afternoon : videos.desktop.afternoon;
+        posterPath = isMobile ? posters.mobile : posters.desktop;
+      } else if (currentTime >= 17 && currentTime < 20) {
+        videoPath = isMobile ? videos.mobile.evening : videos.desktop.evening;
+        posterPath = isMobile ? posters.mobile : posters.desktop;
+      } else {
+        videoPath = isMobile ? videos.mobile.night : videos.desktop.night;
+        posterPath = isMobile ? posters.mobile : posters.desktop;
+      }
+
+      return { videoPath, posterPath };
+    };
+
+    const { videoPath, posterPath } = getCurrentVideo();
+    setCurrentVideo(videoPath);
+    setCurrentPoster(posterPath);
+
+    // Update video and poster if window is resized
+    const handleResize = () => {
+      const { videoPath, posterPath } = getCurrentVideo();
+      setCurrentVideo(videoPath);
+      setCurrentPoster(posterPath);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
     <>
     <section className=''>
-        <video className="hidden md:block  w-full h-full" autoPlay muted loop>
-                <source  src={bandesk}  type="video/mp4" />
+    {currentVideo && (
+        <video className="w-full h-screen bg-black object-cover" poster='https://via.placeholder.com/1920x1080?text=Desktop+Poster' autoPlay loop muted>
+          <source src={currentVideo} type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
-        <video className="block md:hidden w-full h-full" autoPlay muted loop>
-                <source  src={banmob}  type="video/mp4" />
-        </video>
+      )}
     </section>
     </>
   );

@@ -22,19 +22,19 @@ const Blogs = async () => {
   // console.log(blogdata.data);
   return (
     <main className='min-h-screen w-full bg-white'>
-      <div className='w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-2 gap-8'>
+      <div className='w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-1 md:grid-cols-2 gap-8'>
       {blogdata.data && blogdata.data.length > 0 ? (
-       blogdata.data?.map(data=>(
-        <FadeUp duration={0.3} delay={0.2}>
-        <Link href={`/blogs/${data.attributes.slug}`} key={data.attributes.id}>
-            <div className='space-y-5 group'>
-              <div className='relative h-[500px] w-full space-y-3'>
-                <Image id="lightgallery" src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover'  alt="wrk1"/>
+       blogdata.data?.map((data,i)=>(
+         <Link href={`/blogs/${data.attributes.slug}`} key={i}>
+          <FadeUp duration={0.3} delay={0.2}>
+            <div className='space-y-2 group'>
+              <div className='relative overflow-hidden h-[350px] xl:h-[500px] w-full space-y-3'>
+                <Image id="lightgallery" src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover grayscale hover:grayscale-0 group-hover:scale-125 group-hover:rotate-6 duration-300'  alt="wrk1"/>
               </div>     
-              <h1 className='text-2xl font-medium capitalize group-hover:underline duration-300 pr-5'>{data.attributes.title}</h1>  
+              <h1 className='text-xl font-medium capitalize group-hover:underline duration-300 pr-5'>{data.attributes.title}</h1>  
             </div>
+          </FadeUp>
         </Link>
-        </FadeUp>
      ))
      ) : (
        <div className='text-left text-2xl font-medium animate-bounce'>
