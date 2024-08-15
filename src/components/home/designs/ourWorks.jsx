@@ -34,16 +34,16 @@ const InfiniteScroll = () => {
     <div className="overflow-hidden relative py-10 xl:py-20" ref={scrollContainerRef}>
       <Marquee className="flex bg-white -mt-72 pb-20 z-10">
             <div className="mx-20 relative h-[300px] rounded-2xl shadow-2xl overflow-hidden px-28 mt-[600px]">
-                  <Image className="object-cover" fill src={wrk1}/>
+                  <Image className="object-cover" placeholder="blur" fill src={wrk1}/>
             </div>
             <div className="mx-20 relative h-[300px] rounded-2xl shadow-2xl overflow-hidden px-28 ">
-                  <Image className="object-cover" fill src={wrk2}/>
+                  <Image className="object-cover" placeholder="blur" fill src={wrk2}/>
             </div>
             <div className="mx-20 relative h-[300px] rounded-2xl shadow-2xl overflow-hidden px-28 mt-[600px]">
-                  <Image className="object-cover" fill src={wrk3}/>
+                  <Image className="object-cover" placeholder="blur" fill src={wrk3}/>
             </div>
             <div className="mx-20 relative h-[300px] rounded-2xl shadow-2xl overflow-hidden px-28 ">
-                  <Image className="object-cover" fill src={wrk4}/>
+                  <Image className="object-cover" placeholder="blur" fill src={wrk4}/>
             </div>
         </Marquee>
         {/*  */}
