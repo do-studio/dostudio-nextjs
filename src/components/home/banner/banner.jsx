@@ -80,7 +80,7 @@ const Banner = () => {
     <>
     <section className=''>
     {currentVideo && (
-        <video className="w-full h-screen bg-black object-cover" poster='https://via.placeholder.com/1920x1080?text=Desktop+Poster' autoPlay loop muted>
+        <video className="w-full h-full xl:h-screen bg-black object-cover" poster='https://via.placeholder.com/1920x1080?text=Desktop+Poster' autoPlay loop muted>
           <source src={currentVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
