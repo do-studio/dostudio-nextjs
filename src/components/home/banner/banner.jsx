@@ -19,22 +19,22 @@ const Banner = () => {
       // URLs for desktop and mobile videos
       const videos = {
         desktop: {
-          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4',
-          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4',
-          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4',
-          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4',
+          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786915/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_GM_kz2lsn.mp4',
+          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786916/Do%20Studio%20Website/new%20web%20banner/DO__STUDIO_WEBSITE_PROMO_GA_iwkb18.mp4',
+          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786916/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_GE_crccqv.mp4',
+          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786915/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_NS_rbkkbk.mp4',
         },
         mobile: {
-          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723561320/Do%20Studio%20Website/Do_Studio_M2_v5_ug6wqo.mp4',
-          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723561320/Do%20Studio%20Website/Do_Studio_M2_v5_ug6wqo.mp4',
-          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723561320/Do%20Studio%20Website/Do_Studio_M2_v5_ug6wqo.mp4',
-          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723561320/Do%20Studio%20Website/Do_Studio_M2_v5_ug6wqo.mp4',
+          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786857/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GM_c6xzx7.mp4',
+          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786846/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GA_dms43c.mp4',
+          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786846/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GE_pkr7s6.mp4',
+          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786857/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_NS_aaviyn.mp4',
         },
       };
 
       const posters = {
-        desktop: 'https://via.placeholder.com/1920x1080?text=Desktop+Poster',
-        mobile: 'https://via.placeholder.com/768x1024?text=Mobile+Poster',
+        desktop: 'https://res.cloudinary.com/djswkzoth/image/upload/v1723786988/Do%20Studio%20Website/new%20web%20banner/desk_poster_yklfya.png',
+        mobile: 'https://res.cloudinary.com/djswkzoth/image/upload/v1723786988/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx.png',
       };
 
       let videoPath = '';
@@ -80,7 +80,7 @@ const Banner = () => {
     <>
     <section className=''>
     {currentVideo && (
-        <video className="w-full h-full h-full bg-black object-cover" poster='https://via.placeholder.com/1920x1080?text=Desktop+Poster' autoPlay loop muted>
+        <video className="w-full h-full xl:h-screen bg-black object-cover" poster={currentPoster} autoPlay loop muted>
           <source src={currentVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

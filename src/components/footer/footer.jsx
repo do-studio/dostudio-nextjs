@@ -48,7 +48,7 @@ const socialMedia = [
 const Footer = () => {
   return (
     <footer className=" bg-white text-black">
-      <div className="px-3 md:px-7">
+      <div className="w-11/12 xl:w-10/12 mx-auto ">
         <div className="py-5 grid grid-cols-1 gap-y-5 xl:grid-cols-4">
           <div className=" flex flex-col">
             <Image className="object-cover w-40 -mt-10 h-40 " src={dologo} />

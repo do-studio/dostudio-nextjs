@@ -82,7 +82,7 @@ const Whatwedo = () => {
               <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
             </div>
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-              <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">print<br className="hidden md:block"/> design</h2>
+              <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">print<br className="block"/> design</h2>
               <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
             </div>
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">

@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import FadeUp from '../../components/motions/fadeUp';
 
+
 const Contact = () => {
   const [name, setName] = useState('');
   const [value, setValue] = useState('')
