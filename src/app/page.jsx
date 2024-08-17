@@ -34,15 +34,15 @@ export default function Home() {
       <Suspense fallback={<p>Loading data...</p>}>
         <OurWOrks />
       </Suspense>
+      <Suspense fallback={<p>Loading data...</p>}>
+        <ClientSlide />
+      </Suspense>
 
       {/* <AnimatPara/> */}
       <Suspense fallback={<p>Loading data...</p>}>
         <Testimonials />
       </Suspense>
       {/* <Clients/> */}
-      {/* <Suspense fallback={<p>Loading data...</p>}>
-        <ClientSlide />
-      </Suspense> */}
       <Suspense fallback={<p>Loading data...</p>}>
         <WorkWithUs />
       </Suspense>

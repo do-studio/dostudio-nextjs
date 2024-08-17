@@ -54,6 +54,8 @@ import clntbuff from './medias/clients/clientbuff.webp'
 import clntsysmantech from './medias/clients/clientsysmantech.webp'
 import clntfixso from './medias/clients/clientfixso.webp'
 import clntlubigen from './medias/clients/clientlubigen.webp'
+import clntpk from './medias/clients/clientpk.webp'
+import clntztart from './medias/clients/clientztart.webp'
 
 import serviceBg from './medias/servicebg.webp'
 
@@ -105,8 +107,10 @@ export{
     clnthybiz,
     clntkasav,
     clntlivehi,
+    clntztart,
     clntkarims,
     clntshifa,
+    clntpk,
     clntgoodland,
     clntthreeseason,
     clntcresent,

@@ -3,6 +3,8 @@ import {
   Logowhite,
   clntkurikal,
     clntkmct1,
+    clntztart,
+    clntpk,
     clntimax,
     clntgava,
     clntkmct2,
@@ -166,119 +168,21 @@ export const ClientsData=[
     clt:clntkmct1
   },
   {
-    clt:clntimax
-  },
-  {
     clt:clntgava
   },
   {
     clt:clntkmct2
   },
   {
-    clt:clntmywork
-  },
-  {
-    clt:clntrowsandcolumns
-  },
-  {
-    clt:clntkyma
-  },
-  {
-    clt:clntdesigncore
-  },
-  {
-    clt:clnteras1
-  },
-  {
     clt:clntfixso
   },
   {
-    clt:clntbuff
+    clt:clntztart
   },
   {
-    clt:clntlivehi
+    clt:clntpk
   },
-  {
-    clt:clntkarims
-  },
-  {
-    clt:clntcresent
-  },
-  {
-    clt:clntgoodland
-  },
-  {
-    clt:clntthreeseason
-  },
-  {
-    clt:clntshifa
-  },
-  {
-    clt:clntaroma
-  },
-  {
-    clt:clntbeautalo
-  },
-  {
-    clt:clntatelier
-  },
-  {
-    clt:clntstackr
-  },
-  {
-    clt:clntsaleemjavad
-  },
-  {
-    clt:clntplumstory
-  },
-  {
-    clt:clntjaas
-  },
-  {
-    clt:clntessan
-  },
-  {
-    clt:clntjezra
-  },
-  {
-    clt:clntsacred
-  },
-  {
-    clt:clntgeogrip
-  },
-  {
-    clt:clnteogu
-  },
-  {
-    clt:clntyaslin
-  },
-  {
-    clt:clntzain
-  },
-  {
-    clt:clntkans
-  },
-  {
-    clt:clntf2f
-  },
-  {
-    clt:clntkoti
-  },
-  {
-    clt:clntomg
-  },
-  {
-    clt:clntkasav
-  },
-  {
-    clt:clntsysmantech
-  },
-  {
-    clt:clnthybiz
-  },
-  {
-    clt:clntlubigen
-  },
+  
 ]
 
 

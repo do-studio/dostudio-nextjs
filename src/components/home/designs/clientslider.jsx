@@ -21,10 +21,7 @@ const Clientslider = async () => {
   // console.log(clintsdata.data);
 
   return (
-    <div className="w-12/12 xl:w-10/12 mx-auto py-20">
-      <h1 className="text-4xl md:text-7xl xl:text-9xl  font-extrabold pb-10 text-black text-center capitalize">
-        Our clients
-      </h1>
+    <div className="w-12/12 xl:w-10/12 mx-auto py-10">
 
       <Marquee speed={100}>
         {ClientsData && ClientsData.length > 0 ? (
@@ -45,13 +42,13 @@ const Clientslider = async () => {
           </div>
         )}
       </Marquee>
-      <div className="grid place-items-center mt-5">
+      {/* <div className="grid place-items-center mt-5">
         <Link href={"/clients"}>
           <button className="btn-21">
-            <span>Load More</span>
+            <span>Show more</span>
           </button>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
