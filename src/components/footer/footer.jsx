@@ -101,9 +101,9 @@ const Footer = () => {
               </Link>
               <Link
                 className="text-black  foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
-                href={"/our-works/digital-marketing"}
+                href={"/our-works/creatives"}
               >
-                Digital Marketing
+                Creatives
               </Link>
               <Link
                 className="text-black  foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
@@ -123,12 +123,12 @@ const Footer = () => {
               >
                 Print Design
               </Link>
-              <Link
+              {/* <Link
                 className="text-black  foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
                 href={"/our-works/production"}
               >
                 Production
-              </Link>
+              </Link> */}
             </ul>
           </div>
           <div>

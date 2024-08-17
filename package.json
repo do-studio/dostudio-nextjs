@@ -32,7 +32,8 @@
     "react-toastify": "^10.0.5",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.2.1",
-    "webpack": "^5.90.3"
+    "webpack": "^5.90.3",
+    "yet-another-react-lightbox": "^3.21.3"
   },
   "devDependencies": {
     "@types/node": "20.11.20",

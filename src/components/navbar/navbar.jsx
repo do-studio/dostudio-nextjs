@@ -102,8 +102,8 @@ const Navbar = () => {
       delay: 0.2,
     },
     {
-      title: `DIGITAL MARKETING`,
-      url: `/our-works/digital-marketing`,
+      title: `CREATIVES`,
+      url: `/our-works/creatives`,
       delay: 0.2,
     },
     {
@@ -121,11 +121,11 @@ const Navbar = () => {
       url: `/our-works/print-design`,
       delay: 0.2,
     },
-    {
-      title: `PRODUCTION`,
-      url: `/our-works/production`,
-      delay: 0.2,
-    },
+    // {
+    //   title: `PRODUCTION`,
+    //   url: `/our-works/production`,
+    //   delay: 0.2,
+    // },
     // {
     //   title: `DIGITAL MARKETING`,
     //   url: `/our-works/digital-marketing`,

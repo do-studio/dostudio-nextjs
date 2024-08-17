@@ -28,7 +28,7 @@ const Innerpage = async ({params}) => {
             {result.attributes.mockup.data.map((img,i)=>(
               <div className='relative aspect-video' key={i}>
                   <FadeUp duration={0.2}>
-                    <Image src={img.attributes.url}  fill className='object-cover'  alt="wrk1"/>
+                    <Image src={img.attributes.url} loading='lazy'  fill className='object-cover'  alt="wrk1"/>
               </FadeUp>
                 </div>
             ))}
