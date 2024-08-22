@@ -12,6 +12,7 @@ import {
   MovingWords,
   GetinTouch,
   OurWOrks,
+  OurWOrk2,
   WorkWithUs
 } from "../components";
 import { Suspense } from "react";
@@ -32,7 +33,8 @@ export default function Home() {
         <Whatwedo />
       </Suspense>
       <Suspense fallback={<p>Loading data...</p>}>
-        <OurWOrks />
+        {/* <OurWOrks /> */}
+        <OurWOrk2/>
       </Suspense>
       <Suspense fallback={<p>Loading data...</p>}>
         <ClientSlide />

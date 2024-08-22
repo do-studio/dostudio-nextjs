@@ -53,15 +53,15 @@ const Whatwedo = () => {
           <div className="flex flex-col gap-10 md:text-right">
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
               <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">branding</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">Our branding services are designed to create a strong, memorable identity for your business.</p>
             </div>
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
               <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">digital<br className="hidden md:block"/> marketing</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">We specialize in SEO, social media marketing, content creation, and more, ensuring your business reaches its target audience effectively and drives meaningful engagement.</p>
             </div>
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
               <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">website development</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">We specialize in creating custom websites that are visually engaging and functionally robust.</p>
             </div>
           </div>
           <div className="hidden md:flex justify-center items-center">
@@ -79,7 +79,7 @@ const Whatwedo = () => {
           <div className="flex flex-col gap-10 text-left">
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
               <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">production</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">A team of dedicated people focusing on delivering top-quality service, ensuring every project is executed with precision and efficiency.</p>
             </div>
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
               <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">print<br className="block"/> design</h2>
@@ -87,7 +87,7 @@ const Whatwedo = () => {
             </div>
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
               <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">package<br className="hidden md:block"/> design</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br/> consectetur adipisicing elit. Ab, quod.</p>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">We blend creativity with strategic thinking to ensure your packaging not only stands out on the shelf but also resonates with your target audience, driving sales and brand loyalty.</p>
             </div>
           </div>
       </div>

@@ -9,6 +9,7 @@ import GetinTouch from './home/designs/getinTouch';
 import MarqueeText from './home/designs/marqueText';
 import ClientSlide from './home/designs/clientslider';
 import OurWOrks from './home/designs/ourWorks';
+import OurWOrk2 from './home/designs/ourWorks2';
 import WorkWithUs from './home/designs/workWithUs';
 
 export{
@@ -23,5 +24,7 @@ export{
     GetinTouch,
     ClientSlide,
     OurWOrks,
-    WorkWithUs
+    OurWOrk2,
+    WorkWithUs,
+  
 }

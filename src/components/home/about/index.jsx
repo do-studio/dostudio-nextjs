@@ -7,8 +7,8 @@ import { HiArrowSmallDown } from "react-icons/hi2";
 const Aboutus = () => {
   return (
     <main className='bg-white text-black py-10 xl:py-20 flex items-center relative overflow-hidden'>
-      <div className='w-11/12 xl:w-9/12 mx-auto text-lg xl:text-5xl space-y-10 xl:font-light xl:leading-normal'>
-          <h2 className='text-gray-600'>DO Studio is an <span className='font-medium text-black'>Creative Marketing Agency</span> in Calicut that specializes in providing branding and <span className='font-medium text-black'>design services</span>. The team at DO Studio Creative Marketing Agency firmly <span className='font-medium text-black'>believes</span> that <span className='font-medium text-black'>branding</span> is a powerful tool that can be used to effectively communicate stories, build connections with audiences, and <span className='font-medium text-black'>inspire action</span>.</h2>
+      <div className='w-11/12 xl:w-9/12 mx-auto text-lg xl:text-4xl space-y-10 xl:font-light xl:leading-normal'>
+          <h2 className='text-gray-600'>Being the leading <span className='font-medium text-black'>Advertising agency in Calicut</span>, we take an added advantage in preparing outstandingly and achieving exceptional results in branding and advertising. We stand at the frontline as the <span className='font-medium text-black'>best Advertising agency in Calicut</span> but extend further to the forefront of digital marketing services. We don't just have our reach limited to Calicut; we have been able to establish certain milestones that span across regions showing our commitment to excellence at a bigger scale.</h2>
           <div className='relative flex justify-end'>
             <motion.div 
             animate={{ rotate: 360 }} // Rotate 360 degrees

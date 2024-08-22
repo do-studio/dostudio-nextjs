@@ -22,12 +22,12 @@ const PrintDesign = async () => {
 
   return (
     <main className='min-h-screen w-full bg-white'>
-        <div className='w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-1 md:grid-cols-2 gap-10'>
+        <div className='w-11/12 xl:w-10/12 mx-auto pt-32 py-20 grid grid-cols-1 md:grid-cols-2 gap-10'>
         {workdata.data && workdata.data.length > 0 ? (
-          workdata.data?.map((data,i)=>(
-              <div className='relative group' key={i}>
-                  <div className='relative h-80 md:h-96 lg:h-[450px] xl:h-[550px] w-full'>
-                      <Image src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover '  alt="wrk1"/>
+          workdata.data?.reverse().map((data,i)=>(
+              <div className='relative group bg-[#dcdcde]' key={i}>
+                  <div className='relative aspect-video w-full'>
+                      <Image src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover'  loading='lazy'  alt="wrk1"/>
                   </div>
               </div>
 

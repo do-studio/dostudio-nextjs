@@ -31,7 +31,7 @@ const PackageDesign = async () => {
               <div className='relative group' key={i}>
                 
                   <div className='relative h-80 md:h-96 lg:h-[450px] xl:h-[550px] w-full'>
-                      <Image src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover '  alt="wrk1"/>
+                      <Image src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover ' loading='lazy'   alt="wrk1"/>
                   </div>
                   
               </div>

@@ -29,6 +29,7 @@
     "react-phone-number-input": "^3.3.9",
     "react-router-dom": "^6.23.0",
     "react-scroll-motion": "^0.3.3",
+    "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.5",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.2.1",

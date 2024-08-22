@@ -32,7 +32,7 @@ const DigitalMarketing = async () => {
                   src={data.attributes.image.data.attributes.url}
                   fill={true}
                   loading='lazy'
-                  className='object-contain'
+                  className='object-cover'
                   alt={`wrk${i + 1}`}
                 />
               </div>

@@ -21,12 +21,15 @@ const Clientslider = async () => {
   // console.log(clintsdata.data);
 
   return (
-    <div className="w-12/12 xl:w-10/12 mx-auto py-10">
-
+    <div className=" py-10">
+      <div className="w-12/12 xl:w-10/12 mx-auto flex flex-col items-center pt-20 -mb-5">
+        <h1 className="font-black text-8xl uppercase">clients</h1>
+        <p>Not a vendor. A cultural wing of your team.</p>
+      </div>
       <Marquee speed={100}>
         {ClientsData && ClientsData.length > 0 ? (
           ClientsData?.map((data, i) => (
-            <div className="h-16 w-16 md:h-32 md:w-32 xl:h-48 xl:w-48 relative">
+            <div className="h-32 w-32 xl:h-60 xl:w-60 relative">
               <Image
                 key={i}
                 fill={true}
