@@ -52,12 +52,12 @@ const page = () => {
   return (
     <section className='w-11/12 xl:w-10/12 mx-auto min-h-screen pt-32 py-20'>
       
-               <h1 className=' h-full w-full text-7xl text-center font-black capitalize'>our services</h1>
+               <h1 className=' h-full w-full text-4xl sm:text-5xl xl:text-7xl text-center font-black capitalize'>our services</h1>
                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 pt-10'>
                 {serviceData?.map((data,i)=>(
 
-                    <Link href={data.url} className='bg-gray-100 rounded-2xl shadow-lg hover:shadow-xl duration-200 border p-5 flex flex-col justify-between gap-5' key={i}>
-                      <div className='flex flex-col gap-5'>
+                    <Link href={data.url} className='bg-gray-100 rounded-2xl shadow-lg hover:shadow-xl duration-200 border p-5 flex flex-col justify-between gap-3 xl:gap-5' key={i}>
+                      <div className='flex flex-col gap-3 xl:gap-5'>
                         <p className='text-3xl bg-primarygreen w-fit p-2 rounded-md font-black'>0{data.id}</p>
                         <h4 className='text-3xl uppercase font-bold'>{data.title}</h4>
                       </div>

@@ -206,7 +206,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, damping: 7, stiffness: 100 }}
-              className="fixed top-0 left-0 w-full h-full flex  flex-col-reverse xl:flex-row items-center justify-between p-10 lg:p-20 bg-white overflow-hidden text-black z-[99]"
+              className="fixed top-0 left-0 w-full h-full flex  flex-col-reverse xl:flex-row items-center justify-between p-5 lg:p-20 bg-white overflow-hidden text-black z-[99]"
             >
               <motion.div
                 initial={{ opacity: 0, translateY: -40 }}
@@ -289,7 +289,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, damping: 7, stiffness: 100 }}
-              className="fixed top-0 left-0 w-full h-full flex flex-col-reverse xl:flex-row items-center justify-between p-10 lg:p-20 bg-white overflow-hidden text-black z-[999]"
+              className="fixed top-0 left-0 w-full h-full flex flex-col-reverse xl:flex-row items-center justify-between p-5 lg:p-20 bg-white overflow-hidden text-black z-[999]"
             >
               <motion.div
                 initial={{ opacity: 0, translateY: -40 }}

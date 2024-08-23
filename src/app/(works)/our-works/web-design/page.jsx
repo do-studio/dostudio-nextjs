@@ -23,16 +23,16 @@ const WebDesign = async () => {
   return (
     <main className="min-h-screen w-full bg-whit">
       <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 ">
-        <div className="text-center space-y-2">
+        {/* <div className="text-center space-y-2">
         <FadeUp duration={0.3} delay={0.1}>
           <h1 className="text-2xl md:text-4xl font-medium">Strategic Web Design Solutions for Your Brand</h1>
         </FadeUp>
         <FadeUp duration={0.3} delay={0.2}>
           <h2 className="text-base md:text-2xl font-light">Responsive and Mobile-Optimized Design</h2>
         </FadeUp>
-        </div>
+        </div> */}
 
-        <div className="grid grid-cols-1 gap-y-14 mt-10">
+        <div className="grid grid-cols-1 gap-y-14 ">
         {workdata.data && workdata.data.length > 0 ? (
           workdata.data?.map((data,i)=>(
             <FadeUp duration={0.5} delay={0.5}>

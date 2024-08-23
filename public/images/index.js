@@ -63,7 +63,7 @@ import WRK1 from './medias/wrrk1.webp'
 import WRK2 from './medias/wrrk2.webp'
 import testimage from './medias/test.webp'
 
-import doicn from './logo/do-icon1.png'
+import doicn from './logo/doonlylogo.png'
 import dologo from './logo/do-log.svg'
 import doicnbl from './logo/do-icon-bl.svg'
 import doicnwh from './logo/do-iconwh.svg'
