@@ -4,7 +4,7 @@ import React from 'react'
 const workWithUs = () => {
   return (
     <section className='relative'>
-    <div className='absolute -right-5  xl:right-0 -top-28 xl:-top-[42%]'>
+    <div className='absolute right-0 -top-28 xl:-top-[42%]'>
       <video
                       className="h-40 w-40 xl:h-60 xl:w-60 bg-transparent"
                       autoPlay
