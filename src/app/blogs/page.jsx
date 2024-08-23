@@ -29,7 +29,7 @@ const Blogs = async () => {
           <FadeUp duration={0.3} delay={0.2}>
             <div className='space-y-2 group'>
               <div className='relative overflow-hidden h-[350px] xl:h-[500px] w-full space-y-3'>
-                <Image id="lightgallery" src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover grayscale hover:grayscale-0 group-hover:scale-125 group-hover:rotate-6 duration-300'  alt="wrk1"/>
+                <Image id="lightgallery" src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover grayscale hover:grayscale-0 group-hover:scale-125 group-hover:rotate-6 duration-300' loading='lazy'  alt="wrk1"/>
               </div>     
               <h1 className='text-xl font-medium capitalize group-hover:underline duration-300 pr-5'>{data.attributes.title}</h1>  
             </div>

@@ -49,24 +49,24 @@ const ban1 = 'https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_S
 const Whatwedo = () => {
   return (
     <section className='py-10 xl:py-20'>
-      <div className="bg-black text-white  w-11/12  overflow-hidden rounded-[3rem] p-8 sm:p-10 mx-auto grid grid-cols-2 xl:grid-cols-3 gap-10">
-          <div className="flex flex-col gap-10 md:text-right">
+      <div className="bg-black text-white  w-11/12  overflow-hidden rounded-3xl xl:rounded-[3rem] p-8 sm:p-10 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-5 xl:gap-10 relative">
+          <div className="z-20 flex flex-col gap-3 xl:gap-10 md:text-right">
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-              <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">branding</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">Our branding services are designed to create a strong, memorable identity for your business.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">branding</h2>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-right  font-extralight">Our branding services are designed to create a strong, memorable identity for your business.</p>
             </div>
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-              <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">digital<br className="hidden md:block"/> marketing</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">We specialize in SEO, social media marketing, content creation, and more, ensuring your business reaches its target audience effectively and drives meaningful engagement.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">digital<br className="hidden md:block"/> marketing</h2>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-right  font-extralight">We specialize in SEO, social media marketing, content creation, and more, ensuring your business reaches its target audience effectively and drives meaningful engagement.</p>
             </div>
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-              <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">website development</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">We specialize in creating custom websites that are visually engaging and functionally robust.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">website development</h2>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-right  font-extralight">We specialize in creating custom websites that are visually engaging and functionally robust.</p>
             </div>
           </div>
-          <div className="hidden md:flex justify-center items-center">
+          <div className="opacity-40 xl:opacity-100 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10 xl:relative xl:flex justify-center items-center">
               <video
-                    className="aspect-square"
+                    className="h-full w-full  xl:aspect-square"
                     autoPlay
                     loop
                     muted
@@ -76,18 +76,18 @@ const Whatwedo = () => {
                     <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723110686/Do%20Studio%20Website/DO_STUDIO_LOGO_webm_piqdkl.webm' type="video/mp4" />
                 </video>
           </div>
-          <div className="flex flex-col gap-10 text-left">
+          <div className="z-20 flex flex-col gap-3 xl:gap-10 text-left">
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-              <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">production</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">A team of dedicated people focusing on delivering top-quality service, ensuring every project is executed with precision and efficiency.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">production</h2>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-left  font-extralight">A team of dedicated people focusing on delivering top-quality service, ensuring every project is executed with precision and efficiency.</p>
             </div>
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-              <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">print<br className="block"/> design</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">Lorem ipsum dolor sit amet<br className="hidden md:block"/> consectetur adipisicing elit. Ab, quod.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">print<br className="hidden md:block"/> design</h2>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-left  font-extralight">We help design all your marketing materials, ensuring a consistent look and feel across all print items.</p>
             </div>
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-              <h2 className="text-lg sm:text-xl md:text-3xl xl:text-5xl font-black">package<br className="hidden md:block"/> design</h2>
-              <p className="text-[10px] sm:text-xs capitalize text-gray-300 font-extralight">We blend creativity with strategic thinking to ensure your packaging not only stands out on the shelf but also resonates with your target audience, driving sales and brand loyalty.</p>
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-black">package<br className="hidden md:block"/> design</h2>
+              <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-left  font-extralight">We blend creativity with strategic thinking to ensure your packaging not only stands out on the shelf but also resonates with your target audience, driving sales and brand loyalty.</p>
             </div>
           </div>
       </div>

@@ -4,6 +4,7 @@ import Navbar from "../components/navbar/navbar";
 import Footer from "../components/footer/footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import RootClient from "./RootClient";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,10 +30,12 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <ToastContainer position="bottom-right" />
         <div className="2xl:max-w-[1536px] mx-auto">
+        <RootClient>
 
           <Navbar />
           {children}
           <Footer />
+        </RootClient>
         </div>
       </body>
     </html>
