@@ -55,7 +55,7 @@ const Footer = () => {
             {/* <p className="text-sm font-medium xl:w-[60%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam molestias voluptates quos laborum magnam blanditiis earum fuga dolor consectetur totam vero vitae quasi.</p> */}
             <ul className="flex justify-start py-5 gap-3 capitalize mt-2">
               {socialMedia.map((soc, i) => (
-                <a href={soc.href} key={i}>
+                <a className="" target="_blank" href={soc.href} key={i}>
                  {soc.logo}
                 </a>
               ))}
@@ -91,7 +91,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-base font-bold uppercase">services</h4>
+            <h4 className="text-base font-bold uppercase">our works</h4>
             <ul className="text-sm flex flex-col gap-1 capitalize mt-2">
               <Link
                 className="text-black  foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"

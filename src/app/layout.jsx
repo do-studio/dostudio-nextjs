@@ -21,7 +21,7 @@ export const metadata = {
     apple: ["/src/app/apple-touch-icon.png?v=4"],
     shortcut: ["/src/app/apple-touch-icon.png"],
   },
-  manifest: "/site.webmanifest",
+  // manifest: "/src/app/site.webmanifest",
 };
 
 export default function RootLayout({ children }) {
@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={poppins.className}>
         <ToastContainer position="bottom-right" />
-        <div className="2xl:max-w-[1800px] mx-auto">
+        <div className="2xl:max-w-[2500px] mx-auto">
         <RootClient>
 
           <Navbar />

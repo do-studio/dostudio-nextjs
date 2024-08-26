@@ -151,39 +151,39 @@ const FaqMain = () => {
     const faqs2 = [
 
         {
-            question: `1. What services does a branding agency in Calicut offer?`,
+            question: `What services does a branding agency in Calicut offer?`,
             answer: `A branding agency in Calicut typically offers services such as brand strategy development, logo design, brand identity creation, digital marketing, social media branding, and content creation. These services are designed to enhance your brand's visibility and reputation in the market.`,
         },
         {
-            question: `2. How can a branding agency help my business in Calicut?`,
+            question: `How can a branding agency help my business in Calicut?`,
             answer: `A branding agency in Calicut can help your business by developing a strong and cohesive brand identity that resonates with your target audience. This includes creating a memorable logo, consistent messaging, and an effective digital presence, all of which contribute to building brand loyalty and driving business growth.`,
         },
         {
-            question: `3. Why should I choose a local branding agency in Calicut?`,
+            question: `Why should I choose a local branding agency in Calicut?`,
             answer: `Choosing a local branding agency in Calicut offers the advantage of understanding the regional market and cultural nuances. A local agency can provide personalized services, face-to-face consultations, and insights into the local business environment, making your brand more relevant and appealing to the target audience in Kerala.`,
         },
         {
-            question: `4. How long does it take to develop a brand strategy in Calicut?`,
+            question: `How long does it take to develop a brand strategy in Calicut?`,
             answer: `The time required to develop a brand strategy in Calicut varies depending on the complexity of your business and goals. Typically, it can take anywhere from a few weeks to a couple of months. A thorough branding process involves research, strategy development, design, and implementation to ensure a successful brand launch.`,
         },
         {
-            question: `5. What is the cost of hiring a branding agency in Calicut?`,
+            question: `What is the cost of hiring a branding agency in Calicut?`,
             answer: `The cost of hiring a branding agency in Calicut depends on the scope of the project and the services required. Branding packages can range from affordable rates for startups to more comprehensive solutions for established businesses. It’s best to consult with the agency to get a customized quote based on your specific needs.`,
         },
         {
-            question: `6. Can a branding agency in Calicut improve my online presence?`,
+            question: `Can a branding agency in Calicut improve my online presence?`,
             answer: `Yes, a branding agency in Calicut can significantly improve your online presence through digital branding strategies. This includes creating a cohesive online identity across social media, websites, and other digital platforms, as well as optimizing your content and design for better visibility and engagement with your target audience.`,
         },
         {
-            question: `7. What makes a branding agency in Calicut different from others?`,
+            question: `What makes a branding agency in Calicut different from others?`,
             answer: `A branding agency in Calicut is uniquely positioned to understand the local culture, market dynamics, and consumer behavior in Kerala. This local expertise, combined with innovative branding techniques, makes these agencies highly effective in creating brands that resonate deeply with the regional audience.`,
         },
         {
-            question: `8. What makes Do Studio different from other branding agencies in Calicut?`,
+            question: `What makes Do Studio different from other branding agencies in Calicut?`,
             answer: `Do Studio stands out by offering a unique blend of local expertise and innovative branding techniques. Our deep understanding of the local culture, market dynamics, and consumer behavior in Kerala allows us to create brands that resonate deeply with the regional audience`,
         },
         {
-            question: `9. How can Do Studio enhance my brand’s visibility online?`,
+            question: `How can Do Studio enhance my brand’s visibility online?`,
             answer: `Do Studio specializes in creating a strong online presence for your brand through customized digital marketing strategies, including SEO, social media management, and content creation. We ensure that your brand stands out on search engines, social platforms, and other digital channels, driving more traffic and engagement to your business.`,
         },
         
@@ -202,7 +202,7 @@ const FaqMain = () => {
     return (
         <div className="w-full mx-auto">
             {faqs2.slice(0, showAll ? faqs2.length : 4).map((faq, index) => (
-                <div key={index} className="my-2 border-b last:border-b-0">
+                <div key={index} className="my-2 border-b last:border-b-0 outline-none">
                     <button
                         className={`w-full text-left pl-0 p-4 bg-white ${activeFaq === index && 'bg-primarygreen'} transition-all duration-200 rounded-sm flex justify-between gap-10 items-center`}
                         onClick={() => toggleFaq3(index)}
@@ -285,20 +285,20 @@ const Page = () => {
     return (
         <section className='w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20'>
             <div className='relative w-full h-48 md:h-80 xl:h-[500px]  overflow-hidden'>
-                <Image className="object-cover object-bottom" placeholder="blur" fill src={serbra1}/>
+                <Image className="object-cover object-bottom" placeholder="blur" fill src={serbra1} alt='Branding agency in Calicut'/>
             </div>
             <div className='flex flex-col md:flex-row gap-5 gap-y-3'>
                 <h1 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-6xl font-black uppercase'>Branding Agency<br/> In Calicut</h1>
-                <p className='md:basis-1/2 xl:basis-2/5 text-justify tracking-tighter'>Do Studio has built an outstanding track record as one of <a className='font-semibold' href="#" target='_blank'>Best branding agency in Calicut</a> Since 2018. Our skilled staff members can enhance your brand's online visibility and help you stand out.</p>
+                <p className='md:basis-1/2 xl:basis-2/5 text-justify tracking-tighter'>Do Studio has built an outstanding track record as one of Best <a className='font-semibold' href="#" target='_blank'>Branding Agency in Calicut</a> Since 2018. Our skilled staff members can enhance your brand's online visibility and help you stand out.</p>
             </div>
             
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-5 xl:gap-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-5 xl:gap-10 xl:px-40'>
                 {workdata && workdata.length > 0 ? (
                     workdata.slice(0, 4).map(data => (
                         <Link className='space-y-2' href={`/our-works/branding/${data.attributes.slug}`} key={data.id}>
                             <FadeUp duration={0.5} delay={0.5}>
                                 <div className='relative group'>
-                                    <div className='relative h-80 md:h-96 lg:h-[450px] xl:h-[550px] w-full'>
+                                    <div className='relative aspect-square'>
                                         <Image loading='lazy' src={data.attributes.coverimage.data.attributes.url} fill={true} className='object-cover' alt="wrk1"/>
                                     </div>
                                 </div>
@@ -319,7 +319,7 @@ const Page = () => {
             </div>
             <div>
                 <div className='relative w-full  h-48 md:h-80 xl:h-[500px] overflow-hidden'>
-                    <Image className="object-cover object-center" placeholder="blur" fill src={serbra2}/>
+                    <Image className="object-cover object-center" placeholder="blur" fill src={serbra2} alt='Best Branding agency in Calicut'/>
                 </div>
                 <h3 className='text-center  text-3xl xl:text-6xl my-10 xl:my-20  font-black uppercase'>The Method Behind Our Work</h3>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
@@ -352,7 +352,7 @@ const Page = () => {
                <div className='md:basis-1/2 xl:basis-2/5 flex flex-col gap-3'>
                     <h1 className='text-2xl font-semibold'>Driving Business Growth with Innovative Digital Marketing</h1>
                     <p className=' text-justify tracking-tighter'>We drive business growth with innovative digital marketing solutions designed to elevate your brand. As a leading <a className='font-semibold' href="#" target='_blank'>digital marketing agency in Calicut</a>, we specialize in crafting creative strategies that not only capture attention but also convert it into measurable results. Our comprehensive digital marketing services include SEO, social media marketing, content creation, and paid advertising, all tailored to meet the unique needs of your business.</p>
-                     <Link href={'/contact'} className='bg-primarygreen text-black w-fit px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Contact now</Link>
+                     <Link href={'/services/digital-marketing-agency-in-calicut'} className='bg-primarygreen text-black w-fit px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Know more</Link>
                </div>
             </div>
             <div>

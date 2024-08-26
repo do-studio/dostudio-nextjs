@@ -30,7 +30,9 @@ const DigitalMarketing = async () => {
               <div className='relative aspect-square w-full'>
                 <Image
                   src={data.attributes.image.data.attributes.url}
+                  blurDataURL={data.attributes.image.data.attributes.url}
                   fill={true}
+                  placeholder='blur'
                   loading='lazy'
                   className='object-cover'
                   alt={`wrk${i + 1}`}

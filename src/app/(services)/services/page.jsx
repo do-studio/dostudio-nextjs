@@ -2,21 +2,21 @@ import React from 'react';
 import { wrk1, wrk2, wrk3, wrk4, wrk5 ,WRK1,WRK2} from "../../../../public/images/index";
 import Image from "next/image";
 import Link from 'next/link';
-
+import FadeUp from '../../../components/motions/fadeUp';
 const serviceData=[
     {
         id:1,
         title:'branding',
         desc:'Our branding services are designed to enable your business to rise to prominence with an extremely powerful, unforgettable identity speaking for itself to your target audience.',
         img:wrk1,
-        url:`/services/branding`
+        url:`/services/branding-agency-in-calicut`
     },
     {
         id:2,
         title:'Digital marketing',
         desc:'Our services in digital marketing are structured to give your brand the needed online presence and drive measurable results.', 
         img:wrk2,
-        url:`/services/digital-marketing`
+        url:`/services/digital-marketing-agency-in-calicut`
     },
     {
         id:3,
@@ -55,8 +55,8 @@ const page = () => {
                <h1 className=' h-full w-full text-4xl sm:text-5xl xl:text-7xl text-center font-black capitalize'>our services</h1>
                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 pt-10'>
                 {serviceData?.map((data,i)=>(
-
-                    <Link href={data.url} className='bg-gray-100 rounded-2xl shadow-lg hover:shadow-xl duration-200 border p-5 flex flex-col justify-between gap-3 xl:gap-5' key={i}>
+                <FadeUp duration={0.3} delay={0.2 * i} key={i}>
+                    <Link href={data.url} className='bg-gray-100 h-full rounded-2xl shadow-lg hover:shadow-xl duration-200 border p-5 flex flex-col justify-between gap-3 xl:gap-5' >
                       <div className='flex flex-col gap-3 xl:gap-5'>
                         <p className='text-3xl bg-primarygreen w-fit p-2 rounded-md font-black'>0{data.id}</p>
                         <h4 className='text-3xl uppercase font-bold'>{data.title}</h4>
@@ -66,6 +66,7 @@ const page = () => {
                             <Image className="object-cover" placeholder="blur" fill src={data.img}/>
                         </div>
                     </Link>
+                    </FadeUp>
                 ))}
                </div>
     </section>

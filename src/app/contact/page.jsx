@@ -59,50 +59,50 @@ const Contact = () => {
              </FadeUp>
              </div>
              {/*  */}
-             <div className='grid grid-cols-1 md:grid-cols-2 xl:gap-x-32 gap-y-10 pt-10 xl:pt-20 h-full'>
+             <div className='flex flex-col-reverse md:flex-row xl:gap-x-32 gap-y-10 pt-10 xl:pt-20 h-full'>
                 {/* address */}
-                <div className='flex flex-col gap-5 xl:gap-10 font-light text-base xl:text-2xl'>
-                <FadeUp duration={0.3} delay={0.3}>
-                  <div className='flex flex-col'>
-                    <a className='hover:underline w-fit' href="mailto:info@dostudio.co.in" target='_blank'>info@dostudio.co.in</a>
-                    <a className='hover:underline w-fit' href="tel:+919995055541" target='_blank'>+91 9995055541</a>
-                    <a className='hover:underline w-fit' href="tel:+919746155541" target='_blank'>+91 9746155541</a>
-                  </div>
-                </FadeUp>
-                <FadeUp duration={0.3} delay={0.4}>
-                  <div>
-                    <p>1st Floor, Ramaswami Complex,<br/>
-                      Cherooty Rd, Behind Basics,<br/>
-                      Kozhikode, Kerala,<br/>
-                      India - 673001</p>
-                  </div>
-                </FadeUp>
+                <div className='md:basis-1/2 flex flex-col gap-5 xl:gap-10 font-light text-base xl:text-2xl'>
+                  <FadeUp duration={0.3} delay={0.3}>
+                    <div className='flex flex-col'>
+                      <a className='hover:underline w-fit' href="mailto:info@dostudio.co.in" target='_blank'>info@dostudio.co.in</a>
+                      <a className='hover:underline w-fit' href="tel:+919995055541" target='_blank'>+91 9995055541</a>
+                      <a className='hover:underline w-fit' href="tel:+919746155541" target='_blank'>+91 9746155541</a>
+                    </div>
+                  </FadeUp>
+                  <FadeUp duration={0.3} delay={0.4}>
+                    <div>
+                      <p>1st Floor, Ramaswami Complex,<br/>
+                        Cherooty Rd, Behind Basics,<br/>
+                        Kozhikode, Kerala,<br/>
+                        India - 673001</p>
+                    </div>
+                  </FadeUp>
                 </div>
                 {/* form */}
-                <form className='flex flex-col gap-7 w-full' onSubmit={handleSubmit}>
+                <form className='md:basis-1/2 flex flex-col gap-2 md:gap-3 w-full' onSubmit={handleSubmit}>
                     <div className='w-full'>
-                        <input className='py-2 bg-transparent w-full outline-none border-b border-black' type="text" placeholder='Your Name' name='msg_name' value={name} onChange={(e) => setName(e.target.value)}/>
+                        <input className='px-3 py-3 rounded-md bg-transparent w-full outline-none border placeholder:text-gray-300' type="text" placeholder='Name' name='msg_name' value={name} onChange={(e) => setName(e.target.value)} required/>
                     </div>
-                    <div className='w-full flex'>
+                    <div className='w-full flex px-3 py-3 rounded-md bg-transparent  outline-none border'>
                         <PhoneInput
                             required
-                            className="phonecode border-b w-24 outline-none  border-black"
+                            className="phonecode w-24 outline-none"
                             international
                             name='msg_phn_code'
                             // defaultCountry="IN"
                             value={value}
                             onChange={setValue}
                         />
-                        <input className='py-2 bg-transparent w-full outline-none border-b border-black [&::-webkit-inner-spin-button]:appearance-none' type="number" inputMode='numeric' placeholder='Your Number' name='msg_phn' value={phn} onChange={(e) => setPhn(e.target.value)}/>
+                        <input className='w-full bg-transparent outline-none [&::-webkit-inner-spin-button]:appearance-none placeholder:text-gray-300' type="number" inputMode='numeric' placeholder='Mobile' name='msg_phn' value={phn} onChange={(e) => setPhn(e.target.value)} required/>
                     </div>
                     <div className='w-full'>
-                        <input className='py-2 bg-transparent w-full outline-none border-b border-black' type="email" placeholder='Your Email' name='msg_email' value={mail} onChange={(e) => setMail(e.target.value)}/>
+                        <input className='px-3 py-3 rounded-md bg-transparent w-full outline-none border placeholder:text-gray-300' type="email" placeholder='Email' name='msg_email' value={mail} onChange={(e) => setMail(e.target.value)} required/>
                     </div>
                     <div className='w-full'>
-                        <textarea rows={3} className='py-2 bg-transparent w-full outline-none border-b border-black' type="text" placeholder='Message'name='msg_message' value={msg} onChange={(e) => setMsg(e.target.value)}/>
+                        <textarea rows={3} className='px-3 py-3 rounded-md bg-transparent w-full outline-none border placeholder:text-gray-300' type="text" placeholder='Message'name='msg_message' value={msg} onChange={(e) => setMsg(e.target.value)}/>
                     </div>
                     <div>
-                    <button className="contact-form-submit text-center" name="send" value="Submit" type="submit">Submit</button>
+                    <button className="bg-primarygreen text-black w-fit px-8 h-12 rounded-full shadow-xl hover:shadow-2xl duration-200 font-medium capitalize grid place-items-center" name="send" value="Submit" type="submit">Submit</button>
                     </div>
                 </form>
              </div>

@@ -37,7 +37,7 @@ const WebDesign = async () => {
           workdata.data?.map((data,i)=>(
             <FadeUp duration={0.5} delay={0.5}>
 
-          <div className="website-details group rounded-[1rem] overflow-hidden shadow-2xl" key={i}>
+          <div className="website-details group rounded-[1rem] overflow-hidden shadow-xl" key={i}>
             <div className="web-container ">
               <img className="webimgmov object-top group-hover:object-bottom transition-all duration-[5s] ease-in" src={data.attributes.webimage.data.attributes.url} alt="" />
               <div className="web-overlay "></div>

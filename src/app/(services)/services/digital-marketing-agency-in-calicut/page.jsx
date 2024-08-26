@@ -152,43 +152,43 @@ const FaqMain = () => {
     const faqs2 = [
 
         {
-            question: `1.What digital marketing services does your agency offer in Calicut?`,
+            question: `What digital marketing services does your agency offer in Calicut?`,
             answer: `Our digital marketing agency in Calicut offers a wide range of services, including SEO, social media marketing, content creation, email marketing, pay-per-click (PPC) advertising, branding, and web design. We tailor our services to meet the unique needs of each client to ensure maximum online visibility and engagement.`,
         },
         {
-            question: `2. Why should I choose a local digital marketing agency in Calicut?`,
+            question: `Why should I choose a local digital marketing agency in Calicut?`,
             answer: `Choosing a local digital marketing agency in Calicut gives you the advantage of working with a team that understands the regional market, audience behavior, and local trends. We provide personalized service, are easily accessible for in-person meetings, and can offer insights specific to your target audience in Calicut and Kerala`,
         },
         {
-            question: `3. How does digital marketing benefit my business in Calicut?`,
+            question: `How does digital marketing benefit my business in Calicut?`,
             answer: `Digital marketing helps your business in Calicut by increasing your online visibility, attracting targeted traffic, and converting leads into customers. Through strategies like SEO, social media marketing, and PPC, we help you reach a broader audience, build brand awareness, and ultimately drive sales.`,
         },
         {
-            question: `4. What makes your digital marketing agency different from others in Calicut?`,
+            question: `What makes your digital marketing agency different from others in Calicut?`,
             answer: `Our digital marketing agency stands out in Calicut due to our commitment to quality, creativity, and results. We provide tailored strategies, transparent communication, and a focus on ROI. Our team of experts uses the latest tools and techniques to deliver exceptional results that align with your business goals.`,
         },
         {
-            question: `5. How long does it take to see results from digital marketing services?`,
+            question: `How long does it take to see results from digital marketing services?`,
             answer: `The time it takes to see results from digital marketing services varies depending on the strategy and goals. SEO typically takes 3 to 6 months to show significant results, while PPC and social media campaigns can generate leads and conversions almost immediately. We provide ongoing reports to track progress and optimize strategies as needed.`,
         },
         {
-            question: `6. Do you offer customized digital marketing plans?`,
+            question: `Do you offer customized digital marketing plans?`,
             answer: `Yes, we offer customized digital marketing plans tailored to your business needs, goals, and budget. We begin with an in-depth analysis of your business and target audience, then develop a strategy that aligns with your objectives, ensuring maximum effectiveness.`,
         },
         {
-            question: `7. Can your agency help with local SEO in Calicut?`,
+            question: `Can your agency help with local SEO in Calicut?`,
             answer: `Absolutely. We specialize in local SEO to help businesses in Calicut rank higher in search engine results for location-specific queries. Our strategies include optimizing your Google My Business profile, managing online reviews, and targeting local keywords to increase your visibility among potential customers in the area.`,
         },
         {
-            question: `8. How do you measure the success of your digital marketing efforts?`,
+            question: `How do you measure the success of your digital marketing efforts?`,
             answer: `We measure the success of our digital marketing efforts using key performance indicators (KPIs) such as website traffic, conversion rates, return on investment (ROI), engagement metrics, and search engine rankings. We provide detailed reports and analytics to show you the impact of our strategies and how they contribute to your business growth.`,
         },
         {
-            question: `9. What industries do you specialize in for digital marketing?`,
+            question: `What industries do you specialize in for digital marketing?`,
             answer: `Our digital marketing agency in Calicut has experience working with a diverse range of industries, including retail, healthcare, real estate, education, hospitality, and more. We customize our strategies based on industry-specific trends and audience behaviors to deliver effective results.`,
         },
         {
-            question: `10. Do you provide digital marketing services for small businesses in Calicut?`,
+            question: `Do you provide digital marketing services for small businesses in Calicut?`,
             answer: `Yes, we provide tailored digital marketing services for small businesses in Calicut. Our strategies are designed to maximize your online presence within your.`,
         },
     
@@ -205,14 +205,14 @@ const FaqMain = () => {
     return (
         <div className="w-full mx-auto">
             {faqs2.slice(0, showAll ? faqs2.length : 5).map((faq, index) => (
-                <div key={index} className="my-2 border-b last:border-b-0">
+                <div key={index} className="my-2 border-b last:border-b-0 outline-none">
                     <button
                         className={`w-full text-left pl-0 p-4 bg-white ${activeFaq === index && 'bg-primarygreen'} transition-all duration-200 rounded-sm flex justify-between gap-10 items-center`}
                         onClick={() => toggleFaq3(index)}
                     >
-                        <h3 className="text-base font-medium">{faq.question}</h3>
+                        <h3 className={`text-base font-medium `}>{faq.question}</h3>
                         {activeFaq === index ? (
-                            <HiMiniMinusSmall className='text-xl' />
+                            <HiMiniMinusSmall className={`text-xl`} />
                         ) : (
                             <GoPlus className='text-xl' />
                         )}
@@ -288,13 +288,13 @@ const Page = () => {
     return (
         <section className='w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20'>
             <div className='relative w-full h-48 md:h-80 xl:h-[500px] overflow-hidden'>
-                <Image className="object-cover object-center" placeholder="blur" fill src={serdig1}/>
+                <Image className="object-cover" placeholder="blur" fill src={serdig1} alt='digital marketing agency in kozhikode'/>
             </div>
             <div className='flex flex-col md:flex-row gap-5 gap-y-3'>
                 <h1 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-6xl font-black uppercase'>Professional Marketers Creating Tomorrow’s Trends</h1>
                 <div className='md:basis-1/2 xl:basis-2/5 flex flex-col gap-3'>
                   <h1 className='text-2xl font-semibold'>Do Studio Digital Marketing Agency In Calicut</h1>
-                  <p className='text-justify tracking-tighter'>As a <a className='font-semibold' href="#" target='_blank'>Best digital marketing agency in Calicut</a>, we pride ourselves on staying ahead of the curve and setting new industry standards. From SEO to social media, we craft customized solutions that not only meet your business goals but also pave the way for future success. Partner with us to experience the future of digital marketing today.</p>
+                  <p className='text-justify tracking-tighter'>As a Best <a className='font-semibold' href="#" target='_blank'>digital marketing agency in Calicut</a>, we pride ourselves on staying ahead of the curve and setting new industry standards. From SEO to social media, we craft customized solutions that not only meet your business goals but also pave the way for future success. Partner with us to experience the future of digital marketing today.</p>
             <Link href={'/contact'} className='bg-primarygreen text-black w-fit px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Contact now</Link>
                 </div>
             </div>
@@ -302,7 +302,7 @@ const Page = () => {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-0'>
                 {workdata && workdata.length > 0 ? (
                     workdata.slice(0, 6).map(data => (
-                        <Link className='space-y-2' href={`/our-works/branding/${data.attributes.slug}`} key={data.id}>
+             
                             <FadeUp duration={0.5} delay={0.5}>
                                 <div className='relative group'>
                                     <div className='relative aspect-square w-full'>
@@ -310,7 +310,7 @@ const Page = () => {
                                     </div>
                                 </div>
                             </FadeUp>
-                        </Link>
+                
                     ))
                 ) : (
                     <div className='text-left text-2xl font-medium animate-bounce'>
@@ -325,7 +325,7 @@ const Page = () => {
             </div>
             <div>
                 <div className='relative w-full h-48 md:h-80 xl:h-[500px]   overflow-hidden'>
-                    <Image className="object-cover object-center" placeholder="blur" fill src={serdig2}/>
+                    <Image className="object-cover object-center" placeholder="blur" fill src={serdig2} alt='best digital marketing agency in calicut'/>
                 </div>
                
             </div>
@@ -347,7 +347,7 @@ const Page = () => {
             <div className='flex flex-col-reverse md:flex-row gap-y-3 gap-5'>
               <div className='md:basis-1/2 xl:basis-2/5 flex flex-col gap-y-3'>
                  <p className=' text-justify tracking-tighter'>Looking for the <a className='font-semibold' href="#" target='_blank'>best branding agency in Calicut</a>? Our agency specializes in creating powerful and memorable brand identities that resonate with your target audience. We combine creativity, strategy, and market insights to develop branding solutions that elevate your business and set you apart from the competition.</p>
-                <Link href={'/contact'} className='bg-primarygreen text-black w-fit px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Contact now</Link>
+                <Link href={'/services/branding-agency-in-calicut'} className='bg-primarygreen text-black w-fit px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Know more</Link>
               </div>
                <div className='md:basis-1/2 xl:basis-3/5 '>
                   <h1 className='text-4xl xl:text-6xl font-black xl:text-right uppercase'>Best Branding Agency In Calicut.</h1>
