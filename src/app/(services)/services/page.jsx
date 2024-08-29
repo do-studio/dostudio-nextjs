@@ -1,5 +1,5 @@
 import React from 'react';
-import { wrk1, wrk2, wrk3, wrk4, wrk5 ,WRK1,WRK2} from "../../../../public/images/index";
+import { wrk1, wrk2, wrk3, wrk4, wrk5 ,WRK1,servicewebbg} from "../../../../public/images/index";
 import Image from "next/image";
 import Link from 'next/link';
 import FadeUp from '../../../components/motions/fadeUp';
@@ -17,6 +17,13 @@ const serviceData=[
         desc:'Our services in digital marketing are structured to give your brand the needed online presence and drive measurable results.', 
         img:wrk2,
         url:`/services/digital-marketing-agency-in-calicut`
+    },
+    {
+        id:6,
+        title:'Website Development',
+        desc:'Our website development services are focused on developing visually appealing, user-friendly, responsive websites that bring about customer engagement and ultimately meet business goals.', 
+        img:servicewebbg,
+        url:`/services/web-development-company-in-calicut`
     },
     {
         id:3,
@@ -39,13 +46,6 @@ const serviceData=[
         img:wrk5,
         url:`#`
     },
-    {
-        id:6,
-        title:'Website Development',
-        desc:'Our website development services are focused on developing visually appealing, user-friendly, responsive websites that bring about customer engagement and ultimately meet business goals.', 
-        img:WRK1,
-        url:`#`
-    }
 ]
 
 const page = () => {

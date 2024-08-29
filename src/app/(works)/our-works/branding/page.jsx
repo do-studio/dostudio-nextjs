@@ -28,7 +28,7 @@ const Branding = async () => {
         {sortedData && sortedData.length > 0 ? (
           sortedData?.map((data,i)=>(
             <Link className='space-y-2' href={`/our-works/branding/${data.attributes.slug}`} key={i}>
-              <FadeUp duration={0.5} delay={0.5 * 1}>
+              <FadeUp duration={0.5} delay={0.5 * i}>
               <div className='relative group' >
                   {/* <div className='z-20 absolute top-0 left-0 w-full h-full bg-[#00000087] opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer'>
                     <h3 className='text-white grid place-items-center h-full w-full text-3xl font-medium capitalize'>{data.attributes.title}</h3>

@@ -51,7 +51,7 @@ const Footer = () => {
       <div className="w-11/12 xl:w-10/12 mx-auto ">
         <div className="py-5 grid grid-cols-1 gap-y-5 md:grid-cols-2 xl:grid-cols-4">
           <div className=" flex flex-col">
-            <Image className="object-cover w-40 -mt-10 h-40 " src={dologo} />
+          <Link href={'/'}><Image className="object-cover w-40 -mt-10 h-40 " src={dologo} /></Link>
             {/* <p className="text-sm font-medium xl:w-[60%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam molestias voluptates quos laborum magnam blanditiis earum fuga dolor consectetur totam vero vitae quasi.</p> */}
             <ul className="flex justify-start py-5 gap-3 capitalize mt-2">
               {socialMedia.map((soc, i) => (

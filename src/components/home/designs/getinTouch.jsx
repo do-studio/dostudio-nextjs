@@ -4,7 +4,7 @@ import 'react-phone-number-input/style.css';
 import { toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
 import PhoneInput, { formatPhoneNumber, formatPhoneNumberIntl, isValidPhoneNumber } from 'react-phone-number-input'
-
+import Link from 'next/link';
 const GetinTouch = () => {
     const [value, setValue] = useState()
     const [formData, setFormData] = useState({

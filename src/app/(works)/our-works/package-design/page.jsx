@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-
+import FadeUp from '../../../../components/motions/fadeUp';
 
 async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/package-designs?&populate=*`,
@@ -27,15 +27,13 @@ const PackageDesign = async () => {
      <div className='w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-2 gap-0 xl:gap-10'>
         {workdata.data && workdata.data.length > 0 ? (
           workdata.data?.map((data,i)=>(
-   
-              <div className='relative group' key={i}>
-                
+            <FadeUp duration={0.3} delay={0.5 * i}  key={i}>
+              <div className='relative group'>
                   <div className='relative aspect-square w-full'>
                       <Image src={data.attributes.image.data.attributes.url}  fill={true} className='object-cover ' loading='lazy'   alt="wrk1"/>
                   </div>
-                  
               </div>
-
+              </FadeUp>
               ))
               ) : (
                 <div className='text-left text-2xl font-medium animate-bounce'>

@@ -5,6 +5,7 @@ import Footer from "../components/footer/footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import RootClient from "./RootClient";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,15 +28,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="G-09MCC7D39P" />
       <body className={poppins.className}>
         <ToastContainer position="bottom-right" />
         <div className="2xl:max-w-[2500px] mx-auto">
-        <RootClient>
-
-          <Navbar />
-          {children}
-          <Footer />
-        </RootClient>
+          <RootClient>
+            <Navbar />
+            {children}
+            <Footer />
+          </RootClient>
         </div>
       </body>
     </html>

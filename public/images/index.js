@@ -70,11 +70,15 @@ import doicnwh from './logo/do-iconwh.svg'
 
 import imgarrw from './logo/arrw.png'
 
+import servicewebbg from './medias/services/webdev.webp'
+
 import serbra1 from './medias/services/branding/ban1.webp'
 import serbra2 from './medias/services/branding/ban2.webp'
 
 import serdig1 from './medias/services/digital-marketing/ban3.webp'
 import serdig2 from './medias/services/digital-marketing/ban4.webp'
+
+import serwebdev1 from './medias/services/web/ban1.webp'
 
 
 
@@ -143,5 +147,6 @@ export{
     clntfixso,
     clntlubigen,
     serviceBg,
-    serbra1,serbra2,serdig1,serdig2
+    serbra1,serbra2,serdig1,serdig2,serwebdev1,
+    servicewebbg
 }

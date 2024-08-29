@@ -11,6 +11,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "@gsap/react": "^2.1.0",
+    "@next/third-parties": "^14.2.7",
     "@strapi/blocks-react-renderer": "^1.0.1",
     "@studio-freight/react-lenis": "^0.0.45",
     "@tailwindcss/typography": "^0.5.12",
@@ -34,8 +35,7 @@
     "sharp": "^0.33.5",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.2.1",
-    "webpack": "^5.90.3",
-    "yet-another-react-lightbox": "^3.21.3"
+    "webpack": "^5.90.3"
   },
   "devDependencies": {
     "@types/node": "20.11.20",
