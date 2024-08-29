@@ -29,7 +29,7 @@ const Clientslider = async () => {
       <Marquee speed={100}>
         {ClientsData && ClientsData.length > 0 ? (
           ClientsData?.map((data, i) => (
-            <div className="h-32 w-32 xl:h-60 xl:w-60 relative"    key={i}>
+            <div className="h-24 w-24 md:h-32 md:w-32 xl:h-60 xl:w-60 relative"    key={i}>
               <Image
                 fill={true}
                 className="object-cover grayscale hover:grayscale-0 duration-200"
