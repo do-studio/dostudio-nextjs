@@ -72,8 +72,7 @@ const Whatwedo = () => {
                     muted
                     playsInline
                 >
-                    <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723110686/Do%20Studio%20Website/DO_STUDIO_LOGO_webm_piqdkl.webm' type="video/mp4" />
-                    <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723110687/Do%20Studio%20Website/DO_STUDIO_LOGO_3-1_pevafw.mov' type="video/mp4" />
+                    <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1724923136/Do%20Studio%20Website/WhatsApp_Video_2024-08-26_at_11.26.40_940f4270_qahxvn.mp4' type="video/mp4" />
                 </video>
           </div>
           <div className="z-20 flex flex-col gap-3 xl:gap-10 text-left">
