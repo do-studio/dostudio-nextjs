@@ -9,6 +9,8 @@ import { FaHtml5, FaNodeJs, FaReact, FaRegUserCircle, FaShopify, FaWordpress } f
 import { MdKeyboardArrowDown, MdKeyboardArrowUp  } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
 import { HiMiniMinusSmall } from "react-icons/hi2";
+import Head from 'next/head';
+
 
 
 const FaqComponent1 = () => {
@@ -278,6 +280,11 @@ const Page = () => {
 
 
     return (
+         <>
+        <Head>
+            <title>Web Development Company In Calicut</title>
+             <link rel="canonical" href="https://dostudio.co.in/services/web-development-company-in-calicut" key="canonical"/>
+        </Head>
         <section className='w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20'>
             <div className='relative w-full h-48 md:h-80 xl:h-[500px]  overflow-hidden'>
                 <Image className="object-cover object-center" placeholder="blur" fill src={serwebdev1} alt='Branding agency in Calicut'/>
@@ -289,10 +296,10 @@ const Page = () => {
                     company in Calicut, we are good at the job and we are involved in developing and
                     designing powerful, customized websites. We are this type of company that will
                     visualize all your ideas.</p>
-                    <Link href={'/contact'} className='bg-primarygreen text-black w-fit px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Contact now</Link>
                 </div>
 
             </div>
+                    <Link href={'/contact'} className='bg-primarygreen text-black w-fit mx-auto px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Contact now</Link>
             
             <div>
               <p className='xl:text-center tracking-tighter xl:tracking-normal text-justify text-xl xl:text-2xl font-semibold'>"We build websites that are user-friendly, presenting clean and simple layouts, and it
@@ -302,8 +309,8 @@ const Page = () => {
             </div>
     
 
-            <div className=''>
-              <h3 className='text-center  text-3xl xl:text-6xl mb-10 xl:mb-20  font-black uppercase'>Our Services Include</h3>
+            <div className='flex flex-col gap-10 xl:gap-20'>
+              <h3 className='text-center  text-3xl xl:text-6xl font-black uppercase'>Our Services Include</h3>
               <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-x-3 gap-y-10'>
                   <div className='group border shadow-lg hover:shadow-xl duration-200 rounded-xl p-5 flex flex-col justify-center gap-2 relative'>
                       <div className='group-hover:scale-90 duration-300 h-12 w-12 rounded-full bg-black text-primarygreen  absolute -top-7 shadow-2xl shadow-black grid place-items-center'><FaHtml5 className='text-3xl '/></div>
@@ -331,7 +338,8 @@ const Page = () => {
                       <p className='text-sm'>Build scalable and efficient server-side applications with Node.js, providing strong performance and real-time capabilities.</p>
                   </div> 
                  
-              </div>     
+              </div>   
+                    <Link href={'/our-works/web-design'} className='bg-primarygreen mx-auto text-black w-fit px-20 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>See more</Link>  
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
               {workdata.data && workdata.data.length > 0 ? (
@@ -396,6 +404,7 @@ const Page = () => {
                  <FaqMain/>
             </div>
         </section>
+         </>
     );
 };
 

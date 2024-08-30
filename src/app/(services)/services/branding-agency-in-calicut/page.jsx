@@ -9,6 +9,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp  } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
 import { HiMiniMinusSmall } from "react-icons/hi2";
+import Head from 'next/head';
 
 
 const FaqComponent1 = () => {
@@ -283,6 +284,10 @@ const Page = () => {
     }, []);
 
     return (
+        <>
+        <Head>
+             <link rel="canonical" href="https://dostudio.co.in/services/branding-agency-in-calicut" key="canonical"/>
+        </Head>
         <section className='w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20'>
             <div className='relative w-full h-48 md:h-80 xl:h-[500px]  overflow-hidden'>
                 <Image className="object-cover object-bottom" placeholder="blur" fill src={serbra1} alt='Branding agency in Calicut'/>
@@ -360,6 +365,7 @@ const Page = () => {
                  <FaqMain/>
             </div>
         </section>
+        </>
     );
 };
 

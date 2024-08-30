@@ -10,6 +10,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp  } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
 import { HiMiniMinusSmall } from "react-icons/hi2";
 import {Testimonials} from "../../../../components/index";
+import Head from 'next/head';
 
 
 const FaqComponent1 = () => {
@@ -286,6 +287,10 @@ const Page = () => {
     }, []);
 
     return (
+       <>
+        <Head>
+             <link rel="canonical" href="https://dostudio.co.in/services/digital-marketing-agency-in-calicut" key="canonical"/>
+        </Head>
         <section className='w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20'>
             <div className='relative w-full h-48 md:h-80 xl:h-[500px] overflow-hidden'>
                 <Image className="object-cover" placeholder="blur" fill src={serdig1} alt='digital marketing agency in kozhikode'/>
@@ -354,6 +359,7 @@ const Page = () => {
                </div>
             </div>
         </section>
+       </>
     );
 };
 
