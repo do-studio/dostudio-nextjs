@@ -300,9 +300,9 @@ const Page = () => {
                 <div className='md:basis-1/2 xl:basis-2/5 flex flex-col gap-3'>
                   <h1 className='text-2xl font-semibold'>Do Studio Digital Marketing Agency In Calicut</h1>
                   <p className='text-justify tracking-tighter'>As a Best <a className='font-semibold' href="#" target='_blank'>digital marketing agency in Calicut</a>, we pride ourselves on staying ahead of the curve and setting new industry standards. From SEO to social media, we craft customized solutions that not only meet your business goals but also pave the way for future success. Partner with us to experience the future of digital marketing today.</p>
-            <Link href={'/contact'} className='bg-primarygreen text-black w-fit px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Contact now</Link>
                 </div>
             </div>
+            <Link href={'/contact'} className='bg-primarygreen text-black w-fit mx-auto px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Contact now</Link>
 
             <div className='grid grid-cols-1 md:grid-cols-3 gap-0'>
                 {workdata && workdata.length > 0 ? (

@@ -296,6 +296,9 @@ const Page = () => {
                 <h1 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-6xl font-black uppercase'>Branding Agency<br/> In Calicut</h1>
                 <p className='md:basis-1/2 xl:basis-2/5 text-justify tracking-tighter'>Do Studio has built an outstanding track record as one of Best <a className='font-semibold' href="#" target='_blank'>Branding Agency in Calicut</a> Since 2018. Our skilled staff members can enhance your brand's online visibility and help you stand out.</p>
             </div>
+
+            <Link href={'/contact'} className='bg-primarygreen text-black w-fit mx-auto px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Contact now</Link>
+
             
             <div className='grid grid-cols-1 md:grid-cols-2 gap-5 xl:gap-10 xl:px-40'>
                 {workdata && workdata.length > 0 ? (
