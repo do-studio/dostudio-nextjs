@@ -3,6 +3,14 @@ import { wrk1, wrk2, wrk3, wrk4, wrk5 ,WRK1,servicewebbg} from "../../../../publ
 import Image from "next/image";
 import Link from 'next/link';
 import FadeUp from '../../../components/motions/fadeUp';
+import { Metadata } from 'next';
+
+export const metadata = {
+    title: 'Services',
+    description: 'My description',
+
+  }
+  
 const serviceData=[
     {
         id:1,
