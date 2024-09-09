@@ -28,6 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="w7iJ2ozCamTV8_qsPHnhDTZOFBIAra5xJn5xheVeX2M" />
       <GoogleTagManager gtmId="G-09MCC7D39P" />
       <body className={poppins.className}>
         <ToastContainer position="bottom-right" />

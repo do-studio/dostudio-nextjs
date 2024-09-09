@@ -50,7 +50,7 @@ const serviceData=[
     {
         id:5,
         title:'print design',
-        desc:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates optio corrupti, nostrum hic ipsa minus suscipit porro natus eligendi quis?', 
+        desc:'We blend creativity with strategic thinking to ensure your packaging not only stands out on the shelf but also resonates with your target audience, driving sales and brand loyalty.', 
         img:wrk5,
         url:`#`
     },
@@ -67,9 +67,9 @@ const page = () => {
                     <Link href={data.url} className='bg-gray-100 h-full rounded-2xl shadow-lg hover:shadow-xl duration-200 border p-5 flex flex-col justify-between gap-3 xl:gap-5' >
                       <div className='flex flex-col gap-3 xl:gap-5'>
                         <p className='text-3xl bg-primarygreen w-fit p-2 rounded-md font-black'>0{data.id}</p>
-                        <h4 className='text-3xl uppercase font-bold'>{data.title}</h4>
+                        <h4 className='text-2xl uppercase font-bold'>{data.title}</h4>
                       </div>
-                        <p className='text-sm text-justify tracking-tighter'>{data.desc}</p>
+                        <p className='text-sm'>{data.desc}</p>
                         <div className='relative w-full h-80 rounded-md overflow-hidden'>
                             <Image className="object-cover" placeholder="blur" fill src={data.img}/>
                         </div>

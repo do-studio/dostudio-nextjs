@@ -22,12 +22,7 @@ import Head from "next/head";
 export default function Home() {
   return (
     <>
-      <Head>
-				<title>My website</title>
-				<meta name="description">
-					This text will appear in the description section of search engine results.
-				</meta>
-			</Head>
+
     <main>
       <Suspense fallback={<p>Loading data...</p>}>
         <Banner />

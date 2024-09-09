@@ -50,7 +50,7 @@ const Whatwedo = () => {
   return (
     <section className='py-10 xl:py-20'>
       <div className="bg-black text-white  w-11/12  overflow-hidden rounded-3xl xl:rounded-[3rem] p-8 sm:p-10 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-5 xl:gap-10 relative">
-          <div className="z-20 flex flex-col gap-3 xl:gap-10 md:text-right">
+          <div className="z-20 flex flex-col gap-3 xl:gap-10 xl:text-right">
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
               <h2 className="text-xl md:text-3xl xl:text-5xl font-black">branding</h2>
               <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-right  font-extralight">Our branding services are designed to create a strong, memorable identity for your business.</p>
