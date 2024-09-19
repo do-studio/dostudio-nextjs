@@ -42,7 +42,11 @@ import {
     clntbuff,
     clntsysmantech,
     clntfixso,
-    clntlubigen
+    clntlubigen,
+    clntimamom,
+    clntarooha,
+    clnttandt,
+    clntcapind
 } from '../../../public/images/index';
 
 
@@ -174,13 +178,31 @@ export const ClientsData=[
     clt:clntkmct2
   },
   {
-    clt:clntfixso
-  },
-  {
     clt:clntztart
   },
   {
     clt:clntpk
+  },
+  
+  {
+    clt:clntimamom
+  },
+  
+  {
+    clt:clntarooha
+  },
+  {
+    clt:clntcapind
+  },
+  
+  {
+    clt:clnttandt
+  },
+  {
+    clt:clnteras1
+  },
+  {
+    clt:clntcresent
   },
   
 ]

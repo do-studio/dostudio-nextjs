@@ -56,6 +56,10 @@ import clntfixso from './medias/clients/clientfixso.webp'
 import clntlubigen from './medias/clients/clientlubigen.webp'
 import clntpk from './medias/clients/clientpk.webp'
 import clntztart from './medias/clients/clientztart.webp'
+import clntimamom from './medias/clients/iammom.webp'
+import clntarooha from './medias/clients/arooha.webp'
+import clnttandt from './medias/clients/tt.webp'
+import clntcapind from './medias/clients/cap.webp'
 
 import serviceBg from './medias/servicebg.webp'
 
@@ -146,6 +150,10 @@ export{
     clntsysmantech,
     clntfixso,
     clntlubigen,
+    clntimamom,
+    clntarooha,
+    clnttandt,
+    clntcapind,
     serviceBg,
     serbra1,serbra2,serdig1,serdig2,serwebdev1,
     servicewebbg
