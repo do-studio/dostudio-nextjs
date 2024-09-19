@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <GoogleTagManager gtmId="G-09MCC7D39P" />
       <body className={poppins.className}>
         <ToastContainer position="bottom-right" />
-        <div className="2xl:max-w-[4000px] mx-auto">
+        <div className="2xl:max-w-[3500px] mx-auto">
           <RootClient>
             <Navbar />
             {children}

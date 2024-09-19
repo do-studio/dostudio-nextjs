@@ -144,7 +144,7 @@ const Navbar = () => {
     <>
       {/* ===========================================NAVBAR START=========================================== */}
       <nav
-        className={`px-5 fixed top-0 left-0 right-0 flex justify-between items-center z-50 w-full 2xl:max-w-[1536px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${
+        className={`px-5 fixed top-0 left-0 right-0 flex justify-between items-center z-50 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${
           isScrolled ? "navbar" : "bg-transparent"
         }`}
       >

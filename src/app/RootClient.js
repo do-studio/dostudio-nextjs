@@ -49,7 +49,7 @@ export default function RootClient({ children }) {
   return (
     <>
       {loading && <LoadingMain/>}
-      <div className={`2xl:max-w-[1536px] mx-auto ${loading ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}>
+      <div className={` ${loading ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}>
         {children}
       </div>
     </>
