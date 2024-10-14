@@ -7,8 +7,9 @@ import { HiArrowSmallDown } from "react-icons/hi2";
 const Aboutus = () => {
   return (
     <main className='bg-white text-black xl:py-10 flex items-center relative overflow-hidden'>
-      <div className='w-11/12 xl:w-9/12 mx-auto text-lg xl:text-4xl space-y-10 xl:font-light xl:leading-normal'>
-          <h2 className='text-gray-600 md:text-justify'>Being the leading <span className='font-medium text-black'>Advertising agency in Calicut</span>, we take an added advantage in preparing outstandingly and achieving exceptional results in <span className='font-medium text-black'>Branding and Advertising</span>. We stand at the frontline as the Best Advertising agency in Calicut but extend further to the forefront of <span className='font-medium text-black'>Digital marketing services</span>. We don't just have our reach limited to Calicut; we have been able to establish certain milestones that span across regions showing our commitment to excellence at a bigger scale.</h2>
+      <div className='w-11/12 xl:w-9/12 mx-auto text-lg xl:text-4xl space-y-2 xl:font-light xl:leading-normal'>
+          <h1 className='text-gray-600 md:text-justify text-2xl xl:text-[2.8rem]'>Do Studio : <span className='font-medium text-black'>Digital Marketing Agency in Calicut</span></h1>
+          <p className='text-gray-600 md:text-justify'>Being the leading <span className='font-medium text-black'>Digital Marketing Agency in Calicut</span>, we take an added advantage in preparing outstandingly and achieving exceptional results in <span className='font-medium text-black'>Branding and Advertising</span>. We stand at the frontline as the Best Advertising agency in Calicut but extend further to the forefront of <span className='font-medium text-black'>Digital marketing services</span>. We don't just have our reach limited to Calicut; we have been able to establish certain milestones that span across regions showing our commitment to excellence at a bigger scale.</p>
           <div className='relative flex justify-end'>
             <motion.div 
             animate={{ rotate: 360 }} // Rotate 360 degrees

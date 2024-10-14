@@ -46,7 +46,8 @@ import {
     clntimamom,
     clntarooha,
     clnttandt,
-    clntcapind
+    clntcapind,
+    clntasten
 } from '../../../public/images/index';
 
 
@@ -166,10 +167,22 @@ export const banners=[
 
 export const ClientsData=[
   {
+    clt:clntpk
+  },
+  {
+    clt:clntasten
+  },
+  {
     clt:clntkurikal
   },
   {
     clt:clntkmct1
+  },
+  {
+    clt:clntimamom
+  },
+  {
+    clt:clnttandt
   },
   {
     clt:clntgava
@@ -180,13 +193,7 @@ export const ClientsData=[
   {
     clt:clntztart
   },
-  {
-    clt:clntpk
-  },
   
-  {
-    clt:clntimamom
-  },
   
   {
     clt:clntarooha
@@ -195,9 +202,6 @@ export const ClientsData=[
     clt:clntcapind
   },
   
-  {
-    clt:clnttandt
-  },
   {
     clt:clnteras1
   },

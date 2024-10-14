@@ -60,6 +60,7 @@ import clntimamom from './medias/clients/iammom.webp'
 import clntarooha from './medias/clients/arooha.webp'
 import clnttandt from './medias/clients/tt.webp'
 import clntcapind from './medias/clients/cap.webp'
+import clntasten from './medias/clients/clientastenortho.webp'
 
 import serviceBg from './medias/servicebg.webp'
 
@@ -124,6 +125,7 @@ export{
     clntztart,
     clntkarims,
     clntshifa,
+    clntasten,
     clntpk,
     clntgoodland,
     clntthreeseason,

@@ -22,11 +22,12 @@ const Clientslider = async () => {
 
   return (
     <div className=" py-10">
-      <div className="w-12/12 xl:w-10/12 mx-auto flex flex-col items-center xl:pt-20">
+      <div className="w-12/12 xl:w-10/12 mx-auto flex flex-col items-center xl:pt-20 pb-10">
         <h1 className="font-black text-4xl xl:text-8xl uppercase">clients</h1>
         <p>Not a vendor. A cultural wing of your team.</p>
-      </div>
-      <Marquee speed={100}>
+      </div> 
+      <div >
+      <Marquee speed={100} >
         {ClientsData && ClientsData.length > 0 ? (
           ClientsData?.map((data, i) => (
             <div className="h-24 w-24 md:h-32 md:w-32 xl:h-52 xl:w-52 relative"    key={i}>
@@ -44,6 +45,25 @@ const Clientslider = async () => {
           </div>
         )}
       </Marquee>
+      </div>
+      {/* <div className="w-11/12 xl:w-10/12 mx-auto hidden xl:grid grid-cols-3 xl:grid-cols-6 place-items-center gap-3">
+      {ClientsData && ClientsData.length > 0 ? (
+          ClientsData?.map((data, i) => (
+            <div className="h-24 w-24 md:h-32 md:w-32 xl:h-52 xl:w-52 relative"    key={i}>
+            <Image
+                  fill={true}
+                  className="object-cover grayscale hover:grayscale-0 duration-200 "
+                  src={data.clt}
+                  alt="clients"
+                />
+                </div>
+              ))
+              ) : (
+                <div className="text-left text-2xl font-medium animate-bounce">
+                  No data found.
+                </div>
+          )}
+      </div> */}
       {/* <div className="grid place-items-center mt-5">
         <Link href={"/clients"}>
           <button className="btn-21">

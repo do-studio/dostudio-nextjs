@@ -18,6 +18,7 @@ const workWithUs = () => {
     </div>
     <section className='bg-white w-11/12 xl:w-10/12 mx-auto py-10 xl:py-20 flex flex-col gap-5'>
         <h1 className='text-5xl xl:text-7xl font-black text-black'>READY TO WORK<br/> WITH US ?</h1>
+        <p className='xl:w-10/12'>Go beyond typical with Do Studio, the <b>Best advertising agency in Calicut</b>. You’re not just choosing a campaign, you’re selecting a partner who understands your brand and has an interest in crafting genuine, meaningful and connecting stories.</p>
         <Link className='bg-primarygreen text-black shadow-2xl hover:shadow-xl duration-200 shadow-gray-500 py-4 uppercase font-semibold rounded-full px-10 w-fit' href={'/contact'}>get started</Link>
     </section>
     </section>
