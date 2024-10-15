@@ -21,6 +21,8 @@ const Clientslider = async () => {
   // console.log(clintsdata.data);
 
   return (
+
+    
     <div className=" py-10">
       <div className="w-12/12 xl:w-10/12 mx-auto flex flex-col items-center xl:pt-20 pb-10">
         <h1 className="font-black text-4xl xl:text-8xl uppercase">clients</h1>
