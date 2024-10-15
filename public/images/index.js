@@ -61,6 +61,7 @@ import clntarooha from './medias/clients/arooha.webp'
 import clnttandt from './medias/clients/tt.webp'
 import clntcapind from './medias/clients/cap.webp'
 import clntasten from './medias/clients/clientastenortho.webp'
+import clntonecity from './medias/clients/clintonecity.webp'
 
 import serviceBg from './medias/servicebg.webp'
 
@@ -124,6 +125,7 @@ export{
     clntlivehi,
     clntztart,
     clntkarims,
+    clntonecity,
     clntshifa,
     clntasten,
     clntpk,

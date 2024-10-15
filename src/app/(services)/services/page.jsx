@@ -17,6 +17,7 @@ const serviceData=[
         title:'branding',
         desc:'Our branding services are designed to enable your business to rise to prominence with an extremely powerful, unforgettable identity speaking for itself to your target audience.',
         img:wrk1,
+        alt:`Creative marketing agency in Calicut`,
         url:`/services/branding-agency-in-calicut`
     },
     {
@@ -24,6 +25,7 @@ const serviceData=[
         title:'Digital marketing',
         desc:'Our services in digital marketing are structured to give your brand the needed online presence and drive measurable results.', 
         img:wrk2,
+        alt:`Best digital marketing agency in Calicut`,
         url:`/services/digital-marketing-agency-in-calicut`
     },
     {
@@ -31,6 +33,7 @@ const serviceData=[
         title:'Website Development',
         desc:'Our website development services are focused on developing visually appealing, user-friendly, responsive websites that bring about customer engagement and ultimately meet business goals.', 
         img:servicewebbg,
+        alt:`SEO company in calicut`,
         url:`/services/web-development-company-in-calicut`
     },
     {
@@ -38,6 +41,7 @@ const serviceData=[
         title:'package design',
         desc:'Our package design services combine creativity with functionality to create visually appealing and practical packaging that will help brand your product.', 
         img:wrk3,
+        alt:`Socialmedia marketing agency in Calicut`,
         url:`#`
     },
     {
@@ -45,6 +49,7 @@ const serviceData=[
         title:'Production',
         desc:`From concept to the final product, we're driven by detailed planning and seamless execution. Every work we produce is exceptional and sets high expectations in results that customers appreciate.`, 
         img:wrk4,
+        alt:``,
         url:`#`
     },
     {
@@ -52,6 +57,7 @@ const serviceData=[
         title:'print design',
         desc:'We blend creativity with strategic thinking to ensure your packaging not only stands out on the shelf but also resonates with your target audience, driving sales and brand loyalty.', 
         img:wrk5,
+        alt:``,
         url:`#`
     },
 ]
