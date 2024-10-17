@@ -27,7 +27,6 @@ export default function Home() {
       <Suspense fallback={<p>Loading data...</p>}>
         <Banner />
       </Suspense>
-
       <Suspense fallback={<p>Loading data...</p>}>
         <MarqueeText />
       </Suspense>
@@ -44,7 +43,6 @@ export default function Home() {
       <Suspense >
         <ClientSlide />
       </Suspense>
-
       {/* <AnimatPara/> */}
       <Suspense fallback={<p>Loading data...</p>}>
         <Testimonials />
