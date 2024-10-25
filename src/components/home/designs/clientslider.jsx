@@ -1,8 +1,10 @@
+"use client"
 import Marquee from "react-fast-marquee";
 import { ClientsData } from "../../constant/data";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { useState } from "react";
 
 // async function getData() {
 //   const res = await fetch(
@@ -19,6 +21,11 @@ import Link from "next/link";
 const Clientslider = async () => {
   // const clintsdata = await getData();
   // console.log(clintsdata.data);
+
+  const [showAll, setShowAll] = useState(false);
+
+  // Toggle function for "Show More" button
+  const toggleShowAll = () => setShowAll((prev) => !prev);
 
   return (
 

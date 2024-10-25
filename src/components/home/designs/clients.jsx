@@ -5,10 +5,13 @@ import { ClientsData } from "../../constant/data";
 import Image from "next/image";
 
 const Clients = () => {
-  const [displayedImages, setDisplayedImages] = useState(15);
+  const [displayedImages, setDisplayedImages] = useState(5);
 
   const loadMoreImages = () => {
     setDisplayedImages((prevCount) => prevCount + ClientsData.length);
+  };
+  const loadLessImages = () => {
+    setDisplayedImages(5);
   };
 
   const imageVariants = {
@@ -44,11 +47,18 @@ const Clients = () => {
             </motion.div>
           ))}
         </motion.div>
-        {displayedImages < ClientsData.length && (
+        {displayedImages < ClientsData.length ?  (
          <div className="w-full h-full flex justify-center mt-5">
           <button onClick={loadMoreImages} className="btn-21 "><span>Load More</span></button>
          </div>
-        )}
+        ) :
+        (
+        // <div className="w-full h-full flex justify-center mt-5">
+        //   <button onClick={loadLessImages} className="btn-21 "><span>Load More</span></button>
+        //  </div>
+        null
+        )
+        }
       </div>
     </div>
   );

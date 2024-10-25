@@ -41,7 +41,7 @@ export default function Home() {
         <OurWOrk2/>
       </Suspense>
       <Suspense >
-        <ClientSlide />
+        <Clients />
       </Suspense>
       {/* <AnimatPara/> */}
       <Suspense fallback={<p>Loading data...</p>}>

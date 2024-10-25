@@ -41,10 +41,10 @@ const Banner = () => {
       if (currentTime >= 5 && currentTime < 12) {
         videoPath = isMobile ? videos.mobile.morning : videos.desktop.morning;
         posterPath = isMobile ? posters.mobile : posters.desktop;
-      } else if (currentTime >= 12 && currentTime < 17) {
+      } else if (currentTime >= 12 && currentTime < 16) {
         videoPath = isMobile ? videos.mobile.afternoon : videos.desktop.afternoon;
         posterPath = isMobile ? posters.mobile : posters.desktop;
-      } else if (currentTime >= 17 && currentTime < 20) {
+      } else if (currentTime >= 16 && currentTime < 20) {
         videoPath = isMobile ? videos.mobile.evening : videos.desktop.evening;
         posterPath = isMobile ? posters.mobile : posters.desktop;
       } else {
