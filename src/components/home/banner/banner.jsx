@@ -31,8 +31,8 @@ const Banner = () => {
       };
 
       const posters = {
-        desktop: 'https://res.cloudinary.com/djswkzoth/image/upload/v1723786988/Do%20Studio%20Website/new%20web%20banner/desk_poster_yklfya.png',
-        mobile: 'https://res.cloudinary.com/djswkzoth/image/upload/v1723786988/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx.png',
+        desktop: 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/desk_poster_yklfya_a7kqzc.webp',
+        mobile: 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp',
       };
 
       let videoPath = '';
@@ -78,7 +78,7 @@ const Banner = () => {
     <>
     <section className=''>
     {currentVideo && (
-        <video className="w-full h-full xl:h-screen bg-black object-cover" poster={currentPoster} autoPlay loop muted>
+        <video className="w-full h-full xl:h-screen bg-black object-cover" poster={currentPoster} autoPlay loop playsinline muted preload="auto">
           <source src={currentVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
