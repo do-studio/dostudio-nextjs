@@ -20,8 +20,8 @@ const Clients = () => {
   };
 
   return (
-    <div className="bg-white py-10">
-      <h1 className="text-4xl md:text-7xl xl:text-9xl  font-extrabold pb-10 text-black text-center">
+    <div className="bg-white py-10 xl:py-20">
+      <h1 className="text-4xl md:text-7xl xl:text-8xl uppercase font-extrabold text-black text-center">
         Our clients
       </h1>
       <div className="w-11/12 xl:w-10/12 mx-auto">

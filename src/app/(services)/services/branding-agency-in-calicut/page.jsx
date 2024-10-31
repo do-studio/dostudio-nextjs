@@ -321,7 +321,7 @@ const Page = () => {
 
             <div className='flex flex-col-reverse md:flex-row gap-5 gap-y-3'>
                 <p className='md:basis-1/2 xl:basis-2/5 text-justify tracking-tighter'> Do Studio is an <a className='font-semibold' href="#" target='_blank'>Branding agency in calicut</a> dedicated to crafting outstanding identities for brands and user experiences. Our clients have been able to improve their brand image, reach a wider audience, and draw in more business thanks to our skillful design methods. Few organizations in the area are able to make this claim about the caliber of their offerings. As a result we are known as the <a className='font-semibold' href="#">Best branding agency in Calicut</a>.</p>
-                <h1 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-6xl font-black xl:text-right uppercase'>Get to Know Us. Branding Agency In Calicut</h1>
+                <h2 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-6xl font-black xl:text-right uppercase'>Get to Know Us. Branding Agency In Calicut</h2>
             </div>
             <div>
                 <div className='relative w-full  h-48 md:h-80 xl:h-[500px] overflow-hidden'>
@@ -354,7 +354,7 @@ const Page = () => {
             </div>
 
             <div className='flex flex-col md:flex-row gap-5 gap-y-3'>
-                <h1 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-6xl font-black uppercase' href="#">Best Digital Marketing Agency in Calicut, Kerala</h1>
+                <h4 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-6xl font-black uppercase' href="#">Best Digital Marketing Agency in Calicut, Kerala</h4>
                <div className='md:basis-1/2 xl:basis-2/5 flex flex-col gap-3'>
                     <h1 className='text-2xl font-semibold'>Driving Business Growth with Innovative Digital Marketing</h1>
                     <p className=' text-justify tracking-tighter'>We drive business growth with innovative digital marketing solutions designed to elevate your brand. As a leading <a className='font-semibold' href="#" target='_blank'>digital marketing agency in Calicut</a>, we specialize in crafting creative strategies that not only capture attention but also convert it into measurable results. Our comprehensive digital marketing services include SEO, social media marketing, content creation, and paid advertising, all tailored to meet the unique needs of your business.</p>
@@ -362,7 +362,7 @@ const Page = () => {
                </div>
             </div>
             <div>
-                 <h1 className='text-4xl xl:text-6xl font-black pb-5'>FAQs</h1>
+                 <h5 className='text-4xl xl:text-6xl font-black pb-5'>FAQs</h5>
                  <FaqMain/>
             </div>
         </section>

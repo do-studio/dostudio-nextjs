@@ -85,6 +85,7 @@ import serdig1 from './medias/services/digital-marketing/ban3.webp'
 import serdig2 from './medias/services/digital-marketing/ban4.webp'
 
 import serwebdev1 from './medias/services/web/ban1.webp'
+import serwebdev2 from './medias/services/web/webdev22.webp'
 
 
 
@@ -160,5 +161,6 @@ export{
     clntcapind,
     serviceBg,
     serbra1,serbra2,serdig1,serdig2,serwebdev1,
-    servicewebbg
+    servicewebbg,
+    serwebdev2
 }

@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { serwebdev1,serbra1,serbra2} from "../../../../../public/images/index";
+import { serwebdev1,serbra1,serbra2,serwebdev2} from "../../../../../public/images/index";
 import Image from 'next/image'
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -19,11 +19,11 @@ const FaqComponent1 = () => {
     const faqs1 = [
         {
             question: `Discovery & Research`,
-            answer: `We begin by understanding client goals, conducting market analysis, researching competitors, and gaining insights into the target audience.`,
+            answer: `<b>Our web development company in calicut</b> begin by understanding client goals, conducting market analysis, researching competitors, and gaining insights into the target audience.`,
         },
         {
             question: `Planning & Strategy`,
-            answer: `We define the project scope, create information architecture, develop wireframes and prototypes, and craft a content strategy.`,
+            answer: `We define the project scope, create information architecture, develop wireframes and prototypes, and craft a content strategy in <b>our web development company in calicut</b>.`,
         },
         {
             question: `Design & User Experience`,
@@ -67,7 +67,7 @@ const FaqComponent1 = () => {
                     }`}
                 >
                     <div className="p-4 bg-white text-sm border rounded-xl mt-2">
-                        <p>{faq.answer}</p>
+                        <div dangerouslySetInnerHTML={{ __html: faq.answer}}></div>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@ const FaqComponent2 = () => {
         },
         {
             question: `Launch & Deployment`,
-            answer: `We perform a final review and approval, deploy to live servers, provide monitoring and support, and offer post-launch training.`,
+            answer: `Our <b>web development company in calicut</b> perform a final review and approval, deploy to live servers, provide monitoring and support, and offer post-launch training.`,
         },
         {
             question: `Maintenance & Growth`,
@@ -95,7 +95,7 @@ const FaqComponent2 = () => {
         },
         {
             question: `Client Collaboration`,
-            answer: `We ensure regular updates and communication, maintain feedback loops, engage in collaborative decision-making, and plan for long-term partnerships.`,
+            answer: `We in our <b>web development company in calicut</b> ensure regular updates and communication, maintain feedback loops, engage in collaborative decision-making, and plan for long-term partnerships.`,
         },
 
     
@@ -130,7 +130,7 @@ const FaqComponent2 = () => {
                     }`}
                 >
                     <div className="p-4 bg-white text-sm border rounded-xl mt-2">
-                        <p>{faq.answer}</p>
+                        <div dangerouslySetInnerHTML={{ __html: faq.answer}}></div>
                     </div>
                 </div>
             </div>
@@ -148,43 +148,35 @@ const FaqMain = () => {
 
         {
             question: `What is web development?`,
-            answer: `Web development is the process of creating and maintaining websites. It involves designing, coding,
-            and building the functionality of a site to ensure it operates effectively on the web.`,
+            answer: `Web development is the process of creating and maintaining websites. It involves designing, coding, and building the functionality of a site to ensure it operates effectively on the web.`,
         },
         {
             question: `What services do you offer?`,
-            answer: `We offer a range of services including HTML coding, WordPress theme development, React.js web
-            applications, Node.js server-side solutions, and Netlify deployment.`,
+            answer: `Our Web development company in Calicut offers a range of services including HTML coding, WordPress theme development, React.js web applications, Node.js server-side solutions, and Netlify deployment.`,
         },
         {
             question: `How long does it take to build a website?`,
-            answer: `The timeline for building a website depends on its complexity and scope. Simple websites may take
-            a few weeks, while more complex projects could take several months.`,
+            answer: `The timeline for building a website depends on its complexity and scope. Simple websites may take a few weeks, while more complex projects could take several months.`,
         },
         {
             question: `Do you provide ongoing support after the website is launched?`,
-            answer: `Yes, we offer ongoing maintenance and support to ensure your website remains updated, secure,
-            and functional.`,
+            answer: `Yes, Our Web development company offers ongoing maintenance and support to ensure your website remains updated, secure, and functional.`,
         },
         {
             question: `Can you help with website redesigns?`,
-            answer: `Absolutely! We can assist with redesigning your website to improve its appearance, functionality, and
-            user experience.`,
+            answer: `Absolutely! We can assist with redesigning your website to improve its appearance, functionality, and user experience.`,
         },
         {
             question: `What is responsive design?`,
-            answer: `Responsive design ensures that your website looks and works well on all devices, including
-            desktops, tablets, and smartphones.`,
+            answer: `Responsive design ensures that your website looks and works well on all devices, including desktops, tablets, and smartphones.`,
         },
         {
             question: `Will my website be search engine optimized (SEO)?`,
-            answer: `We can implement SEO best practices to help improve your website’s visibility and ranking on
-            search engines.`,
+            answer: `Our Web development company in calicut can implement SEO best practices to help improve your website’s visibility and ranking on search engines.`,
         },
         {
             question: `How do I get started with your services?`,
-            answer: `To get started, simply contact us through our website or schedule a consultation to discuss your
-            project needs and goals.`,
+            answer: `To get started, simply contact us through our website or schedule a consultation to discuss your project needs and goals.`,
         },    
     ];
 
@@ -307,6 +299,17 @@ const Page = () => {
                 the design not only makes for a better user experience, it also increases the average
                 user session time, hence enhancing the funnel conversion rate of the website."</p>
             </div>
+
+            <div className='flex flex-col gap-3'>
+                <div className='relative w-full h-48 md:h-80 xl:h-[500px]  overflow-hidden'>
+                    <Image className="object-cover object-bottom" placeholder="blur" fill src={serwebdev2} alt='Branding agency in Calicut'/>
+                </div>
+                <h2 className='text-3xl xl:text-6xl font-black uppercase'>Make your website alive with Web development company in Calicut</h2>
+                <div className='flex flex-col gap-3'>
+                    <p>We are leading <b>Web Development company in Calicut</b> providing best Digital Solutions with quality, innovation, and reliable result. For a look at our website service offerings, you can visit Web Design, Custom Web Development, WordPress Solutions and Modern Web Applications. We do Custom HTML/CSS Development, WordPress Theme Development, React.js Web Applications, Netlify Deployment & Hosting, Node.js Server Side Solutions.</p>
+                    <p>From numerous industries, we showcase our portfolio featuring our successful projects which were responsive, user friendly and high performing. We are the <b>best web development company in Calicut</b> because of our technical presence and the zeal we bring with our work. We take the pride in being the first pick of leading company as our team of good developers makes sure your web project is completed and handed over to you precisely.</p>
+                </div>
+            </div>
     
 
             <div className='flex flex-col gap-10 xl:gap-20'>
@@ -372,7 +375,7 @@ const Page = () => {
                 <div className='relative w-full  h-48 md:h-80 xl:h-[500px] overflow-hidden'>
                     <Image className="object-cover object-center" placeholder="blur" fill src={serbra2} alt='Best Branding agency in Calicut'/>
                 </div>
-                <h3 className='text-center  text-3xl xl:text-6xl my-10 xl:my-20  font-black uppercase'>How We Turn Your Vision<br className='hidden xl:block'/> Into Reality</h3>
+                <h4 className='text-center  text-3xl xl:text-6xl my-10 xl:my-20  font-black uppercase'>How We Turn Your Vision<br className='hidden xl:block'/> Into Reality</h4>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
                             <FaqComponent1 />
                             {showSecondComponent || (
@@ -400,7 +403,7 @@ const Page = () => {
 
      
             <div>
-                 <h1 className='text-4xl xl:text-6xl font-black pb-5'>FAQs</h1>
+                 <h5 className='text-4xl xl:text-6xl font-black pb-5 uppercase'>FAQ's to a Web development<br className='hidden 2xl:block'/> company in Calicut</h5>
                  <FaqMain/>
             </div>
         </section>

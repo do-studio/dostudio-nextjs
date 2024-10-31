@@ -326,7 +326,7 @@ const Page = () => {
             <Link href={'/our-works/creatives'} className='bg-primarygreen mx-auto text-black w-fit px-20 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>See more</Link>
             <div className='flex flex-col-reverse md:flex-row gap-5 gap-y-3'>
                 <p className='md:basis-1/2 xl:basis-2/5 text-justify tracking-tighter'> At our <a className='font-semibold' href="#" target='_blank'>digital marketing agency in calicut</a>, we specialize in building brands that stand out in today's competitive landscape. Our strategy is focused on a deep understanding of our clients' unique needs, ensuring that every campaign is customized to their specific goals and challenges. By offering the best <a className='font-semibold' href="#" target='_blank'>digital marketing services in calicut</a>, we create effective solutions that not only grab attention but also build lasting connections with target audiences. Our approach combines creativity with data-driven insights to deliver great results that boost your brand's presence and drive steady growth. Partner with us to turn your vision into a powerful, standout brand.</p>
-                <h1 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-6xl font-black xl:text-right uppercase'>Building Brand<br/> That Stands<br/> Out.</h1>
+                <h2 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-6xl font-black xl:text-right uppercase'>Building Brand<br/> That Stands<br/> Out.</h2>
             </div>
             <div>
                 <div className='relative w-full h-48 md:h-80 xl:h-[500px]   overflow-hidden'>
@@ -335,18 +335,18 @@ const Page = () => {
                
             </div>
             <div className='flex flex-col md:flex-row gap-5 gap-y-3'>
-                <h1 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-5xl font-black uppercase' href="#">Transform Your Online Presence with Best<br/> Digital Marketing<br/> Services in Calicut</h1>
+                <h3 className='md:basis-1/2 xl:basis-3/5 text-3xl xl:text-5xl font-black uppercase' href="#">Transform Your Online Presence with Best<br className='hidden xl:block'/> Digital Marketing<br/> Services in Calicut</h3>
                <div className='md:basis-1/2 xl:basis-2/5 flex flex-col gap-3'>
                     <p className=' text-justify tracking-tighter'>Do studio delivers <a className='font-semibold' href="#" target='_blank'>Best Digital Marketing services in Calicut</a>, with a focus on quality, innovation, and tangible results. Our service offerings encompass a wide range of solutions, including Digital Marketing, Branding, Product Photography, Social Media Management, and Brochure Design. Our portfolio reflects our success in executing diverse projects, demonstrating our ability to navigate the digital landscape and deliver outstanding results for our clients. Which makes us the <a className='font-semibold' href="#" target='_blank'>best digital marketing agency in calicut</a>.</p>
                </div>
             </div>
             <div className=''>
-                 <h1 className='text-3xl xl:text-6xl font-black uppercase text-center pb-5 xl:pb-16'>Our Happy Clients</h1>
+                 <h3 className='text-3xl xl:text-6xl font-black uppercase text-center pb-5 xl:pb-16'>Our Happy Clients</h3>
                   <Testimonials/>
             </div>
 
             <div>
-                 <h1 className='text-4xl xl:text-6xl font-black pb-5'>FAQs</h1>
+                 <h4 className='text-4xl xl:text-6xl font-black pb-5'>FAQs</h4>
                  <FaqMain/>
             </div>
             <div className='flex flex-col-reverse md:flex-row gap-y-3 gap-5'>
@@ -355,7 +355,7 @@ const Page = () => {
                 <Link href={'/services/branding-agency-in-calicut'} className='bg-primarygreen text-black w-fit px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center'>Know more</Link>
               </div>
                <div className='md:basis-1/2 xl:basis-3/5 '>
-                  <h1 className='text-4xl xl:text-6xl font-black xl:text-right uppercase'>Best Branding Agency In Calicut.</h1>
+                  <h5 className='text-4xl xl:text-6xl font-black xl:text-right uppercase'>Best Branding Agency In Calicut.</h5>
                </div>
             </div>
         </section>

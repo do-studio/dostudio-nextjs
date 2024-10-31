@@ -15,6 +15,8 @@ import { PiQuotesFill } from "react-icons/pi";
 import {TestimonialData} from '../../constant/data';
 
 import { getData } from './lib/testimonialApi';
+import { usePathname } from 'next/navigation';
+
 
 
 
@@ -22,14 +24,13 @@ const Testimonials = async () => {
   const [_, setInit] = useState();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-
-  // const testimonialdataapi = await getData();
- 
+  const pathname = usePathname();
+  const isServicePage = pathname.startsWith('/service');
 
   return (
     <div className="bg-black text-white">
 
-    <div className="py-10 relative h-full w-12/12 xl:w-10/12 mx-auto overflow-hidden">
+    <div className={`py-10 relative h-full w-12/12  ${isServicePage ? 'xl:w-11/12': 'xl:w-10/12'} mx-auto overflow-hidden`}>
     {/* <h1 className="text-4xl md:text-5xl  font-semibold pb-10 text-left">
          Testimonials
       </h1> */}
@@ -74,7 +75,7 @@ const Testimonials = async () => {
                 <div className="relative py-10">
                   <PiQuotesFill className="text-primarygreen text-4xl absolute top-0 left-0 scale-x-[-1]"/>
                   <PiQuotesFill className="text-primarygreen text-4xl absolute bottom-0 right-0"/>
-                  <p className="text-xl xl:text-6xl font-bold xl:font-black">{data.descrption}</p>
+                  <p className={`text-xl  ${isServicePage ? 'xl:text-4xl xl:font-semibold' : 'xl:text-6xl xl:font-black'} font-bold `}>{data.descrption}</p>
                 </div>
                 <p className="text-base">{data.name}</p>
                 <a href={data.link} target="_blank"><p className="text-xs">{data.design}</p></a>
