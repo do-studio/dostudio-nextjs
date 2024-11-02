@@ -19,6 +19,8 @@ import {
 import { Suspense } from "react";
 import Head from "next/head";
 
+
+
 const DynamicBanner = dynamic(()=> import('../components/home/banner/banner'));
 const DynamicMarqueeText = dynamic(()=> import('../components/home/designs/marqueText'));
 const DynamicAbout = dynamic(()=> import('../components/home/about/index'));

@@ -3,12 +3,15 @@ import { wrk1, wrk2, wrk3, wrk4, wrk5 ,WRK1,servicewebbg} from "../../../../publ
 import Image from "next/image";
 import Link from 'next/link';
 import FadeUp from '../../../components/motions/fadeUp';
-import { Metadata } from 'next';
+
 
 export const metadata = {
     title: 'Services',
     description: 'My description',
-
+    metadataBase: new URL('https://dostudio.co.in'), // Set the base domain
+    alternates: {
+      canonical: '/services', // Relative URL to the canonical page
+    }
   }
   
 const serviceData=[
@@ -63,7 +66,10 @@ const serviceData=[
 ]
 
 const page = () => {
+
   return (
+   <>
+
     <section className='w-11/12 xl:w-10/12 mx-auto min-h-screen pt-32 py-20'>
       
                <h1 className=' h-full w-full text-4xl sm:text-5xl xl:text-7xl text-center font-black capitalize'>our services</h1>
@@ -84,6 +90,7 @@ const page = () => {
                 ))}
                </div>
     </section>
+   </>
   )
 }
 

@@ -5,6 +5,15 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import FadeUp from '../../components/motions/fadeUp';
 
+export const metadata = {
+  title: 'Blogs',
+  description: 'My description',
+  metadataBase: new URL('https://dostudio.co.in'), // Set the base domain
+  alternates: {
+    canonical: '/blogs', // Relative URL to the canonical page
+  }
+}
+
 async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?&populate=*`,
     { cache: "no-store"}

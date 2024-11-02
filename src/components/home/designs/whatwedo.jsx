@@ -50,11 +50,11 @@ const Whatwedo = () => {
   return (
     <section className='py-10 xl:py-20' id="serivesect">
       <div className="w-11/12 xl:w-8/12 mx-auto text-center flex flex-col gap-0 pb-14 items-center">
-        <h1 className="font-black text-4xl xl:text-8xl uppercase">Services</h1>
+        <h1 className="font-black text-4xl xl:text-8xl uppercase"> our Services</h1>
          <p className='text-gray-600 text-justify md:text-center'>We provide businesses with an expert team that guides them through establishing online marketing strategy. Our areas of expertise include <b>Digital marketing services in Calicut</b>, branding, production, website development, package design, and printing design.</p>
       </div>
-      <div className="bg-black text-white  w-11/12  overflow-hidden rounded-3xl xl:rounded-[3rem] p-8 sm:p-10 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-5 xl:gap-10 relative">
-          <div className="z-20 flex flex-col gap-3 xl:gap-10 xl:text-right">
+      <div className="bg-black text-white  w-11/12  overflow-hidden rounded-3xl xl:rounded-[3rem] p-8 sm:p-10 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-5 xl:gap-10 relative ">
+          <div className="z-20 flex flex-col  h-full justify-center gap-3 xl:gap-10 xl:text-right">
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
               <h2 className="text-xl md:text-3xl xl:text-5xl font-black">branding</h2>
               <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-right  font-extralight">Our branding services are designed to create a strong, memorable identity for your business.</p>
@@ -79,7 +79,7 @@ const Whatwedo = () => {
                     <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1724923136/Do%20Studio%20Website/WhatsApp_Video_2024-08-26_at_11.26.40_940f4270_qahxvn.mp4' type="video/mp4" />
                 </video>
           </div>
-          <div className="z-20 flex flex-col gap-3 xl:gap-10 text-left">
+          <div className="z-20 flex flex-col h-full justify-center gap-3 xl:gap-10 text-left">
             <div className="flex flex-col gap-1 xl:gap-3 uppercase">
               <h2 className="text-xl md:text-3xl xl:text-5xl font-black">production</h2>
               <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-left  font-extralight">A team of dedicated people focusing on delivering top-quality service, ensuring every project is executed with precision and efficiency.</p>
