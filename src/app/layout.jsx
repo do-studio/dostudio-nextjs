@@ -33,7 +33,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
+      <meta name="google-site-verification" content="w7iJ2ozCamTV8_qsPHnhDTZOFBIAra5xJn5xheVeX2M" />
       <body className={poppins.className}>
         <ToastContainer position="bottom-right" />
         <div className="2xl:max-w-[3500px] mx-auto">
