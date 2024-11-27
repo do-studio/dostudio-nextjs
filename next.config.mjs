@@ -34,6 +34,10 @@ const nextConfig = {
         destination: 'https://dostudio.co.in/:path*', // Redirect to non-www domain
         permanent: true, // 301 permanent redirect
       },
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap', // This is the API route you created
+      },
     ];
   },
 };
