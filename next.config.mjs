@@ -24,11 +24,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: 'https://www.dostudio.co.in/:path*',
-        destination: 'https://dostudio.co.in/:path*',
-        permanent: true, // This makes the redirect permanent (status code 301)
-      },
-      {
         source: '/(.*)',
         has: [
           {
