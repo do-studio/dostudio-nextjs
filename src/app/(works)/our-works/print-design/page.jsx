@@ -2,6 +2,7 @@
 import { useState,useEffect, useRef } from 'react';
 import Image from 'next/image';
 import FadeUp from '../../../../components/motions/fadeUp';
+import Head from 'next/head';
 
 async function fetchData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/print-designs?&populate=*`, { cache: 'no-store' });
@@ -47,6 +48,10 @@ const PrintDesign = () => {
   };
 
   return (
+    <>
+    <Head>
+        <link rel="canonical" href="https://dostudio.co.in/print-design" />
+      </Head>
     <main className='min-h-screen w-full bg-white'>
       <div className='w-11/12 xl:w-10/12 mx-auto pt-32 py-20 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10'>
         {data && data.length > 0 ? (
@@ -69,9 +74,9 @@ const PrintDesign = () => {
       {/* Lightbox */}
       {lightboxImage && (
         <div 
-          className='fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50'
-          ref={lightboxRef}
-          onClick={handleOverlayClick}
+        className='fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50'
+        ref={lightboxRef}
+        onClick={handleOverlayClick}
         >
           <div className='relative'>
             <button onClick={handleCloseLightbox} className='absolute top-2 right-2 text-white text-2xl font-bold'>&times;</button>
@@ -80,6 +85,7 @@ const PrintDesign = () => {
         </div>
       )}
     </main>
+      </>
   );
 };
 

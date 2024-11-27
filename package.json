@@ -33,6 +33,7 @@
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.5",
     "sharp": "^0.33.5",
+    "sitemap": "^8.0.0",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.2.1",
     "webpack": "^5.90.3"

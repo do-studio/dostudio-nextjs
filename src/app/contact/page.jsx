@@ -1,5 +1,6 @@
 import ContactForm from './form'
 import FadeUp from '../../components/motions/fadeUp';
+import Head from 'next/head';
 
 export const metadata = {
   title: 'Contact',
@@ -14,6 +15,10 @@ export const metadata = {
 const Contact = () => {
  
   return (
+    <>
+    <Head>
+        <link rel="canonical" href="https://dostudio.co.in/contact" />
+      </Head>
     <main className='min-h-screen w-full bg-white'>
         <div className='w-11/12 xl:w-10/12 mx-auto pt-32 py-20'>
              <div className='space-y-5'>
@@ -49,6 +54,7 @@ const Contact = () => {
              </div>
         </div>
     </main>
+    </>
   )
 }
 
