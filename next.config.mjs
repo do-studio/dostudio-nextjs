@@ -37,6 +37,8 @@ const nextConfig = {
       {
         source: '/sitemap.xml',
         destination: '/api/sitemap', // This is the API route you created
+        permanent: true, // 301 permanent redirect
+
       },
     ];
   },
