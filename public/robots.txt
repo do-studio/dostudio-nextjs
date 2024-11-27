@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /api/
 
-Sitemap: https://dostudio.co.in/api/sitemap
+Sitemap: https://dostudio.co.in/sitemap.xml
