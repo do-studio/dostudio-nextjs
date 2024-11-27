@@ -24,6 +24,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: 'https://www.dostudio.co.in/:path*',
+        destination: 'https://dostudio.co.in/:path*',
+        permanent: true, // This makes the redirect permanent (status code 301)
+      },
+      {
         source: '/(.*)',
         has: [
           {
@@ -34,12 +39,7 @@ const nextConfig = {
         destination: 'https://dostudio.co.in/:path*', // Redirect to non-www domain
         permanent: true, // 301 permanent redirect
       },
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap', // This is the API route you created
-        permanent: true, // 301 permanent redirect
 
-      },
     ];
   },
 };
