@@ -24,7 +24,7 @@ const WebDesign = async () => {
   return (
     <>
     <Head>
-        <link rel="canonical" href="https://dostudio.co.in/web-design" />
+        <link rel="canonical" href="https://dostudio.co.in/our-works/web-design" />
       </Head>
     <main className="min-h-screen w-full bg-whit">
       <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 ">
