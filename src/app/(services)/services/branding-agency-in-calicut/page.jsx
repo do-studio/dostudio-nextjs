@@ -293,7 +293,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://dostudio.co.in/branding-agency-in-calicut" />
+        <link rel="canonical" href="https://dostudio.co.in/services/branding-agency-in-calicut" />
         <title>
           Digital Marketing Agency In Calicut, Digital Marketing Services In
           Calicut
