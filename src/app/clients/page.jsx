@@ -18,6 +18,10 @@ const ClientsPage = async () => {
   const clintsdata = await getData();
 
   return (
+    <>
+    <Head>
+        <link rel="canonical" href="https://dostudio.co.in/clients" />
+      </Head>
     <main className="min-h-screen w-full bg-white">
       <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20">
         <h1 className="text-4xl lg:text-6xl font-bold capitalize text-center pb-3">
@@ -33,7 +37,7 @@ const ClientsPage = async () => {
                   className="object-cover grayscale hover:grayscale-0 duration-200"
                   src={data.attributes.image.data.attributes.url}
                   alt="clients"
-                />
+                  />
               </div>
             ))
           ) : (
@@ -44,6 +48,7 @@ const ClientsPage = async () => {
         </div>
       </div>
     </main>
+          </>
   );
 };
 

@@ -50,7 +50,7 @@ const Whatwedo = () => {
   return (
     <section className='py-10 xl:py-20' id="serivesect">
       <div className="w-11/12 xl:w-8/12 mx-auto text-center flex flex-col gap-0 pb-14 items-center">
-        <h1 className="font-black text-4xl xl:text-8xl uppercase"> our Services</h1>
+        <h2 className="font-black text-4xl xl:text-8xl uppercase"> our Services</h2>
          <p className='text-gray-600 text-justify md:text-center'>We provide businesses with an expert team that guides them through establishing online marketing strategy. Our areas of expertise include <b>Digital marketing services in Calicut</b>, branding, production, website development, package design, and printing design.</p>
       </div>
       <div className="bg-black text-white  w-11/12  overflow-hidden rounded-3xl xl:rounded-[3rem] p-8 sm:p-10 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-5 xl:gap-10 relative ">

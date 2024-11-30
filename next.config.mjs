@@ -1,5 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/:path*", // Match all paths
+        has: [
+          {
+            type: "host",
+            value: "www.dostudio.co.in", // Match www domain
+          },
+        ],
+        destination: "https://dostudio.co.in/:path*", // Redirect to non-www domain
+        permanent: true, // Set to true for a 308 permanent redirect
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
@@ -21,21 +36,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  async redirects() {
-    return [
-      {
-        source: '/(.*)',
-        has: [
-          {
-            type: 'host',
-            value: 'www.dostudio.co.in', // Check if the host is 'www.dostudio.co.in'
-          },
-        ],
-        destination: 'https://dostudio.co.in/:path*', // Redirect to non-www domain
-        permanent: true, // 301 permanent redirect
-      },
-    ];
-  },
+ 
 };
 
 export default nextConfig;
