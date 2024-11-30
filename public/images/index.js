@@ -62,6 +62,7 @@ import clnttandt from './medias/clients/tt.webp'
 import clntcapind from './medias/clients/cap.webp'
 import clntasten from './medias/clients/clientastenortho.webp'
 import clntonecity from './medias/clients/clintonecity.webp'
+import clntklum from './medias/clients/clientklum.webp'
 
 import serviceBg from './medias/servicebg.webp'
 
@@ -130,6 +131,7 @@ export{
     clntshifa,
     clntasten,
     clntpk,
+    clntklum,
     clntgoodland,
     clntthreeseason,
     clntcresent,

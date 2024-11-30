@@ -48,7 +48,8 @@ import {
     clnttandt,
     clntcapind,
     clntasten,
-    clntonecity
+    clntonecity,
+    clntklum
 } from '../../../public/images/index';
 
 
@@ -211,6 +212,9 @@ export const ClientsData=[
   },
   {
     clt:clntcresent
+  },
+  {
+    clt:clntklum
   },
   
 ]
