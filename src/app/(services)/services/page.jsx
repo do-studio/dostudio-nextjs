@@ -17,9 +17,7 @@ export const metadata = {
   title: "Services",
   description: "My description",
   metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
-  alternates: {
-    canonical: "/services", // Relative URL to the canonical page
-  },
+ 
 };
 
 const serviceData = [
