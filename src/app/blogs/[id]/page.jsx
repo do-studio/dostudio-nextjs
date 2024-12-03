@@ -26,12 +26,7 @@ const BlogeDetails = async ({ params }) => {
   // console.log(content);
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href={`https://dostudio.co.in/blogs/${params.id}`}
-        />
-      </Head>
+
       <main className="min-h-screen w-full bg-white">
         {/* <h1>{data.data[0].attributes.title}</h1> */}
         <div className="w-11/12 xl:w-10/12 mx-auto pt-24 py-20">

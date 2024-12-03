@@ -47,9 +47,7 @@ const DynamicWorkwithUs = dynamic(() =>
 export default function Home() {
   return (
     <>
-      <Head>
-        <link rel="canonical" href="https://dostudio.co.in/" />
-      </Head>
+    
 
       <main>
         <Suspense fallback={<p>Loading data...</p>}>

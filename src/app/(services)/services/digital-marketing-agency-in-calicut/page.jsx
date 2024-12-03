@@ -297,13 +297,7 @@ const Page = () => {
 
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://dostudio.co.in/services/digital-marketing-agency-in-calicut"
-          key="canonical"
-        />
-      </Head>
+  
       <section className="w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20">
         <div className="relative w-full h-48 md:h-80 xl:h-[500px] overflow-hidden">
           <Image
