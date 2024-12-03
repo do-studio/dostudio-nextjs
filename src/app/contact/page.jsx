@@ -16,9 +16,7 @@ const Contact = () => {
  
   return (
     <>
-    <Head>
-        <link rel="canonical" href="https://dostudio.co.in/contact" />
-      </Head>
+
     <main className='min-h-screen w-full bg-white'>
         <div className='w-11/12 xl:w-10/12 mx-auto pt-32 py-20'>
              <div className='space-y-5'>

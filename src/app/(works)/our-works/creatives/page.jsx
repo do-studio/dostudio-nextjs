@@ -26,9 +26,7 @@ const DigitalMarketing = async () => {
 
   return (
     <>
-      <Head>
-        <link rel="canonical" href="https://dostudio.co.in/our-works/creative" />
-      </Head>
+
       <main className="min-h-screen w-full bg-white">
         <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-0">
           {sortedData && sortedData.length > 0 ? (

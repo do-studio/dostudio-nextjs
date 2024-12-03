@@ -76,9 +76,6 @@ const serviceData = [
 const page = () => {
   return (
     <>
-      <Head>
-        <link rel="canonical" href="https://dostudio.co.in/services" />
-      </Head>
 
       <section className="w-11/12 xl:w-10/12 mx-auto min-h-screen pt-32 py-20">
         <h1 className=" h-full w-full text-4xl sm:text-5xl xl:text-7xl text-center font-black capitalize">

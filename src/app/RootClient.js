@@ -5,6 +5,8 @@ import ClipLoader from "react-spinners/DotLoader";
 
 
 
+
+
 const LoadingMain = () =>{
     return(
         <>
@@ -28,6 +30,10 @@ const LoadingMain = () =>{
         </>
     )
 }
+
+
+
+
 
 export default function RootClient({ children }) {
   const [loading, setLoading] = useState(true);

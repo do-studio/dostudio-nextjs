@@ -10,9 +10,7 @@ export const metadata = {
   title: 'Blogs',
   description: 'My description',
   metadataBase: new URL('https://dostudio.co.in'), // Set the base domain
-  alternates: {
-    canonical: '/blogs', // Relative URL to the canonical page
-  }
+
 }
 
 async function getData() {

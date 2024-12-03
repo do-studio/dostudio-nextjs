@@ -23,12 +23,7 @@ const Innerpage = async ({ params }) => {
   // console.log(result.attributes.mockups.data);
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href={`https://dostudio.co.in/our-works/branding/${params.id}`}
-        />
-      </Head>
+      
       <main className=" xl:min-h-screen w-full bg-white">
         <div className="w-11/12 xl:w-10/12 mx-auto pt-32 py-20">
           {/* <h1 className='text-4xl font-black uppercase text-center pb-5'>{result.attributes.title}</h1> */}
