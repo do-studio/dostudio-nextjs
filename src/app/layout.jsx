@@ -37,6 +37,7 @@ export default function RootLayout({ children }) {
         content="w7iJ2ozCamTV8_qsPHnhDTZOFBIAra5xJn5xheVeX2M"
       />
       <body className={poppins.className}>
+        <GoogleAnalytics gaId="G-XR89GB34HC" />
         <ToastContainer position="bottom-right" />
         <div className="2xl:max-w-[3500px] mx-auto">
           <CanonicalTag /> {/* Include the CanonicalTag */}
