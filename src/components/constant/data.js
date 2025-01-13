@@ -190,13 +190,13 @@ export const ClientsData=[
     clt:clntgava
   },
   {
-    clt:clntstackr
+    clt:clntklum
   },
   {
-    clt:clntf2f
+    clt:clntcresent
   },
   {
-    clt:clntplumstory
+    clt:clntcapind
   },
   {
     clt:clntkmct2
@@ -205,17 +205,17 @@ export const ClientsData=[
     clt:clntztart
   },
   {
-    clt:clntcapind
+    clt:clntplumstory
   },
   
   {
     clt:clnteras1
   },
   {
-    clt:clntcresent
+    clt:clntf2f
   },
   {
-    clt:clntklum
+    clt:clntstackr
   },
   
 ]

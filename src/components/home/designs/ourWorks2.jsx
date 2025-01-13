@@ -7,7 +7,7 @@ const ourWorks2 = () => {
     <div className='w-11/12 xl:w-10/12 mx-auto grid grid-cols-3 gap-1 xl:gap-5 '>
         <div className='grid grid-cols-1 gap-1 xl:gap-5'>
             <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-            <Image className="object-cover" fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1723643685/Untitled_3_ea53cc9f92.gif'} alt='Best advertising agency in Calicut'/> 
+            <Image className="object-cover" fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1736770151/Do%20Studio%20Website/AO_LOGO_ANIMATION_WHITE_k3l4y4.gif'} alt='Best advertising agency in Calicut'/> 
             </div>
             <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
                 <Image className="object-cover"  fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1724307336/eras_bbq_cashew_fb1253009f.webp'} alt='Digital marketing agency in Calicut'/>
@@ -27,7 +27,7 @@ const ourWorks2 = () => {
         </div>
         <div className='grid grid-cols-1 gap-1 xl:gap-5'>
             <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                <Image className="object-cover" fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1724414313/Do%20Studio%20Website/bella-pack_me5b7n.webp'} alt='Branding company in calicut'/>
+                <Image className="object-cover" fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1736769769/Do%20Studio%20Website/PEEKAY_HOARDING_NOV_MOCKUP_0_cjynmt.webp'} alt='Branding company in calicut'/>
             </div>
             <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
             <Image className="object-cover"  fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1723893754/gifmaker_me_3_e8ab6b9966.gif'} alt='Website developement company in Calicut'/>

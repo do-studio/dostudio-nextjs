@@ -41,7 +41,7 @@ const Branding = async () => {
                     {/* <div className='z-20 absolute top-0 left-0 w-full h-full bg-[#00000087] opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer'>
                     <h3 className='text-white grid place-items-center h-full w-full text-3xl font-medium capitalize'>{data.attributes.title}</h3>
                     </div> */}
-                    <div className="relative h-80 md:h-96 lg:h-[450px] xl:h-[550px] w-full">
+                    <div className="relative aspect-square w-full">
                       <Image
                         loading="lazy"
                         src={data.attributes.coverimage.data.attributes.url}
