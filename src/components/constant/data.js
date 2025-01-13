@@ -181,27 +181,28 @@ export const ClientsData=[
     clt:clntkmct1
   },
   {
-    clt:clntimamom
+    clt:clntonecity
   },
   {
     clt:clnttandt
   },
   {
-    clt:clntonecity
+    clt:clntgava
   },
   {
-    clt:clntgava
+    clt:clntstackr
+  },
+  {
+    clt:clntf2f
+  },
+  {
+    clt:clntplumstory
   },
   {
     clt:clntkmct2
   },
   {
     clt:clntztart
-  },
-  
-  
-  {
-    clt:clntarooha
   },
   {
     clt:clntcapind
