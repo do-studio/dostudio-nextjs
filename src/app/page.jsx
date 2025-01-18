@@ -18,6 +18,7 @@ import {
 } from "../components";
 import { Suspense } from "react";
 import Head from "next/head";
+import DynamicPopupform from '../components/home/designs/popUpform'
 
 const DynamicBanner = dynamic(() => import("../components/home/banner/banner"));
 const DynamicMarqueeText = dynamic(() =>
@@ -50,6 +51,8 @@ export default function Home() {
     
 
       <main>
+
+        <DynamicPopupform/>
         <Suspense fallback={<p>Loading data...</p>}>
           <DynamicBanner />
         </Suspense>

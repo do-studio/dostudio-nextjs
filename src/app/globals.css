@@ -58,6 +58,17 @@ cursor: pointer;
   -webkit-backdrop-filter: blur(3px);
 }
 
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.phonecode input{
+  background: transparent !important;
+}
+
 /* login */
 .dologin{
   background-image: linear-gradient(

@@ -1,5 +1,6 @@
 import Logowhite from './logo/dologowht.svg';
 import Logoblack from './logo/dologoblb.svg';
+import LogoDO from './logo/do-icon-bl.svg';
 
 import wrk1 from './medias/wrk1.webp'
 import wrk2 from './medias/work2.webp'
@@ -91,6 +92,7 @@ import serwebdev2 from './medias/services/web/webdev22.webp'
 
 
 export{
+    LogoDO,
     imgarrw,
     dologo,
     doicn,
