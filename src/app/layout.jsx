@@ -25,7 +25,22 @@ export const metadata = {
     apple: ["/src/app/apple-touch-icon.png?v=4"],
     shortcut: ["/src/app/apple-touch-icon.png"],
   },
-
+  openGraph: {
+    type: "website",
+    url: "https://dostudio.co.in", // The URL of your website or specific page
+    title: "Best Digital Marketing Agency In Calicut, Branding Agency In Calicut",
+    description: `Do Studio is a leading Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.`,
+    images: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1737184995/Do%20Studio%20Website/do-icon-bl_blvx7o.svg", // Replace with the URL of your OG image
+        secureUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1737184995/Do%20Studio%20Website/do-icon-bl_blvx7o.svg", // Secure URL (HTTPS)
+        type: "image/jpeg",
+        width: 300, // Image width
+        height: 300, // Image height
+        alt: "Do Studio - Digital Marketing and Branding Agency", // Alternative text for the image
+      },
+    ],
+  },
   // manifest: "/src/app/site.webmanifest",
 };
 
