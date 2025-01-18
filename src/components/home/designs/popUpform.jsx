@@ -130,7 +130,7 @@ const PopupForm = () => {
                             className="phonecode w-24 outline-none !bg-transparent"
                             international
                             name='msg_phn_code'
-                            // defaultCountry="IN"
+                            defaultCountry="IN"
                             value={value}
                             onChange={setValue}
                         />
