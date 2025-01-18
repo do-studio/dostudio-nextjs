@@ -32,11 +32,11 @@ export const metadata = {
     description: `Do Studio is a leading Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.`,
     images: [
       {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1737184995/Do%20Studio%20Website/do-icon-bl_blvx7o.svg", // Replace with the URL of your OG image
-        secureUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1737184995/Do%20Studio%20Website/do-icon-bl_blvx7o.svg", // Secure URL (HTTPS)
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png", // Replace with the URL of your OG image
+        secureUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png", // Secure URL (HTTPS)
         type: "image/jpeg",
-        width: 300, // Image width
-        height: 300, // Image height
+        width: 1200, // Recommended image dimensions
+        height: 630,
         alt: "Do Studio - Digital Marketing and Branding Agency", // Alternative text for the image
       },
     ],
