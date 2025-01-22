@@ -2,19 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FadeUp from "../../../../components/motions/fadeUp";
-import Head from "next/head";
+import axios from "axios";
 
 async function getData() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/package-designs?&populate=*`,
-    { cache: "no-store" }
-  );
+  try {
+    const res = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/package-designs?&populate=*`,
+      { headers: { "Cache-Control": "no-store" } } // Cache control for no-store
+    );
 
-  if (!res.ok) {
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
     return notFound();
   }
-
-  return res.json();
 }
 
 const PackageDesign = async () => {
@@ -27,7 +28,7 @@ const PackageDesign = async () => {
         <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-2 gap-0 xl:gap-10">
           {workdata.data && workdata.data.length > 0 ? (
             workdata.data?.map((data, i) => (
-              <FadeUp duration={0.3} delay={0.5 * i} key={i}>
+              <FadeUp duration={0.3} delay={0.1 * i} key={i}>
                 <div className="relative group">
                   <div className="relative aspect-square w-full">
                     <Image

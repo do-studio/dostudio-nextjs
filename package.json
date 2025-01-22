@@ -16,6 +16,7 @@
     "@studio-freight/react-lenis": "^0.0.45",
     "@tailwindcss/typography": "^0.5.12",
     "aos": "^2.3.4",
+    "axios": "^1.7.9",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.5",
     "gsap": "^3.12.5",
@@ -36,7 +37,8 @@
     "sitemap": "^8.0.0",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.2.1",
-    "webpack": "^5.90.3"
+    "webpack": "^5.90.3",
+    "yet-another-react-lightbox": "^3.21.7"
   },
   "devDependencies": {
     "@types/node": "20.11.20",

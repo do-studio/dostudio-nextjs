@@ -2,20 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FadeUp from "../../../../components/motions/fadeUp";
+import axios from "axios";
 import Head from "next/head";
 
 async function getData() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/webdesigns?&populate=*`,
-    { cache: "no-store" }
-  );
+  try {
+    const res = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/webdesigns?&populate=*`
+    );
 
-  if (!res.ok) {
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
     return notFound();
   }
-
-  return res.json();
 }
+
 
 let testImage =
   "https://res.cloudinary.com/djswkzoth/image/upload/v1706872860/Do%20Studio%20Website/webBanner/long/farookcollege-ac-in_gecais.webp";
@@ -39,10 +41,10 @@ const WebDesign = async () => {
           <div className="grid grid-cols-1 gap-y-14 ">
             {workdata.data && workdata.data.length > 0 ? (
               workdata.data?.map((data, i) => (
-                <FadeUp duration={0.5} delay={0.5}>
+                <FadeUp duration={0.5} delay={0.1 * i}   key={i}>
                   <div
                     className="website-details group rounded-[1rem] overflow-hidden shadow-xl"
-                    key={i}
+                  
                   >
                     <div className="web-container ">
                       <img

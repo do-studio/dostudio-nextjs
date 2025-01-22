@@ -58,7 +58,7 @@ const PrintDesign = () => {
         <div className="w-11/12 xl:w-10/12 mx-auto pt-32 py-20 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
           {data && data.length > 0 ? (
             data.map((item, i) => (
-              <FadeUp duration={0.3} delay={0.5 * i} key={i}>
+              <FadeUp duration={0.3} delay={0.1 * i} key={i}>
                 <div className="relative group bg-[#dcdcde]">
                   <div
                     className="relative aspect-video w-full cursor-pointer"

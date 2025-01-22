@@ -17,9 +17,10 @@ const ourWorks2 = () => {
             <div className='h-full relative bg-[#b3ed00] grid place-items-center rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
             <video className="w-full h-full  object-contain" 
                     autoPlay
+                    playsInline
                     loop
                     muted
-                    playsInline>
+                    >
                     <source src={`https://res.cloudinary.com/djswkzoth/video/upload/v1724413866/Do%20Studio%20Website/homebg_b5bawb.mp4`} type="video/mp4" />
                     Your browser does not support the video tag.
             </video>

@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 async function getData() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/creatives?&populate=*`,
-    { cache: "no-store" }
+    { next: { revalidate: 60 } } // Revalidate every 60 seconds
   );
 
   if (!res.ok) {
