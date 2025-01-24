@@ -18,7 +18,7 @@ import {
 } from "../components";
 import { Suspense } from "react";
 import Head from "next/head";
-import DynamicPopupform from '../components/home/designs/popUpform'
+import DynamicPopupform from "../components/home/designs/popUpform";
 
 const DynamicBanner = dynamic(() => import("../components/home/banner/banner"));
 const DynamicMarqueeText = dynamic(() =>
@@ -41,18 +41,21 @@ const DynamicWorkwithUs = dynamic(() =>
   import("../components/home/designs/workWithUs")
 );
 
-
-
-
-
 export default function Home() {
   return (
     <>
-    
-
+      <Head>
+        <title>
+          Digital Marketing Agency in Calicut, Branding Agency Calicut
+        </title>
+        <meta
+          name="description"
+          content="Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM."
+        />
+        <link rel="canonical" href="https://dostudio.co.in" />
+      </Head>
       <main>
-
-        <DynamicPopupform/>
+        <DynamicPopupform />
         <Suspense fallback={<p>Loading data...</p>}>
           <DynamicBanner />
         </Suspense>

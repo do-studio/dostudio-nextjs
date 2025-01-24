@@ -25,7 +25,7 @@ const socialMedia = [
   },
   {
     logo: <FaInstagram/>,
-    href: `https://instagram.com/do_studi0?igshid=YmMyMTA2M2Y=`,
+    href: `https://www.instagram.com/dostudio.agency/`,
   },
   {
     logo: <FaLinkedin/>,

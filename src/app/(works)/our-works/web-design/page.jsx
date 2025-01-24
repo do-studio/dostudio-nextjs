@@ -5,6 +5,14 @@ import FadeUp from "../../../../components/motions/fadeUp";
 import axios from "axios";
 import Head from "next/head";
 
+export const metadata = {
+  title: 'Custom Web Design & Development services in Calicut',
+  description: 'We are leading web design company in Calicut offering custom website design, development services. We create unique and engaging websites.',
+  metadataBase: new URL('https://dostudio.co.in'), // Set the base domain
+
+}
+
+
 async function getData() {
   try {
     const res = await axios.get(

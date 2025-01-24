@@ -438,9 +438,9 @@ const Page = () => {
             Best Digital Marketing Agency in Calicut, Kerala
           </h4>
           <div className="md:basis-1/2 xl:basis-2/5 flex flex-col gap-3">
-            <h1 className="text-2xl font-semibold">
+            <p className="text-2xl font-semibold">
               Driving Business Growth with Innovative Digital Marketing
-            </h1>
+            </p>
             <p className=" text-justify tracking-tighter">
               We drive business growth with innovative digital marketing
               solutions designed to elevate your brand. As a leading{" "}

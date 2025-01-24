@@ -1,9 +1,8 @@
-import React from "react";
 import { notFound } from "next/navigation";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import Image from "next/image";
-import Head from "next/head";
 
+// Fetch blog data
 async function getData(slug) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?filters[slug][$eq]=${slug}&populate=*`,
@@ -17,35 +16,71 @@ async function getData(slug) {
   return res.json();
 }
 
-const BlogeDetails = async ({ params }) => {
-  // alert("blog slug");
-
+// Dynamic metadata generation
+export async function generateMetadata({ params }) {
   const data = await getData(params.id);
-  // console.log(data);
-  const content = data?.data[0]?.attributes?.content;
-  // console.log(content);
-  return (
-    <>
 
-      <main className="min-h-screen w-full bg-white">
-        {/* <h1>{data.data[0].attributes.title}</h1> */}
-        <div className="w-11/12 xl:w-10/12 mx-auto pt-24 py-20">
-          <div className="relative h-[500px] w-full mb-10">
-            <Image
-              src={data.data[0].attributes.image.data.attributes.url}
-              fill={true}
-              className="object-cover"
-              alt={data.data[0].attributes.title}
-              loading="lazy"
-            />
-          </div>
-          <div className="prose prose-headings:text-black prose-li:text-black prose-blockquote:text-black prose-strong:text-black prose-a:text-blue-500 prose-h1:leading-tight prose-h4:text-3xl prose-a:no-underline prose-h4:font-normal prose-h5:text-xl prose-h4:m-0 prose-h4:mb-2 prose-h5:m-0 prose-p:m-0 prose-h5:font-medium prose-h1:text-3xl prose-h1:m-0 prose-h1:mb-7 prose-p:text-base prose-h1:font-semibold prose-p:text-black">
-            <BlocksRenderer content={content} />
-          </div>
+  if (!data?.data.length) {
+    return {
+      title: "Blog Not Found - Do Studio",
+      description: "The requested blog could not be found.",
+    };
+  }
+
+  const blog = data.data[0].attributes;
+  console.log(blog);
+
+  return {
+    title: blog.metatitle || "Default Blog Title",
+    description: blog.metadesc || "Default blog description.",
+    keywords:
+      blog.metakeywords || "digital marketing, SEO, branding, marketing blogs",
+    metadataBase: new URL("https://dostudio.co.in"), // Base domain
+    alternates: {
+      canonical: `https://dostudio.co.in/blog/${params.id}`,
+    },
+   
+    openGraph: {
+      title: blog.metatitle || "Default Blog Title",
+      description: blog.metadesc || "Default blog description.",
+      url: `https://dostudio.co.in/blog/${params.id}`,
+      images: [
+        {
+          url: blog.image?.data?.attributes?.url || "/default-og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: blog || "Do Studio Blog",
+        },
+      ],
+      type: "article",
+    },
+  };
+}
+
+// Blog details component
+const BlogDetails = async ({ params }) => {
+  const data = await getData(params.id);
+  const blog = data?.data[0]?.attributes;
+  const content = blog?.content;
+
+  return (
+    <main className="min-h-screen w-full bg-white">
+      <div className="w-11/12 xl:w-10/12 mx-auto pt-24 py-20">
+        <div className="relative h-[500px] w-full mb-10">
+          <Image
+            src={blog.image.data.attributes.url}
+            fill={true}
+            className="object-cover"
+            alt={blog.title}
+            loading="lazy"
+          />
         </div>
-      </main>
-    </>
+        <div className="prose prose-headings:text-black prose-li:text-black prose-blockquote:text-black prose-strong:text-black prose-a:text-blue-500 prose-h1:leading-tight prose-h4:text-3xl prose-a:no-underline prose-h4:font-normal prose-h5:text-xl prose-h4:m-0 prose-h4:mb-2 prose-h5:m-0 prose-p:m-0 prose-h5:font-medium prose-h1:text-3xl prose-h1:m-0 prose-h1:mb-7 prose-p:text-base prose-h1:font-semibold prose-p:text-black">
+          <BlocksRenderer content={content} />
+        </div>
+      </div>
+    </main>
   );
 };
 
-export default BlogeDetails;
+export default BlogDetails;

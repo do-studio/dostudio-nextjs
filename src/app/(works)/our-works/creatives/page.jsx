@@ -3,6 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+export const metadata = {
+  title: 'Creative Agency in Calicut: Branding, Web Design, Creatives',
+  description: 'Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more: View our portfolio.',
+  metadataBase: new URL('https://dostudio.co.in'), // Set the base domain
+
+}
+
+
 async function getData() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/creatives?&populate=*`,
