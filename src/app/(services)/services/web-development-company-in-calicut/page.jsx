@@ -238,13 +238,7 @@ const FaqMain = () => {
     );
 };
 
-export const metadata = {
-    title: 'Best Website Development Company in Calicut | Do Studio',
-    description: 'We are your go-to web development company in Calicut. We offer custom web design, WordPress development, e-commerce solutions more.',
-    metadataBase: new URL('https://dostudio.co.in'), // Set the base domain
-  
-  }
-  
+
 
 
 
