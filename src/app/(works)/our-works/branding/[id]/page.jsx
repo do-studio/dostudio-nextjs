@@ -59,6 +59,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
+
 const Innerpage = async ({ params }) => {
   const data = await getData(params.id);
   let result = data.data[0];
