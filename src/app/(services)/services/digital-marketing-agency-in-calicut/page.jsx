@@ -263,12 +263,7 @@ const FaqMain = () => {
   );
 };
 
-export const metadata = {
-  title: "Leading Digital Marketing Services in Calicut: Do Studio",
-  description:
-    "Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more.",
-  metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
-};
+
 
 async function fetchData() {
   const res = await fetch(
