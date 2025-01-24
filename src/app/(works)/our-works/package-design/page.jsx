@@ -4,6 +4,14 @@ import { notFound } from "next/navigation";
 import FadeUp from "../../../../components/motions/fadeUp";
 import axios from "axios";
 
+export const metadata = {
+  title: 'Package Designing Company in Calicut, Package Design Service',
+  description: 'Our Package designing company in Calicut offers creative and effective packaging solutions to enhance your brand and drive sales.',
+  metadataBase: new URL('https://dostudio.co.in'), // Set the base domain
+
+}
+
+
 async function getData() {
   try {
     const res = await axios.get(
