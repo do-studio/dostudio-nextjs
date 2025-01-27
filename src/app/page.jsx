@@ -109,7 +109,7 @@ export default function Home() {
       />
     </Helmet>
       <main>
-        {/* <DynamicPopupform /> */}
+        <DynamicPopupform />
         <Suspense fallback={<p>Loading data...</p>}>
           <DynamicBanner />
         </Suspense>
