@@ -4,6 +4,9 @@ import Image from "next/image";
 import FadeUp from "../../../../components/motions/fadeUp";
 import Head from "next/head";
 
+
+
+
 async function fetchData() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/print-designs?&populate=*`,

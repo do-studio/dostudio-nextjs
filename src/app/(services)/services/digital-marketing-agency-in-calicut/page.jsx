@@ -263,6 +263,8 @@ const FaqMain = () => {
   );
 };
 
+
+
 async function fetchData() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/creatives?&populate=*`,
@@ -297,7 +299,6 @@ const Page = () => {
 
   return (
     <>
-  
       <section className="w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20">
         <div className="relative w-full h-48 md:h-80 xl:h-[500px] overflow-hidden">
           <Image
@@ -313,9 +314,9 @@ const Page = () => {
             Professional Marketers Creating Tomorrow’s Trends
           </h1>
           <div className="md:basis-1/2 xl:basis-2/5 flex flex-col gap-3">
-            <h1 className="text-2xl font-semibold">
+            <p className="text-2xl font-semibold">
               Do Studio Digital Marketing Agency In Calicut
-            </h1>
+            </p>
             <p className="text-justify tracking-tighter">
               As a Best{" "}
               <a className="font-semibold" href="#" target="_blank">

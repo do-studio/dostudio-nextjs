@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import RootClient from "./RootClient";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import {CanonicalTag} from './CanonicalTag'
+import { CanonicalTag } from "./CanonicalTag";
 import Script from "next/script";
 
 const poppins = Poppins({
@@ -17,24 +17,27 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Best Digital Marketing Agency In Calicut, Branding Agency In Calicut",
-  description: `Do Studio is a leading Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.`,
+  title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
+  description: `Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.`,
   metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
-  
+  keywords:
+    "Branding agency in calicut, Advertising agency in Calicut, Digital Marketing Agency in Calicut, Digital marketing services in Calicut, marketing agency in calicut, best marketing agency in calicut, Agency in Calicut, Best Advertising agency in Calicut, best branding agency in calicut, creative agency in calicut, branding services in calicut, best branding company in calicut, digital marketing agency in kozhikode, best digital marketing agency in calicut, digital agency in calicut, digital marketing companies in calicut, best social media marketing agency in calicut, performance marketing company in calicut",
   icons: {
     icon: ["/src/app/favicon.ico"],
     apple: ["/src/app/apple-touch-icon.png?v=4"],
     shortcut: ["/src/app/apple-touch-icon.png"],
   },
+  robots: "index, follow",
   openGraph: {
     type: "website",
     url: "https://dostudio.co.in", // The URL of your website or specific page
-    title: "Best Digital Marketing Agency In Calicut, Branding Agency In Calicut",
-    description: `Do Studio is a leading Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.`,
+    title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
+    description: `Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.`,
     images: [
       {
         url: "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png", // Replace with the URL of your OG image
-        secureUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png", // Secure URL (HTTPS)
+        secureUrl:
+          "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png", // Secure URL (HTTPS)
         type: "image/jpeg",
         width: 1200, // Recommended image dimensions
         height: 630,
@@ -52,10 +55,7 @@ export default function RootLayout({ children }) {
         name="google-site-verification"
         content="w7iJ2ozCamTV8_qsPHnhDTZOFBIAra5xJn5xheVeX2M"
       />
-      <Script
-        id="clarity-script"
-        strategy="afterInteractive"
-      >
+      <Script id="clarity-script" strategy="afterInteractive">
         {`
           (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -65,7 +65,6 @@ export default function RootLayout({ children }) {
         `}
       </Script>
       <body className={poppins.className}>
- 
         <GoogleAnalytics gaId="G-XR89GB34HC" />
         <GoogleTagManager gtmId="AW-11563204186" />
         <ToastContainer position="bottom-right" />

@@ -17,6 +17,49 @@ async function getData(slug) {
   return res.json();
 }
 
+
+// Dynamic metadata generation
+export async function generateMetadata({ params }) {
+  const data = await getData(params.id);
+
+  if (!data?.data.length) {
+    return {
+      title: "Branding Not Found - Do Studio",
+      description: "The requested brand could not be found.",
+    };
+  }
+
+  const brand = data.data[0].attributes;
+  console.log(brand);
+
+  return {
+    title: brand.metatitle || "Default Branding Title",
+    description: brand.metadesc || "Default brand description.",
+    keywords:
+      brand.metakeywords || "digital marketing, SEO, branding, marketing blogs",
+    metadataBase: new URL("https://dostudio.co.in"), // Base domain
+    alternates: {
+      canonical: `https://dostudio.co.in/brand/${params.id}`,
+    },
+   
+    openGraph: {
+      title: brand.metatitle || "Default Branding Title",
+      description: brand.metadesc || "Default brand description.",
+      url: `https://dostudio.co.in/brand/${params.id}`,
+      images: [
+        {
+          url: brand.image?.data?.attributes?.url || "/default-og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: brand || "Do Studio Branding",
+        },
+      ],
+      type: "article",
+    },
+  };
+}
+
+
 const Innerpage = async ({ params }) => {
   const data = await getData(params.id);
   let result = data.data[0];
