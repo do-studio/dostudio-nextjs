@@ -84,7 +84,7 @@ const PopupForm = () => {
       const timer = setTimeout(() => {
         setIsOpen(true);
         sessionStorage.setItem('popupShown', 'true'); // Mark the popup as shown
-      }, 10000);
+      }, 20000);
 
       return () => clearTimeout(timer);
     }
