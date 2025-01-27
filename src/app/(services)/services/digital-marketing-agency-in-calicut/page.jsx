@@ -263,8 +263,6 @@ const FaqMain = () => {
   );
 };
 
-
-
 async function fetchData() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/creatives?&populate=*`,
