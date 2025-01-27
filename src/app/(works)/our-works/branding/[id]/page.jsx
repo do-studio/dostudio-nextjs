@@ -17,7 +17,6 @@ async function getData(slug) {
   return res.json();
 }
 
-
 // Dynamic metadata generation
 export async function generateMetadata({ params }) {
   const data = await getData(params.id);
@@ -38,10 +37,7 @@ export async function generateMetadata({ params }) {
     keywords:
       brand.metakeywords || "digital marketing, SEO, branding, marketing blogs",
     metadataBase: new URL("https://dostudio.co.in"), // Base domain
-    alternates: {
-      canonical: `https://dostudio.co.in/brand/${params.id}`,
-    },
-   
+
     openGraph: {
       title: brand.metatitle || "Default Branding Title",
       description: brand.metadesc || "Default brand description.",
@@ -59,14 +55,12 @@ export async function generateMetadata({ params }) {
   };
 }
 
-
 const Innerpage = async ({ params }) => {
   const data = await getData(params.id);
   let result = data.data[0];
   // console.log(result.attributes.mockups.data);
   return (
     <>
-      
       <main className=" xl:min-h-screen w-full bg-white">
         <div className="w-11/12 xl:w-10/12 mx-auto pt-32 py-20">
           {/* <h1 className='text-4xl font-black uppercase text-center pb-5'>{result.attributes.title}</h1> */}

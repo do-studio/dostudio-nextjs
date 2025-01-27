@@ -3,14 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import FadeUp from "../../../../components/motions/fadeUp";
 import axios from "axios";
+import Head from "next/head";
 
 export const metadata = {
-  title: 'Branding Company in Calicut | Brand Identity Design Services',
-  description: 'Discover how Do Studio can transform your brand. Our team delivers best branding solutions, including logo design, brand strategy.',
-  metadataBase: new URL('https://dostudio.co.in'), // Set the base domain
-
-}
-
+  title: "Branding Company in Calicut | Brand Identity Design Services",
+  description:
+    "Discover how Do Studio can transform your brand. Our team delivers best branding solutions, including logo design, brand strategy.",
+  metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
+};
 
 async function getData() {
   try {
@@ -35,7 +35,8 @@ const Branding = async () => {
 
   return (
     <>
- 
+     
+
       <main className="min-h-screen w-full bg-white">
         <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-1 md:grid-cols-2 gap-10">
           {sortedData && sortedData.length > 0 ? (

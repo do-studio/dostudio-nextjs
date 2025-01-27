@@ -3,9 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import FadeUp from "../../../../components/motions/fadeUp";
 import Head from "next/head";
-
-
-
+import { Helmet } from "react-helmet";
 
 async function fetchData() {
   const res = await fetch(
@@ -57,6 +55,35 @@ const PrintDesign = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          Print Designing Company in Calicut | Boost Brand Visibility
+        </title>
+        <meta
+          name="description"
+          content="Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image."
+        />
+
+        <meta
+          property="og:title"
+          content="Print Designing Company in Calicut | Boost Brand Visibility"
+        />
+        <meta
+          property="og:description"
+          content="Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image."
+        />
+        <meta property="og:url" content="https://dostudio.co.in" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Print Designing Company in Calicut | Boost Brand Visibility"
+        />
+        <meta
+          name="twitter:description"
+          content="Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image."
+        />
+      </Helmet>
       <main className="min-h-screen w-full bg-white">
         <div className="w-11/12 xl:w-10/12 mx-auto pt-32 py-20 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
           {data && data.length > 0 ? (

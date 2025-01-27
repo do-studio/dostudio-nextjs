@@ -23,6 +23,7 @@ import { GoPlus } from "react-icons/go";
 import { HiMiniMinusSmall } from "react-icons/hi2";
 import { Testimonials } from "../../../../components/index";
 import Head from "next/head";
+import { Helmet } from "react-helmet";
 
 const FaqComponent1 = () => {
   const [activeIndex1, setActiveIndex1] = useState(null);
@@ -221,7 +222,7 @@ const FaqMain = () => {
             } transition-all duration-200 rounded-sm flex justify-between gap-10 items-center`}
             onClick={() => toggleFaq3(index)}
           >
-            <h3 className={`text-base font-medium `}>{faq.question}</h3>
+            <p className={`text-base font-medium `}>{faq.question}</p>
             {activeFaq === index ? (
               <HiMiniMinusSmall className={`text-xl`} />
             ) : (
@@ -297,6 +298,36 @@ const Page = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Leading Digital Marketing Services in Calicut: Do Studio</title>
+        <meta
+          name="description"
+          content="Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more."
+        />
+        <meta
+          name="keywords"
+          content="Digital Marketing Agency in Calicut, Digital marketing services in Calicut, marketing agency in calicut, best marketing agency in calicut, digital marketing agency in kozhikode, best digital marketing agency in calicut, digital marketing companies in calicut, best social media marketing agency in calicut, socialmedia agency in kozhikode"
+        />
+        <meta
+          property="og:title"
+          content="Leading Digital Marketing Services in Calicut: Do Studio"
+        />
+        <meta
+          property="og:description"
+          content="Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more."
+        />
+        <meta property="og:url" content="https://dostudio.co.in" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Leading Digital Marketing Services in Calicut: Do Studio"
+        />
+        <meta
+          name="twitter:description"
+          content="Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more."
+        />
+      </Helmet>
       <section className="w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20">
         <div className="relative w-full h-48 md:h-80 xl:h-[500px] overflow-hidden">
           <Image
@@ -309,12 +340,9 @@ const Page = () => {
         </div>
         <div className="flex flex-col md:flex-row gap-5 gap-y-3">
           <h1 className="md:basis-1/2 xl:basis-3/5 text-3xl xl:text-6xl font-black uppercase">
-            Professional Marketers Creating Tomorrow’s Trends
+            Do Studio Digital Marketing Agency In Calicut
           </h1>
           <div className="md:basis-1/2 xl:basis-2/5 flex flex-col gap-3">
-            <p className="text-2xl font-semibold">
-              Do Studio Digital Marketing Agency In Calicut
-            </p>
             <p className="text-justify tracking-tighter">
               As a Best{" "}
               <a className="font-semibold" href="#" target="_blank">
@@ -432,14 +460,14 @@ const Page = () => {
           </div>
         </div>
         <div className="">
-          <h3 className="text-3xl xl:text-6xl font-black uppercase text-center pb-5 xl:pb-16">
+          <h4 className="text-3xl xl:text-6xl font-black uppercase text-center pb-5 xl:pb-16">
             Our Happy Clients
-          </h3>
+          </h4>
           <Testimonials />
         </div>
 
         <div>
-          <h4 className="text-4xl xl:text-6xl font-black pb-5">FAQs</h4>
+          <h5 className="text-4xl xl:text-6xl font-black pb-5">FAQs</h5>
           <FaqMain />
         </div>
         <div className="flex flex-col-reverse md:flex-row gap-y-3 gap-5">
@@ -463,9 +491,9 @@ const Page = () => {
             </Link>
           </div>
           <div className="md:basis-1/2 xl:basis-3/5 ">
-            <h5 className="text-4xl xl:text-6xl font-black xl:text-right uppercase">
+            <h6 className="text-4xl xl:text-6xl font-black xl:text-right uppercase">
               Best Branding Agency In Calicut.
-            </h5>
+            </h6>
           </div>
         </div>
       </section>

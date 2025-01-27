@@ -20,6 +20,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
 import { HiMiniMinusSmall } from "react-icons/hi2";
 import Head from "next/head";
+import { Helmet } from "react-helmet";
 
 const FaqComponent1 = () => {
   const [activeIndex1, setActiveIndex1] = useState(null);
@@ -61,7 +62,7 @@ const FaqComponent1 = () => {
             } transition-all duration-200 rounded-xl flex justify-between items-center`}
             onClick={() => toggleFaq1(index)}
           >
-            <h3 className="text-base font-medium">{faq.question}</h3>
+            <p className="text-base font-medium">{faq.question}</p>
             {activeIndex1 === index ? (
               <>
                 <MdKeyboardArrowUp className="text-2xl" />
@@ -128,7 +129,7 @@ const FaqComponent2 = () => {
               } transition-all duration-200  rounded-xl  flex justify-between items-center`}
               onClick={() => toggleFaq2(index)}
             >
-              <h3 className="text-base font-medium">{faq.question}</h3>
+              <p className="text-base font-medium">{faq.question}</p>
               {activeIndex2 === index ? (
                 <>
                   <MdKeyboardArrowUp className="text-2xl" />
@@ -216,7 +217,7 @@ const FaqMain = () => {
             } transition-all duration-200 rounded-sm flex justify-between gap-10 items-center`}
             onClick={() => toggleFaq3(index)}
           >
-            <h3 className="text-base font-medium">{faq.question}</h3>
+            <p className="text-base font-medium">{faq.question}</p>
             {activeFaq === index ? (
               <HiMiniMinusSmall className="text-xl" />
             ) : (
@@ -292,16 +293,36 @@ const Page = () => {
 
   return (
     <>
-      <Head>
-        <title>
-          Digital Marketing Agency In Calicut, Digital Marketing Services In
-          Calicut
-        </title>
+      <Helmet>
+        <title>Branding Agency in Calicut, Branding Services in Calicut</title>
         <meta
           name="description"
-          content="Do Studio is a top digital marketing agency in Calicut, Kerala, offering a full suite of digital marketing services in calicut including SEO, SMM, and SEM."
+          content="Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation."
         />
-      </Head>
+        <meta
+          name="keywords"
+          content="Branding agency in calicut, Advertising agency in Calicut, Agency in Calicut, Best Advertising agency in Calicut, best branding agency in calicut, creative agency in calicut, branding services in calicut, best branding company in calicut, digital agency in calicut, best social media marketing agency in calicut"
+        />
+        <meta
+          property="og:title"
+          content="Branding Agency in Calicut, Branding Services in Calicut"
+        />
+        <meta
+          property="og:description"
+          content="Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation."
+        />
+        <meta property="og:url" content="https://dostudio.co.in" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Branding Agency in Calicut, Branding Services in Calicut"
+        />
+        <meta
+          name="twitter:description"
+          content="Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation."
+        />
+      </Helmet>
       <section className="w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20">
         <div className="relative w-full h-48 md:h-80 xl:h-[500px]  overflow-hidden">
           <Image

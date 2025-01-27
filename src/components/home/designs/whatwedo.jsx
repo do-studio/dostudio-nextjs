@@ -12,6 +12,7 @@ import {
 } from "../../../../public/images";
 import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 const OurService = [
   {
     id: 1,
@@ -59,7 +60,6 @@ const Whatwedo = () => {
     <section className="py-10 xl:py-20" id="serivesect">
       <div className="w-11/12 xl:w-8/12 mx-auto text-center flex flex-col gap-0 pb-14 items-center">
         <h2 className="font-black text-4xl xl:text-8xl uppercase">
-          {" "}
           our Services
         </h2>
         <p className="text-gray-600 text-justify md:text-center">
@@ -69,41 +69,52 @@ const Whatwedo = () => {
           website development, package design, and printing design.
         </p>
       </div>
-      <div className="bg-black text-white  w-11/12  overflow-hidden rounded-3xl xl:rounded-[3rem] p-8 sm:p-10 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-5 xl:gap-10 relative ">
-        <div className="z-20 flex flex-col  h-full justify-center gap-3 xl:gap-10 xl:text-right">
-          <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-            <p className="text-xl md:text-3xl xl:text-5xl font-black">
-              branding
-            </p>
-            <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-right  font-extralight">
-              Our branding services are designed to create a strong, memorable
-              identity for your business.
-            </p>
-          </div>
-          <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-            <p className="text-xl md:text-3xl xl:text-5xl font-black">
-              digital
-              <br className="hidden md:block" /> marketing
-            </p>
-            <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-right  font-extralight">
-              We specialize in SEO, social media marketing, content creation,
-              and more, ensuring your business reaches its target audience
-              effectively and drives meaningful engagement.
-            </p>
-          </div>
-          <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-            <p className="text-xl md:text-3xl xl:text-5xl font-black">
-              website development
-            </p>
-            <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-right  font-extralight">
-              We specialize in creating custom websites that are visually
-              engaging and functionally robust.
-            </p>
-          </div>
+      <div className="bg-black text-white w-11/12 overflow-hidden rounded-3xl xl:rounded-[3rem] p-8 sm:p-10 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-5 xl:gap-10 relative">
+        <div className="z-20 flex flex-col h-full justify-center gap-3 xl:gap-10 xl:text-right">
+          {[
+            {
+              title: "branding",
+              description:
+                "Our branding services are designed to create a strong, memorable identity for your business.",
+              link: "/our-works/branding",
+            },
+            {
+              title: "digital marketing",
+              description:
+                "We specialize in SEO, social media marketing, content creation, and more, ensuring your business reaches its target audience effectively and drives meaningful engagement.",
+              link: "/our-works/creatives",
+            },
+            {
+              title: "website development",
+              description:
+                "We specialize in creating custom websites that are visually engaging and functionally robust.",
+              link: "/our-works/web-design",
+            },
+          ].map((service, index) => (
+            <div
+              key={index}
+              className="relative group flex flex-col gap-1 xl:gap-3 uppercase transform transition-all duration-300 hover:scale-105"
+            >
+              <Link href={service.link}>
+                <p className="text-xl md:text-3xl xl:text-5xl font-black hover:text-primarygreen">
+                  {service.title}
+                </p>
+                <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify xl:text-right font-extralight">
+                  {service.description}
+                </p>
+                <span className="absolute right-0 -bottom-8 text-xs xl:text-sm text-gray-200  p-1  rounded-xl  flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:cursor-pointer">
+                  Explore{" "}
+                  <span className="material-icons">
+                    <MdKeyboardDoubleArrowRight />
+                  </span>
+                </span>
+              </Link>
+            </div>
+          ))}
         </div>
         <div className="opacity-40 xl:opacity-100 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10 xl:relative xl:flex justify-center items-center">
           <video
-            className="h-full w-full  xl:aspect-square"
+            className="h-full w-full xl:aspect-square"
             autoPlay
             loop
             muted
@@ -116,37 +127,46 @@ const Whatwedo = () => {
           </video>
         </div>
         <div className="z-20 flex flex-col h-full justify-center gap-3 xl:gap-10 text-left">
-          <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-            <p className="text-xl md:text-3xl xl:text-5xl font-black">
-              production
-            </p>
-            <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-left  font-extralight">
-              A team of dedicated people focusing on delivering top-quality
-              service, ensuring every project is executed with precision and
-              efficiency.
-            </p>
-          </div>
-          <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-            <p className="text-xl md:text-3xl xl:text-5xl font-black">
-              print
-              <br className="hidden md:block" /> design
-            </p>
-            <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-left  font-extralight">
-              We help design all your marketing materials, ensuring a consistent
-              look and feel across all print items.
-            </p>
-          </div>
-          <div className="flex flex-col gap-1 xl:gap-3 uppercase">
-            <p className="text-xl md:text-3xl xl:text-5xl font-black">
-              package
-              <br className="hidden md:block" /> design
-            </p>
-            <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify  xl:text-left  font-extralight">
-              We blend creativity with strategic thinking to ensure your
-              packaging not only stands out on the shelf but also resonates with
-              your target audience, driving sales and brand loyalty.
-            </p>
-          </div>
+          {[
+            {
+              title: "production",
+              description:
+                "A team of dedicated people focusing on delivering top-quality service, ensuring every project is executed with precision and efficiency.",
+              link: "",
+            },
+            {
+              title: "print design",
+              description:
+                "We help design all your marketing materials, ensuring a consistent look and feel across all print items.",
+              link: "our-works/print-design",
+            },
+            {
+              title: "package design",
+              description:
+                "We blend creativity with strategic thinking to ensure your packaging not only stands out on the shelf but also resonates with your target audience, driving sales and brand loyalty.",
+              link: "our-works/package-design",
+            },
+          ].map((service, index) => (
+            <div
+              key={index}
+              className="relative group flex flex-col gap-1 xl:gap-3 uppercase transform transition-all duration-300 hover:scale-105"
+            >
+              <Link href={service.link}>
+                <p className="text-xl md:text-3xl xl:text-5xl font-black hover:text-primarygreen">
+                  {service.title}
+                </p>
+                <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify xl:text-left font-extralight">
+                  {service.description}
+                </p>
+                <span className="absolute left-0 -bottom-8 text-xs xl:text-sm text-gray-200  p-1  rounded-xl  flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:cursor-pointer">
+                  Explore{" "}
+                  <span className="material-icons">
+                    <MdKeyboardDoubleArrowRight />
+                  </span>
+                </span>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </section>

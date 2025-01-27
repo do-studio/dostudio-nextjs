@@ -20,27 +20,27 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 const socialMedia = [
   {
-    logo: <FaFacebookF/>,
+    logo: <FaFacebookF />,
     href: `https://www.facebook.com/profile.php?id=100063901933314`,
   },
   {
-    logo: <FaInstagram/>,
+    logo: <FaInstagram />,
     href: `https://www.instagram.com/dostudio.agency/`,
   },
   {
-    logo: <FaLinkedin/>,
+    logo: <FaLinkedin />,
     href: `https://www.linkedin.com/company/do-studi0`,
   },
   {
-    logo: <BiLogoGmail/>,
+    logo: <BiLogoGmail />,
     href: `mailto:info@dostudio.co.in`,
   },
   {
-    logo: <FaMapMarkerAlt/>,
+    logo: <FaMapMarkerAlt />,
     href: `https://goo.gl/maps/ku2aYUFJ78hSuSnb8?coh=178571&entry=tt`,
   },
   {
-    logo: <IoLogoWhatsapp/>,
+    logo: <IoLogoWhatsapp />,
     href: `https://api.whatsapp.com/send?phone=919746155541`,
   },
 ];
@@ -51,20 +51,31 @@ const Footer = () => {
       <div className="w-11/12 xl:w-10/12 mx-auto ">
         <div className="py-5 grid grid-cols-1 gap-y-5 md:grid-cols-2 xl:grid-cols-4">
           <div className=" flex flex-col">
-          <Link href={'/'}><Image className="object-cover w-40 -mt-10 h-40 " src={dologo} alt="dostudio"/></Link>
+            <Link href={"/"}>
+              <Image
+                className="object-cover w-40 -mt-10 h-40 "
+                src={dologo}
+                alt="dostudio"
+              />
+            </Link>
             {/* <p className="text-sm font-medium xl:w-[60%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam molestias voluptates quos laborum magnam blanditiis earum fuga dolor consectetur totam vero vitae quasi.</p> */}
             <ul className="flex justify-start py-5 gap-3 capitalize mt-2">
               {socialMedia.map((soc, i) => (
                 <li key={i}>
-                  <a className="" target="_blank" href={soc.href}  aria-label={`Visit our ${soc.logo} profile`}>
-                  {soc.logo}
+                  <a
+                    className=""
+                    target="_blank"
+                    href={soc.href}
+                    aria-label={`Visit our ${soc.logo} profile`}
+                  >
+                    {soc.logo}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h4 className="text-base font-bold uppercase">pages</h4>
+            <p className="text-base font-bold uppercase">pages</p>
             <ul className="text-sm flex flex-col gap-1 capitalize mt-2">
               <Link
                 className="text-black foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
@@ -93,7 +104,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-base font-bold uppercase">our works</h4>
+            <p className="text-base font-bold uppercase">our works</p>
             <ul className="text-sm flex flex-col gap-1 capitalize mt-2">
               <Link
                 className="text-black  foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
@@ -134,7 +145,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-base font-bold uppercase">office address</h4>
+            <p className="text-base font-bold uppercase">office address</p>
             <p className=" text-sm mt-2 ">
               1st Floor, Ramaswami Complex
               <br />
