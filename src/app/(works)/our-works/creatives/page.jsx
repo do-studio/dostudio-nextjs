@@ -36,11 +36,16 @@ const DigitalMarketing = async () => {
     <>
 
       <main className="min-h-screen w-full bg-white">
-        <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 grid grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-0">
+        <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 columns-3  gap-x-0 gap-y-0">
           {sortedData && sortedData.length > 0 ? (
             sortedData.map((data, i) => (
-              <div className="relative group" key={i}>
-                <div className="relative aspect-square w-full">
+              <div className="relative group " key={i}>
+                <div className={`relative w-full break-inside-avoid-column`} style={{
+    aspectRatio: data.attributes.hgt
+      ? `${data.attributes.hgt}` // Dynamic aspect ratio
+      : '1 / 1', // Fallback to a square aspect ratio
+  }}>
+      {console.log(data.attributes.hgt)}
                   <Image
                     src={data.attributes.image.data.attributes.url}
                     fill={true}
