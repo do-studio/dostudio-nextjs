@@ -45,69 +45,69 @@ const DynamicWorkwithUs = dynamic(() =>
 export default function Home() {
   return (
     <>
-        <Helmet>
-      {/* Meta Title */}
-      <title>
-        Digital Marketing Agency in Calicut, Branding Agency Calicut
-      </title>
+      <Helmet>
+        {/* Meta Title */}
+        <title>
+          Digital Marketing Agency in Calicut, Branding Agency Calicut
+        </title>
 
-      {/* Meta Description */}
-      <meta
-        name="description"
-        content="Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM."
-      />
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM."
+        />
 
-      {/* Meta Keywords */}
-      <meta
-        name="keywords"
-        content="Branding agency in calicut, Advertising agency in Calicut, Digital Marketing Agency in Calicut, Digital marketing services in Calicut, marketing agency in calicut, best marketing agency in calicut, Agency in Calicut, Best Advertising agency in Calicut, best branding agency in calicut, creative agency in calicut, branding services in calicut, best branding company in calicut, digital marketing agency in kozhikode, best digital marketing agency in calicut, digital agency in calicut, digital marketing companies in calicut, best social media marketing agency in calicut, performance marketing company in calicut"
-      />
+        {/* Meta Keywords */}
+        <meta
+          name="keywords"
+          content="Branding agency in calicut, Advertising agency in Calicut, Digital Marketing Agency in Calicut, Digital marketing services in Calicut, marketing agency in calicut, best marketing agency in calicut, Agency in Calicut, Best Advertising agency in Calicut, best branding agency in calicut, creative agency in calicut, branding services in calicut, best branding company in calicut, digital marketing agency in kozhikode, best digital marketing agency in calicut, digital agency in calicut, digital marketing companies in calicut, best social media marketing agency in calicut, performance marketing company in calicut"
+        />
 
-      {/* Favicon and Icons */}
-      <link rel="icon" href="/src/app/favicon.ico" />
-      <link rel="apple-touch-icon" href="/src/app/apple-touch-icon.png?v=4" />
-      <link rel="shortcut icon" href="/src/app/apple-touch-icon.png" />
+        {/* Favicon and Icons */}
+        <link rel="icon" href="/src/app/favicon.ico" />
+        <link rel="apple-touch-icon" href="/src/app/apple-touch-icon.png?v=4" />
+        <link rel="shortcut icon" href="/src/app/apple-touch-icon.png" />
 
-      {/* Robots */}
-      <meta name="robots" content="index, follow" />
+        {/* Robots */}
+        <meta name="robots" content="index, follow" />
 
-      {/* Open Graph */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://dostudio.co.in" />
-      <meta
-        property="og:title"
-        content="Digital Marketing Agency in Calicut, Branding Agency Calicut"
-      />
-      <meta
-        property="og:description"
-        content="Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM."
-      />
-      <meta
-        property="og:image"
-        content="https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png"
-      />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta
-        property="og:image:alt"
-        content="Do Studio - Digital Marketing and Branding Agency"
-      />
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dostudio.co.in" />
+        <meta
+          property="og:title"
+          content="Digital Marketing Agency in Calicut, Branding Agency Calicut"
+        />
+        <meta
+          property="og:description"
+          content="Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image:alt"
+          content="Do Studio - Digital Marketing and Branding Agency"
+        />
 
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:title"
-        content="Digital Marketing Agency in Calicut, Branding Agency Calicut"
-      />
-      <meta
-        name="twitter:description"
-        content="Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM."
-      />
-      <meta
-        name="twitter:image"
-        content="https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png"
-      />
-    </Helmet>
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Digital Marketing Agency in Calicut, Branding Agency Calicut"
+        />
+        <meta
+          name="twitter:description"
+          content="Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM."
+        />
+        <meta
+          name="twitter:image"
+          content="https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png"
+        />
+      </Helmet>
       <main>
         <DynamicPopupform />
         <Suspense fallback={<p>Loading data...</p>}>
