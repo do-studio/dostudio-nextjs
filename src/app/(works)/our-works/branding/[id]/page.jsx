@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: brand.metatitle || "Default Branding Title",
       description: brand.metadesc || "Default brand description.",
-      url: `https://dostudio.co.in/brand/${params.id}`,
+      url: `https://dostudio.co.in/branding/${params.id}`,
       images: [
         {
           url: brand.image?.data?.attributes?.url || "/default-og-image.jpg",
