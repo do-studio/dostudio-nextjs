@@ -20,6 +20,7 @@ import { Suspense } from "react";
 import Head from "next/head";
 import DynamicPopupform from "../components/home/designs/popUpform";
 import { Helmet } from "react-helmet";
+import { LogoDO } from "../../public/images";
 
 const DynamicBanner = dynamic(() => import("../components/home/banner/banner"));
 const DynamicMarqueeText = dynamic(() =>
@@ -40,6 +41,13 @@ const DynamicTestimonials = dynamic(() =>
 );
 const DynamicWorkwithUs = dynamic(() =>
   import("../components/home/designs/workWithUs")
+);
+const DynamicFaq = dynamic(() =>
+  import("../components/home/faq/faq")
+);
+
+const ContactForm = dynamic(() =>
+  import("../components/home/designs/ContactForm")
 );
 
 export default function Home() {
@@ -133,9 +141,20 @@ export default function Home() {
         <Suspense fallback={<p>Loading data...</p>}>
           <DynamicTestimonials />
         </Suspense>
+        {/* Faq section */}
+        <Suspense fallback={<p>Loading data...</p>}>
+          <DynamicFaq />
+        </Suspense>
         {/* <Clients/> */}
         <Suspense fallback={<p>Loading data...</p>}>
-          <DynamicWorkwithUs />
+          <div className="bg-white relative">
+            <img
+              className=" w-60 xl:h-full xl:w-full absolute top-[50%] left-[50%] -translate-x-[50%] object-contain -translate-y-[50%] opacity-5 z-10"
+              src={LogoDO.src}
+              alt=""
+            />
+            <DynamicWorkwithUs />
+          </div>
         </Suspense>
         {/* <GetinTouch/>
       <MovingWords/> */}

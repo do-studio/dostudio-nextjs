@@ -5,8 +5,9 @@ import { Logoblack, Logowhite } from "../../../public/images";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import {banners} from '../../components/constant/data'
+import { banners } from '../../components/constant/data'
 import { CgArrowLongLeft } from "react-icons/cg";
+import { BiChevronDown } from "react-icons/bi";
 
 
 const Navbar = () => {
@@ -94,7 +95,7 @@ const Navbar = () => {
       delay: 0.5,
     },
   ];
-  
+
   const submenu = [
     {
       title: `BRANDING`,
@@ -138,39 +139,105 @@ const Navbar = () => {
     //   delay: 0.2,
     // },
   ];
-  
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const isCurrentPath = (path) => {
+
+    if (typeof window !== "undefined") {
+      return window.location.pathname == path;
+    }
+    return false; // Avoid errors during SSR
+  };
 
   return (
     <>
       {/* ===========================================NAVBAR START=========================================== */}
+
+
+      {
+        console.log(isCurrentPath("/"))
+      }
+
+
       <nav
-        className={`px-5 fixed top-0 left-0 right-0 flex justify-between items-center z-50 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${
-          isScrolled ? "navbar" : "bg-transparent"
-        }`}
+        className={`px-5 fixed top-0 left-0 right-0 flex justify-between md:justify-center  items-center z-40 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${isScrolled ? "navbar " : "bg-transparent invert md:invert-0"
+          }`}
       >
         {/* scroll active header */}
-
-          <div className={`${!isScrolled ? 'hidden':'block'}`}>
-            <Link href={'/'}>
-              {isScrolled ? (
-                <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={Logoblack} alt="Do studio" />
-              ) : (
-                <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={Logowhite} alt="Do studio" />
-              )}
-            </Link>
+        <nav className={`b text-black hidden md:block  `}>
+          <div className="container mx-auto flex justify-center py-2">
+            <ul className={`flex h-full  items-center space-x-6 bg-transparent  ${isScrolled ? "navbar " : "bg-white invert md:invert-0"
+              } backdrop-blur-md px-6 py-1 rounded-full     shadow-2xl `} >
+              <li>
+                <Link href="/" className={`px-4 py-2 rounded-full hover:bg-gray-200 hover:text-black  transition duration-200 uppercase font-light  ${isCurrentPath("/") && ' !bg-black !text-white'}`}>Home</Link>
+              </li>
+              <li>
+                <Link href="/services" className={`px-4 py-2 rounded-full hover:bg-gray-200 hover:text-black  transition duration-200  uppercase font-light  ${isCurrentPath("/services") && ' !bg-black !text-white'}`}>Services</Link>
+              </li>
+              <li className="hover:cursor-pointer rounded-full ">
+                <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-12 xl:w-44" src={Logoblack} alt="Do studio" />
+              </li>
+              {/* Works Dropdown */}
+              <li
+                className="relative"
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
+                <button className="px-4 py-2 rounded-full hover:bg-gray-200 hover:text-black transition duration-200 uppercase font-light">
+                  Works
+                </button>
+                {/* Dropdown Menu */}
+                {isDropdownOpen && (
+                  <ul className="absolute left-0 top-full mt-0 w-48 bg-white shadow-xl rounded-lg py-2" onClick={() => setIsDropdownOpen(false)} >
+                    <li>
+                      <Link href="/our-works/branding" className={`block px-4 py-2 hover:bg-gray-200 transition   `}>Branding</Link>
+                    </li>
+                    <li>
+                      <Link href="/our-works/creatives" className="block px-4 py-2 hover:bg-gray-200 transition">Creatives</Link>
+                    </li>
+                    <li>
+                      <Link href="/our-works/web-design" className="block px-4 py-2 hover:bg-gray-200 transition">Web Design</Link>
+                    </li>
+                    <li>
+                      <Link href="/our-works/package-design" className="block px-4 py-2 hover:bg-gray-200 transition">Package Design</Link>
+                    </li>
+                    <li>
+                      <Link href="/our-works/print-design" className="block px-4 py-2 hover:bg-gray-200 transition">Print Design</Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+              <li>
+                <Link href="/contact" className={`px-4 py-2 rounded-full hover:bg-gray-200 hover:text-black  transition duration-200 uppercase font-light  ${isCurrentPath("/contact") && ' !bg-black !text-white'}`}>Contact</Link>
+              </li>
+            </ul>
           </div>
+        </nav>
+
+
+        {/* scroll active header */}
+
+        <div className={` md:hidden  ${!isScrolled ? 'hidden' : 'block'}`}>
+          <Link href={'/'}>
+            {isScrolled ? (
+              <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={Logoblack} alt="Do studio" />
+            ) : (
+              <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={Logowhite} alt="Do studio" />
+            )}
+          </Link>
+        </div>
 
         {/* changing logo header */}
-        
-          <div className={`${isScrolled ? 'hidden':'block'}`}>
-            <Link href={'/'}>
-              <Image priority className=" h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={isHome ? Logowhite : Logoblack} alt="Do studio" />
-              {/* <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={banners[index].logo} alt="Do studio" /> */}
-            </Link>
-          </div>
+
+        <div className={`md:hidden ${isScrolled ? 'hidden' : 'block'}`}>
+          <Link href={'/'}>
+            <Image priority className=" h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={isHome ? Logowhite : Logoblack} alt="Do studio" />
+            {/* <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={banners[index].logo} alt="Do studio" /> */}
+          </Link>
+        </div>
         {/* Right */}
-        <div className="flex gap-3 items-center">
-            {/* our word button */}
+        <div className="flex gap-3 items-center md:hidden">
+          {/* our word button */}
           <div className="hidden md:block">
             <Link href={'/our-works/creatives'}><button className="nav-btn">our works</button></Link>
           </div>
@@ -178,7 +245,7 @@ const Navbar = () => {
           {/* scroll active humberger */}
           <div
             onClick={handleMenuToggle}
-            className={`${!isScrolled ? 'hidden':'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
+            className={`${!isScrolled ? 'hidden' : 'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
           >
             <div className={`h-[2.5px] w-8  ${isScrolled ? 'bg-black' : 'bg-white'}`}></div>
             <div className={`h-[2.5px] w-5  ${isScrolled ? 'bg-black' : 'bg-white'}`}></div>
@@ -186,7 +253,7 @@ const Navbar = () => {
           {/* change color humberger */}
           <div
             onClick={handleMenuToggle}
-            className={`${isScrolled ? 'hidden':'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
+            className={`${isScrolled ? 'hidden' : 'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
           >
             <div className={`h-[2.5px] w-8 ${isHome ? 'bg-white' : 'bg-black'}`}></div>
             <div className={`h-[2.5px] w-5 ${isHome ? 'bg-white' : 'bg-black'}`}></div>
@@ -195,6 +262,12 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+
+
+
+
+
       {/* ===========================================NAVBAR START=========================================== */}
 
       {/* ==============================================MAIN MENU============================================== */}
@@ -243,7 +316,7 @@ const Navbar = () => {
                     key={index}
                     className="capitalize underline-hover-effect text-3xl xs:text-4xl sm:text-5xl lg:text-7xl xl:text-7xl 2xl:text-8xl h-fit w-fit font-bold"
                   >
-                    <Link href={item.url} onClick={()=> item.ismenu ? setMenuOpen(true) : setMenuOpen(false)}>
+                    <Link href={item.url} onClick={() => item.ismenu ? setMenuOpen(true) : setMenuOpen(false)}>
                       {item?.ismenu ? (
                         <div onClick={handlesubMenuToggle}>works</div>
                       ) : (
@@ -254,8 +327,8 @@ const Navbar = () => {
                 ))}
               </motion.ul>
               <motion.div
-              initial={{ opacity: 1, rotate: 45 }}
-              animate={{ opacity: 1, rotate: 0 }}
+                initial={{ opacity: 1, rotate: 45 }}
+                animate={{ opacity: 1, rotate: 0 }}
                 onClick={handleMenuToggle}
                 className=" absolute  top-9 right-5 xl:right-8 flex flex-col space-y-1 cursor-pointer"
               >
@@ -305,7 +378,7 @@ const Navbar = () => {
                   <p>+91 9746155541</p>
                 </div>
                 <div className="text-xl md:text-2xl font-light">
-                <p>1st Floor, Ramaswami Complex</p>
+                  <p>1st Floor, Ramaswami Complex</p>
                   <p>Cherooty Rd, Behind Basics,</p>
                   <p>Kozhikode, Kerala,</p>
                   <p>India - 673001</p>
@@ -334,7 +407,7 @@ const Navbar = () => {
                     key={index}
                     className="capitalize underline-hover-effect text-2xl sm:text-3xl md:text-5xl xl:text-6xl font-semibold h-fit w-fit"
                   >
-                    <Link href={item.url} onClick={()=> setSubMenuOpen(false) || setMenuOpen(false)}>{item.title}</Link>
+                    <Link href={item.url} onClick={() => setSubMenuOpen(false) || setMenuOpen(false)}>{item.title}</Link>
                   </motion.li>
                 ))}
               </motion.ul>

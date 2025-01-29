@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {banners} from '../../constant/data';
+import { banners } from '../../constant/data';
 
 
 const Banner = () => {
@@ -13,6 +13,7 @@ const Banner = () => {
     const getCurrentVideo = () => {
       const currentTime = new Date().getHours();
       const isMobile = window.innerWidth <= 468;
+      // const isMobile = true;
 
       // URLs for desktop and mobile videos
       const videos = {
@@ -76,14 +77,18 @@ const Banner = () => {
 
   return (
     <>
-    <section className=''>
-    {currentVideo && (
-        <video className="w-full h-full xl:h-screen bg-black object-cover" poster={currentPoster} autoPlay loop playsinline muted preload="auto">
-          <source src={currentVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      )}
-    </section>
+      <section className='grid grid-cols-1 pt-16'>
+       
+        {currentVideo && (
+          <div className='p-3'>
+
+            <video className="w-full h-full  2xl:h-[calc(100vh-6rem)] bg-black z-50  rounded-3xl xl:rounded-[3rem]" poster={currentPoster} autoPlay loop playsinline muted preload="auto">
+              <source src={currentVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        )}
+      </section>
     </>
   );
 };
