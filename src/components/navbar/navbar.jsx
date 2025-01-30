@@ -154,13 +154,10 @@ const Navbar = () => {
       {/* ===========================================NAVBAR START=========================================== */}
 
 
-      {
-        console.log(isCurrentPath("/"))
-      }
-
+     
 
       <nav
-        className={`px-5 fixed top-0 left-0 right-0 flex justify-between md:justify-center  items-center z-40 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${isScrolled ? "navbar " : "bg-transparent invert md:invert-0"
+        className={`px-5 fixed top-0 left-0 right-0 flex justify-between md:justify-center  items-center z-40 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${isScrolled ? " " : "bg-transparent invert md:invert-0"
           }`}
       >
         {/* scroll active header */}
@@ -169,10 +166,10 @@ const Navbar = () => {
             <ul className={`flex h-full  items-center space-x-6 bg-transparent  ${isScrolled ? "navbar " : "bg-white invert md:invert-0"
               } backdrop-blur-md px-6 py-1 rounded-full     shadow-2xl `} >
               <li>
-                <Link href="/" className={`px-4 py-2 rounded-full hover:bg-gray-200 hover:text-black  transition duration-200 uppercase font-light  ${isCurrentPath("/") && ' !bg-black !text-white'}`}>Home</Link>
+                <Link href="/" className={`px-4 py-2 rounded-full foot-underline-hover-effect  transition duration-200 uppercase font-light  ${isCurrentPath("/") && ' !bg-gray-200 !text-black'}`}>Home</Link>
               </li>
               <li>
-                <Link href="/services" className={`px-4 py-2 rounded-full hover:bg-gray-200 hover:text-black  transition duration-200  uppercase font-light  ${isCurrentPath("/services") && ' !bg-black !text-white'}`}>Services</Link>
+                <Link href="/services" className={`px-4 py-2 rounded-full foot-underline-hover-effect  transition duration-200  uppercase font-light  ${isCurrentPath("/services") && ' !bg-gray-200 !text-black'}`}>Services</Link>
               </li>
               <li className="hover:cursor-pointer rounded-full ">
                 <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-12 xl:w-44" src={Logoblack} alt="Do studio" />
@@ -183,32 +180,32 @@ const Navbar = () => {
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
-                <button className="px-4 py-2 rounded-full hover:bg-gray-200 hover:text-black transition duration-200 uppercase font-light">
+                <button className="px-4 py-2 rounded-full foot-underline-hover-effect transition duration-200 uppercase font-light">
                   Works
                 </button>
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
                   <ul className="absolute left-0 top-full mt-0 w-48 bg-white shadow-xl rounded-lg py-2" onClick={() => setIsDropdownOpen(false)} >
                     <li>
-                      <Link href="/our-works/branding" className={`block px-4 py-2 hover:bg-gray-200 transition   `}>Branding</Link>
+                      <Link href="/our-works/branding" className={`block px-4 py-2 foot-underline-hover-effect transition   `}>Branding</Link>
                     </li>
                     <li>
-                      <Link href="/our-works/creatives" className="block px-4 py-2 hover:bg-gray-200 transition">Creatives</Link>
+                      <Link href="/our-works/creatives" className="block px-4 py-2 foot-underline-hover-effect transition">Creatives</Link>
                     </li>
                     <li>
-                      <Link href="/our-works/web-design" className="block px-4 py-2 hover:bg-gray-200 transition">Web Design</Link>
+                      <Link href="/our-works/web-design" className="block px-4 py-2 foot-underline-hover-effect transition">Web Design</Link>
                     </li>
                     <li>
-                      <Link href="/our-works/package-design" className="block px-4 py-2 hover:bg-gray-200 transition">Package Design</Link>
+                      <Link href="/our-works/package-design" className="block px-4 py-2 foot-underline-hover-effect transition">Package Design</Link>
                     </li>
                     <li>
-                      <Link href="/our-works/print-design" className="block px-4 py-2 hover:bg-gray-200 transition">Print Design</Link>
+                      <Link href="/our-works/print-design" className="block px-4 py-2 foot-underline-hover-effect transition">Print Design</Link>
                     </li>
                   </ul>
                 )}
               </li>
               <li>
-                <Link href="/contact" className={`px-4 py-2 rounded-full hover:bg-gray-200 hover:text-black  transition duration-200 uppercase font-light  ${isCurrentPath("/contact") && ' !bg-black !text-white'}`}>Contact</Link>
+                <Link href="/contact" className={`px-4 py-2 rounded-full foot-underline-hover-effect  transition duration-200 uppercase font-light  ${isCurrentPath("/contact") && ' !bg-gray-200 !text-black'}`}>Contact</Link>
               </li>
             </ul>
           </div>
@@ -314,7 +311,7 @@ const Navbar = () => {
                       delay: item.delay || 0,
                     }}
                     key={index}
-                    className="capitalize underline-hover-effect text-3xl xs:text-4xl sm:text-5xl lg:text-7xl xl:text-7xl 2xl:text-8xl h-fit w-fit font-bold"
+                    className="capitalize foot-underline-hover-effect text-3xl xs:text-4xl sm:text-5xl lg:text-7xl xl:text-7xl 2xl:text-8xl h-fit w-fit font-bold"
                   >
                     <Link href={item.url} onClick={() => item.ismenu ? setMenuOpen(true) : setMenuOpen(false)}>
                       {item?.ismenu ? (
@@ -405,7 +402,7 @@ const Navbar = () => {
                       delay: item.delay || 0,
                     }}
                     key={index}
-                    className="capitalize underline-hover-effect text-2xl sm:text-3xl md:text-5xl xl:text-6xl font-semibold h-fit w-fit"
+                    className="capitalize foot-underline-hover-effect text-2xl sm:text-3xl md:text-5xl xl:text-6xl font-semibold h-fit w-fit"
                   >
                     <Link href={item.url} onClick={() => setSubMenuOpen(false) || setMenuOpen(false)}>{item.title}</Link>
                   </motion.li>
