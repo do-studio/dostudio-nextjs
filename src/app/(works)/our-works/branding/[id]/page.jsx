@@ -62,7 +62,7 @@ const Innerpage = async ({ params }) => {
   return (
     <>
      <main className="xl:min-h-screen w-full">
-      <div className="w-11/12 xl:w-10/12 mx-auto pt-20 xl:pt-32 py-20">
+      <div className="w-11/12 xl:w-10/12 mx-auto pt-20 xl:pt-24 py-20">
         {result.attributes.mockup?.data?.map((img, i) => (
           <div
             key={i}

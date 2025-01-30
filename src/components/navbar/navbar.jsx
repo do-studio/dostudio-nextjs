@@ -161,7 +161,7 @@ const Navbar = () => {
           }`}
       >
         {/* scroll active header */}
-        <nav className={`b text-black hidden md:block  `}>
+        <nav className={` text-black hidden md:block  `}>
           <div className="container mx-auto flex justify-center py-2">
             <ul className={`flex h-full  items-center space-x-6 bg-transparent  ${isScrolled ? "navbar " : "bg-white invert md:invert-0"
               } backdrop-blur-md px-6 py-1 rounded-full     shadow-2xl `} >
@@ -185,7 +185,7 @@ const Navbar = () => {
                 </button>
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
-                  <ul className="absolute left-0 top-full mt-0 w-48 bg-white shadow-xl rounded-lg py-2" onClick={() => setIsDropdownOpen(false)} >
+                  <ul className="absolute left-0 top-full mt-0 w-48 bg-white shadow-xl rounded-lg overflow-hidden" onClick={() => setIsDropdownOpen(false)} >
                     <li>
                       <Link href="/our-works/branding" className={`block px-4 py-2 foot-underline-hover-effect transition   `}>Branding</Link>
                     </li>
