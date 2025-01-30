@@ -61,24 +61,28 @@ const Innerpage = async ({ params }) => {
   // console.log(result.attributes.mockups.data);
   return (
     <>
-      <main className=" xl:min-h-screen w-full bg-white">
-        <div className="w-11/12 xl:w-10/12 mx-auto pt-32 py-20">
-          {/* <h1 className='text-4xl font-black uppercase text-center pb-5'>{result.attributes.title}</h1> */}
-          {result.attributes.mockup.data.map((img, i) => (
-            <div className="relative aspect-video" key={i}>
-              <FadeUp duration={0.2}>
-                <Image
-                  src={img.attributes.url}
-                  loading="lazy"
-                  fill
-                  className="object-cover"
-                  alt="wrk1"
-                />
-              </FadeUp>
-            </div>
-          ))}
-        </div>
-      </main>
+     <main className="xl:min-h-screen w-full">
+      <div className="w-11/12 xl:w-10/12 mx-auto pt-20 xl:pt-32 py-20">
+        {result.attributes.mockup?.data?.map((img, i) => (
+          <div
+            key={i}
+            className="relative w-full h-full flex justify-center "
+          
+          >
+            <FadeUp duration={0.2}>
+              <Image
+                src={img.attributes.url}
+                width={img.attributes.width}
+                height={img.attributes.height}
+                loading="lazy"
+                className="object-cover w-auto h-auto max-w-full "
+                alt={img.attributes.alternativeText || "Brand Mockup"}
+              />
+            </FadeUp>
+          </div>
+        ))}
+      </div>
+    </main>
     </>
   );
 };
