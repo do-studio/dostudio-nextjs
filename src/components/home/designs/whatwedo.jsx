@@ -70,7 +70,7 @@ const Whatwedo = () => {
         </p>
       </div>
       <div className="bg-black text-white w-11/12 overflow-hidden rounded-3xl xl:rounded-[3rem] p-8 sm:p-10 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-5 xl:gap-10 relative">
-        <div className="z-20 flex flex-col h-full justify-center gap-3 xl:gap-10 xl:text-right">
+        <div className="z-20 flex flex-col h-full justify-center gap-3 xl:gap-10 text-center xl:text-right">
           {[
             {
               title: "branding",
@@ -99,10 +99,10 @@ const Whatwedo = () => {
                 <p className="text-xl md:text-3xl xl:text-5xl font-black hover:text-primarygreen">
                   {service.title}
                 </p>
-                <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify xl:text-right font-extralight">
+                <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-center  xl:text-right font-extralight">
                   {service.description}
                 </p>
-                <span className="absolute right-0 -bottom-8 text-xs xl:text-sm text-gray-200  p-1  rounded-xl  flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:cursor-pointer">
+                <span className="absolute right-0 -bottom-8 text-xs xl:text-sm text-gray-200  p-1  rounded-xl  flex items-center gap-2 opacity-0 xl:group-hover:opacity-100 transition-opacity duration-300 hover:cursor-pointer">
                   Explore{" "}
                   <span className="material-icons">
                     <MdKeyboardDoubleArrowRight />
@@ -126,7 +126,7 @@ const Whatwedo = () => {
             />
           </video>
         </div>
-        <div className="z-20 flex flex-col h-full justify-center gap-3 xl:gap-10 text-left">
+        <div className="z-20 flex flex-col h-full justify-center gap-3 xl:gap-10 text-center xl:text-left">
           {[
             {
               title: "production",
@@ -155,10 +155,10 @@ const Whatwedo = () => {
                 <p className="text-xl md:text-3xl xl:text-5xl font-black hover:text-primarygreen">
                   {service.title}
                 </p>
-                <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-justify xl:text-left font-extralight">
+                <p className="text-[10px] sm:text-xs capitalize text-gray-300 text-center xl:text-left font-extralight">
                   {service.description}
                 </p>
-                <span className="absolute left-0 -bottom-8 text-xs xl:text-sm text-gray-200  p-1  rounded-xl  flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:cursor-pointer">
+                <span className="absolute left-0 -bottom-8 text-xs xl:text-sm text-gray-200  p-1  rounded-xl  flex items-center gap-2 opacity-0 xl:group-hover:opacity-100 transition-opacity duration-300 hover:cursor-pointer">
                   Explore{" "}
                   <span className="material-icons">
                     <MdKeyboardDoubleArrowRight />

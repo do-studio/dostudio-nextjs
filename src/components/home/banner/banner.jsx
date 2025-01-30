@@ -1,13 +1,21 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { banners } from '../../constant/data';
+import ReactPlayer from 'react-player';
 
 
 const Banner = () => {
 
   const [currentVideo, setCurrentVideo] = useState('');
   const [currentPoster, setCurrentPoster] = useState('');
+  const videoRef = useRef(null);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
 
   useEffect(() => {
     const getCurrentVideo = () => {
@@ -53,6 +61,7 @@ const Banner = () => {
         posterPath = isMobile ? posters.mobile : posters.desktop;
       }
 
+      handlePlay()
       return { videoPath, posterPath };
     };
 
@@ -75,17 +84,38 @@ const Banner = () => {
     };
   }, []);
 
+
+
   return (
     <>
       <section className='grid grid-cols-1 pt-16'>
-       
-        {currentVideo && (
-          <div className='p-3'>
 
-            <video className="w-full h-full  2xl:h-[calc(100vh-6rem)] bg-black z-50  rounded-3xl xl:rounded-[3rem]" poster={currentPoster} autoPlay loop playsinline muted preload="auto">
-              <source src={currentVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+        {currentVideo && (
+          <div className='p-3 2xl:h-[calc(100vh-4rem)]'>
+
+
+            <div className=' w-full h-full   bg-black z-50 overflow-hidden   rounded-3xl xl:rounded-[3rem]'>
+
+              <ReactPlayer
+                url={currentVideo}
+                playing={true} // Autoplay
+                loop={true}
+                muted={true}
+                playsinline={true}
+                
+                controls={false}
+                width="100%"
+                height="100%"
+                style={{objectFit:"cover"}}
+                config={{
+                  file: {
+                    attributes: {
+                      poster: currentPoster,
+                    },
+                  },
+                }}
+              />
+            </div>
           </div>
         )}
       </section>

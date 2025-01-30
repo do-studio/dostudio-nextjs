@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import {
   whatsapplogo,
   facebooklogo,
@@ -46,20 +47,38 @@ const socialMedia = [
 ];
 
 const Footer = () => {
+  const [animationTrue, setAnimationTrue] = useState(false)
+
+  useEffect(() => {
+
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      setAnimationTrue(true)
+      console.log('Homepage')
+    }
+
+  }, [])
+
+
   return (
     <footer className="bg-gradient-to-b from-gray-100 to-white  border-[1px] border-gray-100 pt-10 text-black relative">
-       <div className='absolute right-0 -top-28 xl:-top-[100%]'>
-        <video
-          className="h-40 w-40 xl:h-60 xl:w-60 bg-transparent"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723785309/Do%20Studio%20Website/Vertical_1_utwcx9.webm' type="video/mp4" />
-          <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723110687/Do%20Studio%20Website/DO_STUDIO_LOGO_3-1_pevafw.mov' type="video/mp4" />
-        </video>
-      </div>
+      {
+
+        animationTrue &&
+
+
+        <div className='absolute right-0 -top-28 xl:-top-[100%]'>
+          <video
+            className="h-40 w-40 xl:h-60 xl:w-60 bg-transparent"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723785309/Do%20Studio%20Website/Vertical_1_utwcx9.webm' type="video/mp4" />
+            <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723110687/Do%20Studio%20Website/DO_STUDIO_LOGO_3-1_pevafw.mov' type="video/mp4" />
+          </video>
+        </div>
+      }
       <div className="w-11/12 xl:w-10/12 mx-auto ">
         <div className="py-5 grid grid-cols-1 gap-y-5 md:grid-cols-2 xl:grid-cols-4">
           <div className=" flex flex-col">
