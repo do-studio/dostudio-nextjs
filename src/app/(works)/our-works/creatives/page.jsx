@@ -72,16 +72,15 @@ const DigitalMarketing = () => {
       </Head>
 
       <main className="min-h-screen w-full bg-white">
-<<<<<<< HEAD
         <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 columns-3 gap-x-0 gap-y-0">
+
+
+
+
           {isLoading ? (
             // Skeleton loading
             <Skeleton style={{ aspectRatio: "1/1", gap: "0" }} count={9} />
           ) : sortedData && sortedData.length > 0 ? (
-=======
-        <div className="w-11/12 xl:w-9/12 mx-auto pt-20 xl:pt-24 py-20 columns-3  gap-x-0 gap-y-0">
-          {sortedData && sortedData.length > 0 ? (
->>>>>>> 8293de6708a435060a3b2355e051a991b7145b84
             sortedData.map((data, i) => (
               <div className="relative group" key={i}>
                 <div
