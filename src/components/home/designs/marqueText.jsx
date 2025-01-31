@@ -8,7 +8,7 @@ const MarqueText = () => {
            <Marquee
             speed={200}
              className="col-span-3 overflow-hidden py-10">
-              <p className="font-medium text-5xl xl:text-[150px] m-0">Let your brand stand out from the crowd. </p>
+              <p className="font-medium text-5xl xl:text-[150px] m-0 ">Let your brand stand out from the crowd.&nbsp;&nbsp;&nbsp;&nbsp;  </p>
             </Marquee>
             {/* <div className="grid place-items-center h-full overflow-hidden">
               <video
