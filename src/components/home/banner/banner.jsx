@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { banners } from '../../constant/data';
 import ReactPlayer from 'react-player';
+import Image from 'next/image';
 
 
 const Banner = () => {
@@ -88,9 +89,9 @@ const Banner = () => {
 
   return (
     <>
-      <section className='grid grid-cols-1 pt-16'>
-        {currentVideo && (
-          <div className='p-3 2xl:h-[calc(100vh-4rem)]'>
+      <section className='grid grid-cols-1 pt-16 min-h-[calc(100vh-4rem)] '   >
+        {currentVideo ? (
+          <div className='p-3 min-h-[calc(100vh-4rem)] 2xl:h-[calc(100vh-4rem)]'>
             <div className=' w-full h-full   bg-black z-50 overflow-hidden   rounded-3xl xl:rounded-[3rem]'>
               <ReactPlayer
                 url={currentVideo}
@@ -98,12 +99,12 @@ const Banner = () => {
                 loop={true}
                 muted={true}
                 playsinline={true}
-                
+
                 controls={false}
                 width="100%"
                 height="100%"
                 className="object-fill"
-                style={{objectFit:"fill"}}
+                style={{ objectFit: "fill" }}
                 config={{
                   file: {
                     attributes: {
@@ -114,7 +115,12 @@ const Banner = () => {
               />
             </div>
           </div>
-        )}
+        )
+          :
+          <div className='relative aspect-video'>
+            <Image src={currentPoster} height="100vh" width="100%" />
+          </div>
+        }
       </section>
     </>
   );
