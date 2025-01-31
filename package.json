@@ -48,7 +48,6 @@
     "@types/node": "20.11.20",
     "@types/react": "18.2.60",
     "autoprefixer": "^10.0.1",
-    "daisyui": "^4.7.2",
     "encoding": "^0.1.13",
     "eslint": "^8",
     "eslint-config-next": "^13.5.6",

@@ -36,7 +36,7 @@ const WebDesign = async () => {
     <>
 
       <main className="min-h-screen w-full bg-whit">
-        <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 ">
+        <div className="w-11/12 xl:w-9/12 mx-auto pt-20 xl:pt-24 py-20 ">
           {/* <div className="text-center space-y-2">
         <FadeUp duration={0.3} delay={0.1}>
         <h1 className="text-2xl md:text-4xl font-medium">Strategic Web Design Solutions for Your Brand</h1>
