@@ -89,13 +89,9 @@ const Banner = () => {
   return (
     <>
       <section className='grid grid-cols-1 pt-16'>
-
         {currentVideo && (
           <div className='p-3 2xl:h-[calc(100vh-4rem)]'>
-
-
             <div className=' w-full h-full   bg-black z-50 overflow-hidden   rounded-3xl xl:rounded-[3rem]'>
-
               <ReactPlayer
                 url={currentVideo}
                 playing={true} // Autoplay
@@ -106,7 +102,8 @@ const Banner = () => {
                 controls={false}
                 width="100%"
                 height="100%"
-                style={{objectFit:"cover"}}
+                className="object-fill"
+                style={{objectFit:"fill"}}
                 config={{
                   file: {
                     attributes: {

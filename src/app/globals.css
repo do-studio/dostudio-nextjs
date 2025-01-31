@@ -51,6 +51,17 @@ background:#4b4b4b;
 cursor: pointer;
 }
 
+
+/* Lightbox.css */
+.yarl__container {
+  background-color: rgba(0, 0, 0, 0.582) !important; /* Semi-transparent black */
+  backdrop-filter: blur(3px);
+}
+
+.yarl__slide {
+  background-color: transparent !important; /* Ensure the slide background is also transparent */
+}
+
 /* main navbar */
 .navbar{
   background: rgba(155, 20, 20, 0);
