@@ -154,11 +154,10 @@ const Navbar = () => {
       {/* ===========================================NAVBAR START=========================================== */}
 
 
-     
+
 
       <nav
-        className={`px-5 fixed top-0 left-0 right-0 flex justify-between md:justify-center  items-center z-40 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${isScrolled ? " " : "bg-transparent invert md:invert-0"
-          }`}
+        className={`px-5 fixed top-0 left-0 right-0 flex justify-between md:justify-center  items-center z-40 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${isScrolled ? " " : `bg-transparent " }`}`}
       >
         {/* scroll active header */}
         <nav className={`b text-black hidden md:block  `}>
@@ -172,7 +171,10 @@ const Navbar = () => {
                 <Link href="/services" className={`px-4 py-2 rounded-full foot-underline-hover-effect  transition duration-200  uppercase font-light  ${isCurrentPath("/services") && ' !bg-gray-200 !text-black'}`}>Services</Link>
               </li>
               <li className="hover:cursor-pointer rounded-full ">
-                <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-12 xl:w-44" src={Logoblack} alt="Do studio" />
+                <Link href="/">
+                  <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-12 xl:w-44 " src={Logoblack} alt="Do studio" />
+                </Link>
+
               </li>
               {/* Works Dropdown */}
               <li
@@ -214,49 +216,29 @@ const Navbar = () => {
 
         {/* scroll active header */}
 
-        <div className={` md:hidden  ${!isScrolled ? 'hidden' : 'block'}`}>
+        <div className={` md:hidden `}>
           <Link href={'/'}>
-            {isScrolled ? (
-              <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={Logoblack} alt="Do studio" />
-            ) : (
-              <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={Logowhite} alt="Do studio" />
-            )}
+            <Image priority className="h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={Logoblack} alt="Do studio" />
           </Link>
         </div>
 
         {/* changing logo header */}
 
-        <div className={`md:hidden ${isScrolled ? 'hidden' : 'block'}`}>
-          <Link href={'/'}>
-            <Image priority className=" h-10 w-28 md:h-14 md:w-32 xl:h-20 xl:w-44" src={isHome ? Logowhite : Logoblack} alt="Do studio" />
-            {/* <Image priority className="h-14 w-32 xl:h-20 xl:w-44" src={banners[index].logo} alt="Do studio" /> */}
-          </Link>
-        </div>
+
         {/* Right */}
         <div className="flex gap-3 items-center md:hidden">
-          {/* our word button */}
-          <div className="hidden md:block">
-            <Link href={'/our-works/creatives'}><button className="nav-btn">our works</button></Link>
-          </div>
+
 
           {/* scroll active humberger */}
           <div
             onClick={handleMenuToggle}
-            className={`${!isScrolled ? 'hidden' : 'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
+            className={` flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
           >
-            <div className={`h-[2.5px] w-8  ${isScrolled ? 'bg-black' : 'bg-white'}`}></div>
-            <div className={`h-[2.5px] w-5  ${isScrolled ? 'bg-black' : 'bg-white'}`}></div>
+            <div className={"h-[2.5px] w-8  bg-black"}></div>
+            <div className={"h-[2.5px] w-5  bg-black"}></div>
           </div>
           {/* change color humberger */}
-          <div
-            onClick={handleMenuToggle}
-            className={`${isScrolled ? 'hidden' : 'block'} flex flex-col h-8 p-1 justify-center  items-end space-y-1.5 cursor-pointer w-fit`}
-          >
-            <div className={`h-[2.5px] w-8 ${isHome ? 'bg-white' : 'bg-black'}`}></div>
-            <div className={`h-[2.5px] w-5 ${isHome ? 'bg-white' : 'bg-black'}`}></div>
-            {/* <div className={`h-[2.5px] w-8`} style={{backgroundColor:`${humbclr}`}}></div>
-            <div className={`h-[2.5px] w-5`} style={{backgroundColor:`${humbclr}`}}></div> */}
-          </div>
+
         </div>
       </nav>
 
@@ -389,7 +371,7 @@ const Navbar = () => {
                   <CgArrowLongLeft />
                   BACK
                 </button>
-                {/* <CgArrowLongLeft onClick={handlesubMenuToggle} className="flex justify-start text-5xl items-start mb-5 cursor-pointer bg-red-500 p-0"/> */}
+                {/* <CgArrowLongLeft onClick={handlesubMenuToggle} className="flex justify-start text-5xl items-start mb-5 cursor-pointer bg-black p-0"/> */}
                 {submenu.map((item, index) => (
                   <motion.li
                     initial={{ opacity: 0, translateX: "100%", scale: 0.8 }}
