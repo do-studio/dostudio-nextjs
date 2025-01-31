@@ -189,19 +189,19 @@ const Navbar = () => {
                 {isDropdownOpen && (
                   <ul className="absolute left-0 top-full mt-0 w-48 bg-white shadow-xl rounded-lg overflow-hidden" onClick={() => setIsDropdownOpen(false)} >
                     <li>
-                      <Link href="/our-works/branding" className={`block px-4 py-2 foot-underline-hover-effect transition   `}>Branding</Link>
+                      <Link href="/our-works/branding" className={`block px-4 py-2 foot-underline-hover-effect transition uppercase  `}>Branding</Link>
                     </li>
                     <li>
-                      <Link href="/our-works/creatives" className="block px-4 py-2 foot-underline-hover-effect transition">Creatives</Link>
+                      <Link href="/our-works/creatives" className="block px-4 py-2 foot-underline-hover-effect transition uppercase">Creatives</Link>
                     </li>
                     <li>
-                      <Link href="/our-works/web-design" className="block px-4 py-2 foot-underline-hover-effect transition">Web Design</Link>
+                      <Link href="/our-works/web-design" className="block px-4 py-2 foot-underline-hover-effect transition uppercase">Web Design</Link>
                     </li>
                     <li>
-                      <Link href="/our-works/package-design" className="block px-4 py-2 foot-underline-hover-effect transition">Package Design</Link>
+                      <Link href="/our-works/package-design" className="block px-4 py-2 foot-underline-hover-effect transition uppercase">Package Design</Link>
                     </li>
                     <li>
-                      <Link href="/our-works/print-design" className="block px-4 py-2 foot-underline-hover-effect transition">Print Design</Link>
+                      <Link href="/our-works/print-design" className="block px-4 py-2 foot-underline-hover-effect transition uppercase">Print Design</Link>
                     </li>
                   </ul>
                 )}
