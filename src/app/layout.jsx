@@ -18,6 +18,26 @@ const poppins = Poppins({
 
 export const metadata = {
   robots: "index, follow",
+  openGraph: {
+    title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
+    description: "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
+    url: "https://dostudio.co.in",
+    images: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png",
+        width: 1200,
+        height: 630,
+        alt: "Do Studio - Digital Marketing and Branding Agency",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
+    description: "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
+    images: ["https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
