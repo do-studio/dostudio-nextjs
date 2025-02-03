@@ -47,17 +47,15 @@ const Clients = () => {
             </motion.div>
           ))}
         </motion.div>
-        {displayedImages < ClientsData.length ?  (
-         <div className="w-full h-full flex justify-center mt-5">
-          <button onClick={loadMoreImages} className="btn-21 "><span>Load More</span></button>
-         </div>
+        {displayedImages < ClientsData.length ? (
+          <div className="w-full h-full flex justify-center mt-5">
+            <button onClick={loadMoreImages} className="btn-21 "><span>Load More</span></button>
+          </div>
         ) :
-        (
-        // <div className="w-full h-full flex justify-center mt-5">
-        //   <button onClick={loadLessImages} className="btn-21 "><span>Load More</span></button>
-        //  </div>
-        null
-        )
+          (
+
+            null
+          )
         }
       </div>
     </div>
