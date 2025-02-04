@@ -3,6 +3,7 @@
 import Head from "next/head";
 import 'react-loading-skeleton/dist/skeleton.css';
 import Posters from '../../../../components/tabs/Posters'
+
 import Videos from '../../../../components/tabs/Videos'
 import Motions from '../../../../components/tabs/Motions'
 import { useState } from "react";
