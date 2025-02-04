@@ -647,12 +647,34 @@ cursor: pointer;
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: #AFFE00;
+  background-color: black;
   transition: width 0.30s ease-out;
 }
 .foot-underline-hover-effect:hover::before {
   width: 100%;
 }
+
+/* ----------------- */
+
+.foot-underline-hover-effect-black {
+  position: relative;
+}
+
+.foot-underline-hover-effect-black::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #6b7280;
+  transition: width 0.30s ease-out;
+}
+.foot-underline-hover-effect-black:hover::before {
+  width: 100%;
+}
+
+
 /* Footer menu */
 
 /* styles/global.css or styles/PrintDesign.module.css */

@@ -1,64 +1,43 @@
 "use client";
 
 import Head from "next/head";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css"; // Import the lightbox styles
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import Posters from '../../../../components/tabs/posters'
+import Videos from '../../../../components/tabs/Videos'
+import Motions from '../../../../components/tabs/Motions'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-async function getData() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/creatives?&populate=*`,
-    { next: { revalidate: 60 } } // Revalidate every 60 seconds
-  );
 
-  if (!res.ok) {
-    return notFound();
+const getVariants = (activeTab, prevTab) => {
+  let direction = 0;
+
+  // Motion Tab
+  if (activeTab === "motions") direction = 100; // Right to left
+
+  // Videos Tab
+  if (activeTab === "videos") direction = -100; // Left to right
+
+  // Posters Tab
+  if (activeTab === "posters") {
+    if (prevTab === "motions") direction = -100; // From motions, left to right
+    if (prevTab === "videos") direction = 100;  // From videos, right to left
   }
 
-  return res.json();
-}
+  return {
+    initial: { opacity: 0, x: direction },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -direction },
+  };
+};
 
 const DigitalMarketing = () => {
-  const [workdata, setWorkdata] = useState([]);
-  const [isOpen, setIsOpen] = useState(false); // Lightbox open state
-  const [photoIndex, setPhotoIndex] = useState(0); // Current image index
-  const [images, setImages] = useState([]); // Image URLs for the lightbox
-  const [isLoading, setIsLoading] = useState(true); // Loading state
+  const [activeTab, setActiveTab] = useState('posters')
+  const [prevTab, setPrevTab] = useState(null);
 
-  // Fetch data on component mount
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true); // Start loading
-      const data = await getData();
-      setWorkdata(data.data);
-
-      // Extract image URLs for the lightbox
-      const sorted = data.data?.sort(
-        (a, b) => a.attributes.order - b.attributes.order
-      );
-      const imageUrls = sorted.map(
-        (item) => item.attributes.image.data.attributes.url
-      );
-      setImages(imageUrls);
-
-      setIsLoading(false); // Stop loading
-    };
-    fetchData();
-  }, []);
-
-  // Sort the data by the order field
-  const sortedData = workdata?.sort(
-    (a, b) => a.attributes.order - b.attributes.order
-  );
-
-  // Handle image click
-  const handleImageClick = (order) => {
-    const index = sortedData.findIndex((item) => item.attributes.order === order);
-    setPhotoIndex(index);
-    setIsOpen(true);
+  const handleTabChange = (tab) => {
+    setPrevTab(activeTab); // Store previous tab before updating
+    setActiveTab(tab);
   };
 
   return (
@@ -71,63 +50,79 @@ const DigitalMarketing = () => {
         />
       </Head>
 
-      <main className="min-h-screen w-full bg-white">
-        <div className="w-11/12 xl:w-9/12 mx-auto pt-32 py-20 columns-3 gap-x-0 gap-y-0">
-
-
-
-
-          {isLoading ? (
-            // Skeleton loading
-            <Skeleton style={{ aspectRatio: "1/1", gap: "0" }} count={9} />
-          ) : sortedData && sortedData.length > 0 ? (
-            sortedData.map((data, i) => (
-              <div className="relative group" key={i}>
-                <div
-                  className={`relative w-full break-inside-avoid-column`}
-                  style={{
-                    aspectRatio: data.attributes.hgt
-                      ? `${data.attributes.hgt}` // Dynamic aspect ratio
-                      : "1 / 1", // Fallback to a square aspect ratio
-                  }}
-                >
-                  <Image
-                    onClick={() => handleImageClick(data.attributes.order)} // Use order instead of index
-                    src={data.attributes.image.data.attributes.url}
-                    fill={true}
-                    loading="lazy"
-                    className="object-cover cursor-pointer"
-                    alt={`wrk${i + 1}`}
-                  />
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="text-left text-2xl font-medium animate-bounce">
-              No data found.
-            </div>
-          )}
+      <main className="min-h-screen w-full bg-white pt-32">
+        <div className="w-fit mx-auto flex justify-between text-center rounded-full  md:text-4xl h-10 text-gray-500 font-light">
+          <div
+            className={`w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5 ${activeTab === "motions" ? "-translate-y-1 md:-translate-y-2 scale-110 text-black" : ""
+              }`}
+            onClick={() => handleTabChange("motions")}
+          >
+            <h1 className={`pb-1 ${activeTab === "motions" ? "font-medium" : "foot-underline-hover-effect-black"}`}>
+              motions
+            </h1>
+          </div>
+          <div className="h-full w-[1px] bg-black"></div>
+          <div
+            className={`w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5 ${activeTab === "posters" ? "-translate-y-1 md:-translate-y-2  scale-110 text-black" : ""
+              }`}
+            onClick={() => handleTabChange("posters")}
+          >
+            <h1 className={`pb-1 ${activeTab === "posters" ? "font-medium" : "foot-underline-hover-effect-black"}`}>
+              posters
+            </h1>
+          </div>
+          <div className="h-full w-[1px] bg-black"></div>
+          <div
+            className={`w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5 ${activeTab === "videos" ? "-translate-y-1 md:-translate-y-2 scale-110 text-black" : ""
+              }`}
+            onClick={() => handleTabChange("videos")}
+          >
+            <h1 className={`pb-1 ${activeTab === "videos" ? "font-medium" : "foot-underline-hover-effect-black"}`}>
+              videos
+            </h1>
+          </div>
         </div>
 
-        {/* Lightbox */}
-        {isOpen && (
-          <Lightbox
-            open={isOpen}
-            close={() => setIsOpen(false)}
-            slides={images.map((src) => ({ src }))}
-            index={photoIndex}
-            onView={({ index }) => setPhotoIndex(index)}
-            closeOnClickOutside={true} // Ensure the lightbox closes when clicking outside
-            loading={{
-              // Customize the loading indicator
-              spinner: () => (
-                <div className="flex items-center justify-center h-full">
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
-                </div>
-              ),
-            }}
-          />
-        )}
+        <div className={`w-11/12 xl:w-9/12 mx-auto pt-4 py-20  ${activeTab != "posters" && "columns-2 md:columns-3"} columns-3 gap-x-0 gap-y-0`}>
+          <AnimatePresence mode="wait">
+            {activeTab === "posters" && (
+              <motion.div
+                key="posters"
+                variants={getVariants(activeTab, prevTab)}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <Posters />
+              </motion.div>
+            )}
+            {activeTab === "motions" && (
+              <motion.div
+                key="motions"
+                variants={getVariants(activeTab, prevTab)}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <Videos />
+              </motion.div>
+            )}
+            {activeTab === "videos" && (
+              <motion.div
+                key="videos"
+                variants={getVariants(activeTab, prevTab)}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <Motions />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </main>
     </>
   );

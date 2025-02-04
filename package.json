@@ -40,6 +40,7 @@
     "sitemap": "^8.0.0",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.2.1",
+    "video-react": "^0.16.0",
     "webpack": "^5.90.3",
     "yet-another-react-lightbox": "^3.21.7"
   },
