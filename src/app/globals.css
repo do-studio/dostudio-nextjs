@@ -647,7 +647,7 @@ cursor: pointer;
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: black;
+  background-color: #AFFE00;
   transition: width 0.30s ease-out;
 }
 .foot-underline-hover-effect:hover::before {
@@ -667,7 +667,7 @@ cursor: pointer;
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: #6b7280;
+  background-color: black;
   transition: width 0.30s ease-out;
 }
 .foot-underline-hover-effect-black:hover::before {
