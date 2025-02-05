@@ -54,7 +54,7 @@ const DigitalMarketing = () => {
       <main className="min-h-screen w-full bg-white pt-32">
         <div className="w-fit mx-auto flex justify-between text-center rounded-full  md:text-4xl h-10 text-gray-500 font-light">
           <div
-            className={`w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5 ${activeTab === "motions" ? "-translate-y-1 md:-translate-y-2 scale-110 text-black" : ""
+            className={`w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5 ${activeTab === "motions" ? "-translate-y-1 md:-translate-y-2 scale-110 text-black " : ""
               }`}
             onClick={() => handleTabChange("motions")}
           >
@@ -84,7 +84,7 @@ const DigitalMarketing = () => {
           </div>
         </div>
 
-        <div className={`w-11/12 xl:w-9/12 mx-auto pt-4 py-20  ${activeTab != "posters" && "columns-2 md:columns-3"} columns-3 gap-x-0 gap-y-0`}>
+        <div className={`w-11/12 xl:w-9/12 mx-auto pt-4 py-20  ${activeTab != "posters" ? " columns-2 md:columns-3 " : ' columns-3 ' }  gap-x-0 gap-y-0`}>
           <AnimatePresence mode="wait">
             {activeTab === "posters" && (
               <motion.div
