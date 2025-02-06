@@ -40,7 +40,7 @@ async function getData() {
 
 const Blogs = async () => {
   const blogdata = await getData();
-  console.log(blogdata);
+  // console.log(blogdata.data);
   return (
     <>
       <Head>
