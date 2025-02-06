@@ -49,23 +49,23 @@ const Blogs = async () => {
 
       <main className="min-h-screen w-full bg-white">
         <div className="w-11/12 xl:w-9/12 mx-auto pt-24 py-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-          {blogdata.data && blogdata.data.length > 0 ? (
-            blogdata.data?.reverse().map((data, i) => (
-              <Link href={`/blogs/${data.attributes.slug}`} key={i}>
+          {blogdata?.data && blogdata?.data?.length > 0 ? (
+            blogdata?.data?.map((data, i) => (
+              <Link href={`/blogs/${data?.attributes.slug}`} key={i}>
                 <FadeUp duration={0.3} delay={0.2 * i}>
                   <div className="space-y-2 group">
                     <div className="relative overflow-hidden  h-[350px] xl:h-[500px] w-full space-y-3">
                       <Image
                         id="lightgallery"
-                        src={data.attributes.image.data.attributes.url}
+                        src={data?.attributes.image.data.attributes.url}
                         fill={true}
                         className="object-cover grayscale hover:grayscale-0 group-hover:scale-125 group-hover:rotate-6 duration-300"
                         loading="lazy"
-                        alt={data.attributes.title}
+                        alt={data?.attributes.title}
                       />
                     </div>
                     <h1 className="text-xl font-medium capitalize group-hover:underline duration-300 pr-5">
-                      {data.attributes.title}
+                      {data?.attributes.title}
                     </h1>
                   </div>
                 </FadeUp>
