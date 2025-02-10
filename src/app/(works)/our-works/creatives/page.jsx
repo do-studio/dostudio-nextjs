@@ -6,7 +6,7 @@ import Posters from '../../../../components/tabs/Posters'
 
 import Videos from '../../../../components/tabs/Videos'
 import Motions from '../../../../components/tabs/Motions'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 
@@ -41,20 +41,36 @@ const DigitalMarketing = () => {
     setActiveTab(tab);
   };
 
+  useEffect(() => {
+    // Set title
+    document.title = "Creative Agency in Calicut: Branding, Web Design, Creatives";
+
+    // Set meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more: View our portfolio."
+      );
+    } else {
+      const newMetaDescription = document.createElement("meta");
+      newMetaDescription.setAttribute("name", "description");
+      newMetaDescription.setAttribute(
+        "content",
+        "Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more: View our portfolio."
+      );
+      document.head.appendChild(newMetaDescription);
+    }
+  }, []);
+
   return (
     <>
-      <Head>
-        <title>Creative Agency in Calicut: Branding, Web Design, Creatives</title>
-        <meta
-          name="description"
-          content="Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more: View our portfolio."
-        />
-      </Head>
+      
 
       <main className="min-h-screen w-full bg-white pt-32">
         <div className="w-fit mx-auto flex justify-between text-center rounded-full  md:text-4xl h-10 text-gray-500 font-light">
           <div
-            className={`w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5 ${activeTab === "motions" ? "-translate-y-1 md:-translate-y-2 scale-110 text-black " : ""
+            className={`w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5 ${activeTab === "motions" ? "-translate-y-1 md:-translate-y-2 scale-110 text-black  " : ""
               }`}
             onClick={() => handleTabChange("motions")}
           >
@@ -84,7 +100,7 @@ const DigitalMarketing = () => {
           </div>
         </div>
 
-        <div className={`w-11/12 xl:w-9/12 mx-auto pt-4 py-20  ${activeTab != "posters" ? " columns-2 md:columns-3 " : ' columns-3 ' }  gap-x-0 gap-y-0`}>
+        <div className={`w-11/12 xl:w-9/12 mx-auto pt-4 py-20  ${activeTab != "posters" ? " columns-2 md:columns-3 " : ' columns-3 '}  gap-x-0 gap-y-0`}>
           <AnimatePresence mode="wait">
             {activeTab === "posters" && (
               <motion.div

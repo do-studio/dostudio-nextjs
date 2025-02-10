@@ -53,37 +53,84 @@ const PrintDesign = () => {
     }
   };
 
+  useEffect(() => {
+    // Set title
+    document.title = "Print Designing Company in Calicut | Boost Brand Visibility";
+
+    // Set meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
+    } else {
+      const newMetaDescription = document.createElement("meta");
+      newMetaDescription.setAttribute("name", "description");
+      newMetaDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
+      document.head.appendChild(newMetaDescription);
+    }
+
+    // Set Open Graph meta tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Print Designing Company in Calicut | Boost Brand Visibility");
+    } else {
+      const newOgTitle = document.createElement("meta");
+      newOgTitle.setAttribute("property", "og:title");
+      newOgTitle.setAttribute("content", "Print Designing Company in Calicut | Boost Brand Visibility");
+      document.head.appendChild(newOgTitle);
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
+    } else {
+      const newOgDescription = document.createElement("meta");
+      newOgDescription.setAttribute("property", "og:description");
+      newOgDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
+      document.head.appendChild(newOgDescription);
+    }
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (!ogUrl) {
+      const newOgUrl = document.createElement("meta");
+      newOgUrl.setAttribute("property", "og:url");
+      newOgUrl.setAttribute("content", "https://dostudio.co.in");
+      document.head.appendChild(newOgUrl);
+    }
+
+    // Set Twitter meta tags
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) {
+      twitterTitle.setAttribute("content", "Print Designing Company in Calicut | Boost Brand Visibility");
+    } else {
+      const newTwitterTitle = document.createElement("meta");
+      newTwitterTitle.setAttribute("name", "twitter:title");
+      newTwitterTitle.setAttribute("content", "Print Designing Company in Calicut | Boost Brand Visibility");
+      document.head.appendChild(newTwitterTitle);
+    }
+
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) {
+      twitterDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
+    } else {
+      const newTwitterDescription = document.createElement("meta");
+      newTwitterDescription.setAttribute("name", "twitter:description");
+      newTwitterDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
+      document.head.appendChild(newTwitterDescription);
+    }
+
+    const twitterCard = document.querySelector('meta[name="twitter:card"]');
+    if (!twitterCard) {
+      const newTwitterCard = document.createElement("meta");
+      newTwitterCard.setAttribute("name", "twitter:card");
+      newTwitterCard.setAttribute("content", "summary_large_image");
+      document.head.appendChild(newTwitterCard);
+    }
+  }, []);
+  
+
   return (
     <>
-      <Helmet>
-        <title>
-          Print Designing Company in Calicut | Boost Brand Visibility
-        </title>
-        <meta
-          name="description"
-          content="Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image."
-        />
-
-        <meta
-          property="og:title"
-          content="Print Designing Company in Calicut | Boost Brand Visibility"
-        />
-        <meta
-          property="og:description"
-          content="Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image."
-        />
-        <meta property="og:url" content="https://dostudio.co.in" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Print Designing Company in Calicut | Boost Brand Visibility"
-        />
-        <meta
-          name="twitter:description"
-          content="Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image."
-        />
-      </Helmet>
+      
       <main className="min-h-screen w-full bg-white">
         <div className="w-11/12 xl:w-10/12 mx-auto pt-20 xl:pt-24 py-20 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
           {data && data.length > 0 ? (

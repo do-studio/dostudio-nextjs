@@ -52,6 +52,8 @@ const FaqComponent1 = () => {
     setActiveIndex1(activeIndex1 === index ? null : index);
   };
 
+
+
   return (
     <div className="w-full mx-auto">
       {faqs1.map((faq, index) => (
@@ -291,38 +293,94 @@ const Page = () => {
     getData();
   }, []);
 
+  useEffect(() => {
+    // Set title
+    document.title = "Branding Agency in Calicut, Branding Services in Calicut";
+
+    // Set meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation.");
+    } else {
+      const newMetaDescription = document.createElement("meta");
+      newMetaDescription.setAttribute("name", "description");
+      newMetaDescription.setAttribute("content", "Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation.");
+      document.head.appendChild(newMetaDescription);
+    }
+
+    // Set meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute("content", "Branding agency in calicut, Advertising agency in Calicut, Agency in Calicut, Best Advertising agency in Calicut, best branding agency in calicut, creative agency in calicut, branding services in calicut, best branding company in calicut, digital agency in calicut, best social media marketing agency in calicut");
+    } else {
+      const newMetaKeywords = document.createElement("meta");
+      newMetaKeywords.setAttribute("name", "keywords");
+      newMetaKeywords.setAttribute("content", "Branding agency in calicut, Advertising agency in Calicut, Agency in Calicut, Best Advertising agency in Calicut, best branding agency in calicut, creative agency in calicut, branding services in calicut, best branding company in calicut, digital agency in calicut, best social media marketing agency in calicut");
+      document.head.appendChild(newMetaKeywords);
+    }
+
+    // Set Open Graph meta tags
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Branding Agency in Calicut, Branding Services in Calicut");
+    } else {
+      const newOgTitle = document.createElement("meta");
+      newOgTitle.setAttribute("property", "og:title");
+      newOgTitle.setAttribute("content", "Branding Agency in Calicut, Branding Services in Calicut");
+      document.head.appendChild(newOgTitle);
+    }
+
+    let ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation.");
+    } else {
+      const newOgDescription = document.createElement("meta");
+      newOgDescription.setAttribute("property", "og:description");
+      newOgDescription.setAttribute("content", "Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation.");
+      document.head.appendChild(newOgDescription);
+    }
+
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (!ogUrl) {
+      const newOgUrl = document.createElement("meta");
+      newOgUrl.setAttribute("property", "og:url");
+      newOgUrl.setAttribute("content", "https://dostudio.co.in");
+      document.head.appendChild(newOgUrl);
+    }
+
+    // Set Twitter meta tags
+    let twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) {
+      twitterTitle.setAttribute("content", "Branding Agency in Calicut, Branding Services in Calicut");
+    } else {
+      const newTwitterTitle = document.createElement("meta");
+      newTwitterTitle.setAttribute("name", "twitter:title");
+      newTwitterTitle.setAttribute("content", "Branding Agency in Calicut, Branding Services in Calicut");
+      document.head.appendChild(newTwitterTitle);
+    }
+
+    let twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) {
+      twitterDescription.setAttribute("content", "Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation.");
+    } else {
+      const newTwitterDescription = document.createElement("meta");
+      newTwitterDescription.setAttribute("name", "twitter:description");
+      newTwitterDescription.setAttribute("content", "Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation.");
+      document.head.appendChild(newTwitterDescription);
+    }
+
+    const twitterCard = document.querySelector('meta[name="twitter:card"]');
+    if (!twitterCard) {
+      const newTwitterCard = document.createElement("meta");
+      newTwitterCard.setAttribute("name", "twitter:card");
+      newTwitterCard.setAttribute("content", "summary_large_image");
+      document.head.appendChild(newTwitterCard);
+    }
+  }, []);
+
   return (
     <>
-      <Helmet>
-        <title>Branding Agency in Calicut, Branding Services in Calicut</title>
-        <meta
-          name="description"
-          content="Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation."
-        />
-        <meta
-          name="keywords"
-          content="Branding agency in calicut, Advertising agency in Calicut, Agency in Calicut, Best Advertising agency in Calicut, best branding agency in calicut, creative agency in calicut, branding services in calicut, best branding company in calicut, digital agency in calicut, best social media marketing agency in calicut"
-        />
-        <meta
-          property="og:title"
-          content="Branding Agency in Calicut, Branding Services in Calicut"
-        />
-        <meta
-          property="og:description"
-          content="Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation."
-        />
-        <meta property="og:url" content="https://dostudio.co.in" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Branding Agency in Calicut, Branding Services in Calicut"
-        />
-        <meta
-          name="twitter:description"
-          content="Do Studio is a leading Branding Agency in Calicut offering best branding services, including logo design, brand strategy & visual identity creation."
-        />
-      </Helmet>
+      
       <section className="w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20">
         <div className="relative w-full h-48 md:h-80 xl:h-[500px]  overflow-hidden">
           <Image

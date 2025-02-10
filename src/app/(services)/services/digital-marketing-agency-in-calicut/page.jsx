@@ -296,38 +296,94 @@ const Page = () => {
     getData();
   }, []);
 
+  useEffect(() => {
+    // Set title
+    document.title = "Leading Digital Marketing Services in Calicut: Do Studio";
+
+    // Set meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more.");
+    } else {
+      const newMetaDescription = document.createElement("meta");
+      newMetaDescription.setAttribute("name", "description");
+      newMetaDescription.setAttribute("content", "Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more.");
+      document.head.appendChild(newMetaDescription);
+    }
+
+    // Set meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute("content", "Digital Marketing Agency in Calicut, Digital marketing services in Calicut, marketing agency in calicut, best marketing agency in calicut, digital marketing agency in kozhikode, best digital marketing agency in calicut, digital marketing companies in calicut, best social media marketing agency in calicut, socialmedia agency in kozhikode");
+    } else {
+      const newMetaKeywords = document.createElement("meta");
+      newMetaKeywords.setAttribute("name", "keywords");
+      newMetaKeywords.setAttribute("content", "Digital Marketing Agency in Calicut, Digital marketing services in Calicut, marketing agency in calicut, best marketing agency in calicut, digital marketing agency in kozhikode, best digital marketing agency in calicut, digital marketing companies in calicut, best social media marketing agency in calicut, socialmedia agency in kozhikode");
+      document.head.appendChild(newMetaKeywords);
+    }
+
+    // Set Open Graph meta tags
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Leading Digital Marketing Services in Calicut: Do Studio");
+    } else {
+      const newOgTitle = document.createElement("meta");
+      newOgTitle.setAttribute("property", "og:title");
+      newOgTitle.setAttribute("content", "Leading Digital Marketing Services in Calicut: Do Studio");
+      document.head.appendChild(newOgTitle);
+    }
+
+    let ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more.");
+    } else {
+      const newOgDescription = document.createElement("meta");
+      newOgDescription.setAttribute("property", "og:description");
+      newOgDescription.setAttribute("content", "Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more.");
+      document.head.appendChild(newOgDescription);
+    }
+
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (!ogUrl) {
+      const newOgUrl = document.createElement("meta");
+      newOgUrl.setAttribute("property", "og:url");
+      newOgUrl.setAttribute("content", "https://dostudio.co.in");
+      document.head.appendChild(newOgUrl);
+    }
+
+    // Set Twitter meta tags
+    let twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) {
+      twitterTitle.setAttribute("content", "Leading Digital Marketing Services in Calicut: Do Studio");
+    } else {
+      const newTwitterTitle = document.createElement("meta");
+      newTwitterTitle.setAttribute("name", "twitter:title");
+      newTwitterTitle.setAttribute("content", "Leading Digital Marketing Services in Calicut: Do Studio");
+      document.head.appendChild(newTwitterTitle);
+    }
+
+    let twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) {
+      twitterDescription.setAttribute("content", "Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more.");
+    } else {
+      const newTwitterDescription = document.createElement("meta");
+      newTwitterDescription.setAttribute("name", "twitter:description");
+      newTwitterDescription.setAttribute("content", "Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more.");
+      document.head.appendChild(newTwitterDescription);
+    }
+
+    const twitterCard = document.querySelector('meta[name="twitter:card"]');
+    if (!twitterCard) {
+      const newTwitterCard = document.createElement("meta");
+      newTwitterCard.setAttribute("name", "twitter:card");
+      newTwitterCard.setAttribute("content", "summary_large_image");
+      document.head.appendChild(newTwitterCard);
+    }
+  }, []);
+
   return (
     <>
-      <Helmet>
-        <title>Leading Digital Marketing Services in Calicut: Do Studio</title>
-        <meta
-          name="description"
-          content="Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more."
-        />
-        <meta
-          name="keywords"
-          content="Digital Marketing Agency in Calicut, Digital marketing services in Calicut, marketing agency in calicut, best marketing agency in calicut, digital marketing agency in kozhikode, best digital marketing agency in calicut, digital marketing companies in calicut, best social media marketing agency in calicut, socialmedia agency in kozhikode"
-        />
-        <meta
-          property="og:title"
-          content="Leading Digital Marketing Services in Calicut: Do Studio"
-        />
-        <meta
-          property="og:description"
-          content="Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more."
-        />
-        <meta property="og:url" content="https://dostudio.co.in" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Leading Digital Marketing Services in Calicut: Do Studio"
-        />
-        <meta
-          name="twitter:description"
-          content="Experience best digital marketing services in Calicut with Do Studio. Our team excels in SEO, social media marketing, PPC, and more."
-        />
-      </Helmet>
+      
       <section className="w-11/12 xl:w-10/12 mx-auto min-h-screen pt-20 py-20 flex flex-col gap-10 xl:gap-20">
         <div className="relative w-full h-48 md:h-80 xl:h-[500px] overflow-hidden">
           <Image
