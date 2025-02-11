@@ -260,7 +260,7 @@ export default function Home() {
         </Suspense>
         {/* <Clients/> */}
         <Suspense fallback={<p>Loading data...</p>}>
-          <div className="bg-white relative">
+          <div className="bg-white relative" id="contact-form">
             <img
               className=" w-60 xl:h-full xl:w-full absolute top-[50%] left-[50%] -translate-x-[50%] object-contain -translate-y-[50%] opacity-5 z-10"
               src={LogoDO.src}

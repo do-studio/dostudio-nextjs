@@ -54,19 +54,19 @@ const ContactForm = () => {
 
                     <form
                         onSubmit={handleSubmit}
-                        className="flex flex-col items-center w-full z-20 relative"
+                        className="flex flex-col items-center w-full z-20 relative border p-10 border-gray-500 rounded-3xl"
                     >
                         <div className="mb-4 flex flex-col gap-2 w-full">
                             <input
                                 type="text"
                                 placeholder="Name"
-                                className="w-full p-2 pl-0 border-b-2 bg-transparent placeholder:text-gray-600 outline-none"
+                                className="w-full p-2 pl-0 border-b border-gray-500  bg-transparent placeholder:text-gray-600 outline-none"
                                 name="msg_name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 required
                             />
-                            <div className="w-full flex p-2 pl-0 bg-transparent border-b-2">
+                            <div className="w-full flex p-2 pl-0 bg-transparent border-b border-gray-500 ">
                                 <PhoneInput
                                     required
                                     className="phonecode w-24 outline-none !bg-transparent"
@@ -92,7 +92,7 @@ const ContactForm = () => {
 
                         <button
                             type="submit"
-                            className="bg-primarygreen text-black shadow-2xl hover:shadow-xl duration-200 shadow-gray-500 py-4 uppercase font-semibold rounded-full px-10 w-fit"
+                            className="bg-primarygreen text-black shadow-lg hover:shadow-xl duration-200 shadow-gray-200 py-4 uppercase font-semibold rounded-full px-10 w-fit"
                         >
                             Get Started
                         </button>

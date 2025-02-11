@@ -48,7 +48,7 @@ const serviceData = [
     url: `/services/digital-marketing-agency-in-calicut`,
   },
   {
-    id: 6,
+    id: 3,
     title: "Website Development",
     desc: "Our website development services are focused on developing visually appealing, user-friendly, responsive websites that bring about customer engagement and ultimately meet business goals.",
     img: servicewebbg,
@@ -56,7 +56,7 @@ const serviceData = [
     url: `/services/web-development-company-in-calicut`,
   },
   {
-    id: 3,
+    id: 4,
     title: "package design",
     desc: "Our package design services combine creativity with functionality to create visually appealing and practical packaging that will help brand your product.",
     img: wrk3,
@@ -64,7 +64,7 @@ const serviceData = [
     url: `#`,
   },
   {
-    id: 4,
+    id: 5,
     title: "Production",
     desc: `From concept to the final product, we're driven by detailed planning and seamless execution. Every work we produce is exceptional and sets high expectations in results that customers appreciate.`,
     img: wrk4,
@@ -72,7 +72,7 @@ const serviceData = [
     url: `#`,
   },
   {
-    id: 5,
+    id: 6,
     title: "print design",
     desc: "We blend creativity with strategic thinking to ensure your packaging not only stands out on the shelf but also resonates with your target audience, driving sales and brand loyalty.",
     img: wrk5,
