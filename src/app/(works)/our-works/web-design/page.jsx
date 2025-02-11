@@ -63,7 +63,7 @@ const WebDesign = async () => {
           </div>
         </div>
         <Link
-           href="/#contact-form"
+           href="/contact"
            scroll={true}
           className="bg-primarygreen text-black w-fit mx-auto px-10 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center mb-10 mt-5"
         >
