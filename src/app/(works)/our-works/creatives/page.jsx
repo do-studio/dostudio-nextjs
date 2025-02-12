@@ -65,7 +65,7 @@ const DigitalMarketing = () => {
 
   return (
     <>
-      
+
 
       <main className="min-h-screen w-full bg-white pt-32">
         <div className="w-fit mx-auto flex justify-between text-center rounded-full  md:text-4xl h-10 text-gray-500 font-light">
@@ -88,7 +88,7 @@ const DigitalMarketing = () => {
               posters
             </h1>
           </div>
-          <div className="h-full w-[1px] bg-black"></div>
+          {/* <div className="h-full w-[1px] bg-black"></div>
           <div
             className={`w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5 ${activeTab === "videos" ? "-translate-y-1 md:-translate-y-2 scale-110 text-black" : ""
               }`}
@@ -97,50 +97,48 @@ const DigitalMarketing = () => {
             <h1 className={`pb-1 ${activeTab === "videos" ? "font-medium" : "foot-underline-hover-effect-black"}`}>
               videos
             </h1>
-          </div>
+          </div> */}
         </div>
 
-        <div className={`w-11/12 xl:w-9/12 mx-auto pt-4 py-20  ${activeTab != "posters" ? " columns-2 md:columns-3 " : ' columns-3 '}  gap-x-0 gap-y-0`}>
-          <AnimatePresence mode="wait">
-            {activeTab === "posters" && (
-              <motion.div
-                key="posters"
-                variants={getVariants(activeTab, prevTab)}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              >
-                <Posters />
-              </motion.div>
-            )}
-            {activeTab === "motions" && (
-              <motion.div
-                key="motions"
-                variants={getVariants(activeTab, prevTab)}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              >
-                <Videos />
-              </motion.div>
-            )}
-            {activeTab === "videos" && (
-              <motion.div
-                key="videos"
-                variants={getVariants(activeTab, prevTab)}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              >
-                <Motions />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </main>
+        <AnimatePresence mode="wait">
+          {activeTab === "posters" && (
+            <motion.div
+              key="posters"
+              variants={getVariants(activeTab, prevTab)}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              <Posters />
+            </motion.div>
+          )}
+          {activeTab === "motions" && (
+            <motion.div
+              key="motions"
+              variants={getVariants(activeTab, prevTab)}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              <Motions />
+            </motion.div>
+          )}
+          {activeTab === "videos" && (
+            <motion.div
+              key="videos"
+              variants={getVariants(activeTab, prevTab)}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              <Motions />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main >
     </>
   );
 };
