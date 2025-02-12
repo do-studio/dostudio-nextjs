@@ -67,9 +67,15 @@ const motions = () => {
     };
 
 
+    const convertDriveUrl = (url) => {
+        const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+        return match ? `https://drive.google.com/file/d/${match[1]}/preview` : url;
+    };
+
+
 
     return (
-        <div>
+        <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20  grid grid-cols-2 md:grid-cols-3    gap-x-0 gap-y-0'>
             {isLoading ? (
                 // Skeleton loading
                 <Skeleton style={{ aspectRatio: "9/16", gap: "0" }} count={9} />
@@ -84,31 +90,17 @@ const motions = () => {
                                     : "9/16", // Fallback to a square aspect ratio
                             }}
                         >
-                            <ReactPlayer
-                                url={`${data?.attributes?.url}?autoplay=0&controls=0&modestbranding=0&rel=0&showinfo=0&fs=0&iv_load_policy=3&playsinline=1&disablekb=0`}
-                                playing={false} // Autoplay
-                                loop={true}
-                                muted={true}
-                                playsinline={true}
-                                controls={false}
-                                width="100%"
-                                height="100%"
-                                className="object-fill"
-                                style={{ objectFit: "fill" }}
-                                config={{
-                                    youtube: {
-                                        playerVars: {
-                                            controls: 0, // Hides player controls
-                                            modestbranding: 1, // Minimizes branding
-                                            rel: 0, // Prevents showing related videos from other channels
-                                            fs: 0, // Disables fullscreen button
-                                            iv_load_policy: 3, // Hides annotations
-                                            playsinline: 1, // Ensures inline playback on mobile
-                                            disablekb: 1, // Disables keyboard controls
-                                        },
-                                    },
-                                }}
-                            />
+
+                            <iframe
+                                src={`${convertDriveUrl(data?.attributes?.url)}`}
+                                className=" w-full h-full  relative"
+
+                                allow="true"
+                                allowFullScreen="true"
+
+                            ></iframe>
+
+
                         </div>
                     </div>
                 ))
