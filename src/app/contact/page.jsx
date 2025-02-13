@@ -1,4 +1,4 @@
-import ContactForm from "./form";
+import ContactForm from "../../components/home/designs/ContactForm";
 import FadeUp from "../../components/motions/fadeUp";
 import Head from "next/head";
 
@@ -79,7 +79,11 @@ const Contact = () => {
               </FadeUp>
             </div>
             {/* form */}
-            <ContactForm />
+            <section className=' w-full  text-center '>
+
+            <ContactForm width="1/1" />
+            </section>
+
           </div>
         </div>
       </main>

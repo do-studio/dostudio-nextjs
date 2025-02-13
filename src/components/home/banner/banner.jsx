@@ -89,7 +89,7 @@ const Banner = () => {
 
   return (
     <>
-      <section className='grid grid-cols-1 pt-16 min-h-[calc(100vh-4rem)] '   >
+      <section className='grid grid-cols-1 pt-16 min-h-[calc(100vh-4rem)] z-[999999999]'   >
         {currentVideo ? (
           <div className='p-3 min-h-[calc(100vh-4rem)] 2xl:h-[calc(100vh-4rem)]'>
             <div className=' w-full h-full   bg-black z-50 overflow-hidden   rounded-3xl xl:rounded-[3rem]'>

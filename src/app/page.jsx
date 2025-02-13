@@ -271,10 +271,10 @@ export default function Home() {
             />
             <DynamicWorkwithUs />
           </div>
-        </Suspense>
-        <Suspense fallback={<p>Loading data...</p>}>
+        </Suspense>c
+        {/* <Suspense fallback={<p>Loading data...</p>}>
           <ContactButton />
-        </Suspense>
+        </Suspense> */}
         {/* <GetinTouch/>
       <MovingWords/> */}
       </main>
