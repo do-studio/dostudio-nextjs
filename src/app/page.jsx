@@ -49,6 +49,9 @@ const DynamicFaq = dynamic(() =>
 const ContactForm = dynamic(() =>
   import("../components/home/designs/ContactForm")
 );
+const ContactButton = dynamic(() =>
+  import("../components/home/designs/ContactButton")
+);
 
 export default function Home() {
 
@@ -268,6 +271,9 @@ export default function Home() {
             />
             <DynamicWorkwithUs />
           </div>
+        </Suspense>
+        <Suspense fallback={<p>Loading data...</p>}>
+          <ContactButton />
         </Suspense>
         {/* <GetinTouch/>
       <MovingWords/> */}

@@ -7,6 +7,7 @@ import "yet-another-react-lightbox/styles.css"; // Import the lightbox styles
 import ReactPlayer from 'react-player';
 
 
+
 async function getData() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/productions?&populate=*`,
@@ -73,6 +74,15 @@ const Production = () => {
   };
 
 
+  const fetchVideoUrl = async () => {
+    const apiKey = "YOUR_GOOGLE_DRIVE_API_KEY"; // Replace with your API key
+    const directLink = `https://www.googleapis.com/drive/v3/files/1AjnBNdITZ9T75EMFFEPlwf-TKqX54FVl?alt=media&key=AIzaSyBl6PF6Uvdr72gXXkkUaIvBSDYUBtmfBlM`;
+    // setVideoUrl(directLink);
+    console.log(directLink)
+  };
+
+  // fetchVideoUrl();
+
 
   return (
     <main className='min-h-screen w-full bg-white pt-32'>
@@ -93,13 +103,14 @@ const Production = () => {
                 }}
               >
                
-                <iframe
+                {/* <iframe
                   src={`${convertDriveUrl(data?.attributes?.videourl)}`}
                   className=" w-full h-full  relative"
                   allow="autoplay"
                   allowFullScreen="true"
                   
-                ></iframe>
+                ></iframe> */}
+                <ReactPlayer url="https://drive.google.com/file/d/1AjnBNdITZ9T75EMFFEPlwf-TKqX54FVl/preview" controls />
 
 
               </div>
