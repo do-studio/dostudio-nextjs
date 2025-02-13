@@ -8,6 +8,7 @@ import RootClient from "./RootClient";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { CanonicalTag } from "./CanonicalTag";
 import Script from "next/script";
+import ContactButton from "../components/home/designs/ContactButton";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -66,6 +67,8 @@ export default function RootLayout({ children }) {
           <RootClient>
             <Navbar />
             {children}
+          <ContactButton />
+
             <Footer />
           </RootClient>
         </div>
