@@ -103,14 +103,14 @@ const Production = () => {
                 }}
               >
                
-                {/* <iframe
+                <iframe
                   src={`${convertDriveUrl(data?.attributes?.videourl)}`}
                   className=" w-full h-full  relative"
                   allow="autoplay"
                   allowFullScreen="true"
                   
-                ></iframe> */}
-                <ReactPlayer url="https://drive.google.com/file/d/1AjnBNdITZ9T75EMFFEPlwf-TKqX54FVl/preview" controls />
+                ></iframe>
+                {/* <ReactPlayer url="https://drive.google.com/file/d/1AjnBNdITZ9T75EMFFEPlwf-TKqX54FVl/preview" controls /> */}
 
 
               </div>
