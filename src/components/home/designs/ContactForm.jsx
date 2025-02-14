@@ -50,7 +50,7 @@ const ContactForm = ({ width = "1/2" }) => {
         <div className=" w-full h-full">
 
             <div className="flex items-center justify-center   z-50 ">
-                <div className={`bg-[#ffffff] p-6 xl:p-10 xl:py-20 flex w-full ${`md:w-${width}`}  justify-center  items-center rounded-[1.5rem] relative`}>
+                <div className={`bg-[#ffffff] p-6 xl:p-10 xl:py-20 flex w-full ${`md:w-1/2`}  justify-center  items-center rounded-[1.5rem] relative`}>
 
                     <form
                         onSubmit={handleSubmit}

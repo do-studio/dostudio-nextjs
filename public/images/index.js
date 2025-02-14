@@ -8,6 +8,7 @@ import wrk2 from './medias/work2.webp'
 import wrk3 from './medias/work3.webp'
 import wrk4 from './medias/work4.webp'
 import wrk5 from './medias/work5.webp'
+import DigitalMarketingCardPhoto from "../images/medias/services/digital-marketing/digital-marketing.webp"
 
 import facebooklogo from './medias/sociallogo/facebook.svg'
 import insatgramlogo from './medias/sociallogo/instagram.svg'
@@ -89,6 +90,7 @@ import serdig2 from './medias/services/digital-marketing/ban4.webp'
 
 import serwebdev1 from './medias/services/web/ban1.webp'
 import serwebdev2 from './medias/services/web/webdev22.webp'
+import BrandingCardImage from './medias/services/branding/branding.webp'
 
 
 
@@ -168,5 +170,7 @@ export {
     serviceBg,
     serbra1, serbra2, serdig1, serdig2, serwebdev1,
     servicewebbg,
-    serwebdev2
+    serwebdev2,
+    DigitalMarketingCardPhoto,
+    BrandingCardImage
 }

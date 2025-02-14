@@ -1,6 +1,9 @@
 import ContactForm from "../../components/home/designs/ContactForm";
 import FadeUp from "../../components/motions/fadeUp";
 import Head from "next/head";
+import DynamicWorkwithUs from "../../components/home/designs/workWithUs"
+
+import { LogoDO } from "../../../public/images";
 
 export const metadata = {
   title: "Your Digital Marketing Solutions begins: Contact Do Studio",
@@ -24,6 +27,14 @@ const Contact = () => {
     <>
       <main className="min-h-screen w-full bg-white">
         <div className="w-11/12 xl:w-10/12 mx-auto pt-32 py-20">
+        <div className="bg-white relative" >
+                <img
+                  className=" w-60 xl:h-full xl:w-full absolute top-[50%] left-[50%] -translate-x-[50%] object-contain -translate-y-[50%] opacity-5 z-10"
+                  src={LogoDO.src}
+                  alt=""
+                />
+                <DynamicWorkwithUs />
+              </div>
           <div className="space-y-5">
             <FadeUp duration={0.3} delay={0.1}>
               <h1 className="text-5xl font-medium">Reach Out to Our Team.</h1>
@@ -37,6 +48,7 @@ const Contact = () => {
           </div>
           {/*  */}
           <div className="flex flex-col-reverse md:flex-row xl:gap-x-32 gap-y-10 pt-10 xl:pt-20 h-full">
+            
             {/* address */}
             <div className="md:basis-1/2 flex flex-col gap-5 xl:gap-10 font-light text-base xl:text-2xl">
               <FadeUp duration={0.3} delay={0.3}>
@@ -81,7 +93,7 @@ const Contact = () => {
             {/* form */}
             <section className=' w-full  text-center '>
 
-            <ContactForm width="1/1" />
+              
             </section>
 
           </div>
