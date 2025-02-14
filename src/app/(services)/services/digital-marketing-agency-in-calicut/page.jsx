@@ -12,6 +12,7 @@ import {
   serbra2,
   serdig1,
   serdig2,
+  DigitalMarketingBannerImage
 } from "../../../../../public/images/index";
 import Image from "next/image";
 import Link from "next/link";
@@ -390,7 +391,8 @@ const Page = () => {
             className="object-cover"
             placeholder="blur"
             fill
-            src={serdig1}
+            src={DigitalMarketingBannerImage}
+            objectPosition="top"
             alt="digital marketing agency in kozhikode"
           />
         </div>

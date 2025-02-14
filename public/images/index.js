@@ -91,6 +91,7 @@ import serdig2 from './medias/services/digital-marketing/ban4.webp'
 import serwebdev1 from './medias/services/web/ban1.webp'
 import serwebdev2 from './medias/services/web/webdev22.webp'
 import BrandingCardImage from './medias/services/branding/branding.webp'
+import DigitalMarketingBannerImage from "./medias/services/digital-marketing/digital-marketing-banner.webp"
 
 
 
@@ -172,5 +173,6 @@ export {
     servicewebbg,
     serwebdev2,
     DigitalMarketingCardPhoto,
-    BrandingCardImage
+    BrandingCardImage,
+    DigitalMarketingBannerImage
 }
