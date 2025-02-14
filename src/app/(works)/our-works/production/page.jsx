@@ -85,8 +85,15 @@ const Production = () => {
 
 
   return (
-    <main className='min-h-screen w-full bg-white pt-32'>
+    <main className='min-h-screen w-full bg-white pt-32 md:text-4xl h-10 text-black font-light'>
+      <div
+        className={`w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5 `}
 
+      >
+        <h1 className={`pb-1 font-medium`}>
+          videos
+        </h1>
+      </div>
       <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20  grid grid-cols-2 md:grid-cols-3    gap-x-0 gap-y-0'>
         {isLoading ? (
           // Skeleton loading
@@ -94,6 +101,8 @@ const Production = () => {
         ) : workdata && workdata.length > 0 ? (
           workdata.map((data, i) => (
             <div className="relative group" key={i}>
+
+
               <div
                 className={`relative w-full break-inside-avoid-column`}
                 style={{
@@ -102,13 +111,13 @@ const Production = () => {
                     : "9/16", // Fallback to a square aspect ratio
                 }}
               >
-               
+
                 <iframe
                   src={`${convertDriveUrl(data?.attributes?.videourl)}`}
                   className=" w-full h-full  relative"
                   allow="autoplay"
                   allowFullScreen="true"
-                  
+
                 ></iframe>
                 {/* <ReactPlayer url="https://drive.google.com/file/d/1AjnBNdITZ9T75EMFFEPlwf-TKqX54FVl/preview" controls /> */}
 
@@ -121,7 +130,7 @@ const Production = () => {
             No data found.
           </div>
         )}
-        
+
       </div>
     </main>
   )

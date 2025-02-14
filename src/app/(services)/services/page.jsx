@@ -6,7 +6,8 @@ import {
   wrk4,
   wrk5,
   WRK1,
-  servicewebbg,
+  BrandingCardImage,
+  servicewebbg, DigitalMarketingCardPhoto
 } from "../../../../public/images/index";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,7 +36,7 @@ const serviceData = [
     id: 1,
     title: "branding",
     desc: "Our branding services are designed to enable your business to rise to prominence with an extremely powerful, unforgettable identity speaking for itself to your target audience.",
-    img: wrk1,
+    img: BrandingCardImage,
     alt: `Creative marketing agency in Calicut`,
     url: `/services/branding-agency-in-calicut`,
   },
@@ -43,7 +44,7 @@ const serviceData = [
     id: 2,
     title: "Digital marketing",
     desc: "Our services in digital marketing are structured to give your brand the needed online presence and drive measurable results.",
-    img: wrk2,
+    img: DigitalMarketingCardPhoto,
     alt: `Best digital marketing agency in Calicut`,
     url: `/services/digital-marketing-agency-in-calicut`,
   },
@@ -75,7 +76,7 @@ const serviceData = [
     id: 6,
     title: "print design",
     desc: "We blend creativity with strategic thinking to ensure your packaging not only stands out on the shelf but also resonates with your target audience, driving sales and brand loyalty.",
-    img: wrk5,
+    img: wrk1,
     alt: ``,
     url: `#`,
   },
