@@ -5,6 +5,7 @@ import {
   serbra1,
   serbra2,
   serwebdev2,
+  WebsiteServiceBanner
 } from "../../../../../public/images/index";
 import Image from "next/image";
 import Link from "next/link";
@@ -371,7 +372,7 @@ const Page = () => {
             className="object-cover object-center"
             placeholder="blur"
             fill
-            src={serwebdev1}
+            src={WebsiteServiceBanner}
             alt="Branding agency in Calicut"
           />
         </div>

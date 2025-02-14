@@ -62,7 +62,7 @@ const serviceData = [
     desc: "Our package design services combine creativity with functionality to create visually appealing and practical packaging that will help brand your product.",
     img: wrk3,
     alt: `Socialmedia marketing agency in Calicut`,
-    url: `#`,
+    url: `/our-works/package-design`,
   },
   {
     id: 5,
@@ -70,7 +70,7 @@ const serviceData = [
     desc: `From concept to the final product, we're driven by detailed planning and seamless execution. Every work we produce is exceptional and sets high expectations in results that customers appreciate.`,
     img: wrk4,
     alt: ``,
-    url: `#`,
+    url: `/our-works/production`,
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ const serviceData = [
     desc: "We blend creativity with strategic thinking to ensure your packaging not only stands out on the shelf but also resonates with your target audience, driving sales and brand loyalty.",
     img: wrk1,
     alt: ``,
-    url: `#`,
+    url: `/our-works/print-design`,
   },
 ];
 
