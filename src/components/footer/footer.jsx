@@ -60,12 +60,9 @@ const Footer = () => {
 
 
   return (
-    <footer className="bg-gradient-to-b from-gray-100 to-white  border-[1px] border-gray-100 pt-10 text-black relative">
+    <footer className="bg-gradient-to-b z-40 from-gray-100 to-white  border-[1px] border-gray-100 pt-10 text-black relative">
       {
-
         animationTrue &&
-
-
         <div className='absolute right-0 -top-28 xl:-top-[100%]'>
           <video
             className="h-40 w-40 xl:h-60 xl:w-60 bg-transparent"
@@ -166,6 +163,12 @@ const Footer = () => {
                 href={"/our-works/print-design"}
               >
                 Print Design
+              </Link>
+              <Link
+                className="text-black  foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
+                href={"/our-works/production"}
+              >
+                Production
               </Link>
               {/* <Link
                 className="text-black  foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
