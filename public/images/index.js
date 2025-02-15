@@ -9,6 +9,7 @@ import wrk3 from './medias/work3.webp'
 import wrk4 from './medias/work4.webp'
 import wrk5 from './medias/work5.webp'
 import DigitalMarketingCardPhoto from "../images/medias/services/digital-marketing/digital-marketing.webp"
+import WebsiteServiceBanner from "../images/medias/services/web/website-service-banner.webp"
 
 import facebooklogo from './medias/sociallogo/facebook.svg'
 import insatgramlogo from './medias/sociallogo/instagram.svg'
@@ -174,5 +175,6 @@ export {
     serwebdev2,
     DigitalMarketingCardPhoto,
     BrandingCardImage,
-    DigitalMarketingBannerImage
+    DigitalMarketingBannerImage,
+    WebsiteServiceBanner
 }
