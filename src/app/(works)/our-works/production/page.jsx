@@ -1,17 +1,15 @@
 "use client"
-import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-import Skeleton from 'react-loading-skeleton'
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
 import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css"; // Import the lightbox styles
+import "yet-another-react-lightbox/styles.css";
 import ReactPlayer from 'react-player';
-
-
 
 async function getData() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/productions?&populate=*`,
-    { next: { revalidate: 60 } } // Revalidate every 60 seconds
+    { next: { revalidate: 60 } }
   );
 
   if (!res.ok) {
@@ -23,105 +21,56 @@ async function getData() {
 
 const Production = () => {
   const [workdata, setWorkdata] = useState([]);
-  const [isOpen, setIsOpen] = useState(false); // Lightbox open state
-  const [photoIndex, setPhotoIndex] = useState(0); // Current image index
-  const [images, setImages] = useState([]); // Image URLs for the lightbox
-  const [isLoading, setIsLoading] = useState(true); // Loading state
+  const [isLoading, setIsLoading] = useState(true);
+  const [playingIndex, setPlayingIndex] = useState(null); // Track which video is playing
 
-
-
-  // Fetch data on component mount
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true); // Start loading
+      setIsLoading(true);
       const data = await getData();
       setWorkdata(data.data);
-      setIsLoading(false); // Stop loading
-
-      return console.log(data)
-
-      // Extract image URLs for the lightbox
-      const sorted = data.data?.sort(
-        (a, b) => a.attributes.order - b.attributes.order
-      );
-      const imageUrls = sorted.map(
-        (item) => item.attributes.image.data.attributes.url
-      );
-      setImages(imageUrls);
-
+      setIsLoading(false);
     };
     fetchData();
   }, []);
 
-
-
-  // Sort the data by the order field
-  const sortedData = workdata?.sort(
-    (a, b) => a.attributes.order - b.attributes.order
-  );
-
-
-  // Handle image click
-  const handleImageClick = (order) => {
-    const index = sortedData.findIndex((item) => item.attributes.order === order);
-    setPhotoIndex(index);
-    setIsOpen(true);
-  };
-
-  const convertDriveUrl = (url) => {
-    const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-    return match ? `https://drive.google.com/file/d/${match[1]}/preview` : url;
-  };
-
-
-  const fetchVideoUrl = async () => {
-    const apiKey = "YOUR_GOOGLE_DRIVE_API_KEY"; // Replace with your API key
-    const directLink = `https://www.googleapis.com/drive/v3/files/1AjnBNdITZ9T75EMFFEPlwf-TKqX54FVl?alt=media&key=AIzaSyBl6PF6Uvdr72gXXkkUaIvBSDYUBtmfBlM`;
-    // setVideoUrl(directLink);
-    console.log(directLink)
-  };
-
-  // fetchVideoUrl();
-
+  const sortedData = workdata?.sort((a, b) => a.attributes.order - b.attributes.order);
 
   return (
-    <main className='min-h-screen w-full bg-white pt-32 md:text-4xl h-10 text-black font-light'>
-      <div
-        className={`w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5 `}
-
-      >
-        <h1 className={`pb-1 font-medium`}>
-          videos
-        </h1>
+    <main className='min-h-screen w-full bg-white pt-32 md:text-4xl text-black font-light'>
+      <div className='w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5'>
+        <h1 className='pb-1 font-medium'>Videos</h1>
       </div>
-      <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20  grid grid-cols-2 md:grid-cols-3    gap-x-0 gap-y-0'>
+
+      <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20 grid grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-0'>
         {isLoading ? (
-          // Skeleton loading
-          <Skeleton style={{ aspectRatio: "9/16", gap: "0" }} count={9} />
+          <Skeleton style={{ aspectRatio: "9/16" }} count={9} />
         ) : workdata && workdata.length > 0 ? (
           workdata.map((data, i) => (
-            <div className="relative group" key={i}>
-
-
+            <div
+              className="relative group"
+              key={i}
+              onMouseEnter={() => setPlayingIndex(i)}
+              onMouseLeave={() => setPlayingIndex(null)}
+            >
               <div
-                className={`relative w-full break-inside-avoid-column`}
-                style={{
-                  aspectRatio: data.attributes.height
-                    ? `${data.attributes.height}` // Dynamic aspect ratio
-                    : "9/16", // Fallback to a square aspect ratio
-                }}
+                className="relative w-full break-inside-avoid-column"
+                style={{ aspectRatio: data.attributes.height || "9/16" }}
               >
+                <ReactPlayer
+                  url={`${data?.attributes?.videourl}`}
 
-                <iframe
-                  src={`${convertDriveUrl(data?.attributes?.videourl)}`}
-                  className=" w-full h-full  relative"
-                  allow="autoplay"
-                  allowFullScreen="true"
-
-                ></iframe>
-                {/* <ReactPlayer url="https://drive.google.com/file/d/1AjnBNdITZ9T75EMFFEPlwf-TKqX54FVl/preview" controls /> */}
-
-
+                  // url={`https://ik.imagekit.io/ekomrfja9e/Snapinst.app_video_.mp4?tr=orig`}
+                  playing={playingIndex === i} // Play only when hovered
+                  loop={true}
+                  muted={false}
+                  playsinline={true}
+                  controls={false}
+                  width="100%"
+                  height="100%"
+                  className="object-fill"
+                  style={{ objectFit: "fill" }}
+                />
               </div>
             </div>
           ))
@@ -130,10 +79,9 @@ const Production = () => {
             No data found.
           </div>
         )}
-
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Production
+export default Production;

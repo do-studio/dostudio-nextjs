@@ -25,6 +25,8 @@ const motions = () => {
     const [photoIndex, setPhotoIndex] = useState(0); // Current image index
     const [images, setImages] = useState([]); // Image URLs for the lightbox
     const [isLoading, setIsLoading] = useState(true); // Loading state
+      const [playingIndex, setPlayingIndex] = useState(null); // Track which video is playing
+    
 
 
 
@@ -36,8 +38,7 @@ const motions = () => {
             setWorkdata(data.data);
             setIsLoading(false); // Stop loading
 
-            return console.log(data)
-
+            return 
             // Extract image URLs for the lightbox
             const sorted = data.data?.sort(
                 (a, b) => a.attributes.order - b.attributes.order
@@ -81,26 +82,30 @@ const motions = () => {
                 <Skeleton style={{ aspectRatio: "9/16", gap: "0" }} count={9} />
             ) : workdata && workdata.length > 0 ? (
                 workdata.map((data, i) => (
-                    <div className="relative group" key={i}>
+                    <div
+                        className="relative group"
+                        key={i}
+                        onMouseEnter={() => setPlayingIndex(i)}
+                        onMouseLeave={() => setPlayingIndex(null)}
+                    >
                         <div
-                            className={`relative w-full break-inside-avoid-column`}
-                            style={{
-                                aspectRatio: data.attributes.height
-                                    ? `${data.attributes.height}` // Dynamic aspect ratio
-                                    : "9/16", // Fallback to a square aspect ratio
-                            }}
+                            className="relative w-full break-inside-avoid-column"
+                            style={{ aspectRatio: data.attributes.height || "9/16" }}
                         >
+                            <ReactPlayer
+                                url={`${data?.attributes?.url}`}
 
-                            <iframe
-                                src={`${convertDriveUrl(data?.attributes?.url)}`}
-                                className=" w-full h-full  relative"
-
-                                allow="true"
-                                allowFullScreen="true"
-
-                            ></iframe>
-
-
+                                // url={`https://ik.imagekit.io/ekomrfja9e/Snapinst.app_video_.mp4?tr=orig`}
+                                playing={playingIndex === i} // Play only when hovered
+                                loop={true}
+                                muted={false}
+                                playsinline={true}
+                                controls={false}
+                                width="100%"
+                                height="100%"
+                                className="object-fill"
+                                style={{ objectFit: "fill" }}
+                            />
                         </div>
                     </div>
                 ))
