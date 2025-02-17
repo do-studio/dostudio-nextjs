@@ -1,9 +1,6 @@
-"use client"
-import Image from 'next/image';
+"use client";
 import React, { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
 import ReactPlayer from 'react-player';
 
 async function getData() {
@@ -23,6 +20,8 @@ const Production = () => {
   const [workdata, setWorkdata] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [playingIndex, setPlayingIndex] = useState(null); // Track which video is playing
+  const [videoProgress, setVideoProgress] = useState({}); // Track the progress of videos
+  const [hoveredVideos, setHoveredVideos] = useState(new Set()); // Track which videos have been hovered
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,6 +34,18 @@ const Production = () => {
   }, []);
 
   const sortedData = workdata?.sort((a, b) => a.attributes.order - b.attributes.order);
+
+  const handleProgress = (progress, index) => {
+    setVideoProgress((prev) => ({
+      ...prev,
+      [index]: progress.playedSeconds, // Store the current video progress in seconds
+    }));
+  };
+
+  const handleHover = (index) => {
+    setPlayingIndex(index); // Start playing the video
+    setHoveredVideos((prev) => new Set(prev).add(index)); // Mark the video as hovered
+  };
 
   return (
     <main className='min-h-screen w-full bg-white pt-32 md:text-4xl text-black font-light'>
@@ -50,27 +61,35 @@ const Production = () => {
             <div
               className="relative group"
               key={i}
-              onMouseEnter={() => setPlayingIndex(i)}
-              onMouseLeave={() => setPlayingIndex(null)}
+              onMouseEnter={() => handleHover(i)} // Hover to start playing
+              onMouseLeave={() => setPlayingIndex(null)} // Stop video when hover ends
             >
               <div
-                className="relative w-full break-inside-avoid-column"
+                className="relative w-full break-inside-avoid-column bg-black duration-150"
                 style={{ aspectRatio: data.attributes.height || "9/16" }}
               >
-                <ReactPlayer
-                  url={`${data?.attributes?.videourl}`}
-
-                  // url={`https://ik.imagekit.io/ekomrfja9e/Snapinst.app_video_.mp4?tr=orig`}
-                  playing={playingIndex === i} // Play only when hovered
-                  loop={true}
-                  muted={false}
-                  playsinline={true}
-                  controls={false}
-                  width="100%"
-                  height="100%"
-                  className="object-fill"
-                  style={{ objectFit: "fill" }}
-                />
+                {hoveredVideos.has(i) || playingIndex === i ? (
+                  <ReactPlayer
+                    url={`${data?.attributes?.videourl}?tr=orig&ik-cors=force`}
+                    playing={playingIndex === i} // Play only when hovered
+                    loop={true}
+                    muted={false}
+                    playsinline={true}
+                    controls={false}
+                    width="100%"
+                    height="100%"
+                    className="object-fill"
+                    style={{ objectFit: "fill" }}
+                    onProgress={(progress) => handleProgress(progress, i)} // Track video progress
+                    startTime={videoProgress[i] || 0} // Start from last position
+                  />
+                ) : (
+                  <img
+                    src={`${data?.attributes?.videothump ?? 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp'}`} // Thumbnail at 10 seconds
+                    alt="Thumbnail"
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                  />
+                )}
               </div>
             </div>
           ))
