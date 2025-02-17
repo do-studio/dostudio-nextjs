@@ -67,8 +67,7 @@ export default function RootLayout({ children }) {
           <RootClient>
             <Navbar />
             {children}
-          <ContactButton />
-
+            <ContactButton />
             <Footer />
           </RootClient>
         </div>
