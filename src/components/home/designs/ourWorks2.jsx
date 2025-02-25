@@ -31,7 +31,7 @@ const ourWorks2 = () => {
                     <Image className="object-cover" fill src={'https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740464660/PEEKAY_HOARDING_NOV_MOCKUP_0_cjynmt_aslgbn.webp'} alt='Branding company in calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1740474072/Billboard_Mockup_2_0c64f46e34.webp'} alt='Website developement company in Calicut' />
+                    <Image className="object-cover" fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1740474212/Billboard_Mockup_3_4363bbdaa3.webp'} alt='Website developement company in Calicut' />
                 </div>
             </div>
         </div>
