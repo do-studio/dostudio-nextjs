@@ -31,6 +31,8 @@ const PrintDesign = () => {
           (a, b) => a.attributes.order - b.attributes.order
         );
         setData(sortedData);
+
+
       } catch (error) {
         console.error("Error fetching data:", error);
       }
