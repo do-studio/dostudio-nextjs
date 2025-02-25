@@ -71,8 +71,8 @@ const Footer = () => {
             muted
             playsInline
           >
-            <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723785309/Do%20Studio%20Website/Vertical_1_utwcx9.webm' type="video/mp4" />
-            <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723110687/Do%20Studio%20Website/DO_STUDIO_LOGO_3-1_pevafw.mov' type="video/mp4" />
+            <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723785309/Do%20Studio%20Website/Vertical_1_utwcx9.webm?c_limit=3000&cache=true' type="video/mp4" />
+            <source src='https://res.cloudinary.com/djswkzoth/video/upload/v1723110687/Do%20Studio%20Website/DO_STUDIO_LOGO_3-1_pevafw.mov?c_limit=3000&cache=true' type="video/mp4" />
           </video>
         </div>
       }

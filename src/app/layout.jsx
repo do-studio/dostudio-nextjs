@@ -9,6 +9,8 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { CanonicalTag } from "./CanonicalTag";
 import Script from "next/script";
 import ContactButton from "../components/home/designs/ContactButton";
+import Head from "next/head";
+import React from 'react'
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -44,10 +46,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <meta
-        name="google-site-verification"
-        content="w7iJ2ozCamTV8_qsPHnhDTZOFBIAra5xJn5xheVeX2M"
-      />
+      <Head>
+
+        <meta
+          name="google-site-verification"
+          content="w7iJ2ozCamTV8_qsPHnhDTZOFBIAra5xJn5xheVeX2M"
+        />
+        {/* Preload Fonts */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          as="font"
+          type="font/woff2"
+          crossorigin="anonymous"
+        />
+      </Head>
+
       <Script id="clarity-script" strategy="afterInteractive">
         {`
           (function(c,l,a,r,i,t,y){
@@ -60,7 +74,10 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <GoogleAnalytics gaId="G-XR89GB34HC" />
         <GoogleTagManager gtmId="AW-11563204186" />
-        <ToastContainer position="bottom-right" />
+        {/* <ToastContainer position="bottom-right" /> */}
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <ToastContainer position="bottom-right" />
+        </React.Suspense>
 
         <div className="2xl:max-w-[3500px] mx-auto">
           <CanonicalTag /> {/* Include the CanonicalTag */}
@@ -72,6 +89,7 @@ export default function RootLayout({ children }) {
           </RootClient>
         </div>
       </body>
+
     </html>
   );
 }

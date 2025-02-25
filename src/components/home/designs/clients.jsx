@@ -42,10 +42,16 @@ const Clients = () => {
                 className="h-16 w-16 md:h-32 md:w-32 xl:h-48 xl:w-48 object-contain grayscale hover:grayscale-0 duration-200 cursor-pointer"
                 placeholder="blur"
                 src={image.clt}
-                alt="sa"
+                alt={`Client image ${index + 1}`} // Added unique alt for each image
+                width={1080}  // Set width for responsive images
+                height={1080} // Set height for responsive images
+                sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw" // Responsive sizing
+                loading="lazy"  // Lazy loading
+                decoding="async"  // Async decoding for faster rendering
               />
             </motion.div>
           ))}
+
         </motion.div>
         {displayedImages < ClientsData.length ? (
           <div className="w-full h-full flex justify-center mt-5">

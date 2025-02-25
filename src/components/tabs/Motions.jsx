@@ -40,15 +40,14 @@ const motions = () => {
             setWorkdata(data.data);
             setIsLoading(false); // Stop loading
 
-            return
             // Extract image URLs for the lightbox
             const sorted = data.data?.sort(
                 (a, b) => a.attributes.order - b.attributes.order
             );
-            const imageUrls = sorted.map(
-                (item) => item.attributes.image.data.attributes.url
-            );
-            setImages(imageUrls);
+            // const imageUrls = sorted.map(
+            //     (item) => item.attributes.image.data.attributes.url
+            // );
+            setWorkdata(sorted);
 
         };
         fetchData();
@@ -56,10 +55,10 @@ const motions = () => {
 
 
 
-    // Sort the data by the order field
-    const sortedData = workdata?.sort(
-        (a, b) => a.attributes.order - b.attributes.order
-    );
+    // // Sort the data by the order field
+    // const sortedData = workdata?.sort(
+    //     (a, b) => a.attributes.order - b.attributes.order
+    // );
 
 
 

@@ -53,7 +53,7 @@ const OurService = [
 ];
 
 const ban1 =
-  "https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4";
+  "https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4?c_limit=3000&cache=true";
 
 const Whatwedo = () => {
   return (
