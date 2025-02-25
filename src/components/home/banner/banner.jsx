@@ -2,8 +2,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { banners } from '../../constant/data';
-import ReactPlayer from 'react-player';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
 
 
 const Banner = () => {
@@ -27,22 +28,22 @@ const Banner = () => {
       // URLs for desktop and mobile videos
       const videos = {
         desktop: {
-          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786915/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_GM_kz2lsn.mp4',
-          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786916/Do%20Studio%20Website/new%20web%20banner/DO__STUDIO_WEBSITE_PROMO_GA_iwkb18.mp4',
-          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786916/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_GE_crccqv.mp4',
-          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786915/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_NS_rbkkbk.mp4',
+          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786915/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_GM_kz2lsn.mp4?c_limit=3000&cache=true',
+          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786916/Do%20Studio%20Website/new%20web%20banner/DO__STUDIO_WEBSITE_PROMO_GA_iwkb18.mp4?c_limit=3000&cache=true',
+          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786916/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_GE_crccqv.mp4?c_limit=3000&cache=true',
+          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786915/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_NS_rbkkbk.mp4?c_limit=3000&cache=true',
         },
         mobile: {
-          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786857/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GM_c6xzx7.mp4',
-          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786846/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GA_dms43c.mp4',
-          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786846/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GE_pkr7s6.mp4',
-          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786857/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_NS_aaviyn.mp4',
+          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786857/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GM_c6xzx7.mp4?c_limit=3000&cache=true',
+          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786846/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GA_dms43c.mp4?c_limit=3000&cache=true',
+          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786846/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GE_pkr7s6.mp4?c_limit=3000&cache=true',
+          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786857/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_NS_aaviyn.mp4?c_limit=3000&cache=true',
         },
       };
 
       const posters = {
-        desktop: 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/desk_poster_yklfya_a7kqzc.webp',
-        mobile: 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp',
+        desktop: 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/desk_poster_yklfya_a7kqzc.webp?c_limit=3000&cache=true',
+        mobile: 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp?c_limit=3000&cache=true',
       };
 
       let videoPath = '';
@@ -85,44 +86,45 @@ const Banner = () => {
     };
   }, []);
 
+  const ReactPlayerLazy = dynamic(() => import('react-player'), { ssr: false });
+
+
 
 
   return (
     <>
-      <section className='grid grid-cols-1 pt-16 min-h-[calc(100vh-4rem)] z-[999999999]'   >
-        {currentVideo ? (
-          <div className='p-3 min-h-[calc(100vh-4rem)] 2xl:h-[calc(100vh-4rem)]'>
-            <div className=' w-full h-full   bg-black z-50 overflow-hidden   rounded-3xl xl:rounded-[3rem]'>
-              <ReactPlayer
-                url={currentVideo}
-                playing={true} // Autoplay
-                loop={true}
-                muted={true}
-                playsinline={true}
-
-                controls={false}
-                width="100%"
-                height="100%"
-                className="object-fill"
-                style={{ objectFit: "fill" }}
-                config={{
-                  file: {
-                    attributes: {
-                      poster: currentPoster,
-                    },
+    <section className='grid grid-cols-1 pt-16 min-h-[calc(100vh-4rem)] z-[999999999]'>
+      {currentVideo ? (
+        <div className='p-3 min-h-[calc(100vh-4rem)] 2xl:h-[calc(100vh-4rem)]'>
+          <div className=' w-full h-full bg-black z-50 overflow-hidden rounded-3xl xl:rounded-[3rem]'>
+            <ReactPlayerLazy
+              url={currentVideo}
+              playing={true}
+              loop={true}
+              muted={true}
+              playsinline={true}
+              controls={false}
+              width="100%"
+              height="100%"
+              className="object-fill"
+              style={{ objectFit: "fill" }}
+              config={{
+                file: {
+                  attributes: {
+                    poster: currentPoster,
                   },
-                }}
-              />
-            </div>
+                },
+              }}
+            />
           </div>
-        )
-          :
-          <div className='relative aspect-video'>
-            <Image src={currentPoster} height="100vh" width="100%" />
-          </div>
-        }
-      </section>
-    </>
+        </div>
+      ) : (
+        <div className='relative aspect-video'>
+          <Image src={currentPoster} height="100vh" width="100%" />
+        </div>
+      )}
+    </section>
+  </>
   );
 };
 
@@ -144,13 +146,13 @@ export default Banner;
 //     const mobile = isMobile();
 
 //     if (currentTime >= 5 && currentTime < 12) {
-//       return mobile ? 'morning-mobile.mp4' : 'morning-desktop.mp4';
+//       return mobile ? 'morning-mobile.mp4?c_limit=3000&cache=true' : 'morning-desktop.mp4?c_limit=3000&cache=true';
 //     } else if (currentTime >= 12 && currentTime < 17) {
-//       return mobile ? 'afternoon-mobile.mp4' : 'afternoon-desktop.mp4';
+//       return mobile ? 'afternoon-mobile.mp4?c_limit=3000&cache=true' : 'afternoon-desktop.mp4?c_limit=3000&cache=true';
 //     } else if (currentTime >= 17 && currentTime < 20) {
-//       return mobile ? 'evening-mobile.mp4' : 'evening-desktop.mp4';
+//       return mobile ? 'evening-mobile.mp4?c_limit=3000&cache=true' : 'evening-desktop.mp4?c_limit=3000&cache=true';
 //     } else {
-//       return mobile ? 'night-mobile.mp4' : 'night-desktop.mp4';
+//       return mobile ? 'night-mobile.mp4?c_limit=3000&cache=true' : 'night-desktop.mp4?c_limit=3000&cache=true';
 //     }
 //   };
 
@@ -168,7 +170,7 @@ export default Banner;
 //     <div className="h-screen w-full">
 //       {currentVideo && (
 //         <video className="w-full h-full object-cover" autoPlay loop muted>
-//           <source src={require(`../assets/${currentVideo}`)} type="video/mp4" />
+//           <source src={require(`../assets/${currentVideo}`)} type="video/mp4?c_limit=3000&cache=true" />
 //           Your browser does not support the video tag.
 //         </video>
 //       )}

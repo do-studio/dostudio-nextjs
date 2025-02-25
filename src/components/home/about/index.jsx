@@ -41,8 +41,14 @@ const Aboutus = () => {
                 ease: "linear", // Linear easing for smooth continuous rotation
                 duration: 30, // Rotation duration in seconds
               }}
-              className='relative h-32 w-32 rounded-full'>
-              <Image fill className='object-cover' src={imgarrw} alt='Advertising agency in Calicut' />
+              className="relative h-32 w-32 rounded-full"
+            >
+              <Image
+                layout="fill" // This ensures the image will fill its parent container
+                className="object-cover"
+                src={imgarrw}
+                alt="Advertising agency in Calicut"
+              />
             </motion.div>
             <HiArrowSmallDown className='absolute top-[30%] right-10 text-white text-5xl' />
           </div>
