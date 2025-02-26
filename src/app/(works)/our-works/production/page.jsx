@@ -27,13 +27,15 @@ const Production = () => {
     const fetchData = async () => {
       setIsLoading(true);
       const data = await getData();
-      setWorkdata(data.data);
+      const sorted = data.data?.sort(
+        (a, b) => a.attributes.order - b.attributes.order
+    );
+      setWorkdata(sorted);
       setIsLoading(false);
     };
     fetchData();
   }, []);
 
-  const sortedData = workdata?.sort((a, b) => a.attributes.order - b.attributes.order);
 
   const handleProgress = (progress, index) => {
     setVideoProgress((prev) => ({
