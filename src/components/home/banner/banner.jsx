@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { banners } from '../../constant/data';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import { useInView } from 'react-intersection-observer';
 
 
 
@@ -12,13 +11,7 @@ const Banner = () => {
 
   const [currentVideo, setCurrentVideo] = useState('');
   const [currentPoster, setCurrentPoster] = useState('');
-  const [isVideoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef(null);
-
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Load the video only once
-    threshold: 0.1, // Trigger when 10% of the component is visible
-  });
 
   const handlePlay = () => {
     if (videoRef.current) {
@@ -100,53 +93,38 @@ const Banner = () => {
 
   return (
     <>
-      <section className='grid grid-cols-1 pt-16 min-h-[calc(100vh-4rem)] z-[999999999]'>
-        {currentVideo ? (
-          <div ref={ref} className='p-3 min-h-[calc(100vh-4rem)] 2xl:h-[calc(100vh-4rem)]'>
-            <div className='w-full h-full bg-black z-50 overflow-hidden rounded-3xl xl:rounded-[3rem]'>
-              {!isVideoLoaded && (
-                <div className='relative aspect-video'>
-                  <Image
-                    src={currentPoster}
-                    alt="Video Poster"
-                    fill
-                    priority
-                    className="object-cover"
-                  />
-                </div>
-              )}
-              {inView && (
-                <ReactPlayerLazy
-                  url={videoUrl}
-                  playing={true}
-                  loop={true}
-                  muted={true}
-                  playsinline={true}
-                  controls={false}
-                  width="100%"
-                  height="100%"
-                  className="object-fill"
-                  style={{ objectFit: "fill" }}
-                  onReady={() => setVideoLoaded(true)}
-                  config={{
-                    file: {
-                      attributes: {
-                        poster: currentPoster,
-                        preload: 'metadata',
-                      },
-                    },
-                  }}
-                />
-              )}
-            </div>
+    <section className='grid grid-cols-1 pt-16 min-h-[calc(100vh-4rem)] z-[999999999]'>
+      {currentVideo ? (
+        <div className='p-3 min-h-[calc(100vh-4rem)] 2xl:h-[calc(100vh-4rem)]'>
+          <div className=' w-full h-full bg-black z-50 overflow-hidden rounded-3xl xl:rounded-[3rem]'>
+            <ReactPlayerLazy
+              url={currentVideo}
+              playing={true}
+              loop={true}
+              muted={true}
+              playsinline={true}
+              controls={false}
+              width="100%"
+              height="100%"
+              className="object-fill"
+              style={{ objectFit: "fill" }}
+              config={{
+                file: {
+                  attributes: {
+                    poster: currentPoster,
+                  },
+                },
+              }}
+            />
           </div>
-        ) : (
-          <div className='relative aspect-video'>
-            <Image src={currentPoster} alt="Video Poster" fill priority className="object-cover" />
-          </div>
-        )}
-      </section>
-    </>
+        </div>
+      ) : (
+        <div className='relative aspect-video'>
+          <Image src={currentPoster} height="100vh" width="100%" />
+        </div>
+      )}
+    </section>
+  </>
   );
 };
 
