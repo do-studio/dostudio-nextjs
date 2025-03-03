@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { notFound } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import Lightbox from "yet-another-react-lightbox";
@@ -42,6 +43,7 @@ const posters = () => {
                 (item) => item.attributes.image.data.attributes.url
             );
             setImages(imageUrls);
+
 
             setIsLoading(false); // Stop loading
         };

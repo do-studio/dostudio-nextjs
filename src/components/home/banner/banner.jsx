@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 
 
 
+
 const Banner = () => {
 
   const [currentVideo, setCurrentVideo] = useState('');

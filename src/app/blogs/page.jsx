@@ -30,6 +30,8 @@ async function getData() {
     { cache: "no-store" }
   );
 
+  console.log(res)
+
   if (!res.status) {
     return notFound();
   }

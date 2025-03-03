@@ -18,6 +18,7 @@ async function getData() {
       `${process.env.NEXT_PUBLIC_API_URL}/api/brandings?&populate=*`,
       { headers: { "Cache-Control": "no-store" } } // Cache control for no-store
     );
+    console.log(res.data.data)
 
     return res.data;
   } catch (error) {
