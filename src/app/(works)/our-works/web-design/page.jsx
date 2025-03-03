@@ -17,7 +17,7 @@ export const metadata = {
 async function getData() {
   try {
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/web-cdesigns?&populate=*`
+      `${process.env.NEXT_PUBLIC_API_URL}/api/web-designs?&populate=*`
     );
 
     return res.data;
