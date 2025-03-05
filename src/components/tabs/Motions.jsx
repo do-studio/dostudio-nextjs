@@ -77,6 +77,9 @@ const motions = () => {
     };
 
 
+
+    
+
     return (
         <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20  columns-3     gap-x-0 gap-y-0'>
             {isLoading ? (
