@@ -78,14 +78,14 @@ const motions = () => {
 
 
     return (
-        <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20  grid grid-cols-2 md:grid-cols-3    gap-x-0 gap-y-0'>
+        <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20  columns-3     gap-x-0 gap-y-0'>
             {isLoading ? (
                 // Skeleton loading
                 <Skeleton style={{ aspectRatio: "9/16", gap: "0" }} count={9} />
             ) : workdata && workdata.length > 0 ? (
                 workdata.map((data, i) => (
                     <div
-                        className="relative group"
+                        className="relative group break-inside-avoid-column"
                         key={i}
                         onMouseEnter={() => handleHover(i)} // Hover to start playing
                         onMouseLeave={() => setPlayingIndex(null)} // Stop video when hover ends
