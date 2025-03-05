@@ -55,6 +55,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
+
+
 // Blog details component
 const BlogDetails = async ({ params }) => {
   const data = await getData(params.id);
