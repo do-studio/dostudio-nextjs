@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
   console.log(brand);
 
   return {
-    title: brand.metatitle || "Default Branding Title",
+    title: brand.title || "Branding Company in Calicut | Brand Identity Design Services",
     description: brand.metadesc || "Default brand description.",
     keywords:
       brand.metakeywords || "digital marketing, SEO, branding, marketing blogs",
