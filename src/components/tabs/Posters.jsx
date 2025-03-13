@@ -86,7 +86,7 @@ const posters = () => {
                                 }}
                             >
                                 <Image
-                                    onClick={() => handleImageClick(data.attributes.order)} // Use order instead of index
+                                    // onClick={() => handleImageClick(data.attributes.order)} // Use order instead of index
                                     src={data.attributes.image.data.attributes.url}
                                     fill={true}
                                     loading="lazy"
