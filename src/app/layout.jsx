@@ -47,7 +47,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <meta name="facebook-domain-verification" content="TEST88229" />
+        {/* Add the Pixel Meta Payload Test Code */}
+        <meta name="pixel:payload" content="TEST88229" />
         <meta
           name="google-site-verification"
           content="w7iJ2ozCamTV8_qsPHnhDTZOFBIAra5xJn5xheVeX2M"
