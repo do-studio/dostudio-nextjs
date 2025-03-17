@@ -67,6 +67,7 @@ import clntcapind from './medias/clients/cap.webp'
 import clntasten from './medias/clients/clientastenortho.webp'
 import clntonecity from './medias/clients/clintonecity.webp'
 import clntklum from './medias/clients/clientklum.webp'
+import clntlulu from './medias/clients/clientlulu.webp'
 
 import serviceBg from './medias/servicebg.webp'
 
@@ -136,6 +137,7 @@ export {
     clntztart,
     clntkarims,
     clntonecity,
+    clntlulu,
     clntshifa,
     clntasten,
     clntpk,

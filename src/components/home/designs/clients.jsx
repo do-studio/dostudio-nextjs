@@ -5,13 +5,13 @@ import { ClientsData } from "../../constant/data";
 import Image from "next/image";
 
 const Clients = () => {
-  const [displayedImages, setDisplayedImages] = useState(5);
+  const [displayedImages, setDisplayedImages] = useState(10);
   const [isAllShown, setIsAllShown] = useState(false);
 
   useEffect(() => {
     const updateImageCount = () => {
       if (!isAllShown) {
-        setDisplayedImages(window.innerWidth < 768 ? 8 : 5);
+        setDisplayedImages(window.innerWidth < 768 ? 8 : 10);
       }
     };
 

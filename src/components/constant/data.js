@@ -49,7 +49,8 @@ import {
     clntcapind,
     clntasten,
     clntonecity,
-    clntklum
+    clntklum,
+    clntlulu
 } from '../../../public/images/index';
 
 
@@ -169,19 +170,22 @@ export const banners=[
 
 export const ClientsData=[
   {
+    clt:clntlulu
+  },
+  {
     clt:clntpk
   },
   {
     clt:clntasten
   },
   {
-    clt:clntkurikal
+    clt:clntonecity
   },
   {
     clt:clntkmct1
   },
   {
-    clt:clntonecity
+    clt:clntkurikal
   },
   {
     clt:clnttandt
