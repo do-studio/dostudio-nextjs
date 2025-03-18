@@ -85,7 +85,7 @@ const serviceData = [
 const page = () => {
   return (
     <>
-      <section className="w-11/12 xl:w-10/12 mx-auto min-h-screen pt-32 py-20">
+      <section className="w-11/12 xl:w-10/12 mx-auto min-h-screen pt-24 py-20">
         <h1 className=" h-full w-full text-4xl sm:text-5xl xl:text-7xl text-center font-black capitalize">
           our services
         </h1>
