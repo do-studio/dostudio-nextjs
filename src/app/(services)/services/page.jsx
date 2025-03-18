@@ -89,21 +89,20 @@ const page = () => {
         <h1 className=" h-full w-full text-4xl sm:text-5xl xl:text-7xl text-center font-black capitalize">
           our services
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 pt-10">
+        <div className="grid grid-cols-2 xl:grid-cols-3 gap-2 md:gap-5 xl:gap-10 pt-10">
           {serviceData?.map((data, i) => (
             <FadeUp duration={0.3} delay={0.2 * i} key={i}>
               <Link
                 href={data.url}
-                className="bg-gray-100 h-full rounded-2xl shadow-lg hover:shadow-xl duration-200 border p-5 flex flex-col justify-between gap-3 xl:gap-5"
+                className="bg-gray-100 h-full rounded-2xl shadow-lg hover:shadow-xl duration-200 border p-2 md:p-5 flex flex-col justify-between gap-3"
               >
                 <div className="flex flex-col gap-3 xl:gap-5">
-                  <p className="text-3xl bg-primarygreen w-fit p-2 rounded-md font-black">
-                    0{data.id}
+                <p className="text-xs md:text-xl xl:text-3xl bg-primarygreen w-fit p-1.5 md:p-2 rounded-md font-bold md:font-black">                    0{data.id}
                   </p>
-                  <h4 className="text-2xl uppercase font-bold">{data.title}</h4>
+                  <h4 className="text-xs md:text-2xl uppercase font-bold">{data.title}</h4>
                 </div>
-                <p className="text-sm">{data.desc}</p>
-                <div className="relative w-full h-80 rounded-md overflow-hidden">
+                <p className="hidden md:block text-sm">{data.desc}</p>
+                <div className="relative w-full aspect-square rounded-md overflow-hidden">
                   <Image
                     className="object-cover"
                     placeholder="blur"
