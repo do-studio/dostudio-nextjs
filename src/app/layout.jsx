@@ -41,16 +41,18 @@ export const metadata = {
     description: "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
     images: ["https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png"],
   },
+  other: {
+    'google-site-verification': 'K-0KPQ78AmDrdt3Dtqtln-KygEAHUAR0c5Qo_m4cZkU',
+    'pixel:payload': 'TEST88229',
+  }
 };
+
+
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        {/* Add the Pixel Meta Payload Test Code */}
-        <meta name="pixel:payload" content="TEST88229" />
-        <meta name="google-site-verification" content="K-0KPQ78AmDrdt3Dtqtln-KygEAHUAR0c5Qo_m4cZkU" />
-        {/* Preload Fonts */}
         <link
           rel="preload"
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
