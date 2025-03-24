@@ -49,10 +49,7 @@ export default function RootLayout({ children }) {
       <Head>
         {/* Add the Pixel Meta Payload Test Code */}
         <meta name="pixel:payload" content="TEST88229" />
-        <meta
-          name="google-site-verification"
-          content="w7iJ2ozCamTV8_qsPHnhDTZOFBIAra5xJn5xheVeX2M"
-        />
+        <meta name="google-site-verification" content="K-0KPQ78AmDrdt3Dtqtln-KygEAHUAR0c5Qo_m4cZkU" />
         {/* Preload Fonts */}
         <link
           rel="preload"
