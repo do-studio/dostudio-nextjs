@@ -38,8 +38,10 @@ const Clients = () => {
           transition={{ duration: 0.3 }}
           className="grid place-items-center grid-cols-4 md:grid-cols-5 gap-3"
         >
-          {ClientsData.slice(0, displayedImages).map((image, index) => (
-            <motion.div key={index} className="w-fit h-auto">
+          {ClientsData.slice(0, displayedImages).map((image, index) => {
+            // console.log(image)
+            return(
+              <motion.div key={index} className="w-fit h-auto">
               <Image
                 className="h-16 w-16 md:h-32 md:w-32 xl:h-48 xl:w-48 object-contain grayscale hover:grayscale-0 duration-200 cursor-pointer"
                 placeholder="blur"
@@ -52,7 +54,8 @@ const Clients = () => {
                 decoding="async"
               />
             </motion.div>
-          ))}
+            )
+})}
         </motion.div>
 
         {/* Show All Button */}

@@ -32,6 +32,11 @@ let testImage =
   "https://res.cloudinary.com/djswkzoth/image/upload/v1706872860/Do%20Studio%20Website/webBanner/long/farookcollege-ac-in_gecais.webp";
 const WebDesign = async () => {
   const workdata = await getData();
+  const sortedData = workdata.data?.sort(
+    (a, b) => b.attributes.order - a.attributes.order
+  );
+    // console.log(sortedData);
+
 
   return (
     <>
@@ -71,8 +76,8 @@ const WebDesign = async () => {
         </Link>
 
           <div className="grid grid-cols-1 gap-y-14 ">
-            {workdata.data && workdata.data.length > 0 ? (
-              workdata.data?.map((data, i) => (
+          {sortedData && sortedData.length > 0 ? (
+            sortedData?.map?.((data, i) => (
                 <FadeUp duration={0.5} delay={0.1 * i}   key={i}>
                   <div
                     className="website-details group rounded-[1rem] overflow-hidden shadow-xl"
@@ -86,11 +91,12 @@ const WebDesign = async () => {
                       />
                       <div className="web-overlay "></div>
                       <div className="web-button ">
-                        <a target="_blank" href={data.attributes.siteurl}>
+                        <a target="_blank" href={data.attributes.websiteurl}>
                           Visit Website
                         </a>
                       </div>
                     </div>
+                      {/* <p>{data.attributes.order}</p> */}
                   </div>
                 </FadeUp>
               ))
