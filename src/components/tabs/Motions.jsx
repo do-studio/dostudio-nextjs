@@ -8,7 +8,7 @@ import ReactPlayer from 'react-player';
 
 async function getData() {
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/creative-motions?&populate=*`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/creative-motions?pagination[pageSize]=1000&populate=*`,
         { next: { revalidate: 60 } } // Revalidate every 60 seconds
     );
 
