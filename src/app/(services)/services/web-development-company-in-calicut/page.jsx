@@ -250,7 +250,7 @@ const FaqMain = () => {
 
 async function fetchData() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/webdesigns?&populate=*`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/web-designs?&populate=*`,
     { cache: "no-store" }
   );
 

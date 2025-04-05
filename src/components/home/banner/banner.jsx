@@ -5,28 +5,28 @@ import { banners } from '../../constant/data';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-
-
-
 const Banner = () => {
-
   const [currentVideo, setCurrentVideo] = useState('');
   const [currentPoster, setCurrentPoster] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef(null);
 
   const handlePlay = () => {
     if (videoRef.current) {
-      videoRef.current.play();
+      videoRef.current.play().catch(error => {
+        console.error("Autoplay failed:", error);
+      });
     }
   };
 
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     const getCurrentVideo = () => {
       const currentTime = new Date().getHours();
       const isMobile = window.innerWidth <= 468;
-      // const isMobile = true;
 
-      // URLs for desktop and mobile videos
       const videos = {
         desktop: {
           morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786915/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_GM_kz2lsn.mp4?c_limit=3000&cache=true',
@@ -64,15 +64,15 @@ const Banner = () => {
         posterPath = isMobile ? posters.mobile : posters.desktop;
       }
 
-      handlePlay()
       return { videoPath, posterPath };
     };
 
     const { videoPath, posterPath } = getCurrentVideo();
     setCurrentVideo(videoPath);
     setCurrentPoster(posterPath);
+    setIsLoading(false);
+    handlePlay();
 
-    // Update video and poster if window is resized
     const handleResize = () => {
       const { videoPath, posterPath } = getCurrentVideo();
       setCurrentVideo(videoPath);
@@ -80,25 +80,21 @@ const Banner = () => {
     };
 
     window.addEventListener('resize', handleResize);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const ReactPlayerLazy = dynamic(() => import('react-player'), { ssr: false });
-
-
-
+  const ReactPlayerLazy = dynamic(() => import('react-player'), { 
+    ssr: false,
+    loading: () => <div className="w-full h-full bg-black" />
+  });
 
   return (
-    <>
     <section className='grid grid-cols-1 pt-16 min-h-[calc(100vh-4rem)] z-[999999999]'>
       {currentVideo ? (
         <div className='p-3 min-h-[calc(100vh-4rem)] 2xl:h-[calc(100vh-4rem)]'>
-          <div className=' w-full h-full bg-black z-50 overflow-hidden rounded-3xl xl:rounded-[3rem]'>
+          <div className='w-full h-full bg-black z-50 overflow-hidden rounded-3xl xl:rounded-[3rem]'>
             <ReactPlayerLazy
+              ref={videoRef}
               url={currentVideo}
               playing={true}
               loop={true}
@@ -107,8 +103,11 @@ const Banner = () => {
               controls={false}
               width="100%"
               height="100%"
-              className="object-fill"
-              style={{ objectFit: "fill" }}
+              style={{ 
+                objectFit: "cover",
+                width: '100%',
+                height: '100%'
+              }}
               config={{
                 file: {
                   attributes: {
@@ -120,12 +119,21 @@ const Banner = () => {
           </div>
         </div>
       ) : (
-        <div className='relative aspect-video'>
-          <Image src={currentPoster} height="100vh" width="100%" />
+        <div className='relative w-full h-[calc(100vh-4rem)]'>
+          {currentPoster && (
+            <Image 
+              src={currentPoster} 
+              alt="Banner poster"
+              fill
+              className="object-cover"
+              quality={90}
+              priority
+              sizes="100vw"
+            />
+          )}
         </div>
       )}
     </section>
-  </>
   );
 };
 
