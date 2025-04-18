@@ -21,7 +21,7 @@ const Aboutus = () => {
         <h1 className='text-gray-600 md:text-justify text-2xl xl:text-5xl'>
           <span className='font-medium text-black'>Digital Marketing Agency in Calicut</span>
         </h1>
-        <p className='text-gray-600 text-justify'>
+        <p className='text-gray-600 text-sm md:text-base text-justify'>
           {isExpanded ? fullText : truncatedText}
           {!isExpanded && (
             <button
