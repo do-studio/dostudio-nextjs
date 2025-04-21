@@ -8,7 +8,7 @@ import ReactPlayer from 'react-player';
 
 async function getData() {
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/creative-videos?&populate=*`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/creative-videos?&pagination[pageSize]=1000&populate=*`,
         { next: { revalidate: 60 } } // Revalidate every 60 seconds
     );
 
@@ -53,11 +53,20 @@ const videos = () => {
 
 
 
-    // Sort the data by the order field
-    const sortedData = workdata?.sort(
-        (a, b) => a.attributes.order - b.attributes.order
-    );
-
+    const sortedData = workdata?.slice().sort((a, b) => {
+        const aHasOrder = typeof a.attributes.order === "number";
+        const bHasOrder = typeof b.attributes.order === "number";
+    
+        if (aHasOrder && bHasOrder) {
+            return a.attributes.order - b.attributes.order; // sort by order value
+        } else if (aHasOrder) {
+            return -1; // a comes before b
+        } else if (bHasOrder) {
+            return 1; // b comes before a
+        } else {
+            return 0; // keep original order if neither has 'order'
+        }
+    });
 
     // Handle image click
     const handleImageClick = (order) => {
@@ -73,8 +82,8 @@ const videos = () => {
             {isLoading ? (
                 // Skeleton loading
                 <Skeleton style={{ aspectRatio: "9/16", gap: "0" }} count={9} />
-            ) : workdata && workdata.length > 0 ? (
-                workdata.map((data, i) => (
+            ) : sortedData && sortedData.length > 0 ? (
+                sortedData.map((data, i) => (
                     <div className="relative group" key={i}>
                         <div
                             className={`relative w-full break-inside-avoid-column`}

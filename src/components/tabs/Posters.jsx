@@ -8,7 +8,7 @@ import "yet-another-react-lightbox/styles.css"; // Import the lightbox styles
 
 async function getData() {
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/creatives?&populate=*`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/creatives?pagination[pageSize]=1000&populate=*`,
         { next: { revalidate: 60 } } // Revalidate every 60 seconds
     );
 
@@ -33,22 +33,36 @@ const posters = () => {
         const fetchData = async () => {
             setIsLoading(true); // Start loading
             const data = await getData();
-            setWorkdata(data.data);
-
-            // Extract image URLs for the lightbox
-            const sorted = data.data?.sort(
-                (a, b) => a.attributes.order - b.attributes.order
-            );
+    
+            // Sort the data: with order first (ascending), without order last
+            const sorted = data.data?.slice().sort((a, b) => {
+                const aHasOrder = typeof a.attributes.order === "number";
+                const bHasOrder = typeof b.attributes.order === "number";
+    
+                if (aHasOrder && bHasOrder) {
+                    return a.attributes.order - b.attributes.order;
+                } else if (aHasOrder) {
+                    return -1;
+                } else if (bHasOrder) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }).reverse(); // Reverse to make highest order come first
+    
+            setWorkdata(sorted);
+    
+            // Extract image URLs for the lightbox from the sorted list
             const imageUrls = sorted.map(
                 (item) => item.attributes.image.data.attributes.url
             );
             setImages(imageUrls);
-
-
+    
             setIsLoading(false); // Stop loading
         };
         fetchData();
     }, []);
+    
 
 
 
@@ -75,7 +89,7 @@ const posters = () => {
                     // Skeleton loading
                     <Skeleton style={{ aspectRatio: "1/1", gap: "0" }} count={9} />
                 ) : sortedData && sortedData.length > 0 ? (
-                    sortedData.map((data, i) => (
+                    sortedData.reverse().map((data, i) => (
                         <div className="relative group" key={i}>
                             <div
                                 className={`relative w-full break-inside-avoid-column`}
