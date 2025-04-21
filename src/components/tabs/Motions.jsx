@@ -97,6 +97,7 @@ const motions = () => {
                             className="relative w-full break-inside-avoid-column bg-black duration-150"
                             style={{ aspectRatio: data.attributes.height || "9/16" }}
                         >
+                         
                             {hoveredVideos.has(i) || playingIndex === i ? (
                                 <ReactPlayer
                                     url={`${data?.attributes?.url}?tr=orig&ik-cors=force`}
@@ -116,6 +117,7 @@ const motions = () => {
                                 <img
                                     src={`${data?.attributes?.videothump ?? 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp'}`} // Thumbnail at 10 seconds
                                     alt="Thumbnail"
+                                    id={data.id}
                                     className="absolute top-0 left-0 w-full h-full object-cover"
                                 />
                             )}
