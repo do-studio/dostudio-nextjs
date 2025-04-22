@@ -33,6 +33,11 @@ const DynamicService = dynamic(() =>
 const DynamicOurwork2 = dynamic(() =>
   import("../components/home/designs/ourWorks2")
 );
+
+const DynamicOurwork3 = dynamic(() =>
+  import("../components/home/designs/ourWorks3")
+);
+
 const DynamicClients = dynamic(() =>
   import("../components/home/designs/clients")
 );
@@ -242,6 +247,10 @@ export default function Home() {
         </Suspense>
         <Suspense fallback={<p>Loading data...</p>}>
           <DynamicAbout />
+        </Suspense>
+        <Suspense fallback={<p>Loading data...</p>}>
+          {/* <OurWOrks /> */}
+          <DynamicOurwork3 />
         </Suspense>
         <Suspense fallback={<p>Loading data...</p>}>
           <DynamicService />
