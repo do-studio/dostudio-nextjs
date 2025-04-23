@@ -35,7 +35,7 @@ const PackageDesign = async () => {
       <main className="min-h-screen w-full bg-white">
         <div className="w-11/12 xl:w-9/12 mx-auto pt-20 xl:pt-24 py-20 grid grid-cols-2 gap-0 xl:gap-10">
           {workdata.data && workdata.data.length > 0 ? (
-            workdata.data?.map((data, i) => (
+            workdata.data?.reverse().map((data, i) => (
               <FadeUp duration={0.3} delay={0.1 * i} key={i}>
                 <div className="relative group">
                   <div className="relative aspect-square w-full">

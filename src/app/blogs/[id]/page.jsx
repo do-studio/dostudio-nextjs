@@ -9,7 +9,6 @@ async function getData(slug) {
     `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?filters[slug][$eq]=${slug}&populate=*`,
     { cache: "no-store" }
   );
-
   if (!res.ok) {
     return notFound();
   }
@@ -60,9 +59,11 @@ export async function generateMetadata({ params }) {
 
 // Blog details component
 const BlogDetails = async ({ params }) => {
+  console.log(params.id);
   const data = await getData(params.id);
   const blog = data?.data[0]?.attributes;
   const content = blog?.content;
+  // if (!blog) return <p>Loading blog...</p>;
 
   return (
     <main className="min-h-screen w-full bg-white">
