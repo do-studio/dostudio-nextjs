@@ -28,7 +28,7 @@ const ourWorks2 = () => {
             </div>
             <div className='grid grid-cols-1 gap-1 xl:gap-5'>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill src={'https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740464660/PEEKAY_HOARDING_NOV_MOCKUP_0_cjynmt_aslgbn.webp'} alt='Branding company in calicut' />
+                    <Image className="object-cover" fill src={'https://res.cloudinary.com/ddv3f8yl2/image/upload/v1745327746/pack_3_cxqkhz.webp'} alt='Branding company in calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
                     <Image className="object-cover" fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1740474212/Billboard_Mockup_3_4363bbdaa3.webp'} alt='Website developement company in Calicut' />
