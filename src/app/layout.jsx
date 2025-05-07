@@ -67,6 +67,41 @@ export default function RootLayout({ children }) {
       <GoogleAnalytics gaId="G-XR89GB34HC" />
       <GoogleTagManager gtmId="AW-11563204186" /> */}
 
+      {/* Microsoft Clarity – lazy load after user interaction */}
+      <Script
+        id="clarity-script"
+        strategy="lazyOnload"
+      >
+        {`
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "pxs9rkmsym");
+  `}
+      </Script>
+
+      {/* Google Tag Manager – load after page load */}
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtm.js?id=AW-11563204186`}
+      />
+
+      {/* Google Analytics – load after page load */}
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=G-XR89GB34HC`}
+      />
+      <Script id="gtag-init" strategy="lazyOnload">
+        {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XR89GB34HC');
+  `}
+      </Script>
+
+
       <body className={poppins.className}>
         {/* <body > */}
 
