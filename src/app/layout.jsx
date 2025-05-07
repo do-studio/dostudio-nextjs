@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* Microsoft Clarity */}
-      <Script id="clarity-script" strategy="afterInteractive">
+      {/* <Script id="clarity-script" strategy="afterInteractive">
         {`
           (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
       </Script>
 
       <GoogleAnalytics gaId="G-XR89GB34HC" />
-      <GoogleTagManager gtmId="AW-11563204186" />
+      <GoogleTagManager gtmId="AW-11563204186" /> */}
 
       <body className={poppins.className}>
         {/* <body > */}
