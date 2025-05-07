@@ -11,15 +11,15 @@ const ourWorks3 = () => {
         {/* Bottom three squares */}
         <div className='grid grid-cols-3 gap-1 xl:gap-5'>
             <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://res.cloudinary.com/ddv3f8yl2/image/upload/v1745321363/RC__odnquq.webp'} alt='Best advertising agency in Calicut' />
+                <Image className="object-cover" fill src={'https://res.cloudinary.com/ddv3f8yl2/image/upload/v1745321363/RC__odnquq.webp'} alt='Best advertising agency in Calicut' />
             </div>
             <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"  src={'https://res.cloudinary.com/ddv3f8yl2/image/upload/v1745405595/lulu-thudarum_lyhqyg.webp'} alt='Digital marketing agency in Calicut' />
+                <Image className="object-cover" fill src={'https://res.cloudinary.com/ddv3f8yl2/image/upload/v1745405595/lulu-thudarum_lyhqyg.webp'} alt='Digital marketing agency in Calicut' />
             </div>
             <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={' https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740464660/PEEKAY_HOARDING_NOV_MOCKUP_0_cjynmt_aslgbn.webp'} alt='Branding company in calicut' />
+                <Image className="object-cover" fill src={' https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740464660/PEEKAY_HOARDING_NOV_MOCKUP_0_cjynmt_aslgbn.webp'} alt='Branding company in calicut' />
             </div>
-        </div> 
+        </div>
         <div className='w-full aspect-[4/2] relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
             <video className="w-full h-full object-cover"
                 autoPlay
