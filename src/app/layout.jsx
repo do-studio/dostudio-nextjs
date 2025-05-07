@@ -1,4 +1,4 @@
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/navbar/navbar";
 import Footer from "../components/footer/footer";
@@ -9,8 +9,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { CanonicalTag } from "./CanonicalTag";
 import Script from "next/script";
 import ContactButton from "../components/home/designs/ContactButton";
-import Head from "next/head";
-import React from 'react'
+import React from "react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,7 +22,8 @@ export const metadata = {
   robots: "index, follow",
   openGraph: {
     title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
-    description: "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
+    description:
+      "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
     url: "https://dostudio.co.in",
     images: [
       {
@@ -38,30 +38,22 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
-    description: "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
-    images: ["https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png"],
+    description:
+      "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
+    images: [
+      "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png",
+    ],
   },
   other: {
-    'google-site-verification': 'K-0KPQ78AmDrdt3Dtqtln-KygEAHUAR0c5Qo_m4cZkU',
-    'pixel:payload': 'TEST88229',
-  }
+    "google-site-verification": "K-0KPQ78AmDrdt3Dtqtln-KygEAHUAR0c5Qo_m4cZkU",
+    "pixel:payload": "TEST88229",
+  },
 };
-
-
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-          as="font"
-          type="font/woff2"
-          crossorigin="anonymous"
-        />
-      </Head>
-
+      {/* Microsoft Clarity */}
       <Script id="clarity-script" strategy="afterInteractive">
         {`
           (function(c,l,a,r,i,t,y){
@@ -71,25 +63,28 @@ export default function RootLayout({ children }) {
           })(window, document, "clarity", "script", "pxs9rkmsym");
         `}
       </Script>
-      <body className={poppins.className}>
-        <GoogleAnalytics gaId="G-XR89GB34HC" />
-        <GoogleTagManager gtmId="AW-11563204186" />
-        {/* <ToastContainer position="bottom-right" /> */}
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <ToastContainer position="bottom-right" />
-        </React.Suspense>
 
+      {/* Google Tag Manager & Analytics */}
+      <GoogleAnalytics gaId="G-XR89GB34HC" />
+      <GoogleTagManager gtmId="AW-11563204186" />
+
+      <body className={poppins.className}>
         <div className="2xl:max-w-[3500px] mx-auto">
-          <CanonicalTag /> {/* Include the CanonicalTag */}
+          <CanonicalTag />
+
           <RootClient>
             <Navbar />
             {children}
-            <ContactButton />
-            <Footer />
+
+            {/* Defer non-critical components */}
+            <React.Suspense fallback={null}>
+              <ContactButton />
+              <Footer />
+              <ToastContainer position="bottom-right" />
+            </React.Suspense>
           </RootClient>
         </div>
       </body>
-
     </html>
   );
 }
