@@ -237,7 +237,56 @@ export default function Home() {
       </Head>
 
 
-      
+      <main>
+        <DynamicPopupform />
+        <Suspense fallback={<p>Loading data...</p>}>
+          <DynamicBanner />
+        </Suspense>
+        <Suspense fallback={<p>Loading data...</p>}>
+          <DynamicMarqueeText />
+        </Suspense>
+        <Suspense fallback={<p>Loading data...</p>}>
+          <DynamicAbout />
+        </Suspense>
+        <Suspense fallback={<p>Loading data...</p>}>
+          {/* <OurWOrks /> */}
+          <DynamicOurwork3 />
+        </Suspense>
+        <Suspense fallback={<p>Loading data...</p>}>
+          <DynamicService />
+        </Suspense>
+        <Suspense fallback={<p>Loading data...</p>}>
+          {/* <OurWOrks /> */}
+          <DynamicOurwork2 />
+        </Suspense>
+        <Suspense>
+          <DynamicClients />
+        </Suspense>
+        {/* <AnimatPara/> */}
+        <Suspense fallback={<p>Loading data...</p>}>
+          <DynamicTestimonials />
+        </Suspense>
+        {/* Faq section */}
+        <Suspense fallback={<p>Loading data...</p>}>
+          <DynamicFaq />
+        </Suspense>
+        {/* <Clients/> */}
+        <Suspense fallback={<p>Loading data...</p>}>
+          <div className="bg-white relative" id="contact-form">
+            <img
+              className=" w-60 xl:h-full xl:w-full absolute top-[50%] left-[50%] -translate-x-[50%] object-contain -translate-y-[50%] opacity-5 z-10"
+              src={LogoDO.src}
+              alt=""
+            />
+            <DynamicWorkwithUs />
+          </div>
+        </Suspense>
+        {/* <Suspense fallback={<p>Loading data...</p>}>
+          <ContactButton />
+        </Suspense> */}
+        {/* <GetinTouch/>
+      <MovingWords/> */}
+      </main>
     </>
   );
 }
