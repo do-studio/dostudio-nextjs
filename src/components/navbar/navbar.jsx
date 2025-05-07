@@ -19,6 +19,12 @@ const Navbar = () => {
   const [issubMenuOpen, setSubMenuOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   if (typeof window !== "undefined" && typeof document !== "undefined") {
     isMenuOpen
       ? (document.body.style.overflow = "hidden")
@@ -157,18 +163,28 @@ const Navbar = () => {
 
 
       <nav
-        className={`px-5 fixed top-0 left-0 right-0 flex justify-between md:justify-center  items-center z-40 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${isScrolled ? " " : `bg-transparent " }`}`}
-      >
+        className={`px-5 fixed top-0 left-0 right-0 flex justify-between md:justify-center items-center z-40 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${isScrolled ? "" : "bg-transparent"}`}>
         {/* scroll active header */}
         <nav className={` text-black hidden md:block  `}>
           <div className="container mx-auto flex justify-center py-2">
             <ul className={`flex h-full  items-center space-x-6 bg-transparent  ${isScrolled ? "navbar " : "bg-white invert md:invert-0"
               } backdrop-blur-md px-6 py-1 rounded-full     shadow-2xl `} >
               <li>
-                <Link href="/" className={`px-4 py-2 rounded-full foot-underline-hover-effect  transition duration-200 uppercase font-light  ${isCurrentPath("/") && ' !bg-gray-200 !text-black'}`}>Home</Link>
+                <Link
+                  href="/"
+                  className={`px-4 py-2 rounded-full foot-underline-hover-effect transition duration-200 uppercase font-light ${hasMounted && isCurrentPath("/") ? '!bg-gray-200 !text-black' : ''}`}
+                >
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="/services" className={`px-4 py-2 rounded-full foot-underline-hover-effect  transition duration-200  uppercase font-light  ${isCurrentPath("/services") && ' !bg-gray-200 !text-black'}`}>Services</Link>
+                <Link
+                  href="/services"
+                  className={`px-4 py-2 rounded-full foot-underline-hover-effect transition duration-200 uppercase font-light ${hasMounted && isCurrentPath("/services") ? '!bg-gray-200 !text-black' : ''}`}
+                >
+                  Services
+                </Link>
+
               </li>
               <li className="hover:cursor-pointer rounded-full ">
                 <Link href="/">
@@ -210,7 +226,12 @@ const Navbar = () => {
                 )}
               </li>
               <li>
-                <Link href="/contact" className={`px-4 py-2 rounded-full foot-underline-hover-effect  transition duration-200 uppercase font-light  ${isCurrentPath("/contact") && ' !bg-gray-200 !text-black'}`}>Contact</Link>
+                <Link
+                  href="/contact"
+                  className={`px-4 py-2 rounded-full foot-underline-hover-effect transition duration-200 uppercase font-light ${hasMounted && isCurrentPath("/contact") ? '!bg-gray-200 !text-black' : ''}`}
+                >
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>

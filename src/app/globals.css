@@ -658,6 +658,10 @@ cursor: pointer;
 
 
 
+.skeleton-custom {
+  aspect-ratio: 1 / 1;
+  gap: 0;
+}
 
 .foot-underline-hover-effect-black {
   position: relative;
