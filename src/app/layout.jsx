@@ -11,50 +11,50 @@ import Script from "next/script";
 import ContactButton from "../components/home/designs/ContactButton";
 import React from "react";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poppins",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+// const poppins = Poppins({
+//   subsets: ["latin"],
+//   display: "swap",
+//   variable: "--font-poppins",
+//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+// });
 
-export const metadata = {
-  robots: "index, follow",
-  openGraph: {
-    title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
-    description:
-      "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
-    url: "https://dostudio.co.in",
-    images: [
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png",
-        width: 1200,
-        height: 630,
-        alt: "Do Studio - Digital Marketing and Branding Agency",
-      },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
-    description:
-      "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
-    images: [
-      "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png",
-    ],
-  },
-  other: {
-    "google-site-verification": "K-0KPQ78AmDrdt3Dtqtln-KygEAHUAR0c5Qo_m4cZkU",
-    "pixel:payload": "TEST88229",
-  },
-};
+// export const metadata = {
+//   robots: "index, follow",
+//   openGraph: {
+//     title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
+//     description:
+//       "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
+//     url: "https://dostudio.co.in",
+//     images: [
+//       {
+//         url: "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png",
+//         width: 1200,
+//         height: 630,
+//         alt: "Do Studio - Digital Marketing and Branding Agency",
+//       },
+//     ],
+//     type: "website",
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
+//     description:
+//       "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
+//     images: [
+//       "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png",
+//     ],
+//   },
+//   other: {
+//     "google-site-verification": "K-0KPQ78AmDrdt3Dtqtln-KygEAHUAR0c5Qo_m4cZkU",
+//     "pixel:payload": "TEST88229",
+//   },
+// };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* Microsoft Clarity */}
-      <Script id="clarity-script" strategy="afterInteractive">
+      {/* <Script id="clarity-script" strategy="afterInteractive">
         {`
           (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -64,13 +64,14 @@ export default function RootLayout({ children }) {
         `}
       </Script>
 
-      {/* Google Tag Manager & Analytics */}
       <GoogleAnalytics gaId="G-XR89GB34HC" />
-      <GoogleTagManager gtmId="AW-11563204186" />
+      <GoogleTagManager gtmId="AW-11563204186" /> */}
 
-      <body className={poppins.className}>
+      {/* <body className={poppins.className}> */}
+      <body >
+
         <div className="2xl:max-w-[3500px] mx-auto">
-          <CanonicalTag />
+          {/* <CanonicalTag /> */}
 
           <RootClient>
             <Navbar />
