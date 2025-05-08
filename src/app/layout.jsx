@@ -67,37 +67,35 @@ export default function RootLayout({ children }) {
       <GoogleAnalytics gaId="G-XR89GB34HC" />
       <GoogleTagManager gtmId="AW-11563204186" /> */}
 
+
       {/* Microsoft Clarity – lazy load after user interaction */}
-      <Script
-        id="clarity-script"
-        strategy="lazyOnload"
-      >
+      <Script id="defer-analytics" strategy="afterInteractive">
         {`
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "pxs9rkmsym");
-  `}
-      </Script>
+    setTimeout(() => {
+      // Google Analytics
+      const gaScript = document.createElement("script");
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-XR89GB34HC";
+      gaScript.async = true;
+      document.head.appendChild(gaScript);
 
-      {/* Google Tag Manager – load after page load */}
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtm.js?id=AW-11563204186`}
-      />
+      gaScript.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XR89GB34HC');
+      };
 
-      {/* Google Analytics – load after page load */}
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-XR89GB34HC`}
-      />
-      <Script id="gtag-init" strategy="lazyOnload">
-        {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XR89GB34HC');
+      // Microsoft Clarity
+      const clarityScript = document.createElement("script");
+      clarityScript.innerHTML = \`
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/pxs9rkmsym";
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pxs9rkmsym");
+      \`;
+      document.body.appendChild(clarityScript);
+    }, 3000); // Load after 3 seconds
   `}
       </Script>
 
