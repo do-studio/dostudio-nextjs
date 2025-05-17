@@ -23,7 +23,31 @@ const postersData = [
     imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1745220987/large_Lulu_vishu_ca477cb2fc.webp",
     hgt: "4/5"
   },
-
+  {
+    id: 4,
+    order: 4,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174474/medium_AROOHA_P4_copy_e8bcd8835f_32723205a2.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 5,
+    order: 5,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174362/small_medium_C_Builders_JUNE_P2_copy_7e41f57f4d_6c8779bed2.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 6,
+    order: 6,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174108/large_Kurikkal_MAR_P3_copy_d884943c7b_62d2c88128.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977522/large_Ztart_Aug_Destination_18cc317071_ee37b09ffa.webp",
+    hgt: "4/5"
+  },
+ 
 
 
 ];
