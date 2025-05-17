@@ -1,137 +1,131 @@
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css"; // Import the lightbox styles
 import ReactPlayer from 'react-player';
 
-
-async function getData() {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/creative-motions?pagination[pageSize]=1000&populate=*`,
-        { next: { revalidate: 60 } } // Revalidate every 60 seconds
-    );
-
-    if (!res.ok) {
-        return notFound();
-    }
-
-    return res.json();
-}
-
-const motions = () => {
-    const [workdata, setWorkdata] = useState([]);
-    const [isOpen, setIsOpen] = useState(false); // Lightbox open state
-    const [photoIndex, setPhotoIndex] = useState(0); // Current image index
-    const [images, setImages] = useState([]); // Image URLs for the lightbox
-    const [isLoading, setIsLoading] = useState(true); // Loading state      
-    const [playingIndex, setPlayingIndex] = useState(null); // Track which video is playing
-    const [videoProgress, setVideoProgress] = useState({}); // Track the progress of videos
-    const [hoveredVideos, setHoveredVideos] = useState(new Set()); // Track which videos have been hovered
-
-
-
-
-    // Fetch data on component mount
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true); // Start loading
-            const data = await getData();
-            setWorkdata(data.data);
-            setIsLoading(false); // Stop loading
-
-            // Extract image URLs for the lightbox
-            const sorted = data.data?.sort(
-                (a, b) => a.attributes.order - b.attributes.order
-            );
-            // const imageUrls = sorted.map(
-            //     (item) => item.attributes.image.data.attributes.url
-            // );
-            setWorkdata(sorted);
-
-        };
-        fetchData();
-    }, []);
-
-
-
-    // // Sort the data by the order field
-    // const sortedData = workdata?.sort(
-    //     (a, b) => a.attributes.order - b.attributes.order
-    // );
-
-
-
-
-
-    const handleProgress = (progress, index) => {
-        setVideoProgress((prev) => ({
-            ...prev,
-            [index]: progress.playedSeconds, // Store the current video progress in seconds
-        }));
-    };
-
-    const handleHover = (index) => {
-        setPlayingIndex(index); // Start playing the video
-        setHoveredVideos((prev) => new Set(prev).add(index)); // Mark the video as hovered
-    };
+const motionVideos = [
+  {
+    id: 1,
+    url: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1745217528/Lulu_-_kuttippada_-_compressed_mte3qc.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1745217712/lulu_-_kuttipada_xsv2dd.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    url: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1745217527/Stckr_xtnftp.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1745217711/stackr_-_eid_mxay93.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    url: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1739852981/PK_JAN_MP1_cdncu1.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740982785/Screenshot_2025-03-03_114848_qf4jxx.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    url: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1740639122/imamom_v1jnai.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740639238/Screenshot_2025-02-27_122226_qga3iw.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    url: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1740480985/STAKR_FEB_M2_qzex2s.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740481007/Screenshot_2025-02-25_162448_fzypwi.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    url: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1739854124/PK_JAN_MP2_cmpinc.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1739853579/Screenshot_2025-02-18_100909_tqb8rz.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    url: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1739853404/C.Builders_JUNE_MP1_v2_nfwjuq.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1739853580/Screenshot_2025-02-18_100838_zfotpy.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    url: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1739853404/NCARE_JUNE_MP2_szx92n.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1739853974/Screenshot_2025-02-18_101543_eyateh.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    url: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1739853403/PK_DEC_MP2_hsiwij.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1739853579/Screenshot_2025-02-18_100811_xo4bdn.png",
+    height: "9/16"
+  },
 
 
 
-    
+];
 
-    return (
-        <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20  columns-3     gap-x-0 gap-y-0'>
-            {isLoading ? (
-                // Skeleton loading
-                <Skeleton style={{ aspectRatio: "9/16", gap: "0" }} count={9} />
-            ) : workdata && workdata.length > 0 ? (
-                workdata.map((data, i) => (
-                    <div
-                        className="relative group break-inside-avoid-column"
-                        key={i}
-                        onMouseEnter={() => handleHover(i)} // Hover to start playing
-                        onMouseLeave={() => setPlayingIndex(null)} // Stop video when hover ends
-                    >
-                        <div
-                            className="relative w-full break-inside-avoid-column bg-black duration-150"
-                            style={{ aspectRatio: data.attributes.height || "9/16" }}
-                        >
-                         
-                            {hoveredVideos.has(i) || playingIndex === i ? (
-                                <ReactPlayer
-                                    url={`${data?.attributes?.url}?tr=orig&ik-cors=force`}
-                                    playing={playingIndex === i} // Play only when hovered
-                                    loop={true}
-                                    muted={false}
-                                    playsinline={true}
-                                    controls={false}
-                                    width="100%"
-                                    height="100%"
-                                    className="object-fill"
-                                    style={{ objectFit: "fill" }}
-                                    onProgress={(progress) => handleProgress(progress, i)} // Track video progress
-                                    startTime={videoProgress[i] || 0} // Start from last position
-                                />
-                            ) : (
-                                <img
-                                    src={`${data?.attributes?.videothump ?? 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp'}`} // Thumbnail at 10 seconds
-                                    alt="Thumbnail"
-                                    id={data.id}
-                                    className="absolute top-0 left-0 w-full h-full object-cover"
-                                />
-                            )}
-                        </div>
-                    </div>
-                ))
-            ) : (
-                <div className="text-left text-2xl font-medium animate-bounce">
-                    No data found.
-                </div>
-            )}
+const Motions = () => {
+  const [playingIndex, setPlayingIndex] = useState(null);
+  const [videoProgress, setVideoProgress] = useState({});
+  const [hoveredVideos, setHoveredVideos] = useState(new Set());
 
+  const handleProgress = (progress, index) => {
+    setVideoProgress((prev) => ({
+      ...prev,
+      [index]: progress.playedSeconds,
+    }));
+  };
+
+  const handleHover = (index) => {
+    setPlayingIndex(index);
+    setHoveredVideos((prev) => new Set(prev).add(index));
+  };
+
+  return (
+    <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20 columns-3 gap-x-0 gap-y-0'>
+      {motionVideos.length > 0 ? (
+        motionVideos.map((data, i) => (
+          <div
+            className="relative group break-inside-avoid-column"
+            key={data.id}
+            onMouseEnter={() => handleHover(i)}
+            onMouseLeave={() => setPlayingIndex(null)}
+          >
+            <div
+              className="relative w-full break-inside-avoid-column bg-black duration-150"
+              style={{ aspectRatio: data.height || "9/16" }}
+            >
+              {hoveredVideos.has(i) || playingIndex === i ? (
+                <ReactPlayer
+                  url={`${data.url}?tr=orig&ik-cors=force`}
+                  playing={playingIndex === i}
+                  loop={true}
+                  muted={false}
+                  playsinline={true}
+                  controls={false}
+                  width="100%"
+                  height="100%"
+                  className="object-fill"
+                  style={{ objectFit: "fill" }}
+                  onProgress={(progress) => handleProgress(progress, i)}
+                  startTime={videoProgress[i] || 0}
+                />
+              ) : (
+                <img
+                  src={data.videothump || 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp'}
+                  alt="Video thumbnail"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                />
+              )}
+            </div>
+          </div>
+        ))
+      ) : (
+        <div className="text-left text-2xl font-medium animate-bounce">
+          No videos found.
         </div>
-    )
+      )}
+    </div>
+  )
 }
 
-export default motions
+export default Motions;
