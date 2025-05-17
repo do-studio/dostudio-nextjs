@@ -10,24 +10,9 @@ export const metadata = {
 };
 
 const brandingData = [
+  
   {
     id: 1,
-    slug: "blue-leaf",
-    title: "Blue Leaf",
-    coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977266/large_blue_leaf_68a59f9721_bd2707dca3.webp"
-    },
-    innerImages: [
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977274/BLUE_LEAF_LOGO_OP_01_5d9eaeee49_bd4b1c0640.webp",
-        width: 1200,
-        height: 800,
-        alt: "Blue Leaf Logo"
-      },
-    ]
-  },
-  {
-    id: 2,
     slug: "adis",
     title: "adis",
     coverimage: {
@@ -55,7 +40,23 @@ const brandingData = [
 
     ]
   },
-  
+  {
+    id: 2,
+    slug: "medimode",
+    title: "medimode",
+    coverimage: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1747482760/MEDI_MODE_GREEN_LOGO_SQUAR_OP_01_-01_e5qwny.webp"
+    },
+    innerImages: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1747481990/MEDI_MODE_GREEN_LOGO_OP_01_-01_dokfh5.webp",
+        width: 1200,
+        height: 800,
+        alt: "medimode"
+      },
+
+    ]
+  },
   {
     id: 3,
     slug: "kebabji",
@@ -226,6 +227,22 @@ const brandingData = [
         alt: "My work"
       },
 
+    ]
+  },
+  {
+    id: 9,
+    slug: "blue-leaf",
+    title: "Blue Leaf",
+    coverimage: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977266/large_blue_leaf_68a59f9721_bd2707dca3.webp"
+    },
+    innerImages: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977274/BLUE_LEAF_LOGO_OP_01_5d9eaeee49_bd4b1c0640.webp",
+        width: 1200,
+        height: 800,
+        alt: "Blue Leaf Logo"
+      },
     ]
   },
 

@@ -1,45 +1,80 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import FadeUp from "../../../../components/motions/fadeUp";
 import Head from "next/head";
-import { Helmet } from "react-helmet";
 
-async function fetchData() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/print-designs?&populate=*`,
-    { cache: "no-store" }
-  );
+const printDesignsData = [
+  {
+    id: 1,
+    image: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1745833026/PEEKAY_BROUCHER_MOCKUP_a2ac16b067.webp",
+      alt: "Print Design 1"
+    }
+  },
+  {
+    id: 2,
+    image: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740976934/Billboard_Mockup_2_0c64f46e34_f36407a4a9.webp",
+      alt: "Print Design 2"
+    }
+  },
+  {
+    id: 2,
+    image: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740976931/medium_Billboard_Mockup_1_d42b0e7070_3706ad8057.webp",
+      alt: "Print Design 2"
+    }
+  },
+  {
+    id: 2,
+    image: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974816/large_print_11_f09d17ddb0_82fe52ebaa.webp",
+      alt: "Print Design 2"
+    }
+  },
+  {
+    id: 2,
+    image: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974814/print_10_51664aa010_bfdc50a5c5.webp",
+      alt: "Print Design 2"
+    }
+  },
+  {
+    id: 2,
+    image: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974813/print_07_e2d228c0dc_415d122a31.webp",
+      alt: "Print Design 2"
+    }
+  },
+  {
+    id: 2,
+    image: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974813/large_print_09_fc4d0ec873_e158628b44.webp",
+      alt: "Print Design 2"
+    }
+  },
+  {
+    id: 2,
+    image: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974813/large_print_08_1eca5449d8_83f4aa986c.webp",
+      alt: "Print Design 2"
+    }
+  },
+  {
+    id: 2,
+    image: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974576/print_05_cf5718cf7c_9b320d43e3.webp",
+      alt: "Print Design 2"
+    }
+  },
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
 
-  return res.json();
-}
+];
 
 const PrintDesign = () => {
-  const [data, setData] = useState([]);
   const [lightboxImage, setLightboxImage] = useState(null);
   const lightboxRef = useRef(null);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const workdata = await fetchData();
-        const sortedData = workdata.data?.sort(
-          (a, b) => a.attributes.order - b.attributes.order
-        );
-        setData(sortedData);
-
-
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    getData();
-  }, []);
 
   const handleImageClick = (url) => {
     setLightboxImage(url);
@@ -55,117 +90,41 @@ const PrintDesign = () => {
     }
   };
 
-  useEffect(() => {
-    // Set title
-    document.title = "Print Designing Company in Calicut | Boost Brand Visibility";
-
-    // Set meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
-    } else {
-      const newMetaDescription = document.createElement("meta");
-      newMetaDescription.setAttribute("name", "description");
-      newMetaDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
-      document.head.appendChild(newMetaDescription);
-    }
-
-    // Set Open Graph meta tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute("content", "Print Designing Company in Calicut | Boost Brand Visibility");
-    } else {
-      const newOgTitle = document.createElement("meta");
-      newOgTitle.setAttribute("property", "og:title");
-      newOgTitle.setAttribute("content", "Print Designing Company in Calicut | Boost Brand Visibility");
-      document.head.appendChild(newOgTitle);
-    }
-
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
-    } else {
-      const newOgDescription = document.createElement("meta");
-      newOgDescription.setAttribute("property", "og:description");
-      newOgDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
-      document.head.appendChild(newOgDescription);
-    }
-
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (!ogUrl) {
-      const newOgUrl = document.createElement("meta");
-      newOgUrl.setAttribute("property", "og:url");
-      newOgUrl.setAttribute("content", "https://dostudio.co.in");
-      document.head.appendChild(newOgUrl);
-    }
-
-    // Set Twitter meta tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) {
-      twitterTitle.setAttribute("content", "Print Designing Company in Calicut | Boost Brand Visibility");
-    } else {
-      const newTwitterTitle = document.createElement("meta");
-      newTwitterTitle.setAttribute("name", "twitter:title");
-      newTwitterTitle.setAttribute("content", "Print Designing Company in Calicut | Boost Brand Visibility");
-      document.head.appendChild(newTwitterTitle);
-    }
-
-    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDescription) {
-      twitterDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
-    } else {
-      const newTwitterDescription = document.createElement("meta");
-      newTwitterDescription.setAttribute("name", "twitter:description");
-      newTwitterDescription.setAttribute("content", "Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image.");
-      document.head.appendChild(newTwitterDescription);
-    }
-
-    const twitterCard = document.querySelector('meta[name="twitter:card"]');
-    if (!twitterCard) {
-      const newTwitterCard = document.createElement("meta");
-      newTwitterCard.setAttribute("name", "twitter:card");
-      newTwitterCard.setAttribute("content", "summary_large_image");
-      document.head.appendChild(newTwitterCard);
-    }
-  }, []);
-  
-
   return (
     <>
-      
+      <Head>
+        <title>Print Designing Company in Calicut | Boost Brand Visibility</title>
+        <meta name="description" content="Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image." />
+        <meta property="og:title" content="Print Designing Company in Calicut | Boost Brand Visibility" />
+        <meta property="og:description" content="Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image." />
+        <meta property="og:url" content="https://dostudio.co.in" />
+        <meta name="twitter:title" content="Print Designing Company in Calicut | Boost Brand Visibility" />
+        <meta name="twitter:description" content="Leading print designing company in Calicut to craft high-quality print materials like brochures, flyers, and business cards for your brand image." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
       <main className="min-h-screen w-full bg-white">
         <div className="w-11/12 xl:w-10/12 mx-auto pt-20 xl:pt-24 py-20 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
-          {data && data.length > 0 ? (
-            data.reverse().map((item, i) => (
-              <FadeUp duration={0.3} delay={0.1 * i} key={i}>
-                <div className="relative group bg-[#dcdcde]">
-                  <div
-                    className="relative aspect-video w-full cursor-pointer"
-                    onClick={() =>
-                      handleImageClick(
-                        item.attributes.image.data.attributes.url
-                      )
-                    }
-                  >
-                    <Image
-                      src={item.attributes.image.data.attributes.url}
-                      fill={true}
-                      className="object-cover"
-                      loading="lazy"
-                      alt="wrk1"
-                    />
-                  </div>
+          {printDesignsData.map((item, i) => (
+            <FadeUp duration={0.3} delay={0.1 * i} key={item.id}>
+              <div className="relative group bg-[#dcdcde]">
+                <div
+                  className="relative aspect-video w-full cursor-pointer"
+                  onClick={() => handleImageClick(item.image.url)}
+                >
+                  <Image
+                    src={item.image.url}
+                    fill={true}
+                    className="object-cover"
+                    loading="lazy"
+                    alt={item.image.alt}
+                  />
                 </div>
-              </FadeUp>
-            ))
-          ) : (
-            <div className="text-left text-2xl font-medium animate-bounce">
-              No data found.
-            </div>
-          )}
+              </div>
+            </FadeUp>
+          ))}
         </div>
 
-        {/* Lightbox */}
         {lightboxImage && (
           <div
             className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50"
@@ -184,7 +143,7 @@ const PrintDesign = () => {
                 width={800}
                 height={600}
                 className="object-contain"
-                alt="Lightbox image"
+                alt="Print design lightbox view"
               />
             </div>
           </div>

@@ -265,18 +265,18 @@ const FaqMain = () => {
   );
 };
 
-async function fetchData() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/creatives?&populate=*`,
-    { cache: "no-store" }
-  );
+// async function fetchData() {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_API_URL}/api/creatives?&populate=*`,
+//     { cache: "no-store" }
+//   );
 
-  if (!res.ok) {
-    return notFound();
-  }
+//   if (!res.ok) {
+//     return notFound();
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 const Page = () => {
   const [workdata, setWorkdata] = useState([]);
@@ -286,16 +286,16 @@ const Page = () => {
     setShowSecondComponent(!showSecondComponent);
   };
 
-  useEffect(() => {
-    const getData = async () => {
-      const data = await fetchData();
-      setWorkdata(
-        data.data?.sort((a, b) => a.attributes.order - b.attributes.order)
-      );
-    };
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const data = await fetchData();
+  //     setWorkdata(
+  //       data.data?.sort((a, b) => a.attributes.order - b.attributes.order)
+  //     );
+  //   };
 
-    getData();
-  }, []);
+  //   getData();
+  // }, []);
 
   useEffect(() => {
     // Set title
@@ -421,7 +421,7 @@ const Page = () => {
           Contact now
         </Link>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
           {workdata && workdata.length > 0 ? (
             workdata.slice(0, 6).map((data) => (
               <FadeUp duration={0.5} delay={0.5}>
@@ -443,7 +443,7 @@ const Page = () => {
               No data found.
             </div>
           )}
-        </div>
+        </div> */}
         <Link
           href={"/our-works/creatives"}
           className="bg-primarygreen mx-auto text-black w-fit px-20 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center"

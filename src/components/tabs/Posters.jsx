@@ -47,6 +47,73 @@ const postersData = [
     imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977522/large_Ztart_Aug_Destination_18cc317071_ee37b09ffa.webp",
     hgt: "4/5"
   },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974452/large_AROOHA_aug_p8_v2_copy_f97df6128d_f9e6d4b8f3.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974453/USA_AD_2_b46ad390d2_faabe9db3a.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974453/AROOHA_AUG_P1_copy_49da850ee2_0cf2bdc3bc.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974453/large_ZTART_CANADA_AD_f4b9f66a7f_af02cd7e41.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974453/medium_uk_visa_ad_de2cf60dc5_171ee9d252.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974452/large_AROOHA_p5_copy_ed8d2a45b7_13b2e5309e.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974112/palooda_SEP_P4_v5_copy_4d1f3e9493_8f10468a08.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974112/large_Whats_App_Image_2025_01_13_at_17_12_07_77026146_75e998b28e_421155b073.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974111/large_T_and_T_NOV_P2_copy_349d77fbb9_a5d98513a9.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974111/large_Whats_App_Image_2025_01_13_at_17_11_45_645dcaad_2daa8f0661_b9172a1dbc.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974111/large_Whats_App_Image_2025_01_13_at_17_11_44_545857c7_36335c331c_f72ae60992.webp",
+    hgt: "1/1"
+  },
+  
  
 
 

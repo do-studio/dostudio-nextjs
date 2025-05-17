@@ -248,18 +248,18 @@ const FaqMain = () => {
   );
 };
 
-async function fetchData() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/web-designs?&populate=*`,
-    { cache: "no-store" }
-  );
+// async function fetchData() {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_API_URL}/api/web-designs?&populate=*`,
+//     { cache: "no-store" }
+//   );
 
-  if (!res.ok) {
-    return notFound();
-  }
+//   if (!res.ok) {
+//     return notFound();
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 const Page = () => {
   const [workdata, setWorkdata] = useState([]);
@@ -269,14 +269,14 @@ const Page = () => {
     setShowSecondComponent(!showSecondComponent);
   };
 
-  useEffect(() => {
-    const getData = async () => {
-      const data = await fetchData();
-      setWorkdata(data);
-    };
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const data = await fetchData();
+  //     setWorkdata(data);
+  //   };
 
-    getData();
-  }, []);
+  //   getData();
+  // }, []);
 
   useEffect(() => {
     // Set title
@@ -508,7 +508,7 @@ const Page = () => {
             See more
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {workdata.data && workdata.data.length > 0 ? (
             workdata.data?.slice(0, 4).map((data, i) => (
               <FadeUp duration={0.5} delay={0.5 * i} key={i}>
@@ -534,7 +534,7 @@ const Page = () => {
               No data found.
             </div>
           )}
-        </div>
+        </div> */}
         <Link
           href={"/our-works/web-design"}
           className="bg-primarygreen mx-auto text-black w-fit px-20 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center"

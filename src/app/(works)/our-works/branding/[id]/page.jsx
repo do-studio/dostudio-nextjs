@@ -4,91 +4,9 @@ import FadeUp from "../../../../../components/motions/fadeUp";
 
 // Local data array
 const brandingData = [
+  
   {
     id: 1,
-    slug: "blue-leaf",
-    title: "Blue Leaf",
-    coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977266/large_blue_leaf_68a59f9721_bd2707dca3.webp"
-    },
-    innerImages: [
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977274/BLUE_LEAF_LOGO_OP_01_5d9eaeee49_bd4b1c0640.webp",
-        width: 1200,
-        height: 800,
-        alt: "Blue Leaf Logo"
-      },
-    ]
-  },
-  {
-    id: 2,
-    slug: "geogrip",
-    title: "Geogrip",
-    coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740978493/medium_large_GEOGRIP_THUMB_261a6d7665_761d6ca25e.webp"
-    },
-    innerImages: [
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740978535/GEOGRIP_01_09ccde30b4_3974a1667e.webp",
-        width: 1200,
-        height: 800,
-        alt: "geogrip"
-      },
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740978536/GEOGRIP_02_55d190d471_819570ad69.webp",
-        width: 1200,
-        height: 800,
-        alt: "geogrip"
-      },
-    ]
-  },
-  {
-    id: 3,
-    slug: "kebabji",
-    title: "Kebabji",
-    coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740979589/KEBABJI_05_f3f6d019d5_c16a67984b.webp"
-    },
-    innerImages: [
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740979585/large_KEBABJI_01_356cd4636c_e863c8a3c4.webp",
-        width: 1200,
-        height: 800,
-        alt: "kebabji"
-      },
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740979592/KEBABJI_03_73f0d427dc_f8568b04b4.webp",
-        width: 1200,
-        height: 800,
-        alt: "kebabji"
-      },
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740979593/KEBABJI_04_27b247102f_da4549ce26.webp",
-        width: 1200,
-        height: 800,
-        alt: "kebabji"
-      },
-    ]
-  },
-  {
-    id: 4,
-    slug: "add-mind",
-    title: "add mind",
-    coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741170922/large_s5_kfziqa_43869b7f15.jpg"
-    },
-    innerImages: [
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741170849/ADDMIND_p_01_c0797feafa_413fc29623.webp",
-        width: 1200,
-        height: 800,
-        alt: "add mind"
-      },
-
-    ]
-  },
-  {
-    id: 5,
     slug: "adis",
     title: "adis",
     coverimage: {
@@ -114,6 +32,90 @@ const brandingData = [
         alt: "adis"
       },
 
+    ]
+  },
+  {
+    id: 2,
+    slug: "medimode",
+    title: "medimode",
+    coverimage: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1747482760/MEDI_MODE_GREEN_LOGO_SQUAR_OP_01_-01_e5qwny.webp"
+    },
+    innerImages: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1747481990/MEDI_MODE_GREEN_LOGO_OP_01_-01_dokfh5.webp",
+        width: 1200,
+        height: 800,
+        alt: "medimode"
+      },
+
+    ]
+  },
+  {
+    id: 3,
+    slug: "kebabji",
+    title: "Kebabji",
+    coverimage: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740979589/KEBABJI_05_f3f6d019d5_c16a67984b.webp"
+    },
+    innerImages: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740979585/large_KEBABJI_01_356cd4636c_e863c8a3c4.webp",
+        width: 1200,
+        height: 800,
+        alt: "geogrip"
+      },
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740979592/large_KEBABJI_03_73f0d427dc_f8568b04b4.webp",
+        width: 1200,
+        height: 800,
+        alt: "geogrip"
+      },
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740979593/KEBABJI_04_27b247102f_da4549ce26.webp",
+        width: 1200,
+        height: 800,
+        alt: "geogrip"
+      },
+    ]
+  },
+  {
+    id: 4,
+    slug: "add-mind",
+    title: "add mind",
+    coverimage: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741170922/large_s5_kfziqa_43869b7f15.jpg"
+    },
+    innerImages: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741170849/ADDMIND_p_01_c0797feafa_413fc29623.webp",
+        width: 1200,
+        height: 800,
+        alt: "add mind"
+      },
+
+    ]
+  },
+  {
+    id: 5,
+    slug: "geogrip",
+    title: "Geogrip",
+    coverimage: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740978493/medium_large_GEOGRIP_THUMB_261a6d7665_761d6ca25e.webp"
+    },
+    innerImages: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740978535/GEOGRIP_01_09ccde30b4_3974a1667e.webp",
+        width: 1200,
+        height: 800,
+        alt: "geogrip"
+      },
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740978536/GEOGRIP_02_55d190d471_819570ad69.webp",
+        width: 1200,
+        height: 800,
+        alt: "geogrip"
+      },
     ]
   },
   {
@@ -185,7 +187,7 @@ const brandingData = [
     slug: "my-work",
     title: "My work",
     coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741170922/large_s5_kfziqa_43869b7f15.jpg"
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174752/MW_THUMB_08_440ae154f1_54ab465145.webp"
     },
     innerImages: [
       {
@@ -221,6 +223,23 @@ const brandingData = [
 
     ]
   },
+  {
+    id: 9,
+    slug: "blue-leaf",
+    title: "Blue Leaf",
+    coverimage: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977266/large_blue_leaf_68a59f9721_bd2707dca3.webp"
+    },
+    innerImages: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977274/BLUE_LEAF_LOGO_OP_01_5d9eaeee49_bd4b1c0640.webp",
+        width: 1200,
+        height: 800,
+        alt: "Blue Leaf Logo"
+      },
+    ]
+  },
+
 ];
 
 export async function generateMetadata({ params }) {
