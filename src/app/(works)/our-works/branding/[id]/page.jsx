@@ -4,7 +4,6 @@ import FadeUp from "../../../../../components/motions/fadeUp";
 
 // Local data array
 const brandingData = [
-  
   {
     id: 1,
     slug: "adis",
@@ -36,6 +35,42 @@ const brandingData = [
   },
   {
     id: 2,
+    slug: "switchlab",
+    title: "switchlab",
+    coverimage: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1747720122/STITCHLABlogo_ltmrv9.webp"
+    },
+    innerImages: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1747720124/STITCHLAB_okedxi.webp",
+        width: 1200,
+        height: 800,
+        alt: "switchlab"
+      },
+
+    ]
+  },
+  {
+    id: 3,
+    slug: "equipspace",
+    title: "equipspace",
+    coverimage: {
+      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1747720122/EQUISPACE_LOGO1_j2ud5x.webp"
+    },
+    innerImages: [
+      {
+        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1747720123/EQUISPACE_LOGO_pjrnkk.webp",
+        width: 1200,
+        height: 800,
+        alt: "equipspace"
+      },
+
+    ]
+  },
+  
+  
+  {
+    id: 4,
     slug: "medimode",
     title: "medimode",
     coverimage: {
@@ -52,7 +87,7 @@ const brandingData = [
     ]
   },
   {
-    id: 3,
+    id: 5,
     slug: "kebabji",
     title: "Kebabji",
     coverimage: {
@@ -80,7 +115,7 @@ const brandingData = [
     ]
   },
   {
-    id: 4,
+    id: 6,
     slug: "add-mind",
     title: "add mind",
     coverimage: {
@@ -97,7 +132,7 @@ const brandingData = [
     ]
   },
   {
-    id: 5,
+    id: 7,
     slug: "geogrip",
     title: "Geogrip",
     coverimage: {
@@ -119,7 +154,7 @@ const brandingData = [
     ]
   },
   {
-    id: 6,
+    id: 8,
     slug: "chai-drop",
     title: "chai drop",
     coverimage: {
@@ -148,7 +183,7 @@ const brandingData = [
     ]
   },
   {
-    id: 7,
+    id: 9,
     slug: "dream-of-us",
     title: "Dream of us",
     coverimage: {
@@ -183,7 +218,7 @@ const brandingData = [
     ]
   },
   {
-    id: 8,
+    id: 10,
     slug: "my-work",
     title: "My work",
     coverimage: {
@@ -224,7 +259,7 @@ const brandingData = [
     ]
   },
   {
-    id: 9,
+    id: 11,
     slug: "blue-leaf",
     title: "Blue Leaf",
     coverimage: {

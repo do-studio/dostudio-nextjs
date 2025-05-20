@@ -265,18 +265,120 @@ const FaqMain = () => {
   );
 };
 
-// async function fetchData() {
-//   const res = await fetch(
-//     `${process.env.NEXT_PUBLIC_API_URL}/api/creatives?&populate=*`,
-//     { cache: "no-store" }
-//   );
+const postersData = [
+  {
+    id: 1,
+    order: 1,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1745405949/Lulu_thudarum_39e52c82f8.webp",
+    hgt: "4/5"
+  },
+  {
+    id: 2,
+    order: 2,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1745220987/Lulu_empuran_17b9ddcf3a.webp",
+    hgt: "4/5"
+  },
+  {
+    id: 3,
+    order: 3,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1745220987/large_Lulu_vishu_ca477cb2fc.webp",
+    hgt: "4/5"
+  },
+  {
+    id: 4,
+    order: 4,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174474/medium_AROOHA_P4_copy_e8bcd8835f_32723205a2.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 5,
+    order: 5,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174362/small_medium_C_Builders_JUNE_P2_copy_7e41f57f4d_6c8779bed2.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 6,
+    order: 6,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174108/large_Kurikkal_MAR_P3_copy_d884943c7b_62d2c88128.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977522/large_Ztart_Aug_Destination_18cc317071_ee37b09ffa.webp",
+    hgt: "4/5"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974452/large_AROOHA_aug_p8_v2_copy_f97df6128d_f9e6d4b8f3.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974453/USA_AD_2_b46ad390d2_faabe9db3a.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974453/AROOHA_AUG_P1_copy_49da850ee2_0cf2bdc3bc.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974453/large_ZTART_CANADA_AD_f4b9f66a7f_af02cd7e41.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974453/medium_uk_visa_ad_de2cf60dc5_171ee9d252.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974452/large_AROOHA_p5_copy_ed8d2a45b7_13b2e5309e.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974112/palooda_SEP_P4_v5_copy_4d1f3e9493_8f10468a08.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974112/large_Whats_App_Image_2025_01_13_at_17_12_07_77026146_75e998b28e_421155b073.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974111/large_T_and_T_NOV_P2_copy_349d77fbb9_a5d98513a9.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974111/large_Whats_App_Image_2025_01_13_at_17_11_45_645dcaad_2daa8f0661_b9172a1dbc.webp",
+    hgt: "1/1"
+  },
+  {
+    id: 7,
+    order: 7,
+    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974111/large_Whats_App_Image_2025_01_13_at_17_11_44_545857c7_36335c331c_f72ae60992.webp",
+    hgt: "1/1"
+  },
+  
+ 
 
-//   if (!res.ok) {
-//     return notFound();
-//   }
 
-//   return res.json();
-// }
+];
 
 const Page = () => {
   const [workdata, setWorkdata] = useState([]);
@@ -286,16 +388,7 @@ const Page = () => {
     setShowSecondComponent(!showSecondComponent);
   };
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const data = await fetchData();
-  //     setWorkdata(
-  //       data.data?.sort((a, b) => a.attributes.order - b.attributes.order)
-  //     );
-  //   };
 
-  //   getData();
-  // }, []);
 
   useEffect(() => {
     // Set title
@@ -421,15 +514,18 @@ const Page = () => {
           Contact now
         </Link>
 
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
-          {workdata && workdata.length > 0 ? (
-            workdata.slice(0, 6).map((data) => (
+        <div className="columns-3 gap-x-0 gap-y-0">
+          {postersData && postersData.length > 0 ? (
+            postersData.slice(0, 6).map((data) => (
               <FadeUp duration={0.5} delay={0.5}>
                 <div className="relative group">
-                  <div className="relative aspect-square w-full">
+                  <div    className="relative w-full break-inside-avoid-column"
+              style={{
+                aspectRatio: data.hgt || '1 / 1',
+              }}>
                     <Image
                       loading="lazy"
-                      src={data.attributes.image.data.attributes.url}
+                      src={data.imageUrl}
                       fill={true}
                       className="object-cover"
                       alt="wrk1"
@@ -443,7 +539,7 @@ const Page = () => {
               No data found.
             </div>
           )}
-        </div> */}
+        </div>
         <Link
           href={"/our-works/creatives"}
           className="bg-primarygreen mx-auto text-black w-fit px-20 h-14 rounded-full shadow-2xl hover:shadow-xl duration-200 font-semibold uppercase grid place-items-center"
