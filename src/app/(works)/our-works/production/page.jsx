@@ -152,11 +152,11 @@ const Production = () => {
         <h1 className='pb-1 font-medium'>Videos</h1>
       </div>
 
-      <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20 grid grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-0'>
+      <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20 columns-3 gap-x-0 gap-y-0'>
         {productionVideos.length > 0 ? (
           productionVideos.map((data, i) => (
             <div
-              className="relative group"
+              className="relative group break-inside-avoid-column"
               key={data.id}
               onMouseEnter={() => handleHover(i)}
               onMouseLeave={() => setPlayingIndex(null)}
