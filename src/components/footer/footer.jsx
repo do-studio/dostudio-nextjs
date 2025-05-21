@@ -112,19 +112,19 @@ const Footer = () => {
                 home
               </Link>
               <Link
-                className="text-black  foot-underline-hover-effect w-fit  hover:text-gray-700 duration-200"
+                className="text-black foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
                 href={"/services"}
               >
                 services
               </Link>
               <Link
-                className="text-black  foot-underline-hover-effect w-fit  hover:text-gray-700 duration-200"
+                className="text-black foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
                 href={"/contact"}
               >
                 contact
               </Link>
               <Link
-                className="text-black  foot-underline-hover-effect w-fit  hover:text-gray-700 duration-200"
+                className="text-black foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
                 href={"/blogs"}
               >
                 blogs
