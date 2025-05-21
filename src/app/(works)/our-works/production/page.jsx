@@ -6,40 +6,125 @@ import ReactPlayer from 'react-player';
 const productionVideos = [
   {
     id: 1,
-    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1745220582/Gava_01_amnzgo.mp4",
-    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1745220293/gava_01_d6xjyv.webp",
-    height: "9/16"
-  },
-  {
-    id: 2,
     videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1745220577/d_arc_kpi5l4.mp4",
     videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1745220294/d-arc_lm05qs.webp",
     height: "9/16"
   },
   {
-    id: 3,
+    id: 1,
     videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1745220574/Crescent_xfxkzj.mp4",
     videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1745220294/crescent_kgz0rf.webp",
     height: "9/16"
   },
   {
-    id: 4,
+    id: 1,
     videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1743839096/WhatsApp_Video_2025-04-05_at_12.38.10_41d364fc_mnzgdl.mp4",
     videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1743838692/Screenshot_2025-04-05_125340_mhsvra.webp",
     height: "9/16"
   },
   {
-    id: 5,
+    id: 1,
     videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1743838572/VID-20250405-WA0007_ixht97.mp4",
     videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1743838692/Screenshot_2025-04-05_124537_ifowx8.webp",
     height: "9/16"
   },
   {
-    id: 6,
+    id: 1,
     videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1743838570/VID-20250405-WA0002_rwwhlx.mp4",
     videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1743838692/Screenshot_2025-04-05_125146_cbntbi.webp",
     height: "9/16"
   },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1743838562/VID-20250405-WA0006_wdv8zl.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1743838692/Screenshot_2025-04-05_124832_qmtkww.webp",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1743838560/VID-20250405-WA0004_ctuvqs.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1743838692/Screenshot_2025-04-05_124941_qip5yn.webp",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1743838559/VID-20250405-WA0003_ocfo80.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1743838692/Screenshot_2025-04-05_125040_ncs0er.webp",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1741170371/kurikkal_auliww.webm",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1744270039/WhatsApp_Image_2025-04-10_at_12.46.12_f4dcb4f1_d2ymuy.jpg",
+    height: "9/16"
+  },
+  // {
+  //   id: 1,
+  //   videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1741170194/plum_bts_T_Draft_sgk0h6.webm",
+  //   videothump: "",
+  //   height: "9/16"
+  // },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1741170119/hungryll_zinger_wrap_01_nppdr0.webm",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1744270038/WhatsApp_Image_2025-04-10_at_12.46.12_ca91dba0_v5zupz.jpg",
+    height: "9/16"
+  },
+  // {
+  //   id: 1,
+  //   videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1741169951/hungryll_01_D1_mwsnxg.webm",
+  //   videothump: "",
+  //   height: "9/16"
+  // },
+  // {
+  //   id: 1,
+  //   videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1741169807/Plumstories_Founders_Trial_Draft_v5h4jv.webm",
+  //   videothump: "",
+  //   height: "9/16"
+  // },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1740639610/kurikkal2_opke3b.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740639613/Screenshot_2025-02-27_122951_cnmprk.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1740488841/tyndis_out_01_v2_1_uqzfmw.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740488847/Screenshot_2025-02-25_183323_dtrkr8.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1740487626/aeropress_i1utgw.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740487809/Screenshot_2025-02-25_181657_smga7h.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1740487313/CRESCENT_SABYASACHI_WALLPAPER_tgnje9.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740487540/Screenshot_2025-02-25_181320_bfszwr.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1740487197/Peekay_compressed_a6hhcp.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740488353/Screenshot_2025-02-25_181037_holay4.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1740482832/matchastrawberry_01_l1k3up.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740483038/Screenshot_2025-02-25_170017_m1ma2m.png",
+    height: "9/16"
+  },
+  {
+    id: 1,
+    videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1740482090/onecity_apartment_4_compressed_wlalub.mp4",
+    videothump: "https://res.cloudinary.com/ddv3f8yl2/image/upload/v1740482911/Screenshot_2025-02-25_165646_byiq1m.png",
+    height: "9/16"
+  },
+
 
 
 ];
