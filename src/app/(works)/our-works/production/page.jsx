@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import ReactPlayer from 'react-player';
+import { client } from '../../../../../utils/sanity';
 
-const productionVideos = [
+const productionVideoss = [
   {
     id: 1,
     videourl: "https://res.cloudinary.com/ddv3f8yl2/video/upload/v1745220577/d_arc_kpi5l4.mp4",
@@ -133,6 +134,7 @@ const Production = () => {
   const [playingIndex, setPlayingIndex] = useState(null);
   const [videoProgress, setVideoProgress] = useState({});
   const [hoveredVideos, setHoveredVideos] = useState(new Set());
+  const [productionVideos, setProductionVideos] = useState([])
 
   const handleProgress = (progress, index) => {
     setVideoProgress((prev) => ({
@@ -145,6 +147,48 @@ const Production = () => {
     setPlayingIndex(index);
     setHoveredVideos((prev) => new Set(prev).add(index));
   };
+
+  const getStaticProps = async () => {
+    const query = `*[_type == "production"]{
+      _id,
+      title,
+      thumbnail{
+        asset->{
+        url,
+        }
+      },
+      altText,
+      ratio,
+      video {
+        asset->{
+          url,
+          
+        }
+      }
+    }`;
+
+
+    const videos = await client.fetch(query);
+
+    return {
+      props: {
+        videos,
+      },
+      revalidate: 60,
+    };
+  }
+
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      const { props } = await getStaticProps()
+
+      console.log(props.videos)
+      setProductionVideos(props.videos)
+    }
+    fetchData()
+  }, [])
 
   return (
     <main className='min-h-screen w-full bg-white pt-32 md:text-4xl text-black font-light'>
@@ -163,11 +207,11 @@ const Production = () => {
             >
               <div
                 className="relative w-full break-inside-avoid-column bg-black duration-150"
-                style={{ aspectRatio: data.height || "9/16" }}
+                style={{ aspectRatio: data.ratio || "9/16" }}
               >
                 {hoveredVideos.has(i) || playingIndex === i ? (
                   <ReactPlayer
-                    url={`${data.videourl}?tr=orig&ik-cors=force`}
+                    url={`${data.video.asset.url}?tr=orig&ik-cors=force`}
                     playing={playingIndex === i}
                     loop={true}
                     muted={false}
@@ -182,8 +226,8 @@ const Production = () => {
                   />
                 ) : (
                   <img
-                    src={data.videothump || 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp'}
-                    alt="Video thumbnail"
+                    src={data.thumbnail.asset.url || 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp'}
+                    alt={data.altText}
                     className="absolute top-0 left-0 w-full h-full object-cover"
                   />
                 )}
