@@ -184,7 +184,7 @@ const Production = () => {
     const fetchData = async () => {
       const { props } = await getStaticProps()
 
-      console.log(props.videos)
+  
       setProductionVideos(props.videos)
     }
     fetchData()

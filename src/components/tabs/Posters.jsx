@@ -178,7 +178,6 @@ const Posters = () => {
     const fetchData = async () => {
       const { props } = await getStaticProps()
 
-      console.log(props.posters)
       setSortedData(props.posters)
     }
     fetchData()
