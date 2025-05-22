@@ -1,8 +1,9 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
+import { client } from '../../../utils/sanity';
 
 const postersData = [
   {
@@ -113,31 +114,75 @@ const postersData = [
     imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1740974111/large_Whats_App_Image_2025_01_13_at_17_11_44_545857c7_36335c331c_f72ae60992.webp",
     hgt: "1/1"
   },
-  
- 
+
+
 
 
 ];
+
+
+
+
 
 const Posters = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [images] = useState(postersData.map(item => item.imageUrl));
+  const [sortedData, setSortedData] = useState([])
 
   // Sort the data: with order first (ascending), without order last
-  const sortedData = [...postersData].sort((a, b) => {
-    const aHasOrder = typeof a.order === 'number';
-    const bHasOrder = typeof b.order === 'number';
+  // const sortedData = [...postersData].sort((a, b) => {
+  //   const aHasOrder = typeof a.order === 'number';
+  //   const bHasOrder = typeof b.order === 'number';
 
-    if (aHasOrder && bHasOrder) {
-      return b.order - a.order; // Reverse sort (highest first)
-    } else if (aHasOrder) {
-      return -1;
-    } else if (bHasOrder) {
-      return 1;
+  //   if (aHasOrder && bHasOrder) {
+  //     return b.order - a.order; // Reverse sort (highest first)
+  //   } else if (aHasOrder) {
+  //     return -1;
+  //   } else if (bHasOrder) {
+  //     return 1;
+  //   }
+  //   return 0;
+  // });
+
+
+  const getStaticProps = async () => {
+    const query = `*[_type == "poster"]{
+    _id,
+    title,
+  
+    ratio,
+    image {
+      alt,
+      asset->{
+        url,
+        
+      }
     }
-    return 0;
-  });
+  }`;
+
+
+    const posters = await client.fetch(query);
+
+    return {
+      props: {
+        posters,
+      },
+      revalidate: 60,
+    };
+  }
+
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      const { props } = await getStaticProps()
+
+      console.log(props.posters)
+      setSortedData(props.posters)
+    }
+    fetchData()
+  }, [])
 
   const handleImageClick = (index) => {
     setPhotoIndex(index);
@@ -152,12 +197,12 @@ const Posters = () => {
             <div
               className="relative w-full break-inside-avoid-column"
               style={{
-                aspectRatio: data.hgt || '1 / 1',
+                aspectRatio: data.ratio || '1 / 1',
               }}
             >
               <Image
                 onClick={() => handleImageClick(i)}
-                src={data.imageUrl}
+                src={data.image.asset.url}
                 width={500}
                 height={500}
                 loading="lazy"
@@ -173,7 +218,7 @@ const Posters = () => {
         </div>
       )}
 
-      <Lightbox
+      {/* <Lightbox
         open={isOpen}
         close={() => setIsOpen(false)}
         slides={images.map((src) => ({ src }))}
@@ -187,7 +232,7 @@ const Posters = () => {
             </div>
           ),
         }}
-      />
+      /> */}
     </div>
   );
 };
