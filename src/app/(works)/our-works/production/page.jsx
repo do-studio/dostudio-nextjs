@@ -190,6 +190,34 @@ const Production = () => {
     fetchData()
   }, [])
 
+
+
+
+   useEffect(() => {
+    // Set title
+    document.title = "Production Videos | Do Studio";
+
+    // Set meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more: View our portfolio."
+      );
+    } else {
+      const newMetaDescription = document.createElement("meta");
+      newMetaDescription.setAttribute("name", "description");
+      newMetaDescription.setAttribute(
+        "content",
+        "Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more: View our portfolio."
+      );
+      document.head.appendChild(newMetaDescription);
+    }
+  }, []);
+
+
+  
+
   return (
     <main className='min-h-screen w-full bg-white pt-32 md:text-4xl text-black font-light'>
       <div className='w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5'>
