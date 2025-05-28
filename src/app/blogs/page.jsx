@@ -28,10 +28,10 @@ export const metadata = {
 async function getData() {
 
 
- 
 
 
-      const query = `*[_type == "blog"] | order(createdAt desc){
+
+  const query = `*[_type == "blog" && !(_id in path("drafts.**"))] | order(createdAt desc){
       _id,
       title,
       image {
@@ -49,7 +49,7 @@ async function getData() {
     }`;
 
   const blogs = await client.fetch(query);
-  console.log(blogs[0].createdAt)
+  console.log(blogs)
 
   return blogs
   return {
