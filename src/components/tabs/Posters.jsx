@@ -129,6 +129,7 @@ const Posters = () => {
   const [photoIndex, setPhotoIndex] = useState(0);
   const [images] = useState(postersData.map(item => item.imageUrl));
   const [sortedData, setSortedData] = useState([])
+  const [loading, setLoading] = useState(true);
 
   // Sort the data: with order first (ascending), without order last
   // const sortedData = [...postersData].sort((a, b) => {
@@ -147,19 +148,21 @@ const Posters = () => {
 
 
   const getStaticProps = async () => {
-    const query = `*[_type == "poster"]{
+    const query = `*[_type == "poster" && !(_id in path("drafts.**"))] | order(orderRank){
     _id,
     title,
-  
     ratio,
     image {
       alt,
       asset->{
-        url,
-        
+        url
       }
     }
   }`;
+
+
+
+
 
 
     const posters = await client.fetch(query);
@@ -168,7 +171,7 @@ const Posters = () => {
       props: {
         posters,
       },
-      revalidate: 60,
+
     };
   }
 
@@ -176,10 +179,18 @@ const Posters = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      const { props } = await getStaticProps()
-
-      setSortedData(props.posters)
+      try {
+        setLoading(true);
+        const { props } = await getStaticProps()
+        setSortedData(props.posters)
+      } catch (error) {
+        console.error("Error fetching posters data:", error);
+      } finally {
+        setLoading(false);
+      }
     }
+
+
     fetchData()
   }, [])
 
@@ -190,7 +201,11 @@ const Posters = () => {
 
   return (
     <div className="w-11/12 xl:w-9/12 mx-auto pt-4 py-20 columns-3 gap-x-0 gap-y-0">
-      {sortedData.length > 0 ? (
+      {loading ? (
+        Array.from({ length: 12 }).map((_, index) => (
+          <Skeleton key={index} height={400} className="w-full " />
+        ))
+      ) : sortedData.length > 0 ? (
         sortedData.map((data, i) => (
           <div className="relative group" key={data.id}>
             <div
@@ -215,7 +230,8 @@ const Posters = () => {
         <div className="text-left text-2xl font-medium animate-bounce">
           No posters found.
         </div>
-      )}
+      )
+      }
 
       {/* <Lightbox
         open={isOpen}

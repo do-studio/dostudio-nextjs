@@ -1,8 +1,10 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import Skeleton from 'react-loading-skeleton';
 import ReactPlayer from 'react-player';
 import { client } from '../../../../../utils/sanity';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css';
+
 
 const productionVideoss = [
   {
@@ -135,6 +137,7 @@ const Production = () => {
   const [videoProgress, setVideoProgress] = useState({});
   const [hoveredVideos, setHoveredVideos] = useState(new Set());
   const [productionVideos, setProductionVideos] = useState([])
+  const [loading, setLoading] = useState(true);
 
   const handleProgress = (progress, index) => {
     setVideoProgress((prev) => ({
@@ -149,7 +152,7 @@ const Production = () => {
   };
 
   const getStaticProps = async () => {
-    const query = `*[_type == "production"]{
+    const query = `*[_type == "production"]  | order(orderRank) {
       _id,
       title,
       thumbnail{
@@ -168,6 +171,7 @@ const Production = () => {
     }`;
 
 
+
     const videos = await client.fetch(query);
 
     return {
@@ -182,10 +186,17 @@ const Production = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      const { props } = await getStaticProps()
 
-  
-      setProductionVideos(props.videos)
+      try {
+        const { props } = await getStaticProps()
+        setProductionVideos(props.videos)
+      } catch (error) {
+        console.error("Error fetching production videos:", error);
+      } finally {
+        setLoading(false);
+      }
+
+
     }
     fetchData()
   }, [])
@@ -193,7 +204,7 @@ const Production = () => {
 
 
 
-   useEffect(() => {
+  useEffect(() => {
     // Set title
     document.title = "Production Videos | Do Studio";
 
@@ -216,7 +227,7 @@ const Production = () => {
   }, []);
 
 
-  
+
 
   return (
     <main className='min-h-screen w-full bg-white pt-32 md:text-4xl text-black font-light'>
@@ -224,49 +235,59 @@ const Production = () => {
         <h1 className='pb-1 font-medium'>Videos</h1>
       </div>
 
-      <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20 columns-3 gap-x-0 gap-y-0'>
-        {productionVideos.length > 0 ? (
-          productionVideos.map((data, i) => (
-            <div
-              className="relative group break-inside-avoid-column"
-              key={data.id}
-              onMouseEnter={() => handleHover(i)}
-              onMouseLeave={() => setPlayingIndex(null)}
-            >
-              <div
-                className="relative w-full break-inside-avoid-column bg-black duration-150"
-                style={{ aspectRatio: data.ratio || "9/16" }}
-              >
-                {hoveredVideos.has(i) || playingIndex === i ? (
-                  <ReactPlayer
-                    url={`${data.video.asset.url}?tr=orig&ik-cors=force`}
-                    playing={playingIndex === i}
-                    loop={true}
-                    muted={false}
-                    playsinline={true}
-                    controls={false}
-                    width="100%"
-                    height="100%"
-                    className="object-fill"
-                    style={{ objectFit: "fill" }}
-                    onProgress={(progress) => handleProgress(progress, i)}
-                    startTime={videoProgress[i] || 0}
-                  />
-                ) : (
-                  <img
-                    src={data.thumbnail.asset.url || 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp'}
-                    alt={data.altText}
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                  />
-                )}
-              </div>
-            </div>
+      <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20 grid grid-cols-3 gap-x-0 gap-y-0'>
+        {loading ? (
+
+          Array.from({ length: 10 }).map((_, i) => (
+            <Skeleton key={i}  height={650} className="" />
           ))
-        ) : (
-          <div className="text-left text-2xl font-medium animate-bounce">
-            No videos found.
-          </div>
-        )}
+
+
+        ) :
+          productionVideos.length > 0 ? (
+            productionVideos.map((data, i) => (
+              <div
+                className="relative group break-inside-avoid-column"
+                key={data.id}
+                onMouseEnter={() => handleHover(i)}
+                onMouseLeave={() => setPlayingIndex(null)}
+              >
+                <div
+                  className="relative w-full break-inside-avoid-column bg-black duration-150"
+                  style={{ aspectRatio: data.ratio || "9/16" }}
+                >
+                  {hoveredVideos.has(i) || playingIndex === i ? (
+                    <ReactPlayer
+                      url={`${data.video.asset.url}?tr=orig&ik-cors=force`}
+                      playing={playingIndex === i}
+                      loop={true}
+                      muted={false}
+                      playsinline={true}
+                      controls={false}
+                      width="100%"
+                      height="100%"
+                      className="object-fill"
+                      style={{ objectFit: "fill" }}
+                      onProgress={(progress) => handleProgress(progress, i)}
+                      startTime={videoProgress[i] || 0}
+                    />
+                  ) : (
+                    <img
+                      src={data.thumbnail.asset.url || 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp'}
+                      alt={data.altText}
+                      className="absolute top-0 left-0 w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="text-left text-2xl font-medium animate-bounce">
+              No videos found.
+            </div>
+          )
+
+        }
       </div>
     </main>
   );

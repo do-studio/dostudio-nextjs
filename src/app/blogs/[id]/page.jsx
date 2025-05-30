@@ -20,6 +20,8 @@ async function getData(slug) {
     }
   }`;
 
+  
+
   const data = await client.fetch(query, { slug });
 
   console.log(data)

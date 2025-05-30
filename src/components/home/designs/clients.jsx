@@ -3,10 +3,57 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ClientsData } from "../../constant/data";
 import Image from "next/image";
+import { client } from "../../../../utils/sanity";
 
 const Clients = () => {
   const [displayedImages, setDisplayedImages] = useState(10);
   const [isAllShown, setIsAllShown] = useState(false);
+
+
+  const getStaticProps = async () => {
+    const query = `*[_type == "client"] | order(orderRank){
+        _id,
+        title,
+       
+        image {
+          alt,
+          asset->{ url }
+        },
+      }`
+    const motions = await client.fetch(query)
+    return {
+      props: { motions },
+
+    }
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+
+        const { props } = await getStaticProps()
+        console.log(props.motions)
+        // setMotionVideos(props.motions)
+      } catch (error) {
+        console.error("Error fetching motion videos:", error)
+      } finally {
+        // setIsLoading(false)
+      }
+    }
+    fetchData()
+  }, [])
+
+
+
+
+
+
+
+
+
+
+
+
 
   useEffect(() => {
     const updateImageCount = () => {
@@ -40,22 +87,22 @@ const Clients = () => {
         >
           {ClientsData.slice(0, displayedImages).map((image, index) => {
             // console.log(image)
-            return(
+            return (
               <motion.div key={index} className="w-fit h-auto">
-              <Image
-                className="h-16 w-16 md:h-32 md:w-32 xl:h-48 xl:w-48 object-contain grayscale hover:grayscale-0 duration-200 cursor-pointer"
-                placeholder="blur"
-                src={image.clt}
-                alt={`Client image ${index + 1}`}
-                width={1080}
-                height={1080}
-                sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
-                loading="lazy"
-                decoding="async"
-              />
-            </motion.div>
+                <Image
+                  className="h-16 w-16 md:h-32 md:w-32 xl:h-48 xl:w-48 object-contain grayscale hover:grayscale-0 duration-200 cursor-pointer"
+                  placeholder="blur"
+                  src={image.clt}
+                  alt={`Client image ${index + 1}`}
+                  width={1080}
+                  height={1080}
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </motion.div>
             )
-})}
+          })}
         </motion.div>
 
         {/* Show All Button */}
