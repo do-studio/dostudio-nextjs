@@ -1,13 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ClientsData } from "../../constant/data";
+// import { ClientsData } from "../../constant/data";
 import Image from "next/image";
 import { client } from "../../../../utils/sanity";
+import { clntgava } from "../../../../public/images";
 
 const Clients = () => {
   const [displayedImages, setDisplayedImages] = useState(10);
   const [isAllShown, setIsAllShown] = useState(false);
+  const [ClientsData, setClientsData] = useState([]);
 
 
   const getStaticProps = async () => {
@@ -20,9 +22,18 @@ const Clients = () => {
           asset->{ url }
         },
       }`
-    const motions = await client.fetch(query)
+    const clients = await client.fetch(query)
+
+    
+
+
+    //  clients.map((client) => {
+    //   console.log(client.image.asset.url)
+    // })
+
+
     return {
-      props: { motions },
+      props: { clients },
 
     }
   }
@@ -32,7 +43,8 @@ const Clients = () => {
       try {
 
         const { props } = await getStaticProps()
-        console.log(props.motions)
+        console.log(props.clients)
+        setClientsData(props.clients)
         // setMotionVideos(props.motions)
       } catch (error) {
         console.error("Error fetching motion videos:", error)
@@ -92,14 +104,18 @@ const Clients = () => {
                 <Image
                   className="h-16 w-16 md:h-32 md:w-32 xl:h-48 xl:w-48 object-contain grayscale hover:grayscale-0 duration-200 cursor-pointer"
                   placeholder="blur"
-                  src={image.clt}
-                  alt={`Client image ${index + 1}`}
+                  blurDataURL='../../../public/images/medias/branding/ban1.webp'
+                  src={image.image?.asset.url}
+                  alt={`Client image ${image.alt}`}
                   width={1080}
                   height={1080}
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
                   loading="lazy"
                   decoding="async"
                 />
+                {
+                  console.log(image.image.asset.url)
+                }
               </motion.div>
             )
           })}
