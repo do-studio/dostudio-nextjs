@@ -13,47 +13,8 @@ import {
 import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-const OurService = [
-  {
-    id: 1,
-    title: `Illustration`,
-    link: ``,
-    img: wrk1,
-  },
-  {
-    id: 2,
-    title: `Brand Design`,
-    link: ``,
-    img: wrk2,
-  },
-  {
-    id: 3,
-    title: `UI/UX Design`,
-    link: ``,
-    img: wrk3,
-  },
-  {
-    id: 4,
-    title: `Graphic Design`,
-    link: ``,
-    img: wrk4,
-  },
-  {
-    id: 5,
-    title: `Web Development`,
-    link: ``,
-    img: wrk5,
-  },
-  {
-    id: 1,
-    title: `Illustration`,
-    link: ``,
-    img: wrk1,
-  },
-];
 
-const ban1 =
-  "https://res.cloudinary.com/djswkzoth/video/upload/v1720000391/DO_STUDIO__JUNE_M1_HORIZONTAL_p3o0uk.mp4?c_limit=3000&cache=true";
+
 
 const Whatwedo = () => {
   return (
@@ -132,7 +93,7 @@ const Whatwedo = () => {
               title: "production",
               description:
                 "A team of dedicated people focusing on delivering top-quality service, ensuring every project is executed with precision and efficiency.",
-              link: "",
+              link: "our-works/production",
             },
             {
               title: "print design",
@@ -174,8 +135,3 @@ const Whatwedo = () => {
 };
 
 export default Whatwedo;
-
-{
-  /* <h2 className="text-6xl font-normal">production</h2>
-<p className="text-xs capitalize text-gray-00">Comprehensive Company Services</p> */
-}
