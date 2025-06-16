@@ -56,17 +56,6 @@ const Clients = () => {
   }, [])
 
 
-
-
-
-
-
-
-
-
-
-
-
   useEffect(() => {
     const updateImageCount = () => {
       if (!isAllShown) {
