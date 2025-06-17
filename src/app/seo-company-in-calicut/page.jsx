@@ -18,6 +18,7 @@ export const metadata = {
     },
 };
 
+
 const Landing = () => {
     return (
         <div className="min-h-screen ">
