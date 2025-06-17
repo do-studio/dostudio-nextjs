@@ -3,17 +3,15 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import ContactForm from "../../components/home/designs/ContactForm";
 
 export const metadata = {
-    title: "Your Digital Marketing Solutions begins: Contact Do Studio",
+    title: "SEO COMPANY IN CALICUT",
     description:
-        "Get in touch with Do Studio: We specialize in SEO, social media marketing, website development more. Contact us for a free consultation.",
+        "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
     metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
-    keywords:
-        "Branding agency in calicut, Digital Marketing Agency in Calicut, Digital marketing services in Calicut, web development company in calicut, digital marketing agency in kozhikode",
     openGraph: {
-        title: "Your Digital Marketing Solutions begins: Contact Do Studio",
+        title: "SEO COMPANY IN CALICUT",
         description:
-            "Get in touch with Do Studio: We specialize in SEO, social media marketing, website development more. Contact us for a free consultation.",
-        url: `https://dostudio.co.in/services`,
+            "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
+        url: `https://dostudio.co.in/seo-company-in-calicut`,
         type: "article",
     },
 };
