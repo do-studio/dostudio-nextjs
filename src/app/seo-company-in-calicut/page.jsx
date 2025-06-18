@@ -1,27 +1,26 @@
-"use client"
+// "use client"
 
 import Link from "next/link";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import ContactForm from "../../components/home/designs/ContactForm";
-import { Clients } from "../../components";
 import Head from "next/head";
 
 
-// export const metadata = {
-//     title: "SEO COMPANY IN CALICUT",
-//     description:
-//         "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
-//     metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
-//     keywords:
-//         "seo company in calicut, best seo company in calicut, seo companies in calicut, best seo companies in calicut, seo agency in calicut, best seo agency in calicut, seo services in calicut, best seo services in calicut",
-//     openGraph: {
-//         title: "SEO COMPANY IN CALICUT",
-//         description:
-//             "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
-//         url: `https://dostudio.co.in/seo-company-in-calicut`,
-//         type: "article",
-//     },
-// };
+export const metadata = {
+    title: "SEO COMPANY IN CALICUT",
+    description:
+        "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
+    metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
+    keywords:
+        "seo company in calicut, best seo company in calicut, seo companies in calicut, best seo companies in calicut, seo agency in calicut, best seo agency in calicut, seo services in calicut, best seo services in calicut",
+    openGraph: {
+        title: "SEO COMPANY IN CALICUT",
+        description:
+            "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
+        url: `https://dostudio.co.in/seo-company-in-calicut`,
+        type: "article",
+    },
+};
 
 
 const Landing = () => {
@@ -48,9 +47,9 @@ const Landing = () => {
                     </Link>
                 </div>
             </section>
-            <section>
+            {/* <section>
                 <Clients/>
-            </section>
+            </section> */}
             <section id="why-us" className="py-16 bg-white">
                 <div className="md:container mx-auto px-4">
                     <h2 className="text-5xl xl:text-7xl font-black uppercase text-center xl:text-center">Our SEO Services</h2>
