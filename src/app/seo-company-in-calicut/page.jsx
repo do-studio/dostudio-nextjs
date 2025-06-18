@@ -1,26 +1,33 @@
+"use client"
+
 import Link from "next/link";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import ContactForm from "../../components/home/designs/ContactForm";
+import { Clients } from "../../components";
+import Head from "next/head";
 
-export const metadata = {
-    title: "SEO COMPANY IN CALICUT",
-    description:
-        "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
-    metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
-    openGraph: {
-        title: "SEO COMPANY IN CALICUT",
-        description:
-            "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
-        url: `https://dostudio.co.in/seo-company-in-calicut`,
-        type: "article",
-    },
-};
+
+// export const metadata = {
+//     title: "SEO COMPANY IN CALICUT",
+//     description:
+//         "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
+//     metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
+//     keywords:
+//         "seo company in calicut, best seo company in calicut, seo companies in calicut, best seo companies in calicut, seo agency in calicut, best seo agency in calicut, seo services in calicut, best seo services in calicut",
+//     openGraph: {
+//         title: "SEO COMPANY IN CALICUT",
+//         description:
+//             "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
+//         url: `https://dostudio.co.in/seo-company-in-calicut`,
+//         type: "article",
+//     },
+// };
 
 
 const Landing = () => {
     return (
         <div className="min-h-screen ">
-            {/* Hero section */}
+           
             <section
                 className="h-screen bg-cover bg-center flex items-center justify-left text-white relative"
                 style={{
@@ -31,18 +38,18 @@ const Landing = () => {
                 <div className="absolute w-full h-full bg-black opacity-60" ></div>
                 <div className="w-full px-2 text-center md:text-left md:w-11/12 mx-auto z-50 flex flex-col items-center md:items-start gap-5">
                     {/* You can add content here if needed */}
-                    <h1 className="text-5xl xl:text-7xl font-black uppercase text-center xl:text-left">SEO Company in Calicut <br /> Do Studio</h1>
+                    <h1 className="text-5xl xl:text-7xl font-black uppercase text-center md:text-left">SEO Company in Calicut <br /> Do Studio</h1>
                     <p className=" max-w-4xl ">Do Studio is the leading SEO company in Calicut, trusted by businesses to drive impactful digital growth. We specialize in enhancing your website’s visibility, attracting targeted traffic, and ensuring your business ranks higher in search engine results.</p>
                     <Link
                         href='/contact'
-                        className="bg-primarygreen shadow-lg hover:shadow-xl text-black font-medium py-3 px-6 rounded-[3rem]  w-full hover:scale-110 duration-200 text-center max-w-52 capitalize"
+                        className="bg-primarygreen shadow-lg hover:shadow-xl text-black font-medium py-3 px-6 rounded-[3rem] w-full hover:scale-110 duration-200 text-center max-w-52 capitalize"
                     >
                         Contact Now
                     </Link>
                 </div>
-                {/* <div>
-
-                </div> */}
+            </section>
+            <section>
+                <Clients/>
             </section>
             <section id="why-us" className="py-16 bg-white">
                 <div className="md:container mx-auto px-4">
@@ -127,10 +134,11 @@ const Landing = () => {
                         <div className="bg-gray-100 rounded-lg">
                             <img
                                 src={"https://res.cloudinary.com/djswkzoth/image/upload/v1750076030/Do%20Studio%20Website/seo_mqmnj1.webp"}
-                                alt="Do Studio SEO Team"
+                                alt="seo company in calicut"
                                 className="rounded-lg shadow-md w-full h-auto"
                                 width={600}
                                 height={400}
+                                
                             />
                         </div>
                     </div>
