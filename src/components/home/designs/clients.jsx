@@ -87,7 +87,7 @@ const Clients = () => {
           className="grid place-items-center grid-cols-4 md:grid-cols-5 gap-3"
         >
           {ClientsData.slice(0, displayedImages).map((image, index) => {
-            // console.log(image)
+            console.log(image)
             return (
               <motion.div key={index} className="w-fit h-auto">
                 <Image
@@ -95,16 +95,15 @@ const Clients = () => {
                   placeholder="blur"
                   blurDataURL='../../../public/images/medias/branding/ban1.webp'
                   src={image.image?.asset.url}
-                  alt={`Client image ${image.alt}`}
+                  title={image.title}
+                  alt={`${image.image.alt}`}
                   width={1080}
                   height={1080}
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
                   loading="lazy"
                   decoding="async"
                 />
-                {
-                  console.log(image.image.asset.url)
-                }
+               
               </motion.div>
             )
           })}
