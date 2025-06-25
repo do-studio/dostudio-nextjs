@@ -180,7 +180,7 @@ const Footer = () => {
           </div>
           <div>
             <p className="text-base font-bold uppercase">office address</p>
-            <p className=" text-sm mt-2 ">
+            <p className="text-sm mt-2 ">
               1st Floor, Ramaswami Complex
               <br />
               Cherooty Rd, Behind Basics,
@@ -189,6 +189,9 @@ const Footer = () => {
               <br />
               India - 673001
             </p>
+            <a target="_blank" className="cursor-pointer text-sm mt-2 font-bold foot-underline-hover-effect" href="http://wa.me/+919746155541">
+             DO Support <span className="font-normal" >+91 97461 55541</span>
+            </a>
           </div>
         </div>
       </div>
