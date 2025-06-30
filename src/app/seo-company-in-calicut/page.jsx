@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import ContactForm from "../../components/home/designs/ContactForm";
 import Head from "next/head";
+import { client } from "../../../utils/sanity";
 
 
 export const metadata = {
@@ -23,10 +24,28 @@ export const metadata = {
 };
 
 
-const Landing = () => {
+const getClients = async () => {
+    const query = `*[_type == "client"] | order(orderRank){
+        _id,
+        title,
+        image {
+          alt,
+          asset->{ url }
+        },
+      }`;
+    return await client.fetch(query);
+};
+
+
+const Landing = async () => {
+
+    // Directly get the clients array instead of using getStaticProps
+    const clients = await getClients();
+
     return (
         <div className="min-h-screen ">
-           
+
+
             <section
                 className="h-screen bg-cover bg-center flex items-center justify-left text-white relative"
                 style={{
@@ -47,10 +66,43 @@ const Landing = () => {
                     </Link>
                 </div>
             </section>
-            {/* <section>
-                <Clients/>
-            </section> */}
-            <section id="why-us" className="py-16 bg-white">
+
+
+
+            <section className="py-5 bg-white">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-5xl xl:text-7xl font-black uppercase text-center xl:text-center">Our Clients</h2>
+
+                    {/* Carousel Container */}
+                    <div className="relative w-full overflow-hidden group">
+                        {/* Scrolling Track - Animation applied via Tailwind */}
+                        <div className="flex w-max animate-[scroll_40s_linear_infinite]  group-hover:[animation-play-state:paused]">
+                            {clients.map((client, index) => (
+                                <div
+                                    key={`${client._id}-${index}`}
+                                    className="flex items-center justify-center h-40 md:w-40 md:h-48 mx-8"
+                                >
+                                    <img
+                                        src={client.image.asset.url}
+                                        alt={client.image.alt || client.title}
+                                        className="max-h-full max-w-full object-contain"
+                                        loading="lazy"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Gradient Fades - Pure Tailwind */}
+                        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+                        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section id="why-us" className="py-5 bg-white">
                 <div className="md:container mx-auto px-4">
                     <h2 className="text-5xl xl:text-7xl font-black uppercase text-center xl:text-center">Our SEO Services</h2>
                     <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">At Do Studio, we provide a wide range of SEO services designed to meet the unique needs of your business. Whether you’re a local startup or a growing enterprise, we tailor our strategies to maximize your online presence.</p>
@@ -137,7 +189,7 @@ const Landing = () => {
                                 className="rounded-lg shadow-md w-full h-auto"
                                 width={600}
                                 height={400}
-                                
+
                             />
                         </div>
                     </div>
@@ -183,6 +235,7 @@ const Landing = () => {
 
                 </section>
             </section>
+
 
 
         </div>

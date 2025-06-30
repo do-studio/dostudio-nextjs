@@ -16,6 +16,10 @@ module.exports = {
     },
     extend: {
       keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
         fadeFloat: {
           '0%': { opacity: 0, transform: 'translateX(-10px)' },
           '50%': { opacity: 0.5, transform: 'translateX(-5px)' },
@@ -24,6 +28,7 @@ module.exports = {
       },
       animation: {
         'fade-float': 'fadeFloat 1s ease-in-out forwards',
+        scroll: 'scroll 40s linear infinite',
       },
       padding: {
         'allpadding': '4.5rem'
