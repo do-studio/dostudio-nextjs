@@ -24,12 +24,6 @@ const Clients = () => {
       }`
     const clients = await client.fetch(query)
 
-    
-
-
-    //  clients.map((client) => {
-    //   console.log(client.image.asset.url)
-    // })
 
 
     return {
