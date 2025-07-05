@@ -7,10 +7,10 @@ const ourWorks2 = () => {
         <div className='w-11/12 xl:w-10/12 mx-auto grid grid-cols-3 gap-1 xl:gap-5 '>
             <div className='grid grid-cols-1 gap-1 xl:gap-5'>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill src={'https://res.cloudinary.com/dkm2bwlao/image/upload/v1747834580/AO_LOGO_ANIMATION_WHITE_k3l4y4_kpt0id_tpoz7r.gif'} alt='Best advertising agency in Calicut' />
+                    <Image className="object-cover" fill src={'https://res.cloudinary.com/dzbc1oqbq/image/upload/v1751695363/AO_LOGO_ANIMATION_WHITE_oedy7m.gif'} alt='Best advertising agency in Calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill src={'https://res.cloudinary.com/dkm2bwlao/image/upload/v1747834732/eras_bbq_cashew_fb1253009f_tzpzld_xjqnjj.webp'} alt='Digital marketing agency in Calicut' />
+                    <Image className="object-cover" fill src={'https://res.cloudinary.com/dzbc1oqbq/image/upload/v1751695497/eras_bbq_cashew_fb1253009f_tzpzld_xjqnjj_ljkiww.webp'} alt='Digital marketing agency in Calicut' />
                 </div>
             </div>
             <div>
@@ -28,7 +28,7 @@ const ourWorks2 = () => {
             </div>
             <div className='grid grid-cols-1 gap-1 xl:gap-5'>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill src={'https://res.cloudinary.com/dkm2bwlao/image/upload/v1747834671/pack_3_cxqkhz_stlxxr.webp'} alt='Branding company in calicut' />
+                    <Image className="object-cover" fill src={'https://res.cloudinary.com/dzbc1oqbq/image/upload/v1751695446/pack_3_cxqkhz_stlxxr_sgs91s.webp'} alt='Branding company in calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
                     <Image className="object-cover" fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1740474212/Billboard_Mockup_3_4363bbdaa3.webp'} alt='Website developement company in Calicut' />
