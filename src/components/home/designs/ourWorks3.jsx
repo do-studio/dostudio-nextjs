@@ -11,13 +11,13 @@ const ourWorks3 = () => {
             {/* Bottom three squares */}
             <div className='grid grid-cols-3 gap-1 xl:gap-5'>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://res.cloudinary.com/dkm2bwlao/image/upload/v1747834423/RC__odnquq_p3qnmy.webp'} alt='Best advertising agency in Calicut' />
+                    <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://res.cloudinary.com/dzbc1oqbq/image/upload/v1751694774/RC__gwub3x.webp'} alt='Best advertising agency in Calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://res.cloudinary.com/dkm2bwlao/image/upload/v1747834491/lulu-thudarum_lyhqyg_emkjfj.webp'} alt='Digital marketing agency in Calicut' />
+                    <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://res.cloudinary.com/dzbc1oqbq/image/upload/v1751695662/lulu-thudarum_kfgkdm.webp'} alt='Digital marketing agency in Calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={' https://res.cloudinary.com/dkm2bwlao/image/upload/v1747834519/PEEKAY_HOARDING_NOV_MOCKUP_0_cjynmt_aslgbn_ql7bqe.webp'} alt='Branding company in calicut' />
+                    <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={' https://res.cloudinary.com/dzbc1oqbq/image/upload/v1751695097/PEEKAY_HOARDING_NOV_MOCKUP_0_agaesy.webp'} alt='Branding company in calicut' />
                 </div>
             </div>
             <div className='w-full aspect-[4/2] relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
@@ -27,7 +27,7 @@ const ourWorks3 = () => {
                     loop
                     muted
                 >
-                    <source src={`https://res.cloudinary.com/dkm2bwlao/video/upload/v1747834235/AO_TECH_CAMPAIGN_Theatre_AD_xwznyo.mp4`} type="video/mp4" />
+                    <source src={`https://res.cloudinary.com/dzbc1oqbq/video/upload/v1751694816/AO_TECH_CAMPAIGN_Theatre_AD_fgjqwk_fkhjhx.mp4`} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
