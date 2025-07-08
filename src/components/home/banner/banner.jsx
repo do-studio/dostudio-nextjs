@@ -1,7 +1,5 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { banners } from '../../constant/data';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
@@ -29,22 +27,22 @@ const Banner = () => {
 
       const videos = {
         desktop: {
-          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786915/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_GM_kz2lsn.mp4?c_limit=3000&cache=true',
-          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786916/Do%20Studio%20Website/new%20web%20banner/DO__STUDIO_WEBSITE_PROMO_GA_iwkb18.mp4?c_limit=3000&cache=true',
-          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786916/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_GE_crccqv.mp4?c_limit=3000&cache=true',
-          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786915/Do%20Studio%20Website/new%20web%20banner/DOSTUDIO_WEBSITE_PROMO_NS_rbkkbk.mp4?c_limit=3000&cache=true',
+          morning: 'https://cdn.sanity.io/files/0hjyj1bs/production/dc1231794d63ee6e1b4726db3e4fffed5289073d.mp4',
+          afternoon: 'https://cdn.sanity.io/files/0hjyj1bs/production/da32ae8ab95dbb1386bec495a67dbfad3aa870ef.mp4',
+          evening: 'https://cdn.sanity.io/files/0hjyj1bs/production/e804ee795468b9968c281e2d8c74efed84d3d907.mp4',
+          night: 'https://cdn.sanity.io/files/0hjyj1bs/production/b91c2374f2a75daf8846dc686133157827465c95.mp4',
         },
         mobile: {
-          morning: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786857/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GM_c6xzx7.mp4?c_limit=3000&cache=true',
-          afternoon: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786846/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GA_dms43c.mp4?c_limit=3000&cache=true',
-          evening: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786846/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_GE_pkr7s6.mp4?c_limit=3000&cache=true',
-          night: 'https://res.cloudinary.com/djswkzoth/video/upload/v1723786857/Do%20Studio%20Website/new%20web%20banner/Do_Studio_M2_VERTICAL_NS_aaviyn.mp4?c_limit=3000&cache=true',
+          morning: 'https://cdn.sanity.io/files/0hjyj1bs/production/9f84a43ec5f8b176138ce5a103ffc556693987d1.mp4',
+          afternoon: 'https://cdn.sanity.io/files/0hjyj1bs/production/b944218c4430cae525e036475a7ac95cfd2e80d1.mp4',
+          evening: 'https://cdn.sanity.io/files/0hjyj1bs/production/453bd5b7a50e9ea7039a410a07b0a62af6c33d61.mp4',
+          night: 'https://cdn.sanity.io/files/0hjyj1bs/production/1527c3cbd4190d6dfe036738c88dc98e8c0a7193.mp4',
         },
       };
 
       const posters = {
-        desktop: 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/desk_poster_yklfya_a7kqzc.webp?c_limit=3000&cache=true',
-        mobile: 'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp?c_limit=3000&cache=true',
+        desktop: 'https://cdn.sanity.io/images/0hjyj1bs/production/850db6d8114080e1ba31af3bde27865d5b64b17d-1920x1080.webp',
+        mobile: 'https://cdn.sanity.io/images/0hjyj1bs/production/514c02bf80817ecc72b756477618d10f11b04e3d-1080x1920.webp',
       };
 
       let videoPath = '';

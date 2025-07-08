@@ -37,7 +37,6 @@ const Clients = () => {
       try {
 
         const { props } = await getStaticProps()
-        console.log(props.clients)
         setClientsData(props.clients)
         // setMotionVideos(props.motions)
       } catch (error) {
@@ -81,7 +80,6 @@ const Clients = () => {
           className="grid place-items-center grid-cols-4 md:grid-cols-5 gap-3"
         >
           {ClientsData.slice(0, displayedImages).map((image, index) => {
-            console.log(image)
             return (
               <motion.div key={index} className="w-fit h-auto">
                 <Image

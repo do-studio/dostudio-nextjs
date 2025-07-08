@@ -49,7 +49,6 @@ async function getData() {
     }`;
 
   const blogs = await client.fetch(query);
-  console.log(blogs)
 
   return blogs
   return {
@@ -66,7 +65,6 @@ async function getData() {
     { cache: "no-store" }
   );
 
-  console.log(res)
 
   if (!res.status) {
     return notFound();
@@ -105,6 +103,16 @@ const Blogs = async () => {
                     <h1 className="text-xl font-medium capitalize group-hover:underline duration-300 pr-5">
                       {data?.title}
                     </h1>
+                    <div className="text-sm text-gray-500 pt-2">
+                      
+                      {data?.createdAt
+                        ? new Date(data.createdAt).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })
+                        : ""}
+                    </div>
                   </div>
                 </FadeUp>
               </Link>

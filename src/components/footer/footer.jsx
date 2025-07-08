@@ -53,7 +53,6 @@ const Footer = () => {
 
     if (typeof window !== "undefined" && window.location.pathname === "/") {
       setAnimationTrue(true)
-      console.log('Homepage')
     }
 
   }, [])

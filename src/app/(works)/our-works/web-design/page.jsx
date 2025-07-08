@@ -133,7 +133,6 @@ const WebDesign = async () => {
       try {
         setLoading(true);
         const { props } = await getStaticProps()
-        console.log(props.webDesigns);
         setWebDesignsData(props.webDesigns)
       } catch (error) {
         console.error("Error fetching production videos:", error);
