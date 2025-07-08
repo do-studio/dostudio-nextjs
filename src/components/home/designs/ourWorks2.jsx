@@ -7,10 +7,10 @@ const ourWorks2 = () => {
         <div className='w-11/12 xl:w-10/12 mx-auto grid grid-cols-3 gap-1 xl:gap-5 '>
             <div className='grid grid-cols-1 gap-1 xl:gap-5'>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill src={'https://res.cloudinary.com/dzbc1oqbq/image/upload/v1751695363/AO_LOGO_ANIMATION_WHITE_oedy7m.gif'} alt='Best advertising agency in Calicut' />
+                    <Image className="object-cover" fill src={'https://cdn.sanity.io/images/0hjyj1bs/production/cb890df9c3750946a2c153b88c22c169b4471f0a-400x225.gif'} alt='Best advertising agency in Calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill src={'https://res.cloudinary.com/dzbc1oqbq/image/upload/v1751695497/eras_bbq_cashew_fb1253009f_tzpzld_xjqnjj_ljkiww.webp'} alt='Digital marketing agency in Calicut' />
+                    <Image className="object-cover" fill src={'https://cdn.sanity.io/images/0hjyj1bs/production/0f732a7997f27af7177330acca91aace62fefcf2-3000x3000.webp'} alt='Digital marketing agency in Calicut' />
                 </div>
             </div>
             <div>
@@ -21,17 +21,17 @@ const ourWorks2 = () => {
                         loop
                         muted
                     >
-                        <source src={`https://res.cloudinary.com/djswkzoth/video/upload/v1724413866/Do%20Studio%20Website/homebg_b5bawb.mp4?c_limit=3000&cache=true`} type="video/mp4" />
+                        <source src={`https://cdn.sanity.io/files/0hjyj1bs/production/82985bdb3ff8d01b8a72ce841e0a991fb8597aff.mp4`} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
             <div className='grid grid-cols-1 gap-1 xl:gap-5'>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill src={'https://res.cloudinary.com/dzbc1oqbq/image/upload/v1751695446/pack_3_cxqkhz_stlxxr_sgs91s.webp'} alt='Branding company in calicut' />
+                    <Image className="object-cover" fill src={'https://cdn.sanity.io/images/0hjyj1bs/production/b29e5b8933090fa56c506c3014b1dae04d09fc42-1080x1080.webp'} alt='Branding company in calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill src={'https://res.cloudinary.com/djswkzoth/image/upload/v1740474212/Billboard_Mockup_3_4363bbdaa3.webp'} alt='Website developement company in Calicut' />
+                    <Image className="object-cover" fill src={'https://cdn.sanity.io/images/0hjyj1bs/production/949746ea727de4852ba1ae904ab8411444bdd408-3840x2560.webp'} alt='Website developement company in Calicut' />
                 </div>
             </div>
         </div>

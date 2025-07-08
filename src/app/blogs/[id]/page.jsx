@@ -24,7 +24,6 @@ async function getData(slug) {
 
   const data = await client.fetch(query, { slug });
 
-  console.log(data)
   if (!data) {
     return notFound();
   }
@@ -53,7 +52,6 @@ export async function generateMetadata({ params }) {
   }
 
   const blog = data.data[0].attributes;
-  console.log(blog);
 
   return {
     title: blog.metatitle || "Default Blog Title",
@@ -84,7 +82,6 @@ export async function generateMetadata({ params }) {
 
 // Blog details component
 const BlogDetails = async ({ params }) => {
-  console.log(params.id);
   const data = await getData(params.id);
   const blog = data?.data[0]?.attributes;
   const content = blog?.content;
