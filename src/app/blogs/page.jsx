@@ -103,7 +103,7 @@ const Blogs = async () => {
                     <h1 className="text-xl font-medium capitalize group-hover:underline duration-300 pr-5">
                       {data?.title}
                     </h1>
-                    <div className="text-sm text-gray-500 pt-2">
+                    {/* <div className="text-sm text-gray-500 pt-2">
                       
                       {data?.createdAt
                         ? new Date(data.createdAt).toLocaleDateString("en-US", {
@@ -112,7 +112,7 @@ const Blogs = async () => {
                             day: "numeric",
                           })
                         : ""}
-                    </div>
+                    </div> */}
                   </div>
                 </FadeUp>
               </Link>
