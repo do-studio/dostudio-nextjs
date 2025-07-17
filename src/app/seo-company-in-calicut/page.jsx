@@ -8,7 +8,7 @@ import { client } from "../../../utils/sanity";
 
 
 export const metadata = {
-    title: "SEO COMPANY IN CALICUT",
+    title: "Seo Company in Calicut",
     description:
         "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
     metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
