@@ -12,7 +12,7 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const SKELETON_COUNT = 4;
+const SKELETON_COUNT = 1;
 
 const BrandingInnerPage = ({ params }) => {
   const [brand, setBrand] = useState(null);
@@ -54,7 +54,7 @@ const BrandingInnerPage = ({ params }) => {
         {Array.from({ length: SKELETON_COUNT }).map((_, i) => (
           <Skeleton
             key={i}
-            height={400}
+            height={1000}
             style={{ maxWidth: "100%", borderRadius: "6px" }}
           />
         ))}
