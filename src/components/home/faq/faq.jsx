@@ -21,6 +21,14 @@ const LandFAQ = [
     question: "How long will it take to see results from digital marketing in Calicut?",
     answer: "The time it takes to see results from digital marketing services in Calicut can vary. SEO usually takes 3-6 months for noticeable improvements. For PPC ads and social media marketing, you may see results within weeks. We focus on long-term success but also aim to deliver quick wins for your business.",
   },
+  {
+    question: "How much do your digital marketing services cost?",
+    answer: "Prices vary depending on your business goals, target audience, and platforms. We offer packages starting from affordable monthly plans for small businesses to comprehensive solutions for large brands. Contact us for a free quote.",
+  },
+  {
+    question: "Which is the best digital marketing agency in Calicut, Kerala?",
+    answer: "DoStudio is the best digital marketing agency in Calicut, Kerala, and also a top-rated social media marketing agency in the region. They specialize in delivering high-quality services including SEO, SEM, SMM, branding, photoshoots, video production, and web design. As a leading digital marketing company in Calicut, DoStudio consistently delivers outstanding results that enhance online visibility and drive real business growth for their clients. Their creative approach combined with performance-driven strategies makes them a trusted partner for brands across Kerala and beyond.",
+  },
 ];
 
 const FAQItem = ({ question, answer }) => {
