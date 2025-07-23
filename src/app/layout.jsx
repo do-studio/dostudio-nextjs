@@ -5,7 +5,6 @@ import Footer from "../components/footer/footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import RootClient from "./RootClient";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { CanonicalTag } from "./CanonicalTag";
 import Script from "next/script";
 import ContactButton from "../components/home/designs/ContactButton";
@@ -53,55 +52,50 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* Microsoft Clarity */}
-      {/* <Script id="clarity-script" strategy="afterInteractive">
+      {/* Google Tag Manager - Script */}
+      <Script id="gtm-script" strategy="afterInteractive">
         {`
-          (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "pxs9rkmsym");
+          (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),
+                dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-5QJX6KRG');
         `}
       </Script>
-
-      <GoogleAnalytics gaId="G-XR89GB34HC" />
-      <GoogleTagManager gtmId="AW-11563204186" /> */}
-
 
       {/* Microsoft Clarity – lazy load after user interaction */}
       <Script id="defer-analytics" strategy="afterInteractive">
         {`
-    setTimeout(() => {
-      // Google Analytics
-      const gaScript = document.createElement("script");
-      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-XR89GB34HC";
-      gaScript.async = true;
-      document.head.appendChild(gaScript);
-
-      gaScript.onload = () => {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XR89GB34HC');
-      };
-
-      // Microsoft Clarity
-      const clarityScript = document.createElement("script");
-      clarityScript.innerHTML = \`
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/pxs9rkmsym";
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "pxs9rkmsym");
-      \`;
-      document.body.appendChild(clarityScript);
-    }, 3000); // Load after 3 seconds
-  `}
+          setTimeout(() => {
+            // Microsoft Clarity
+            const clarityScript = document.createElement("script");
+            clarityScript.innerHTML = \`
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/pxs9rkmsym";
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "pxs9rkmsym");
+            \`;
+            document.body.appendChild(clarityScript);
+          }, 3000); // Load after 3 seconds
+        `}
       </Script>
 
-
       <body className={poppins.className}>
-        {/* <body > */}
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5QJX6KRG"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
 
         <div className="2xl:max-w-[3500px] mx-auto">
           {/* <CanonicalTag /> */}
