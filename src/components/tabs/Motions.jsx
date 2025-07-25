@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { client } from '../../../utils/sanity'
@@ -6,7 +5,6 @@ import Skeleton from 'react-loading-skeleton'
 
 const Motions = () => {
   const [motionVideos, setMotionVideos] = useState([])
-  const [playingIndex, setPlayingIndex] = useState(null)
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const playersRef = useRef([])
@@ -28,14 +26,12 @@ const Motions = () => {
     const motions = await client.fetch(query)
     return {
       props: { motions },
-
     }
   }
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-
         const { props } = await getStaticProps()
         setMotionVideos(props.motions)
       } catch (error) {
@@ -48,52 +44,48 @@ const Motions = () => {
   }, [])
 
   const handleHover = (index) => {
-    // Pause all players
-    playersRef.current.forEach((player, i) => {
-      if (player && player.seekTo) {
-        player.seekTo(0)
-      }
-    })
-
-    setPlayingIndex(index)
+    // Optionally seek to zero if needed, though unmounting player resets anyway
     setHoveredIndex(index)
   }
 
   const handleMouseLeave = () => {
-    setPlayingIndex(null)
     setHoveredIndex(null)
   }
 
   return (
-    <div className='w-11/12 xl:w-9/12 mx-auto pt-4 py-20 columns-3 gap-x-0 gap-y-0'>
+    <div className="w-11/12 xl:w-9/12 mx-auto pt-4 py-20 grid grid-cols-3">
       {isLoading ? (
         Array.from({ length: 6 }).map((_, index) => (
-          <Skeleton className='aspect-[9/16]' />
-        ))) :
-        motionVideos.length > 0 ? (
-          motionVideos.map((data, i) => (
+          <Skeleton key={index} className="aspect-[9/16] w-full" />
+        ))
+      ) : motionVideos.length > 0 ? (
+        motionVideos.map((data, i) => {
+          const isWide = data.ratio?.replace(/\s/g, '') === '16/9'
+
+          return (
             <div
-              className="relative group break-inside-avoid-column"
               key={data._id || i}
+              className={`relative group  ${
+                isWide ? 'col-span-3' : ''
+              }`}
               onMouseEnter={() => handleHover(i)}
               onMouseLeave={handleMouseLeave}
             >
               <div
                 className="relative w-full bg-black duration-150"
-                style={{ aspectRatio: data.ratio || "9/16" }}
+                style={{ aspectRatio: data.ratio || '9/16' }}
               >
                 {hoveredIndex === i ? (
                   <ReactPlayer
-                    ref={(ref) => (playersRef.current[i] = ref)}
                     url={data.video.asset.url}
-                    playing={playingIndex === i}
+                    playing={true}
                     loop
-
                     playsinline
                     controls={false}
                     width="100%"
                     height="100%"
                     className="object-fill"
+                    muted={false} // Unmute if you want sound on hover, or true for muted
                   />
                 ) : (
                   <img
@@ -107,14 +99,13 @@ const Motions = () => {
                 )}
               </div>
             </div>
-          ))
-        ) : (
-          <div className="text-left text-2xl font-medium animate-bounce">
-            No videos found.
-          </div>
-        )
-
-      }
+          )
+        })
+      ) : (
+        <div className="text-left text-2xl font-medium animate-bounce">
+          No videos found.
+        </div>
+      )}
     </div>
   )
 }
