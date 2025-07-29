@@ -94,7 +94,7 @@ const Production = () => {
   };
 
   return (
-    <main className="min-h-screen w-full bg-white pt-32 md:text-4xl text-black font-light">
+    <main className="min-h-screen w-full bg-white pt-20 xl:pt-32 md:text-4xl text-black font-light">
       <div className="w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5">
         <h1 className="pb-1 font-medium">Videos</h1>
       </div>

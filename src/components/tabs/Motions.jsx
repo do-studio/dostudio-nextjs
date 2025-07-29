@@ -1,14 +1,32 @@
-import React, { useEffect, useRef, useState } from 'react'
-import ReactPlayer from 'react-player'
-import { client } from '../../../utils/sanity'
-import Skeleton from 'react-loading-skeleton'
+"use client";
+
+import React, { useEffect, useState, useRef } from "react";
+import ReactPlayer from "react-player";
+import { client } from "../../../utils/sanity";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Motions = () => {
-  const [motionVideos, setMotionVideos] = useState([])
-  const [hoveredIndex, setHoveredIndex] = useState(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const playersRef = useRef([])
+  const [motionVideos, setMotionVideos] = useState([]);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [clickedIndex, setClickedIndex] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const playerRefs = useRef([]);
 
+  // Mobile detection
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
+
+  // Fetch motion videos from Sanity
+  // Keeping async function to behave similarly, though this is client-side fetching
   const getStaticProps = async () => {
     const query = `*[_type == "motion"] | order(orderRank){
       _id,
@@ -22,92 +40,121 @@ const Motions = () => {
         asset->{ url }
       },
       order
-    }`
-    const motions = await client.fetch(query)
-    return {
-      props: { motions },
-    }
-  }
+    }`;
+    const motions = await client.fetch(query);
+    return { props: { motions }, revalidate: 60 };
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { props } = await getStaticProps()
-        setMotionVideos(props.motions)
+        const { props } = await getStaticProps();
+        setMotionVideos(props.motions);
       } catch (error) {
-        console.error("Error fetching motion videos:", error)
+        console.error("Error fetching motion videos:", error);
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
+    };
+    fetchData();
+  }, []);
+
+  // Set document title and meta description - You can customize
+  useEffect(() => {
+    document.title = "Motion Videos | Do Studio";
+    const descriptionContent =
+      "Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more: View our portfolio.";
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", descriptionContent);
+    } else {
+      const newMetaDescription = document.createElement("meta");
+      newMetaDescription.setAttribute("name", "description");
+      newMetaDescription.setAttribute("content", descriptionContent);
+      document.head.appendChild(newMetaDescription);
     }
-    fetchData()
-  }, [])
+  }, []);
 
-  const handleHover = (index) => {
-    // Optionally seek to zero if needed, though unmounting player resets anyway
-    setHoveredIndex(index)
-  }
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null)
-  }
+  // Handle video click on mobile for play/pause toggle and pause previous video
+  const handleVideoClick = (index) => {
+    if (clickedIndex === index) {
+      // Clicking same video pauses
+      if (playerRefs.current[index]) {
+        playerRefs.current[index].getInternalPlayer().pause();
+      }
+      setClickedIndex(null);
+    } else {
+      // Pause previously playing video
+      if (clickedIndex !== null && playerRefs.current[clickedIndex]) {
+        playerRefs.current[clickedIndex].getInternalPlayer().pause();
+      }
+      setClickedIndex(index);
+    }
+  };
 
   return (
-    <div className="w-11/12 xl:w-9/12 mx-auto pt-4 py-20 grid grid-cols-3">
-      {isLoading ? (
-        Array.from({ length: 6 }).map((_, index) => (
-          <Skeleton key={index} className="aspect-[9/16] w-full" />
-        ))
-      ) : motionVideos.length > 0 ? (
-        motionVideos.map((data, i) => {
-          const isWide = data.ratio?.replace(/\s/g, '') === '16/9'
+    <main className="min-h-screen w-full bg-white  md:text-4xl text-black font-light">
+  
+      <div className="w-11/12 xl:w-9/12 mx-auto pt-4 py-20 grid grid-cols-3 gap-0">
+        {isLoading ? (
+          Array.from({ length: 10 }).map((_, i) => (
+            <Skeleton key={i} className="aspect-[9/16] w-full" />
+          ))
+        ) : motionVideos.length > 0 ? (
+          motionVideos.map((data, i) => {
+            const isWide = data.ratio?.replace(/\s/g, "") === "16/9";
+            const isPlaying = isMobile ? clickedIndex === i : hoveredIndex === i;
 
-          return (
-            <div
-              key={data._id || i}
-              className={`relative group  ${
-                isWide ? 'col-span-3' : ''
-              }`}
-              onMouseEnter={() => handleHover(i)}
-              onMouseLeave={handleMouseLeave}
-            >
+            return (
               <div
-                className="relative w-full bg-black duration-150"
-                style={{ aspectRatio: data.ratio || '9/16' }}
+                key={data._id || i}
+                className={`relative group ${isWide ? "col-span-3" : ""}`}
+                onMouseEnter={!isMobile ? () => setHoveredIndex(i) : undefined}
+                onMouseLeave={!isMobile ? () => setHoveredIndex(null) : undefined}
+                onClick={isMobile ? () => handleVideoClick(i) : undefined}
               >
-                {hoveredIndex === i ? (
+                <div
+                  className="relative w-full bg-black duration-150"
+                  style={{ aspectRatio: data.ratio || "9/16" }}
+                >
                   <ReactPlayer
+                    ref={(el) => (playerRefs.current[i] = el)}
                     url={data.video.asset.url}
-                    playing={true}
-                    loop
-                    playsinline
+                    playing={isPlaying}
+                    loop={true}
+                    muted={isMobile ? false : !isPlaying} // mute on desktop when not playing, unmute on mobile always playing
                     controls={false}
+                    playsinline={true}
                     width="100%"
                     height="100%"
                     className="object-fill"
-                    muted={false} // Unmute if you want sound on hover, or true for muted
+                    onEnded={() => {
+                      if (isMobile) setClickedIndex(null);
+                    }}
                   />
-                ) : (
-                  <img
-                    src={
-                      data.image?.asset?.url ||
-                      'https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp'
-                    }
-                    alt={data.image?.alt || 'Video thumbnail'}
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                  />
-                )}
-              </div>
-            </div>
-          )
-        })
-      ) : (
-        <div className="text-left text-2xl font-medium animate-bounce">
-          No videos found.
-        </div>
-      )}
-    </div>
-  )
-}
 
-export default Motions
+                  {(!isPlaying || (isMobile && clickedIndex !== i)) && (
+                    <img
+                      src={
+                        data.image?.asset?.url ||
+                        "https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp"
+                      }
+                      alt={data.image?.alt || "Video thumbnail"}
+                      className="absolute top-0 left-0 w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+              </div>
+            );
+          })
+        ) : (
+          <div className="text-left text-2xl font-medium animate-bounce">
+            No videos found.
+          </div>
+        )}
+      </div>
+    </main>
+  );
+};
+
+export default Motions;
