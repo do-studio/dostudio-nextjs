@@ -87,7 +87,7 @@ export default async function Blogs({ searchParams }) {
         )}
 
         {/* Current Page */}
-        <span className="px-4 py-2 bg-black text-primarygreen rounded-lg font-medium">
+        <span className="px-4 py-2  text-black rounded-lg font-medium">
           {page}
         </span>
 
