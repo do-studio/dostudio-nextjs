@@ -1,7 +1,4 @@
-"use client"
 import Marquee from "react-fast-marquee";
-import {doicnwh,doicnbl,doicn} from '../../../../public/images/index'
-import Image from "next/image";
 const MarqueText = () => {
   return (
     <div className="overflow-hidden">

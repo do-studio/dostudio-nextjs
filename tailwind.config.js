@@ -44,6 +44,7 @@ module.exports = {
       colors: {
         mainclr: 'rgb(0, 0, 0)',
         primarygreen: '#AFFE00',
+        primarygreenhvr: '#8bc900',
         mainclr2: '#292524',
       }
     },
