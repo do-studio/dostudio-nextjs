@@ -6,8 +6,20 @@ import { client } from "../../../utils/sanity";
 export const metadata = {
   title: "Creative Insights & Digital Marketing Blogs from Do Studio",
   description:
-    "Digital marketing strategies and tips from Do Studio. Learn how to improve your SEO, social media, and more.",
+    "Digital marketing strategies and tips from Do Studio. Learn how to improve your SEO, social media, and more to achieve your business goals.",
+  metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
+  keywords:
+    "Advertising agency in Calicut, marketing agency in calicut, Agency in Calicut, Best Advertising agency in Calicut, creative agency in calicut, digital agency in calicut",
+  openGraph: {
+    title: "Creative Insights & Digital Marketing Blogs from Do Studio",
+    description:
+      "Digital marketing strategies and tips from Do Studio. Learn how to improve your SEO, social media, and more to achieve your business goals.",
+    url: `https://dostudio.co.in/blogs`,
+
+    type: "article",
+  },
 };
+
 
 // Server-side fetch with pagination
 async function getBlogs(page = 1, limit = 6) {
