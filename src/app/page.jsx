@@ -4,37 +4,15 @@ import { Suspense } from "react";
 import DynamicPopupform from "../components/home/designs/popUpform";
 
 const DynamicBanner = dynamic(() => import("../components/home/banner/banner"));
-
-const DynamicMarqueeText = dynamic(() =>
-  import("../components/home/designs/marqueText")
-);
-
+const DynamicMarqueeText = dynamic(() => import("../components/home/designs/marqueText"));
 const DynamicAbout = dynamic(() => import("../components/home/about/index"));
-
-const DynamicService = dynamic(() =>
-  import("../components/home/designs/whatwedo")
-);
-
-const DynamicOurwork2 = dynamic(() =>
-  import("../components/home/designs/ourWorks2")
-);
-
-const DynamicOurwork3 = dynamic(() =>
-  import("../components/home/designs/ourWorks3")
-);
-
-const DynamicClients = dynamic(() =>
-  import("../components/home/designs/clients")
-);
-const DynamicTestimonials = dynamic(() =>
-  import("../components/home/designs/Testimonials")
-);
-const DynamicWorkwithUs = dynamic(() =>
-  import("../components/home/designs/workWithUs")
-);
-const DynamicFaq = dynamic(() =>
-  import("../components/home/faq/faq")
-);
+const DynamicService = dynamic(() => import("../components/home/designs/whatwedo"));
+const DynamicOurwork2 = dynamic(() => import("../components/home/designs/ourWorks2"));
+const DynamicOurwork3 = dynamic(() => import("../components/home/designs/ourWorks3"));
+const DynamicClients = dynamic(() => import("../components/home/designs/clients"));
+const DynamicTestimonials = dynamic(() => import("../components/home/designs/Testimonials"));
+const DynamicWorkwithUs = dynamic(() => import("../components/home/designs/workWithUs"));
+const DynamicFaq = dynamic(() => import("../components/home/faq/faq"));
 
 
 
@@ -43,7 +21,7 @@ export const metadata = {
   description:
     "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
   keywords:
-    "Branding agency in calicut, Advertising agency in Calicut, Digital Marketing Agency in Calicut, ...",
+    "Branding agency in calicut, Advertising agency in Calicut, Digital Marketing Agency in Calicut, Digital marketing services in Calicut, marketing agency in calicut, best marketing agency in calicut, Agency in Calicut, Best Advertising agency in Calicut, best branding agency in calicut, creative agency in calicut, branding services in calicut, best branding company in calicut, digital marketing agency in kozhikode, best digital marketing agency in calicut, digital agency in calicut, digital marketing companies in calicut, best social media marketing agency in calicut, performance marketing company in calicut",
   openGraph: {
     type: "website",
     url: "https://dostudio.co.in",
