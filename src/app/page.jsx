@@ -13,6 +13,7 @@ const DynamicClients = dynamic(() => import("../components/home/designs/clients"
 const DynamicTestimonials = dynamic(() => import("../components/home/designs/Testimonials"));
 const DynamicWorkwithUs = dynamic(() => import("../components/home/designs/workWithUs"));
 const DynamicFaq = dynamic(() => import("../components/home/faq/faq"));
+const OurWorksHorizontal = dynamic(() => import("../components/home/designs/ourWorksHorizontal"));
 
 
 
@@ -79,6 +80,11 @@ export default function Home() {
         {/* <OurWOrks /> */}
         <DynamicOurwork2 />
       </Suspense>
+
+        {/* <Suspense fallback={<p>Loading data...</p>}>
+         <OurWorksHorizontal />
+      </Suspense> */}
+
       <Suspense>
         <DynamicClients />
       </Suspense>
