@@ -46,6 +46,7 @@ export const metadata = {
   other: {
     "google-site-verification": "K-0KPQ78AmDrdt3Dtqtln-KygEAHUAR0c5Qo_m4cZkU",
     "pixel:payload": "TEST88229",
+    "facebook-domain-verification": "8obnherhfzfpv5unpmsdv4k4bdqsm0",
   },
 };
 
