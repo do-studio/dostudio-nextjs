@@ -90,7 +90,7 @@ const PackageDesign = () => {
                   <Image
                     src={data.image.asset.url}
                     fill={true}
-                    className="object-cover"
+                    className="object-cover rounded-xl"
                     loading="lazy"
                     alt={data.image.alt || "Package Design"}
                   />

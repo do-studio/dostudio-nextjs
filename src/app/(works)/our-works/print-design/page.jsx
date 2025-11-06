@@ -90,7 +90,7 @@ const PrintDesign = () => {
                     delay={0.1 * imgIdx}
                     key={`${item._id}_${imgIdx}`}
                   >
-                    <div className="relative group bg-[#dcdcde]">
+                    <div className="relative group ">
                       <div
                         className="relative aspect-video w-full cursor-pointer"
                         onClick={() => handleImageClick(imageObj.asset.url)}
@@ -98,7 +98,7 @@ const PrintDesign = () => {
                         <Image
                           src={imageObj.asset.url}
                           fill={true}
-                          className="object-cover"
+                          className="object-cover rounded-xl"
                           loading="lazy"
                           alt="Print Design"
                         />

@@ -84,12 +84,12 @@ const Branding = () => {
             >
               <FadeUp duration={0.5} delay={0.1 * i}>
                 <div className="relative group">
-                  <div className="relative aspect-square w-full">
+                  <div className="relative aspect-square w-full ">
                     <Image
                       loading="lazy"
                       src={data.thumbnail.asset?.url}
                       fill={true}
-                      className="object-cover"
+                      className="object-cover rounded-xl"
                       alt={data.title}
                     />
                   </div>
