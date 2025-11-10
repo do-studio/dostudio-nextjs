@@ -1,0 +1,80 @@
+[
+  {
+    "id": "jory",
+    "name": "Jory",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [0, 0, 0]
+  },
+  {
+    "id": "coco-blue",
+    "name": "Coco Blue",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [5, 2, 0]
+  },
+  {
+    "id": "sandy-grey",
+    "name": "Sandy Loam Grey",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [-5, -3, 0]
+  },
+  {
+    "id": "misty-white",
+    "name": "Misty White",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [8, 4, -2]
+  },
+  {
+    "id": "charcoal-black",
+    "name": "Charcoal Black",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [-8, 2, 1]
+  },
+  {
+    "id": "sunset-gold",
+    "name": "Sunset Gold",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [3, -5, 2]
+  },
+  {
+    "id": "forest-green",
+    "name": "Forest Green",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [-3, 6, -1]
+  },
+  {
+    "id": "crystal-beige",
+    "name": "Crystal Beige",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [7, -2, 3]
+  },
+  {
+    "id": "aqua-mist",
+    "name": "Aqua Mist",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [-20, -4, -2]
+  },
+  {
+    "id": "ruby-red",
+    "name": "Ruby Red",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [9, 1, -3]
+  },
+  {
+    "id": "pearl-grey",
+    "name": "Pearl Grey",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [-9, 5, 2]
+  },
+  {
+    "id": "amber-brown",
+    "name": "Amber Brown",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [2, 8, -1]
+  },
+  {
+    "id": "midnight-blue",
+    "name": "Midnight Blue",
+    "image": "https://cdn.sanity.io/images/0hjyj1bs/production/f4fc814791098ba501e9fdc0093830fffe521717-772x772.jpg",
+    "position": [-2, -8, 1]
+  }
+]

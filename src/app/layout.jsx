@@ -9,6 +9,7 @@ import { CanonicalTag } from "./CanonicalTag";
 import Script from "next/script";
 import ContactButton from "../components/home/designs/ContactButton";
 import React from "react";
+import FooterWrapper from "../components/FooterWrapper";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       {/* Google Tag Manager - Script */}
@@ -108,7 +110,7 @@ export default function RootLayout({ children }) {
             {/* Defer non-critical components */}
             <React.Suspense fallback={null}>
               <ContactButton />
-              <Footer />
+              <FooterWrapper /> {/* 👈 This replaces <Footer /> */}
               <ToastContainer position="bottom-right" />
             </React.Suspense>
           </RootClient>

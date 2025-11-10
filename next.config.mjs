@@ -105,6 +105,10 @@ const nextConfig = {
         hostname: 'cdn.sanity.io',
       },
       {
+        protocol: "https",
+        hostname: "dostudio.co.in",
+      },
+      {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
       },
