@@ -29,12 +29,12 @@ export async function generateMetadata({ params }) {
     description:
       selectedService?.metaDescription,
     alternates: {
-      canonical: `https://dostudio.in/${slug}`,
+      canonical: `https://dostudio.co.in/${slug}`,
     },
     openGraph: {
       title: selectedService?.metaTitle,
       description: selectedService?.metaDescription,
-      url: `https://dostudio.in/${slug}`,
+      url: `https://dostudio.co.in/${slug}`,
       type: "website",
     },
   };
