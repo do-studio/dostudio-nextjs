@@ -75,7 +75,7 @@ function CameraBoundary({
     );
 
     // Smooth zoom
-    if (camera.isOrthographicCamera) {
+    if ((camera as THREE.OrthographicCamera).isOrthographicCamera) {
       // 👇 smoothly interpolate current zoom toward global zoom from store
       camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoom, 0.1);
       camera.zoom = THREE.MathUtils.clamp(
