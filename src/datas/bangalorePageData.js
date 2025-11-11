@@ -1,6 +1,9 @@
 export const data = {
     socialMedia: {
         slug: 'social-media-marketing-services-in-bangalore',
+        metaTitle: "Best digital marketing agency in bangalore | Do Studio",
+        metaDescription:
+            "Partner with Do Studio, a Social Media Marketing Agency in Bangalore. End‑to‑end Social Media Marketing Services in Bangalore with clear KPIs and reports",
         hero: {
             title: "Social Media Marketing Services in Bangalore | ",
             highlight: "Do Studio",
@@ -118,6 +121,8 @@ export const data = {
 
     branding: {
         slug: 'branding-agency-in-bangalore',
+        metaTitle: "Branding Agency in Bangalore | Build Your Brand with Do Studio",
+        metaDescription: "From strategy to identity, Do Studio - Branding Agency in Bangalore - creates brands that win hearts and market share. Guidelines, packaging, go‑to‑market.",
         hero: {
             title: "Branding Agency in Bangalore | ",
             highlight: "Do Studio",
@@ -242,6 +247,8 @@ export const data = {
 
     digitalMarketing: {
         slug: 'digital-marketing-agency-in-bangalore',
+        metaTitle: "Digital Marketing Agency in Bangalore | Digital Marketing Company in Bangalore",
+        metaDescription: " Grow faster with Do Studio - Digital Marketing Agency in Bangalore - full-funnel SEO, Google Ads, and social. Clear KPIs, transparent reports. Talk to us.",
         hero: {
             title: "Digital Marketing Agency in Bangalore | ",
             highlight: "Do Studio",
@@ -389,6 +396,8 @@ export const data = {
 
     videoProduction: {
         slug: 'video-production-agency-in-bangalore',
+        metaTitle: " Video Production Company in Bangalore | Do Studio",
+        metaDescription: " Partner with Do Studio, leading Video Production Company in Bangalore for high‑impact brand films, corporate videos, and ads. Strategy to final edit - done right.",
         hero: {
             title: "Video Production Company in Bangalore |  ",
             highlight: "Do Studio",
@@ -536,6 +545,8 @@ export const data = {
 
     webDevelopment: {
         slug: 'web-development-agency-in-bangalore',
+        metaTitle: "Web Development Company in Bangalore | Do Studio",
+        metaDescription: "Team up with a Web Development Company in Bangalore that pairs UX, speed, CRO, and CMS. Do Studio builds high‑performing websites. Get a custom quote.",
         hero: {
             title: "Web Development Company in Bangalore |  ",
             highlight: "Do Studio",
@@ -668,6 +679,9 @@ export const data = {
 
     seo: {
         slug: 'seo-agency-in-bangalore',
+        metaTitle: "SEO Company in Bangalore | Do Studio Bangalore",
+        metaDescription:
+            " Looking for SEO services in Bangalore? Do Studio - an SEO company in Bangalore - drives results with technical SEO, content, and quality backlinks.",
         hero: {
             title: "SEO Company in Bangalore | ",
             highlight: "Do Studio",

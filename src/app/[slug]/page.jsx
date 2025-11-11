@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import HeroSocialMedia from "../../components/bangalorePage/HeroSocialMedia";
 import SocialMediaServices from "../../components/bangalorePage/SocialMediaServices";
@@ -7,13 +6,44 @@ import BoostsBrandSocialMedia from "../../components/bangalorePage/BoostsBrandSo
 import Faq from "../../components/bangalorePage/Faq";
 import GetsStartedSocialMedia from "../../components/bangalorePage/GetStartedSocialMedia";
 import { data } from "../../datas/bangalorePageData";
-import { useParams } from "next/navigation";
 
-const page = () => {
-  const { slug } = useParams();
+// ✅ Generate dynamic metadata for SEO
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+
+  const selectedService = Object.values(data).find(
+    (service) => service.slug === slug
+  );
+
+  if (!selectedService) {
+    return {
+      title: "Page Not Found | Do Studio",
+      description: "The requested page could not be found.",
+      robots: "noindex, nofollow",
+    };
+  }
 
 
-  // find the matching section dynamically
+  return {
+    title: selectedService?.metaTitle ,
+    description:
+      selectedService?.metaDescription,
+    alternates: {
+      canonical: `https://dostudio.in/${slug}`,
+    },
+    openGraph: {
+      title: selectedService?.metaTitle,
+      description: selectedService?.metaDescription,
+      url: `https://dostudio.in/${slug}`,
+      type: "website",
+    },
+  };
+}
+
+// ✅ Server component
+const Page = async ({ params }) => {
+  const { slug } = params;
+
   const selectedService = Object.values(data).find(
     (service) => service.slug === slug
   );
@@ -26,24 +56,26 @@ const page = () => {
     );
   }
 
-
   const { hero, services, whyChoose, boostUrBrand, faqs, letsStarted } =
     selectedService;
 
-  console.log("Data", letsStarted);
-
-
-
   return (
-    <main className="bg-white w-full flex flex-col" >
+    <main className="bg-white w-full flex flex-col">
       <HeroSocialMedia {...hero} />
       <SocialMediaServices services={services} />
       <WhyChooseSocialMedia {...whyChoose} />
       <BoostsBrandSocialMedia {...boostUrBrand} />
       <Faq faqs={faqs} />
       <GetsStartedSocialMedia {...letsStarted} />
-    </main >
+    </main>
   );
 };
 
-export default page;
+export default Page;
+
+// ✅ Pre-generate static paths (for SSG or ISR)
+export async function generateStaticParams() {
+  return Object.values(data).map((service) => ({
+    slug: service.slug,
+  }));
+}
