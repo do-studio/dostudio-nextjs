@@ -12,7 +12,7 @@ const GetStarted = ({ heading, description, buttonText, buttonLink }) => {
             />
             <section className='relative flex justify-center'>
                 <section className='bg-white w-full xl:w-full mx-auto text-center py-10 xl:py-20 flex flex-col gap-5'>
-                    <h4 className='text-5xl xl:text-7xl font-black text-black uppercase'>{heading}</h4>
+                    <h6 className='text-5xl xl:text-6xl font-bold text-black uppercase'>{heading}</h6>
                     <p className='xl:w-10/12 w-full mx-auto px-5'>{description}</p>
                     <div className="mt-6 z-20">
                         <a

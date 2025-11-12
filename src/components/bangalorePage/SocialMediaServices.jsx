@@ -11,15 +11,15 @@ export default function SocialMediaServices({ services }) {
 
             {/* Title */}
             <div className="relative z-10">
-                <p className="text-gray-500 text-sm tracking-wide mb-2">Services</p>
-                <h2 className="text-5xl xl:text-7xl font-black text-black uppercase">
+                {/* <p className="text-gray-500 text-sm tracking-wide mb-2">Services</p> */}
+                <h2 className="text-5xl xl:text-6xl font-bold text-black uppercase">
                     {services.heading}  <br />
                     <span className="text-primarygreen">  {services.highlight}</span>
                 </h2>
                 <p className="text-gray-500 mt-4 md:max-w-3xl mx-auto">
                    {services.description}
                 </p>
-            </div>
+            </div>d
 
             {/* Services Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-16 relative z-10">
@@ -39,9 +39,9 @@ export default function SocialMediaServices({ services }) {
                         <div className="w-full h-[2px] bg-black mt-3 mb-5"></div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-semibold text-gray-800 leading-snug min-h-[60px]">
+                        <p className="text-2xl font-semibold text-gray-800 leading-snug min-h-[60px]">
                             {service.title}
-                        </h3>
+                        </p>
 
                         <p>
                             {service.desc}

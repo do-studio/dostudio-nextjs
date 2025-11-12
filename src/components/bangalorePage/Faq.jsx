@@ -42,7 +42,7 @@ const Faq = ({ faqs }) => {
         <>
             <section className="w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 pb-20 pt-20 gap-y-5">
                 <div className="h-full flex flex-col justify-center space-y-3">
-                    <h5 className="text-5xl xl:text-7xl font-black uppercase text-center xl:text-left">
+                    <h5 className="text-5xl xl:text-6xl font-bold uppercase text-center xl:text-left">
                         Frequently asked <span className="text-visaclr">questions?</span>
                     </h5>
 

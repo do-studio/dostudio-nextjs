@@ -30,9 +30,9 @@ export default function WhyChooseDoStudio({ heading, description, image, points,
     <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-20">
       {/* Section Heading */}
       <div className=" mx-auto text-center mb-20">
-        <h2 className="text-5xl xl:text-7xl font-black text-black uppercase">
+        <h3 className="text-5xl xl:text-6xl font-bold text-black uppercase">
           {heading}
-        </h2>
+        </h3>
         <p className="text-gray-500 mt-4 md:max-w-3xl mx-auto">
           {description}
         </p>
