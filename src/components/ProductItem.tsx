@@ -73,7 +73,7 @@ export function ProductItem({ product, i }: ProductItemProps) {
         url={product.image}
         scale={[BASE_WIDTH, BASE_HEIGHT]} // ✅ maintain ratio here
         transparent
-        onClick={() => setSelectedProduct(product, i)}
+        onClick={() => setSelectedProduct(product)}
       />
     </group>
   );
