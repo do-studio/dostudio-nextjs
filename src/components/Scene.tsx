@@ -85,7 +85,6 @@ export function Scene() {
           const parsed = JSON.parse(cached);
           if (Array.isArray(parsed) && parsed.length > 0) {
             setProducts(parsed);
-            useAppStore.setState({ posters: parsed });
             setIsLoaded(true);
           }
         } catch {
@@ -129,7 +128,6 @@ export function Scene() {
       });
 
       // Save to Zustand & localStorage cache
-      useAppStore.setState({ posters: mapped });
       localStorage.setItem("snapwave_posters", JSON.stringify(mapped));
 
       // Update bounds dynamically
@@ -167,7 +165,7 @@ export function Scene() {
       {/* Render posters */}
       {isLoaded &&
         products.map((product, index) => (
-          <ProductItem key={product.id} product={product} index={index} />
+          <ProductItem key={product.id} product={product}  />
         ))}
 
       {/* Controls */}

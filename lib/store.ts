@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 export interface Product {
   id: string;
@@ -11,8 +11,7 @@ export interface Product {
 interface AppState {
   selectedProduct: Product | null;
   setSelectedProduct: (product: Product | null) => void;
-  selectedIndex: null;
-
+  
   // --- ADD THIS SECTION ---
   zoom: number; // This will hold the current zoom level
   zoomIn: () => void;
@@ -24,9 +23,8 @@ export const useAppStore = create<AppState>((set) => ({
   posters: [],
   selectedProduct: null,
   selectedIndex: null,
-  // Set the clicked product + its index
-  setSelectedProduct: (product, index = null) =>
-    set({ selectedProduct: product, selectedIndex: index }),
+  setSelectedProduct: (product) => set({ selectedProduct: product }),
+
   // --- ADD THIS SECTION ---
   zoom: 90, // Set a default zoom
   zoomIn: () => set((state) => ({ zoom: state.zoom * 1.2 })), // Increase zoom by 20%
