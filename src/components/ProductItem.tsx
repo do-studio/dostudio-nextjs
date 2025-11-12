@@ -7,10 +7,9 @@ import * as THREE from "three";
 
 interface ProductItemProps {
   product: Product & { ratio?: string };
-  i: number;
 }
 
-export function ProductItem({ product, i }: ProductItemProps) {
+export function ProductItem({ product}: ProductItemProps) {
   const setSelectedProduct = useAppStore((state) => state.setSelectedProduct);
   const meshRef = useRef<THREE.Group>(null!);
   const { mouse, camera } = useThree();
