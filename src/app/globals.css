@@ -620,6 +620,10 @@ cursor: pointer;
   transition: opacity .35s ease
 }
 
+html, body {
+  overscroll-behavior-x: none;
+}
+
 .web-button a {
   width: 200px;
   padding: 12px 48px;

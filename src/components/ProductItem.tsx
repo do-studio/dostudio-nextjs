@@ -7,9 +7,10 @@ import * as THREE from "three";
 
 interface ProductItemProps {
   product: Product & { ratio?: string };
+  i: number;
 }
 
-export function ProductItem({ product }: ProductItemProps) {
+export function ProductItem({ product, i }: ProductItemProps) {
   const setSelectedProduct = useAppStore((state) => state.setSelectedProduct);
   const meshRef = useRef<THREE.Group>(null!);
   const { mouse, camera } = useThree();
@@ -72,7 +73,7 @@ export function ProductItem({ product }: ProductItemProps) {
         url={product.image}
         scale={[BASE_WIDTH, BASE_HEIGHT]} // ✅ maintain ratio here
         transparent
-        // onClick={() => setSelectedProduct(product)}
+        onClick={() => setSelectedProduct(product, i)}
       />
     </group>
   );

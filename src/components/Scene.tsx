@@ -1,116 +1,61 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { MapControls, OrthographicCamera } from "@react-three/drei";
+import { MapControls, OrthographicCamera, Html } from "@react-three/drei";
 import { ProductItem } from "./ProductItem";
 import { Product, useAppStore } from "../../lib/store";
 import { client } from "../../utils/sanity";
 import * as THREE from "three";
 
-/**
- * 🧭 Helper: Runs inside Canvas to clamp camera position AND apply custom smooth scroll movement
- */
 function CameraBoundary({
   controlsRef,
   bounds,
   zoomLimits,
+  isLoaded,
 }: {
   controlsRef: any;
   bounds: { minX: number; maxX: number; minY: number; maxY: number };
   zoomLimits: { min: number; max: number };
+  isLoaded: boolean;
 }) {
   const { camera } = useThree();
-  const zoom = useAppStore((state) => state.zoom); // 👈 subscribe to zoom state
-
-  // 🎯 Store smooth movement targets for scroll panning
+  const zoom = useAppStore((state) => state.zoom);
+  const [introZoom] = useState(300);
   const targetOffset = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       if (!controlsRef.current) return;
-
-      const speed = 0.03; // slower scroll panning
+      const speed = 0.03;
       const deltaX = e.deltaX * speed;
       const deltaY = e.deltaY * speed;
-
-      // Accumulate movement smoothly
       targetOffset.current.x += deltaX;
       targetOffset.current.y += deltaY;
     };
-
     window.addEventListener("wheel", handleWheel, { passive: true });
     return () => window.removeEventListener("wheel", handleWheel);
   }, []);
 
-  // 🧭 Smoothly apply movement and zoom each frame
   useFrame(() => {
     const controls = controlsRef.current;
     if (!controls) return;
 
     const { x: targetX, y: targetY } = targetOffset.current;
+    const lerpFactor = 0.08;
 
-    const lerpFactor = 0.08; // smooth scroll transition
+    controls.target.x = THREE.MathUtils.lerp(controls.target.x, controls.target.x + targetX, lerpFactor);
+    controls.target.y = THREE.MathUtils.lerp(controls.target.y, controls.target.y - targetY, lerpFactor);
+    camera.position.x = THREE.MathUtils.lerp(camera.position.x, controls.target.x, lerpFactor);
+    camera.position.y = THREE.MathUtils.lerp(camera.position.y, controls.target.y, lerpFactor);
 
-    // Smooth panning
-    controls.target.x = THREE.MathUtils.lerp(
-      controls.target.x,
-      controls.target.x + targetX,
-      lerpFactor
+    // Intro zoom
+    camera.zoom = THREE.MathUtils.lerp(
+      camera.zoom,
+      isLoaded ? zoom : introZoom,
+      0.05
     );
-    controls.target.y = THREE.MathUtils.lerp(
-      controls.target.y,
-      controls.target.y - targetY,
-      lerpFactor
-    );
-
-    camera.position.x = THREE.MathUtils.lerp(
-      camera.position.x,
-      controls.target.x,
-      lerpFactor
-    );
-    camera.position.y = THREE.MathUtils.lerp(
-      camera.position.y,
-      controls.target.y,
-      lerpFactor
-    );
-
-    // Smooth zoom
-    if ((camera as THREE.OrthographicCamera).isOrthographicCamera) {
-      // 👇 smoothly interpolate current zoom toward global zoom from store
-      camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoom, 0.1);
-      camera.zoom = THREE.MathUtils.clamp(
-        camera.zoom,
-        zoomLimits.min,
-        zoomLimits.max
-      );
-      camera.updateProjectionMatrix();
-    }
-
-    // Clamp camera and target within bounds
-    controls.target.x = THREE.MathUtils.clamp(
-      controls.target.x,
-      bounds.minX,
-      bounds.maxX
-    );
-    controls.target.y = THREE.MathUtils.clamp(
-      controls.target.y,
-      bounds.minY,
-      bounds.maxY
-    );
-    camera.position.x = THREE.MathUtils.clamp(
-      camera.position.x,
-      bounds.minX,
-      bounds.maxX
-    );
-    camera.position.y = THREE.MathUtils.clamp(
-      camera.position.y,
-      bounds.minY,
-      bounds.maxY
-    );
-
-    // Gradual decay for smoothness
-    targetOffset.current.x *= 0.9;
-    targetOffset.current.y *= 0.9;
+    camera.zoom = THREE.MathUtils.clamp(camera.zoom, zoomLimits.min, zoomLimits.max);
+    camera.updateProjectionMatrix();
 
     controls.update();
   });
@@ -120,6 +65,7 @@ function CameraBoundary({
 
 export function Scene() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [bounds, setBounds] = useState({
     minX: -20,
     maxX: 20,
@@ -128,67 +74,76 @@ export function Scene() {
   });
 
   const controlsRef = useRef<any>(null);
-  const zoomLimits = { min: 20, max: 120 };
+  const zoomLimits = { min: 20, max: 200 };
 
   useEffect(() => {
     async function fetchPosters() {
-      const query = `*[_type == "poster" && !(_id in path("drafts.**"))] | order(orderRank){
-      _id,
-      title,
-      ratio,
-      image {
-        alt,
-        asset->{ url }
+      // 👇 Try to get cached posters
+      const cached = localStorage.getItem("snapwave_posters");
+      if (cached) {
+        try {
+          const parsed = JSON.parse(cached);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setProducts(parsed);
+            useAppStore.setState({ posters: parsed });
+            setIsLoaded(true);
+          }
+        } catch {
+          console.warn("Invalid cache, refetching...");
+        }
       }
-    }`;
+
+      // 👇 Fetch fresh data in background
+      const query = `*[_type == "poster" && !(_id in path("drafts.**"))] | order(orderRank){
+        _id,
+        title,
+        ratio,
+        image {
+          alt,
+          asset->{ url }
+        }
+      }`;
 
       const posters = await client.fetch(query);
 
-      // --- CONFIGURATION ---
-      const postersPerRow = 10; // how many per row
-      const spacingX = 3.5; // horizontal gap
-      const spacingY = 3.5; // vertical gap
-
+      // Prepare layout mapping
+      const postersPerRow = 10;
+      const spacingX = 3.5;
+      const spacingY = 3.5;
       const totalRows = Math.ceil(posters.length / postersPerRow);
       const totalCols = Math.min(posters.length, postersPerRow);
-
       const offsetX = (totalCols - 1) * spacingX * 0.5;
       const offsetY = (totalRows - 1) * spacingY * 0.5;
 
-      // --- CREATE STAGGERED PATTERN ---
       const mapped = posters.map((poster: any, index: number) => {
         const col = index % postersPerRow;
         const row = Math.floor(index / postersPerRow);
-
-        // Every other row gets a small horizontal offset
         const staggerOffset = row % 2 === 0 ? 0 : spacingX / 2;
-
         return {
           id: poster._id,
           name: poster.title,
           image: poster.image?.asset?.url,
-          // Apply staggered positioning
-          position: [
-            col * spacingX - offsetX + staggerOffset,
-            -(row * spacingY) + offsetY,
-            0,
-          ],
+          position: [col * spacingX - offsetX + staggerOffset, -(row * spacingY) + offsetY, 0],
           ratio: poster.ratio || "1/1",
         };
       });
 
-      // --- CAMERA BOUNDS ---
+      // Save to Zustand & localStorage cache
+      useAppStore.setState({ posters: mapped });
+      localStorage.setItem("snapwave_posters", JSON.stringify(mapped));
+
+      // Update bounds dynamically
       const halfWidth = (totalCols * spacingX) / 2;
       const halfHeight = (totalRows * spacingY) / 2;
-
       setBounds({
-        minX: -halfWidth - 2,
-        maxX: halfWidth + 2,
-        minY: -halfHeight - 2,
-        maxY: halfHeight + 2,
+        minX: -halfWidth * 0.9,
+        maxX: halfWidth * 0.9,
+        minY: -halfHeight * 0.9,
+        maxY: halfHeight * 0.9,
       });
 
       setProducts(mapped);
+      setIsLoaded(true);
     }
 
     fetchPosters();
@@ -196,29 +151,39 @@ export function Scene() {
 
   return (
     <Canvas>
-      {/* Orthographic Camera — initial zoom set from store (defaults to 50) */}
-      <OrthographicCamera makeDefault position={[0, 0, 100]} />
+      <OrthographicCamera makeDefault position={[0, 0, 80]} zoom={300} />
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
 
-      {/* Render posters */}
-      {products.map((product) => (
-        <ProductItem key={product.id} product={product} />
-      ))}
+      {/* Loading Spinner */}
+      {!isLoaded && (
+        <Html center>
+          <div className="flex flex-col items-center justify-center text-gray-600">
+            <div className="w-12 h-12 border-4 border-gray-300 border-t-gray-800 rounded-full animate-spin"></div>
+          </div>
+        </Html>
+      )}
 
-      {/* MapControls (scroll pans only) */}
+      {/* Render posters */}
+      {isLoaded &&
+        products.map((product, index) => (
+          <ProductItem key={product.id} product={product} index={index} />
+        ))}
+
+      {/* Controls */}
       <MapControls
         ref={controlsRef}
         enableRotate={false}
         screenSpacePanning={true}
-        enableZoom={false} // 🚫 disable manual zoom
+        enableZoom={false}
       />
 
-      {/* Camera boundary and zoom logic */}
+      {/* Camera logic */}
       <CameraBoundary
         controlsRef={controlsRef}
         bounds={bounds}
         zoomLimits={zoomLimits}
+        isLoaded={isLoaded}
       />
     </Canvas>
   );

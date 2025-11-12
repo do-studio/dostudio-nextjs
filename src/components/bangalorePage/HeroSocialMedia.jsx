@@ -25,7 +25,7 @@ export default function HeroSection({
 
             {/* Hero Content */}
             <div className="relative z-10 flex flex-col items-center text-center max-w-5xl">
-                <h2 className="text-4xl md:text-5xl xl:text-7xl font-black text-white leading-tight uppercase">
+                <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight uppercase">
                     {title}
                     {highlight && (
                         <>
@@ -33,7 +33,7 @@ export default function HeroSection({
                             <span className="text-primarygreen">{highlight}</span>
                         </>
                     )}
-                </h2>
+                </h1>
 
                 {description && (
                     <p className="text-gray-200 mt-6 text-lg md:text-xl max-w-3xl">

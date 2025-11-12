@@ -1,18 +1,18 @@
 export const data = {
     socialMedia: {
-        slug: 'social-media-marketing-services-in-bangalore',
+        slug: 'social-media-marketing-agency-in-bangalore',
         metaTitle: "Best digital marketing agency in bangalore | Do Studio",
         metaDescription:
             "Partner with Do Studio, a Social Media Marketing Agency in Bangalore. End‑to‑end Social Media Marketing Services in Bangalore with clear KPIs and reports",
         hero: {
-            title: "Social Media Marketing Services in Bangalore | ",
+            title: "Social Media Marketing Agency in Bangalore | ",
             highlight: "Do Studio",
             description:
                 "Do Studio is a leading social media marketing agency in Bangalore, helping businesses grow their online presence, engage audiences, and drive results. We specialize in creating tailored social media strategies that align with your brand goals, ensuring maximum reach and impact across all platforms.",
             buttonText: "Contact Now",
             buttonLink: "https://wa.me/919746155541",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/7fce67df721768fae624ff1f543fd8b6d4b43a3a-8000x5713.webp",
         },
         services: {
             heading: "Social Media Marketing Services by ",
@@ -45,7 +45,7 @@ export const data = {
             description:
                 "As the best social media marketing agency in Bangalore, Do Studio combines creativity, strategy, and data-driven solutions to deliver measurable results",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/d8f4ccc80195fb666532af97644ca4c1b3f13431-3200x4800.webp",
             points: [
                 {
                     title: "Tailored Campaigns",
@@ -131,7 +131,7 @@ export const data = {
             buttonText: "Contact Now",
             buttonLink: "https://wa.me/919746155541",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/c1b48ca7b5484e8d7e0c4a5ac0223458e397fb35-1280x800.webp",
         },
         services: {
             heading: "Branding Services by",
@@ -171,7 +171,7 @@ export const data = {
             description:
                 "As a top branding agency in Bangalore, Do Studio helps businesses achieve brand recognition, trust, and growth.",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/3608ab0de4b378280c911e2311260416391ca56d-1600x1200.webp",
             points: [
                 {
                     title: "Customized Branding Solutions",
@@ -257,7 +257,7 @@ export const data = {
             buttonText: "Contact Now",
             buttonLink: "https://wa.me/919746155541",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/7fce67df721768fae624ff1f543fd8b6d4b43a3a-8000x5713.webp",
         },
         services: {
             heading: "Digital Marketing Services by",
@@ -295,7 +295,7 @@ export const data = {
             description:
                 "As the best digital marketing agency in Bangalore, Do Studio delivers strategies that grow your brand and drive measurable results.",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/d8f4ccc80195fb666532af97644ca4c1b3f13431-3200x4800.webp",
             points: [
                 {
                     title: "Tailored Strategies",
@@ -395,7 +395,7 @@ export const data = {
     },
 
     videoProduction: {
-        slug: 'video-production-agency-in-bangalore',
+        slug: 'video-production-company-in-bangalore',
         metaTitle: " Video Production Company in Bangalore | Do Studio",
         metaDescription: " Partner with Do Studio, leading Video Production Company in Bangalore for high‑impact brand films, corporate videos, and ads. Strategy to final edit - done right.",
         hero: {
@@ -406,7 +406,7 @@ export const data = {
             buttonText: "Contact Now",
             buttonLink: "https://wa.me/919746155541",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/cc4b62618e0865d82b392b37f388584fd38475dc-8000x5333.webp",
         },
         services: {
             heading: "Video Production Services by ",
@@ -444,7 +444,7 @@ export const data = {
             description:
                 "As the best video production company in Bangalore, Do Studio delivers videos that enhance your brand image and drive engagement.",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/df67023f99197eb71c10b22ac6183f90376ad424-7373x4147.webp",
             points: [
                 {
                     title: "Tailored Video Solutions",
@@ -544,7 +544,7 @@ export const data = {
     },
 
     webDevelopment: {
-        slug: 'web-development-agency-in-bangalore',
+        slug: 'web-development-company-in-bangalore',
         metaTitle: "Web Development Company in Bangalore | Do Studio",
         metaDescription: "Team up with a Web Development Company in Bangalore that pairs UX, speed, CRO, and CMS. Do Studio builds high‑performing websites. Get a custom quote.",
         hero: {
@@ -555,7 +555,7 @@ export const data = {
             buttonText: "Contact Now",
             buttonLink: "https://wa.me/919746155541",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/27d09461b7b19a6efb2884fa20df96d5bda22e55-4015x2745.webp",
         },
         services: {
             heading: "Web Development Services ",
@@ -597,7 +597,7 @@ export const data = {
             description:
                 "As the best web development company in Bangalore, Do Studio delivers powerful web solutions that enhance your brand’s digital presence.",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/4f4adb9cc2b59227b2791cbffef0e4c64bfc4aa2-5392x3594.webp",
             points: [
                 {
                     title: "Tailored Solutions",
@@ -678,7 +678,7 @@ export const data = {
     },
 
     seo: {
-        slug: 'seo-agency-in-bangalore',
+        slug: 'seo-company-in-bangalore',
         metaTitle: "SEO Company in Bangalore | Do Studio Bangalore",
         metaDescription:
             " Looking for SEO services in Bangalore? Do Studio - an SEO company in Bangalore - drives results with technical SEO, content, and quality backlinks.",
@@ -690,7 +690,7 @@ export const data = {
             buttonText: "Contact Now",
             buttonLink: "https://wa.me/919746155541",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/fd93d87f0cbd670facb5ada8e431454ff527a497-3000x2001.webp",
         },
         services: {
             heading: "SEO Solutions by  ",
@@ -725,7 +725,7 @@ export const data = {
             description:
                 "As the best SEO company in Bangalore, Do Studio delivers results through strategies that boost visibility, drive traffic, and growth, which includes.",
             image:
-                "https://cdn.sanity.io/images/0hjyj1bs/production/9845e39248d93b6cbade4e297ead518141c9e618-5848x3899.webp",
+                "https://cdn.sanity.io/images/0hjyj1bs/production/812b64d2615f5b3f33b9e900f28a4bb277f8932d-4796x4196.webp",
             points: [
                 {
                     title: "Focused SEO Strategies",
