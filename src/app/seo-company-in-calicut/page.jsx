@@ -1,4 +1,3 @@
-// "use client"
 
 import Link from "next/link";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
@@ -14,6 +13,9 @@ export const metadata = {
     metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
     keywords:
         "seo company in calicut, best seo company in calicut, seo companies in calicut, best seo companies in calicut, seo agency in calicut, best seo agency in calicut, seo services in calicut, best seo services in calicut",
+    alternates: {
+        canonical: "https://dostudio.co.in/seo-company-in-calicut",
+    },
     openGraph: {
         title: "SEO COMPANY IN CALICUT",
         description:
