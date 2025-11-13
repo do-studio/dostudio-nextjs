@@ -96,6 +96,11 @@ const nextConfig = {
         destination: '/blogs/how-to-choose-the-right-branding-services',
         permanent: true,
       },
+      {
+        source: '/blogs/seo-company-in-callicut',
+        destination: '/blogs/seo-services-in-bangalore',
+        permanent: true,
+      },
     ];
   },
   images: {
