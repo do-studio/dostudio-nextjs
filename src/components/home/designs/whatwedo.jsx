@@ -82,7 +82,7 @@ const Whatwedo = () => {
             playsInline
           >
             <source
-              src="https://res.cloudinary.com/djswkzoth/video/upload/v1724923136/Do%20Studio%20Website/WhatsApp_Video_2024-08-26_at_11.26.40_940f4270_qahxvn.mp4"
+              src="https://cdn.sanity.io/files/0hjyj1bs/production/a5a297715050d7a3cf0016ad4783f6c317d7a439.mov"
               type="video/mp4"
             />
           </video>

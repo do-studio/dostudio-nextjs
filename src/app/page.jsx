@@ -81,7 +81,7 @@ export default function Home() {
         <DynamicOurwork2 />
       </Suspense>
 
-        {/* <Suspense fallback={<p>Loading data...</p>}>
+      {/* <Suspense fallback={<p>Loading data...</p>}>
          <OurWorksHorizontal />
       </Suspense> */}
 
