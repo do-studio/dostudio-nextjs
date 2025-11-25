@@ -5,29 +5,35 @@ export interface Product {
   name: string;
   image: string;
   position: [number, number, number];
-  // Add other fields like collection_images here
+  ratio?: string;
+
+  // ✅ REQUIRED FIELDS TO FIX NEXT.JS BUILD ERROR
+  screenPosition?: { x: number; y: number };
+  elementSize?: { width: number; height: number };
 }
 
 interface AppState {
   selectedProduct: Product | null;
   setSelectedProduct: (product: Product | null) => void;
-  
-  // --- ADD THIS SECTION ---
-  zoom: number; // This will hold the current zoom level
+
+  zoom: number;
   zoomIn: () => void;
   zoomOut: () => void;
-  // --- END ADD ---
+
+  // (You included posters + selectedIndex but didn't type them;
+  // keeping them optional to avoid breaking anything)
+  posters?: Product[];
+  selectedIndex?: number | null;
 }
 
 export const useAppStore = create<AppState>((set) => ({
   posters: [],
   selectedProduct: null,
   selectedIndex: null,
+
   setSelectedProduct: (product) => set({ selectedProduct: product }),
 
-  // --- ADD THIS SECTION ---
-  zoom: 90, // Set a default zoom
-  zoomIn: () => set((state) => ({ zoom: state.zoom * 1.2 })), // Increase zoom by 20%
-  zoomOut: () => set((state) => ({ zoom: state.zoom / 1.2 })), // Decrease zoom by 20%
-  // --- END ADD ---
+  zoom: 90,
+  zoomIn: () => set((state) => ({ zoom: state.zoom * 1.2 })),
+  zoomOut: () => set((state) => ({ zoom: state.zoom / 1.2 })),
 }));
