@@ -121,7 +121,7 @@ export const data = {
 
     branding: {
         slug: 'branding-agency-in-bangalore',
-        metaTitle: "Branding Agency in Bangalore | Build Your Brand with Do Studio",
+        metaTitle: "Branding Agency in Bangalore | Branding Company in Bangalore",
         metaDescription: "From strategy to identity, Do Studio - Branding Agency in Bangalore - creates brands that win hearts and market share. Guidelines, packaging, go‑to‑market.",
         hero: {
             title: "Branding Agency in Bangalore | ",
