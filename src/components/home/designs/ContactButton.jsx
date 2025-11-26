@@ -7,7 +7,7 @@ const whatsappLink = "https://api.whatsapp.com/send?phone=919746155541";
 const ContactButton = () => {
     const pathname = usePathname();
 
-    if (pathname === "/home2" || pathname === "/contact" || pathname === "/seo-company-in-calicut") return null;
+    if (pathname === "/home2" || pathname === "/contact" || pathname === "/seo-company-in-calicut" || pathname === "/social-media-marketing-agency-in-bangalore") return null;
 
     const handleWhatsApp = () => {
         window.open(whatsappLink, '_blank');

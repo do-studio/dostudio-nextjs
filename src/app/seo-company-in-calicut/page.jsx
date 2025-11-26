@@ -52,7 +52,7 @@ const Landing = async () => {
                 className="h-screen bg-cover bg-center flex items-center justify-left text-white relative"
                 style={{
                     backgroundImage:
-                        "url('https://res.cloudinary.com/djswkzoth/image/upload/v1750076024/Do%20Studio%20Website/seo2_vivh9n.webp')",
+                        "url('https://cdn.sanity.io/images/0hjyj1bs/production/e3d3d2723667936e30e5cf25115f8603af2f07fc-4000x2000.webp')",
                 }}
             >
                 <div className="absolute w-full h-full bg-black opacity-60" ></div>

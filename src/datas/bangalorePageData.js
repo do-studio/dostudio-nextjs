@@ -10,7 +10,7 @@ export const data = {
             description:
                 "Do Studio is a leading social media marketing agency in Bangalore, helping businesses grow their online presence, engage audiences, and drive results. We specialize in creating tailored social media strategies that align with your brand goals, ensuring maximum reach and impact across all platforms.",
             buttonText: "Contact Now",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/7fce67df721768fae624ff1f543fd8b6d4b43a3a-8000x5713.webp",
         },
@@ -65,7 +65,7 @@ export const data = {
                 },
             ],
             buttonText: "Contact Now",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         },
 
         boostUrBrand: {
@@ -73,7 +73,7 @@ export const data = {
             highlight: "Social Media Marketing Company in Bangalore",
             description: "Partner with Do Studio, the best social media marketing company in Bangalore, to strengthen your online presence, attract new customers, and drive business growth. Our expert solutions help businesses leverage social media effectively to achieve real results.",
             buttonText: "Get a Quote",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
         },
         faqs: [
             {
@@ -115,7 +115,7 @@ export const data = {
             heading: "Maximize Your Social Media Impact – Let’s Get Started",
             description: "Looking for the best social media marketing agency in Bangalore? Connect with Do Studio today for a free consultation and see how our professional social media services can elevate your brand and drive results.",
             buttonText: "Get a Free Consultation",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         }
     },
 
@@ -129,7 +129,7 @@ export const data = {
             description:
                 "Do Studio is a top-rated branding agency in Bangalore , helping businesses create powerful brand identities that leave a lasting impression. We specialize in delivering strategic branding solutions, from visual identity and brand strategy to marketing collateral and digital presence, ensuring your brand stands out in a competitive market.",
             buttonText: "Contact Now",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/c1b48ca7b5484e8d7e0c4a5ac0223458e397fb35-1280x800.webp",
         },
@@ -191,7 +191,7 @@ export const data = {
                 },
             ],
             buttonText: "Contact Now",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         },
 
         boostUrBrand: {
@@ -199,7 +199,7 @@ export const data = {
             highlight: "Branding Agency in Bangalore",
             description: "Partner with Do Studio, the best branding agency in Bangalore, to build a strong, recognizable brand that resonates with your audience. Our professional branding services help businesses communicate their identity, gain trust, and grow effectively.",
             buttonText: "Get a Quote",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
         },
         faqs: [
             {
@@ -241,7 +241,7 @@ export const data = {
             heading: "Maximize Your Brand Impact – Let’s Get Started",
             description: "Looking for the best branding agency in Bangalore? Connect with Do Studio today for a free consultation and discover how our branding solutions can elevate your business and create a lasting impression.",
             buttonText: "Get a Free Consultation",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         }
     },
 
@@ -255,7 +255,7 @@ export const data = {
             description:
                 "Do Studio is a top-rated digital marketing company in Bangalore, helping businesses grow their online presence. We focus on increasing brand visibility, driving quality traffic, and boosting conversions through tailored digital strategies.",
             buttonText: "Contact Now",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/7fce67df721768fae624ff1f543fd8b6d4b43a3a-8000x5713.webp",
         },
@@ -315,7 +315,7 @@ export const data = {
                 },
             ],
             buttonText: "Contact Now",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         },
 
         boostUrBrand: {
@@ -323,7 +323,7 @@ export const data = {
             highlight: "Drive Conversions",
             description: "Partner with Do Studio, the best digital marketing company in Bangalore, to grow your business online. Our solutions cater to startups, SMEs, and enterprise-level businesses seeking measurable digital growth.",
             buttonText: "Get a Quote",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
         },
         faqs: [
             {
@@ -390,7 +390,7 @@ export const data = {
             heading: "Maximize Your ROI Let’s Get Started",
             description: "Looking for the best digital marketing agency in Bangalore? Connect with Do Studio now to schedule a free consultation. Let’s discuss how our proven strategies can increase traffic, generate leads, and grow your business in Bangalore and beyond.",
             buttonText: "Get a Free Consultation",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         }
     },
 
@@ -404,7 +404,7 @@ export const data = {
             description:
                 "Do Studio is a top-rated video production company in Bangalore, creating high-quality videos that help businesses communicate their story effectively. We specialize in producing corporate videos, promotional content, and engaging visual media to enhance brand visibility and audience engagement.",
             buttonText: "Contact Now",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/cc4b62618e0865d82b392b37f388584fd38475dc-8000x5333.webp",
         },
@@ -464,7 +464,7 @@ export const data = {
                 },
             ],
             buttonText: "Contact Now",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         },
 
         boostUrBrand: {
@@ -472,7 +472,7 @@ export const data = {
             highlight: "Video Production",
             description: "Partner with Do Studio, the video production company in Bangalore, to create videos that leave a lasting impression. Our solutions help businesses tell their story, attract clients, and grow their brand through compelling visuals.",
             buttonText: "Get a Quote",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
         },
         faqs: [
             {
@@ -539,7 +539,7 @@ export const data = {
             heading: "Maximize Your Brand Impact – Let’s Get Started",
             description: "Looking for the best video production company in Bangalore? Connect with Do Studio now for a free consultation. Let’s discuss how our professional video solutions can elevate your brand and engage your audience effectively.",
             buttonText: "Get a Free Consultation",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         }
     },
 
@@ -553,7 +553,7 @@ export const data = {
             description:
                 "Do Studio is a leading web development company in Bangalore, crafting high-performance, responsive, and visually appealing websites that help businesses stand out online. We combine design, technology, and strategy to create user-friendly digital experiences that drive traffic, leads, and conversions",
             buttonText: "Contact Now",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/27d09461b7b19a6efb2884fa20df96d5bda22e55-4015x2745.webp",
         },
@@ -621,7 +621,7 @@ export const data = {
                 },
             ],
             buttonText: "Contact Now",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         },
 
         boostUrBrand: {
@@ -629,7 +629,7 @@ export const data = {
             highlight: "Online Identity",
             description: "Partner with Do Studio, the best web development agency in Bangalore, to build a website that not only looks great but performs flawlessly. Our expert developers and designers work closely with you to deliver a digital platform that attracts, engages, and converts.",
             buttonText: "Get a Quote",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
         },
         faqs: [
             {
@@ -673,7 +673,7 @@ export const data = {
             heading: "Let’s Build Your Online Presence – Get Started Today",
             description: "Looking for the best web development company in Bangalore? Connect with Do Studio for a free consultation and discover how our custom web development services can elevate your business online.",
             buttonText: "Get a Free Consultation",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         }
     },
 
@@ -688,7 +688,7 @@ export const data = {
             description:
                 "Do Studio is a top-rated SEO company in Bangalore, helping businesses boost their online presence. We focus on increasing your website’s visibility, driving quality traffic, and improving your search engine rankings.",
             buttonText: "Contact Now",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/fd93d87f0cbd670facb5ada8e431454ff527a497-3000x2001.webp",
         },
@@ -746,7 +746,7 @@ export const data = {
 
             ],
             buttonText: "Contact Now",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         },
 
         boostUrBrand: {
@@ -754,7 +754,7 @@ export const data = {
             highlight: "Drive Traffic",
             description: "Partner with Do Studio, a top SEO company in Bangalore, to enhance your website’s visibility. Our SEO solutions cater to small business websites and enterprise-level digital growth.",
             buttonText: "Get a Quote",
-            buttonLink: "https://wa.me/919746155541",
+            buttonLink: "https://wa.me/918590855541",
         },
         faqs: [
             {
@@ -816,7 +816,7 @@ export const data = {
             heading: "Get in Touch with Do Studio Bangalore Today",
             description: "Looking for a trusted SEO company in Bangalore? Connect with Do Studio now to schedule a free consultation. Let’s explore how our proven SEO strategies can boost your website traffic, generate more leads, and help your business grow in Bangalore and beyond.",
             buttonText: "Get a Free Consultation",
-            buttonLink: "tel:+919746155541",
+            buttonLink: "tel:+918590855541",
         }
     },
 }

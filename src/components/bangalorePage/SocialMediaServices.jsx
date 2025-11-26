@@ -19,7 +19,7 @@ export default function SocialMediaServices({ services }) {
                 <p className="text-gray-500 mt-4 md:max-w-3xl mx-auto">
                    {services.description}
                 </p>
-            </div>d
+            </div>
 
             {/* Services Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-16 relative z-10">
