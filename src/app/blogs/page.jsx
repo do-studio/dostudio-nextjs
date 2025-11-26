@@ -65,7 +65,7 @@ export default async function Blogs({ searchParams }) {
               <div className="space-y-4 group overflow-hidden rounded-xl">
                 <div className="relative h-[350px] xl:h-[500px] w-full overflow-hidden rounded-xl">
                   <Image
-                    src={data.image.asset.url}
+                    src={data.image?.asset?.url}
                     fill
                     className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 group-hover:rotate-2 transition-transform duration-500"
                     loading="lazy"
