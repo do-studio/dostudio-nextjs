@@ -58,7 +58,7 @@ export async function generateMetadata({ params }) {
       url: `https://dostudio.co.in/blogs/${params.id}`,
       images: [
         {
-          url: blog.image.asset.url || "/default-og-image.jpg",
+          url: blog.image?.asset?.url || "/default-og-image.jpg",
           width: 1200,
           height: 630,
           alt: blog.altText || "Do Studio Blog",
@@ -83,7 +83,7 @@ const BlogDetails = async ({ params }) => {
       <div className="w-11/12 xl:w-10/12 mx-auto pt-24 py-20">
         <div className="relative h-[500px] w-full mb-10">
           <Image
-            src={blog.image.asset.url}
+            src={blog.image?.asset?.url}
             fill={true}
             className="object-cover"
             alt={blog.altText}
