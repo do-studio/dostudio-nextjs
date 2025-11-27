@@ -250,80 +250,25 @@ const FaqMain = () => {
 
 const webDesignsData = [
   {
+    id: 0,
+    websiteurl: "https://exxude.in",
+    imageUrl: "https://cdn.sanity.io/images/0hjyj1bs/production/415ef0a5e87926c90a7a80a89f4ac2c76d62f836-2561x11214.webp"
+  },
+  {
     id: 1,
-    websiteurl: "https://farookcollege.ac.in",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1706872860/Do%20Studio%20Website/webBanner/long/farookcollege-ac-in_gecais.webp"
+    websiteurl: "https://bfcsoccerschoolsqatar.com",
+    imageUrl: "https://cdn.sanity.io/images/0hjyj1bs/production/fa3b0ceef29cbe5802328ccb253ad98ad6ef1d1a-2940x7142.webp"
   },
   {
     id: 2,
     websiteurl: "https://ztartvisa.com",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1742888081/ztartvisa_a08e5b0b34.webp"
+    imageUrl: "https://cdn.sanity.io/images/0hjyj1bs/production/d8a24d7e39e2e11af7f187a9d04bbda9891814f0-1920x7212.webp"
   },
 
   {
     id: 3,
     websiteurl: "https://heeracorporate.com",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1742888145/heeracorporate_2025_03_25_13_01_24_a6b742df93.webp"
-  },
-  {
-    id: 4,
-    websiteurl: "https://pigmentslive.com/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1744190165/pigmentslive_2025_04_09_14_41_59_0353e8a23d.webp"
-  },
-  {
-    id: 5,
-    websiteurl: "https://tandthospitalityllp.com/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1742888108/tandthospitalityllp_2025_03_25_13_00_33_ed3880b44e.webp"
-  },
-  {
-    id: 6,
-    websiteurl: "https://smartkidsabacus.com/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1744190205/smartkidsabacus_2025_04_09_14_42_36_4f241c9e8b.webp"
-  },
-  {
-    id: 7,
-    websiteurl: "https://kadalundibank.com/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1745928699/kadalundibank_2025_04_29_17_35_47_2919072f38.webp"
-  },
-  {
-    id: 8,
-    websiteurl: "https://stackr.ae/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1706872858/Do%20Studio%20Website/webBanner/long/stackr-ae_ccu2k9.webp"
-  },
-  {
-    id: 9,
-    websiteurl: "https://mckkutty.com/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1706872858/Do%20Studio%20Website/webBanner/long/mckkutty_m787i0.webp"
-  },
-  {
-    id: 10,
-    websiteurl: "https://esordio.in/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1706872859/Do%20Studio%20Website/webBanner/long/esordio-in_ogsoxs.webp"
-  },
-  {
-    id: 11,
-    websiteurl: "https://zainbuilders.co/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1706872859/Do%20Studio%20Website/webBanner/long/zainbuilders-co_lueerg.webp"
-  },
-  {
-    id: 12,
-    websiteurl: "https://kccpl.com/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1706872860/Do%20Studio%20Website/webBanner/long/kccpl_a0fi3s.webp"
-  },
-  {
-    id: 13,
-    websiteurl: "https://pythonbull.com/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1706872860/Do%20Studio%20Website/webBanner/long/pythonbull_imr96b.webp"
-  },
-  {
-    id: 14,
-    websiteurl: "https://www.hearvox.in/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1706872858/Do%20Studio%20Website/webBanner/long/hearvox-in_mhciel.webp"
-  },
-  {
-    id: 15,
-    websiteurl: "https://annamonicabeautyshack.com/",
-    imageUrl: "https://res.cloudinary.com/djswkzoth/image/upload/v1706872859/Do%20Studio%20Website/webBanner/long/annamonicabeautyshack_t0hrjt.webp"
+    imageUrl: "https://cdn.sanity.io/images/0hjyj1bs/production/ff42ee60b6a52e88a70203cce9bca85f9505c218-1920x4402.webp"
   },
 
 ];
@@ -603,15 +548,7 @@ const Page = () => {
         </Link>
 
         <div>
-          <div className="relative w-full  h-48 md:h-80 xl:h-[500px] overflow-hidden">
-            <Image
-              className="object-cover object-center"
-              placeholder="blur"
-              fill
-              src={serbra2}
-              alt="Best Branding agency in Calicut"
-            />
-          </div>
+        
           <h4 className="text-center  text-3xl xl:text-6xl my-10 xl:my-20  font-black uppercase">
             How We Turn Your Vision
             <br className="hidden xl:block" /> Into Reality

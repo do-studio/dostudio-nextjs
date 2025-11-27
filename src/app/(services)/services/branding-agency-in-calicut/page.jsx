@@ -268,7 +268,7 @@ const brandingData = [
     slug: "adis",
     title: "adis",
     coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741171401/large_ADIS_FROZEN_BITES_THUMB_04_ace03ce408_6f0c194fb6.webp"
+      url: "https://cdn.sanity.io/images/0hjyj1bs/production/0cff8c2ea7d42f5819deea992fe6ea2d01364ee5-1000x1000.webp"
     },
     innerImages: [
       {
@@ -297,7 +297,7 @@ const brandingData = [
     slug: "medimode",
     title: "medimode",
     coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1747482760/MEDI_MODE_GREEN_LOGO_SQUAR_OP_01_-01_e5qwny.webp"
+      url: "https://cdn.sanity.io/images/0hjyj1bs/production/a1a52d0acb048e85ad859eaa69b75714c5cb6522-3508x3508.webp"
     },
     innerImages: [
       {
@@ -314,7 +314,7 @@ const brandingData = [
     slug: "kebabji",
     title: "Kebabji",
     coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740979589/KEBABJI_05_f3f6d019d5_c16a67984b.webp"
+      url: "https://cdn.sanity.io/images/0hjyj1bs/production/0d34832c1e94e87d6fab5d5d890d140f0b8e5fa6-500x500.gif"
     },
     innerImages: [
       {
@@ -342,7 +342,7 @@ const brandingData = [
     slug: "add-mind",
     title: "add mind",
     coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741170922/large_s5_kfziqa_43869b7f15.jpg"
+      url: "https://cdn.sanity.io/images/0hjyj1bs/production/9c2626bad7814d28a402fe769090a71bd2efa918-1000x1000.jpg"
     },
     innerImages: [
       {
@@ -359,7 +359,7 @@ const brandingData = [
     slug: "geogrip",
     title: "Geogrip",
     coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740978493/medium_large_GEOGRIP_THUMB_261a6d7665_761d6ca25e.webp"
+      url: "https://cdn.sanity.io/images/0hjyj1bs/production/dff677d91633bccebcd5183ce51ec57c9554b70c-750x750.webp"
     },
     innerImages: [
       {
@@ -381,7 +381,7 @@ const brandingData = [
     slug: "chai-drop",
     title: "chai drop",
     coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741171141/large_chai_drop_04tumb_bfac854407_0547a65068.webp"
+      url: "https://cdn.sanity.io/images/0hjyj1bs/production/6e676f5cc5ac61ff58f70c62ff355a618b856215-1000x1000.webp"
     },
     innerImages: [
       {
@@ -410,7 +410,7 @@ const brandingData = [
     slug: "dream-of-us",
     title: "Dream of us",
     coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740979589/DOU_THUMB_04_b6adb23bf2_0babb3af31.webp"
+      url: "https://cdn.sanity.io/images/0hjyj1bs/production/eca8aa5a4352bfde7cb38f041c274b4ca2c55c7e-4500x4500.webp"
     },
     innerImages: [
       {
@@ -440,63 +440,7 @@ const brandingData = [
 
     ]
   },
-  {
-    id: 8,
-    slug: "my-work",
-    title: "My work",
-    coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174752/MW_THUMB_08_440ae154f1_54ab465145.webp"
-    },
-    innerImages: [
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174960/medium_MW_01_4f7633d7ac_3dfec7a490.webp",
-        width: 1200,
-        height: 800,
-        alt: "My work"
-      },
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174968/large_MW_03_b477565878_0363ffb11b.webp",
-        width: 1200,
-        height: 800,
-        alt: "My work"
-      },
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174968/MW_05_bcd9e75ff5_857445500d.webp",
-        width: 1200,
-        height: 800,
-        alt: "My work"
-      },
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174969/large_MW_02_f76ce4eb47_37cf8a113a.webp",
-        width: 1200,
-        height: 800,
-        alt: "My work"
-      },
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1741174969/MW_04_348b5a16e4_804996543c.webp",
-        width: 1200,
-        height: 800,
-        alt: "My work"
-      },
-
-    ]
-  },
-  {
-    id: 9,
-    slug: "blue-leaf",
-    title: "Blue Leaf",
-    coverimage: {
-      url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977266/large_blue_leaf_68a59f9721_bd2707dca3.webp"
-    },
-    innerImages: [
-      {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1740977274/BLUE_LEAF_LOGO_OP_01_5d9eaeee49_bd4b1c0640.webp",
-        width: 1200,
-        height: 800,
-        alt: "Blue Leaf Logo"
-      },
-    ]
-  },
+  
 
 ];
 
