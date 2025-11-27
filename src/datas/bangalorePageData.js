@@ -75,6 +75,9 @@ export const data = {
             buttonText: "Get a Quote",
             buttonLink: "https://wa.me/918590855541",
         },
+
+
+
         faqs: [
             {
                 question:
@@ -200,6 +203,23 @@ export const data = {
             description: "Partner with Do Studio, the best branding agency in Bangalore, to build a strong, recognizable brand that resonates with your audience. Our professional branding services help businesses communicate their identity, gain trust, and grow effectively.",
             buttonText: "Get a Quote",
             buttonLink: "https://wa.me/918590855541",
+        },
+        works: {
+            link: "/our-works/branding",
+            works: [
+                {
+                    image: "https://cdn.sanity.io/images/0hjyj1bs/production/7d0ced86029c6dce3dfa922df670b49c27c85482-1080x1080.webp",
+                    link: "/our-works/branding/lulu-malabar-carnival",
+                },
+                {
+                    image: "https://cdn.sanity.io/images/0hjyj1bs/production/e0c9cdf113b00be9c5c0a31c95677bad74dcbb57-1000x1000.png",
+                    link: "/our-works/branding/the-grand-upstairs",
+                },
+                {
+                    image: "https://cdn.sanity.io/images/0hjyj1bs/production/6bc5b32146b2ea657ff11366465596c3db171f86-500x500.gif",
+                    link: "/our-works/branding/lofoten",
+                },
+            ],
         },
         faqs: [
             {
@@ -386,6 +406,7 @@ export const data = {
             },
 
         ],
+
         letsStarted: {
             heading: "Maximize Your ROI Let’s Get Started",
             description: "Looking for the best digital marketing agency in Bangalore? Connect with Do Studio now to schedule a free consultation. Let’s discuss how our proven strategies can increase traffic, generate leads, and grow your business in Bangalore and beyond.",
@@ -535,6 +556,8 @@ export const data = {
             },
 
         ],
+        
+
         letsStarted: {
             heading: "Maximize Your Brand Impact – Let’s Get Started",
             description: "Looking for the best video production company in Bangalore? Connect with Do Studio now for a free consultation. Let’s discuss how our professional video solutions can elevate your brand and engage your audience effectively.",

@@ -7,8 +7,7 @@ export default function BoostsBrandSocialMedia({ heading, highlight, description
     <section className="w-full bg-black text-white py-24 px-6 md:px-16 lg:px-32">
       <div className="max-w-6xl mx-auto relative text-center">
      
-        {/* Testimonial / Main Heading */}
-        <h4 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-10 uppercase">
+        <h4 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-10 uppercase flex flex-col">
           {heading}
           <span className="text-primarygreen ">{highlight}</span>
         </h4>
