@@ -6,6 +6,7 @@ import BoostsBrandSocialMedia from "../../components/bangalorePage/BoostsBrandSo
 import Faq from "../../components/bangalorePage/Faq";
 import GetsStartedSocialMedia from "../../components/bangalorePage/GetStartedSocialMedia";
 import { data } from "../../datas/bangalorePageData";
+import WorkSection from "../../components/bangalorePage/WorkSection";
 
 // ✅ Generate dynamic metadata for SEO
 export async function generateMetadata({ params }) {
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }) {
 
 
   return {
-    title: selectedService?.metaTitle ,
+    title: selectedService?.metaTitle,
     description:
       selectedService?.metaDescription,
     alternates: {
@@ -56,7 +57,7 @@ const Page = async ({ params }) => {
     );
   }
 
-  const { hero, services, whyChoose, boostUrBrand, faqs, letsStarted } =
+  const { hero, services, whyChoose, boostUrBrand, works, faqs, letsStarted } =
     selectedService;
 
   return (
@@ -65,6 +66,7 @@ const Page = async ({ params }) => {
       <SocialMediaServices services={services} />
       <WhyChooseSocialMedia {...whyChoose} />
       <BoostsBrandSocialMedia {...boostUrBrand} />
+      <WorkSection {...works} />
       <Faq faqs={faqs} />
       <GetsStartedSocialMedia {...letsStarted} />
     </main>
