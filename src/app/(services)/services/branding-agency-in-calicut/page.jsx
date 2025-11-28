@@ -456,7 +456,7 @@ const Page = () => {
 
   useEffect(() => {
     // Set title
-    document.title = "Branding Agency in Calicut, Branding Services in Calicut";
+    document.title = "Branding Agency In Calicut, Kerala | Branding Services in Calicut";
 
     // Set meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -483,11 +483,11 @@ const Page = () => {
     // Set Open Graph meta tags
     let ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
-      ogTitle.setAttribute("content", "Branding Agency in Calicut, Branding Services in Calicut");
+      ogTitle.setAttribute("content", "Branding Agency In Calicut, Kerala | Branding Services in Calicut");
     } else {
       const newOgTitle = document.createElement("meta");
       newOgTitle.setAttribute("property", "og:title");
-      newOgTitle.setAttribute("content", "Branding Agency in Calicut, Branding Services in Calicut");
+      newOgTitle.setAttribute("content", "Branding Agency In Calicut, Kerala | Branding Services in Calicut");
       document.head.appendChild(newOgTitle);
     }
 
@@ -512,11 +512,11 @@ const Page = () => {
     // Set Twitter meta tags
     let twitterTitle = document.querySelector('meta[name="twitter:title"]');
     if (twitterTitle) {
-      twitterTitle.setAttribute("content", "Branding Agency in Calicut, Branding Services in Calicut");
+      twitterTitle.setAttribute("content", "Branding Agency In Calicut, Kerala | Branding Services in Calicut");
     } else {
       const newTwitterTitle = document.createElement("meta");
       newTwitterTitle.setAttribute("name", "twitter:title");
-      newTwitterTitle.setAttribute("content", "Branding Agency in Calicut, Branding Services in Calicut");
+      newTwitterTitle.setAttribute("content", "Branding Agency In Calicut, Kerala | Branding Services in Calicut");
       document.head.appendChild(newTwitterTitle);
     }
 
