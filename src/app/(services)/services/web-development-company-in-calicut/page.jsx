@@ -285,7 +285,7 @@ const Page = () => {
 
   useEffect(() => {
     // Set title
-    document.title = "Best Website Development Company in Calicut | Do Studio";
+    document.title = "Web Development Company In Calicut, Kerala | Do Studio";
 
     // Set meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -312,11 +312,11 @@ const Page = () => {
     // Set Open Graph meta tags
     let ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
-      ogTitle.setAttribute("content", "Best Website Development Company in Calicut | Do Studio");
+      ogTitle.setAttribute("content", "Web Development Company In Calicut, Kerala | Do Studio");
     } else {
       const newOgTitle = document.createElement("meta");
       newOgTitle.setAttribute("property", "og:title");
-      newOgTitle.setAttribute("content", "Best Website Development Company in Calicut | Do Studio");
+      newOgTitle.setAttribute("content", "Web Development Company In Calicut, Kerala | Do Studio");
       document.head.appendChild(newOgTitle);
     }
 
@@ -341,11 +341,11 @@ const Page = () => {
     // Set Twitter meta tags
     let twitterTitle = document.querySelector('meta[name="twitter:title"]');
     if (twitterTitle) {
-      twitterTitle.setAttribute("content", "Best Website Development Company in Calicut | Do Studio");
+      twitterTitle.setAttribute("content", "Web Development Company In Calicut, Kerala | Do Studio");
     } else {
       const newTwitterTitle = document.createElement("meta");
       newTwitterTitle.setAttribute("name", "twitter:title");
-      newTwitterTitle.setAttribute("content", "Best Website Development Company in Calicut | Do Studio");
+      newTwitterTitle.setAttribute("content", "Web Development Company In Calicut, Kerala | Do Studio");
       document.head.appendChild(newTwitterTitle);
     }
 

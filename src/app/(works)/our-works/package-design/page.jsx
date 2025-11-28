@@ -45,7 +45,7 @@ const PackageDesign = () => {
 
   useEffect(() => {
     // Set title
-    document.title = "Package Designing Company in Calicut, Package Design Service";
+    document.title = "Package Designing Company in Calicut, Kerala";
 
     // Set meta description
     let metaDescription = document.querySelector('meta[name="description"]');

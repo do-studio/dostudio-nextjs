@@ -7,7 +7,7 @@ import { client } from "../../../utils/sanity";
 
 
 export const metadata = {
-    title: "Seo Company in Calicut",
+    title: "SEO Company in Calicut, Kerala | SEO Services in Calicut ",
     description:
         "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
     metadataBase: new URL("https://dostudio.co.in"), // Set the base domain
@@ -17,7 +17,7 @@ export const metadata = {
         canonical: "https://dostudio.co.in/seo-company-in-calicut",
     },
     openGraph: {
-        title: "SEO COMPANY IN CALICUT",
+        title: "SEO Company in Calicut, Kerala | SEO Services in Calicut ",
         description:
             "Boost your online visibility with Do Studio SEO company in Calicut. We offer expert SEO strategies that drive traffic, increase rankings, and grow your business",
         url: `https://dostudio.co.in/seo-company-in-calicut`,

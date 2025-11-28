@@ -18,7 +18,7 @@ const OurWorksHorizontal = dynamic(() => import("../components/home/designs/ourW
 
 
 export const metadata = {
-  title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
+  title: "Digital Marketing Agency in Calicut, Kerala | Branding Agency Calicut",
   description:
     "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
   keywords:
@@ -26,7 +26,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: "https://dostudio.co.in",
-    title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
+    title: "Digital Marketing Agency in Calicut, Kerala | Branding Agency Calicut",
     description:
       "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
     images: [
@@ -40,7 +40,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Marketing Agency in Calicut, Branding Agency Calicut",
+    title: "Digital Marketing Agency in Calicut, Kerala | Branding Agency Calicut",
     description:
       "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
     images: [
