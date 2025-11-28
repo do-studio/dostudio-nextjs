@@ -1,5 +1,5 @@
 import React from "react";
-import BrandingPage from "./brandingPage";
+import BrandingPage from "./BrandingPage";
 import Head from "next/head";
 
 export const metadata = {

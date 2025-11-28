@@ -1,5 +1,5 @@
 import React from "react";
-import BrandingPage from "./brandingPage";
+import WebDevelopmentPage from "./WebDevelopmentPage";
 import Head from "next/head";
 
 export const metadata = {
@@ -29,7 +29,7 @@ export default function Page() {
                 />
             </Head>
 
-            <BrandingPage />
+            <WebDevelopmentPage />
         </>
     );
 }
