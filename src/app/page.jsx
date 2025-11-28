@@ -31,7 +31,7 @@ export const metadata = {
       "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
     images: [
       {
-        url: "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png",
+        url: "https://cdn.sanity.io/images/0hjyj1bs/production/fd0e406fac5be662e3a12297817597b3b9c25080-8161x2283.png",
         width: 1200,
         height: 630,
         alt: "Do Studio - Digital Marketing and Branding Agency",
@@ -44,7 +44,7 @@ export const metadata = {
     description:
       "Digital Marketing and Branding agency in Calicut, Kerala, offers a wide range of digital marketing services, including SEO, SMM, and SEM.",
     images: [
-      "https://res.cloudinary.com/djswkzoth/image/upload/v1737185612/metaicon_t4u5lc.png",
+      "https://cdn.sanity.io/images/0hjyj1bs/production/fd0e406fac5be662e3a12297817597b3b9c25080-8161x2283.png",
     ],
   },
 };
