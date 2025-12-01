@@ -273,7 +273,7 @@ export const data = {
             title: "Digital Marketing Agency in Bangalore | ",
             highlight: "Do Studio",
             description:
-                "Do Studio is a top-rated digital marketing company in Bangalore, helping businesses grow their online presence. We focus on increasing brand visibility, driving quality traffic, and boosting conversions through tailored digital strategies.",
+                "Do Studio is a top-rated digital marketing agency in Bangalore, helping businesses grow their online presence. We focus on increasing brand visibility, driving quality traffic, and boosting conversions through tailored digital strategies.",
             buttonText: "Contact Now",
             buttonLink: "https://wa.me/918590855541",
             image:
