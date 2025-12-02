@@ -1,7 +1,7 @@
 export const data = {
     socialMedia: {
         slug: 'social-media-marketing-agency-in-bangalore',
-        metaTitle: "Best digital marketing agency in bangalore | Do Studio",
+        metaTitle: "Social Media Marketing Agency in Bangalore | Social Media Marketing Services",
         metaDescription:
             "Partner with Do Studio, a Social Media Marketing Agency in Bangalore. End‑to‑end Social Media Marketing Services in Bangalore with clear KPIs and reports",
         hero: {
