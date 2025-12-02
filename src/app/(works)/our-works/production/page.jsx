@@ -64,6 +64,20 @@ const Production = () => {
     }
   };
 
+  // Set document title and meta description 
+  useEffect(() => {
+    document.title = "Production Videos | Do Studio";
+    const descriptionContent = "Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more: View our portfolio.";
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) { metaDescription.setAttribute("content", descriptionContent); }
+    else {
+      const newMetaDescription = document.createElement("meta");
+      newMetaDescription.setAttribute("name", "description");
+      newMetaDescription.setAttribute("content", descriptionContent);
+      document.head.appendChild(newMetaDescription);
+    }
+  }, []);
+
   return (
     <main className="min-h-screen w-full bg-white pt-20 xl:pt-32 md:text-4xl text-black font-light">
       <div className="w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5">
@@ -101,7 +115,7 @@ const Production = () => {
                     url={data.video.asset.url}
                     playing={isPlaying}
                     loop
-                    muted={!isMobile}
+                    muted={false}
                     controls={false}
                     playsinline
                     width="100%"
