@@ -10,37 +10,30 @@ const Production = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [clickedIndex, setClickedIndex] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const playerRefs = useRef([]);
 
-  // Check if device is mobile
+  // Detect Mobile
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkIfMobile = () => {
+    const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    checkIfMobile();
-    window.addEventListener("resize", checkIfMobile);
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", checkIfMobile);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Fetch production videos from Sanity
+  // Fetch videos
   const getStaticProps = async () => {
     const query = `*[_type == "production"] | order(orderRank) {
       _id,
       title,
-      thumbnail {
-        asset->{ url }
-      },
+      thumbnail { asset->{ url } },
       altText,
       ratio,
-      video {
-        asset->{ url }
-      }
+      video { asset->{ url } }
     }`;
     const videos = await client.fetch(query);
     return { props: { videos }, revalidate: 60 };
@@ -60,36 +53,14 @@ const Production = () => {
     fetchData();
   }, []);
 
-  // Set document title and meta description
-  useEffect(() => {
-    document.title = "Production Videos | Do Studio";
-    const descriptionContent =
-      "Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more: View our portfolio.";
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", descriptionContent);
-    } else {
-      const newMetaDescription = document.createElement("meta");
-      newMetaDescription.setAttribute("name", "description");
-      newMetaDescription.setAttribute("content", descriptionContent);
-      document.head.appendChild(newMetaDescription);
-    }
-  }, []);
-
-  // Handle video click on mobile
+  // Handle Play/Pause on Mobile Tap
   const handleVideoClick = (index) => {
+    if (!isMobile) return;
+
     if (clickedIndex === index) {
-      // Clicked on the same video - pause it
-      if (playerRefs.current[index]) {
-        playerRefs.current[index].getInternalPlayer().pause();
-      }
-      setClickedIndex(null);
+      setClickedIndex(null); // Pause
     } else {
-      // Clicked on a different video
-      if (clickedIndex !== null && playerRefs.current[clickedIndex]) {
-        playerRefs.current[clickedIndex].getInternalPlayer().pause();
-      }
-      setClickedIndex(index);
+      setClickedIndex(index); // Play
     }
   };
 
@@ -107,7 +78,11 @@ const Production = () => {
         ) : productionVideos.length > 0 ? (
           productionVideos.map((data, i) => {
             const isWide = data.ratio?.replace(/\s/g, "") === "16/9";
-            const isPlaying = isMobile ? clickedIndex === i : hoveredIndex === i;
+
+            // Playback logic
+            const isPlaying = isMobile
+              ? clickedIndex === i
+              : hoveredIndex === i;
 
             return (
               <div
@@ -118,29 +93,27 @@ const Production = () => {
                 onClick={isMobile ? () => handleVideoClick(i) : undefined}
               >
                 <div
-                  className="relative w-full bg-black duration-150"
+                  className="relative w-full bg-black"
                   style={{ aspectRatio: data.ratio || "9/16" }}
                 >
+                  {/* React Player */}
                   <ReactPlayer
-                    ref={(el) => (playerRefs.current[i] = el)}
                     url={data.video.asset.url}
                     playing={isPlaying}
-                    loop={true}
-                    muted={isMobile ? false : !isPlaying} // <--- Updated here
+                    loop
+                    muted={!isMobile}
                     controls={false}
-                    playsinline={true}
+                    playsinline
                     width="100%"
                     height="100%"
                     className="object-fill"
-                    onEnded={() => {
-                      if (isMobile) setClickedIndex(null);
-                    }}
                   />
 
-                  {(!isPlaying || (isMobile && clickedIndex !== i)) && (
+                  {/* Thumbnail (shows only when NOT playing) */}
+                  {!isPlaying && (
                     <img
                       src={
-                        data.thumbnail?.asset?.url ||
+                        data.thumbnail?.asset?.url ??
                         "https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp"
                       }
                       alt={data.altText || "Video thumbnail"}
