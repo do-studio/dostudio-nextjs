@@ -702,7 +702,7 @@ export const data = {
 
     seo: {
         slug: 'seo-company-in-bangalore',
-        metaTitle: "SEO Company in Bangalore | Do Studio Bangalore",
+        metaTitle: "SEO Company in Bangalore | SEO Agency in Bangalore",
         metaDescription:
             " Looking for SEO services in Bangalore? Do Studio - an SEO company in Bangalore - drives results with technical SEO, content, and quality backlinks.",
         hero: {
