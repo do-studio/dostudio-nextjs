@@ -62,10 +62,10 @@ const Contact = () => {
                   </a>
                   <a
                     className="hover:underline w-fit"
-                    href="tel:+919995055541"
+                    href="tel:917994055541"
                     target="_blank"
                   >
-                    +91 9995055541
+                    +91 7994055541
                   </a>
                   <a
                     className="hover:underline w-fit"
