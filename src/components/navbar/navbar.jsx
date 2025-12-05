@@ -294,7 +294,7 @@ const Navbar = () => {
                 <div className="text-xl md:text-2xl font-light">
                   <p className="text-base text-gray-500">GET IN TOUCH</p>
                   <p>info@dostudio.co.in</p>
-                  <p>+91 9995055541</p>
+                  <p>+91 7994055541</p>
                   <p>+91 9746155541</p>
                 </div>
                 <div className="text-xl md:text-2xl font-light">
@@ -377,7 +377,7 @@ const Navbar = () => {
                 <div className="text-xl md:text-2xl font-light">
                   <p className="text-base text-gray-500">GET IN TOUCH</p>
                   <p>info@dostudio.co.in</p>
-                  <p>+91 9995055541</p>
+                  <p>+91 7994055541</p>
                   <p>+91 9746155541</p>
                 </div>
                 <div className="text-xl md:text-2xl font-light">
