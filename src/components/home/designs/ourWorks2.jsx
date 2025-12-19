@@ -37,7 +37,7 @@ const ourWorks2 = () => {
             </div>
             <div className='grid grid-cols-1 gap-1 xl:gap-5'>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill src={'https://cdn.sanity.io/images/0hjyj1bs/production/b29e5b8933090fa56c506c3014b1dae04d09fc42-1080x1080.webp'} alt='Branding company in calicut' />
+                    <Image className="object-cover" fill src={'https://cdn.sanity.io/images/0hjyj1bs/production/5e5e4f2360f829430e8f4f5be64f43c4ed235d95-4000x4000.webp'} alt='Branding company in calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
                     <Image className="object-cover" fill src={'https://cdn.sanity.io/images/0hjyj1bs/production/949746ea727de4852ba1ae904ab8411444bdd408-3840x2560.webp'} alt='Website developement company in Calicut' />
