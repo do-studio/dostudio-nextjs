@@ -101,7 +101,7 @@ const Motions = () => {
                       url={data.video.asset.url}
                       playing
                       loop
-                      muted={isMobile} // CRITICAL for Android
+                      muted={false} // CRITICAL for Android
                       controls={false}
                       playsinline
                       width="100%"
