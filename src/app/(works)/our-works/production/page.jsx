@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { client } from "../../../../../utils/sanity";
 import Skeleton from "react-loading-skeleton";
@@ -7,45 +7,37 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const Production = () => {
   const [productionVideos, setProductionVideos] = useState([]);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [clickedIndex, setClickedIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null); // desktop
+  const [clickedIndex, setClickedIndex] = useState(null); // mobile
   const [isLoading, setIsLoading] = useState(true);
-
-  // Detect Mobile
   const [isMobile, setIsMobile] = useState(false);
 
+  // Detect Mobile
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Fetch videos
-  const getStaticProps = async () => {
-    const query = `*[_type == "production"] | order(orderRank) {
-      _id,
-      title,
-      thumbnail { asset->{ url } },
-      altText,
-      ratio,
-      video { asset->{ url } }
-    }`;
-    const videos = await client.fetch(query);
-    return { props: { videos }, revalidate: 60 };
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { props } = await getStaticProps();
-        setProductionVideos(props.videos);
-      } catch (error) {
-        console.error("Error fetching production videos:", error);
+        const query = `*[_type == "production"] | order(orderRank) {
+          _id,
+          title,
+          thumbnail { asset->{ url } },
+          altText,
+          ratio,
+          video { asset->{ url } }
+        }`;
+        const videos = await client.fetch(query);
+        setProductionVideos(videos);
+      } catch (err) {
+        console.error(err);
       } finally {
         setIsLoading(false);
       }
@@ -53,85 +45,80 @@ const Production = () => {
     fetchData();
   }, []);
 
-  // Handle Play/Pause on Mobile Tap
-  const handleVideoClick = (index) => {
-    if (!isMobile) return;
-
-    if (clickedIndex === index) {
-      setClickedIndex(null); // Pause
-    } else {
-      setClickedIndex(index); // Play
-    }
-  };
-
-  // Set document title and meta description 
+  // SEO
   useEffect(() => {
     document.title = "Production Videos | Do Studio";
-    const descriptionContent = "Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more: View our portfolio.";
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) { metaDescription.setAttribute("content", descriptionContent); }
-    else {
-      const newMetaDescription = document.createElement("meta");
-      newMetaDescription.setAttribute("name", "description");
-      newMetaDescription.setAttribute("content", descriptionContent);
-      document.head.appendChild(newMetaDescription);
+    const description =
+      "Do Studio is a leading creative agency in Calicut offering creative services, branding, web design, graphic design, and more.";
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "description";
+      document.head.appendChild(meta);
     }
+    meta.content = description;
   }, []);
 
   return (
-    <main className="min-h-screen w-full bg-white pt-20 xl:pt-32 md:text-4xl text-black font-light">
-      <div className="w-full flex justify-center items-center duration-300 uppercase hover:cursor-pointer p-5">
-        <h1 className="pb-1 font-medium">Videos</h1>
+    <main className="min-h-screen w-full bg-white pt-20 xl:pt-32 text-black font-light">
+      <div className="w-full flex justify-center p-5 uppercase">
+        <h1 className="font-medium">Videos</h1>
       </div>
 
-      <div className="w-11/12 xl:w-9/12 mx-auto pt-4 py-20 grid grid-cols-3 gap-0">
+      <div className="w-11/12 xl:w-9/12 mx-auto py-20 grid grid-cols-3 gap-0">
         {isLoading ? (
-          Array.from({ length: 10 }).map((_, i) => (
+          Array.from({ length: 9 }).map((_, i) => (
             <Skeleton key={i} className="aspect-[9/16] w-full" />
           ))
         ) : productionVideos.length > 0 ? (
           productionVideos.map((data, i) => {
             const isWide = data.ratio?.replace(/\s/g, "") === "16/9";
 
-            // Playback logic
-            const isPlaying = isMobile
-              ? clickedIndex === i
-              : hoveredIndex === i;
+            // PLAY LOGIC
+            const isDesktopPlaying = !isMobile && hoveredIndex === i;
+            const isMobilePlaying = isMobile && clickedIndex === i;
+            const shouldPlay = isDesktopPlaying || isMobilePlaying;
 
             return (
               <div
-                key={data._id || i}
-                className={`relative group ${isWide ? "col-span-3" : ""}`}
-                onMouseEnter={!isMobile ? () => setHoveredIndex(i) : undefined}
-                onMouseLeave={!isMobile ? () => setHoveredIndex(null) : undefined}
-                onClick={isMobile ? () => handleVideoClick(i) : undefined}
+                key={data._id}
+                className={`relative ${isWide ? "col-span-3" : ""}`}
+                onMouseEnter={() => !isMobile && setHoveredIndex(i)}
+                onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+                onClick={() => {
+                  if (!isMobile) return;
+                  setClickedIndex((prev) => (prev === i ? null : i));
+                }}
               >
                 <div
-                  className="relative w-full bg-black"
+                  className="relative w-full bg-black overflow-hidden"
                   style={{ aspectRatio: data.ratio || "9/16" }}
                 >
-                  {/* React Player */}
-                  <ReactPlayer
-                    url={data.video.asset.url}
-                    playing={isPlaying}
-                    loop
-                    muted={false}
-                    controls={false}
-                    playsinline
-                    width="100%"
-                    height="100%"
-                    className="object-fill"
-                  />
+                  {/* VIDEO */}
+                  {shouldPlay && (
+                    <ReactPlayer
+                      url={data.video.asset.url}
+                      playing
+                      loop
+                      muted={false} // VERY IMPORTANT for Android
+                      controls={false}
+                      playsinline
+                      width="100%"
+                      height="100%"
+                      className="absolute inset-0"
+                    />
+                  )}
 
-                  {/* Thumbnail (shows only when NOT playing) */}
-                  {!isPlaying && (
+                  {/* THUMBNAIL */}
+                  {!shouldPlay && (
                     <img
                       src={
                         data.thumbnail?.asset?.url ??
                         "https://res.cloudinary.com/djswkzoth/image/upload/v1730272183/Do%20Studio%20Website/new%20web%20banner/Mob_poster_syk7fx_mk6q0p.webp"
                       }
                       alt={data.altText || "Video thumbnail"}
-                      className="absolute top-0 left-0 w-full h-full object-cover"
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   )}
                 </div>
@@ -139,9 +126,7 @@ const Production = () => {
             );
           })
         ) : (
-          <div className="text-left text-2xl font-medium animate-bounce">
-            No videos found.
-          </div>
+          <div className="text-2xl font-medium">No videos found.</div>
         )}
       </div>
     </main>
