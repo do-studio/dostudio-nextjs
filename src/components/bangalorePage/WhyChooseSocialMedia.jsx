@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRef, useLayoutEffect, useState } from "react";
 
-export default function WhyChooseDoStudio({ heading, description, image, points, buttonText, buttonLink }) {
+export default function WhyChooseDoStudio({ heading, description, image, points, buttonText, buttonLink, altText }) {
 
   const rightRef = useRef(null);
   const [rightHeight, setRightHeight] = useState("auto");
@@ -47,7 +47,7 @@ export default function WhyChooseDoStudio({ heading, description, image, points,
         >
           <Image
             src={image}
-            alt="Why Choose Do Studio"
+            alt={altText[0]}
             fill
             className="object-cover"
             priority

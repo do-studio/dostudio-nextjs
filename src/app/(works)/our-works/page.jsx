@@ -41,39 +41,46 @@ const serviceData = [
   },
   {
     id: 2,
-    title: "creatives",
+    title: "creative posters",
     img: DigitalMarketingCardPhoto,
     alt: `Best digital marketing agency in Calicut`,
-    url: `/our-works/creatives`,
+    url: `/our-works/creative-posters`,
   },
   {
     id: 3,
+    title: "motion creatives",
+    img: DigitalMarketingCardPhoto,
+    alt: `Best digital marketing agency in Calicut`,
+    url: `/our-works/motion-creatives`,
+  },
+  {
+    id: 4,
     title: "web design",
     img: servicewebbg,
     alt: `SEO company in calicut`,
     url: `/our-works/web-design`,
   },
   {
-    id: 4,
+    id: 5,
     title: "package design",
     img: wrk3,
     alt: `Socialmedia marketing agency in Calicut`,
     url: `/our-works/package-design`,
   },
   {
-      id: 5,
-      title: "print design",
-      img: wrk1,
-      alt: ``,
-      url: `/our-works/print-design`,
-    },
-    {
-      id: 6,
-      title: "Production",
-      img: wrk4,
-      alt: ``,
-      url: `/our-works/production`,
-    },
+    id: 6,
+    title: "print design",
+    img: wrk1,
+    alt: ``,
+    url: `/our-works/print-design`,
+  },
+  {
+    id: 7,
+    title: "Production",
+    img: wrk4,
+    alt: ``,
+    url: `/our-works/production`,
+  },
 ];
 
 const page = () => {
@@ -96,7 +103,7 @@ const page = () => {
                   </p>
                   <h4 className="text-xs md:text-2xl uppercase font-bold">{data.title}</h4>
                 </div>
-              
+
                 <div className="relative w-full aspect-square rounded-md overflow-hidden">
                   <Image
                     className="object-cover"

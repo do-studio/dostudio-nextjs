@@ -2,13 +2,13 @@
 import React from 'react'
 import { LogoDO } from '../../../public/images'
 
-const GetStarted = ({ heading, description, buttonText, buttonLink }) => {
+const GetStarted = ({ heading, description, buttonText, buttonLink, altText }) => {
     return (
         <div className="bg-white relative" id="contact-form">
             <img
                 className="w-60 xl:h-full xl:w-full absolute top-[50%] left-[50%] -translate-x-[50%] object-contain -translate-y-[50%] opacity-5 z-10"
                 src={LogoDO.src}
-                alt=""
+                alt={altText[1]}
             />
             <section className='relative flex justify-center'>
                 <section className='bg-white w-full xl:w-full mx-auto text-center py-10 xl:py-20 flex flex-col gap-5'>

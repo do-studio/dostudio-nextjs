@@ -57,18 +57,18 @@ const Page = async ({ params }) => {
     );
   }
 
-  const { hero, services, whyChoose, boostUrBrand, works, faqs, letsStarted } =
+  const { hero, services, whyChoose, boostUrBrand, works, faqs, letsStarted, altText } =
     selectedService;
 
   return (
     <main className="bg-white w-full flex flex-col">
       <HeroSocialMedia {...hero} />
       <SocialMediaServices services={services} />
-      <WhyChooseSocialMedia {...whyChoose} />
+      <WhyChooseSocialMedia {...whyChoose} altText={altText}/>
       <BoostsBrandSocialMedia {...boostUrBrand} />
       <WorkSection {...works} />
       <Faq faqs={faqs} />
-      <GetsStartedSocialMedia {...letsStarted} />
+      <GetsStartedSocialMedia {...letsStarted} altText={altText} />
     </main>
   );
 };

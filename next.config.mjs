@@ -4,20 +4,21 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/:path*", // Match all paths
+        source: "/:path*",
         has: [
           {
             type: "host",
-            value: "www.dostudio.co.in", // Match www domain
+            value: "www.dostudio.co.in",
           },
         ],
-        destination: "https://dostudio.co.in/:path*", // Redirect to non-www domain
-        permanent: true, // Set to true for a 308 permanent redirect
+        destination: "https://dostudio.co.in/:path*",
+        permanent: true,
       },
+      // Brand redirects
       {
         source: '/brand/flowers-academy',
         destination: '/our-works/branding/flowers-academy',
-        permanent: true, // 301 permanent redirect
+        permanent: true,
       },
       {
         source: '/brand/chai-drop',
@@ -90,7 +91,7 @@ const nextConfig = {
         permanent: true,
       },
 
-      // Redirect blog link
+      // Existing blog redirects
       {
         source: '/blog/how-to-choose-the-right-branding-services',
         destination: '/blogs/how-to-choose-the-right-branding-services',
@@ -101,43 +102,59 @@ const nextConfig = {
         destination: '/blogs/seo-services-in-bangalore',
         permanent: true,
       },
+
+      // 🔥 NEW BLOG REDIRECTS (added)
+      {
+        source: '/blogs/dostudio-lulu-mall-calicut-kids-summer-campaign',
+        destination: '/blogs/kids-footfall-lulu-mall-case-study',
+        permanent: true,
+      },
+      {
+        source: '/blogs/social-media-marketing-strategies-2025',
+        destination: '/blogs/social-media-growth-hacks-for-local-brands',
+        permanent: true,
+      },
+      {
+        source: '/blogs/google-business-account',
+        destination: '/blogs/Benefits-of-having-gmb',
+        permanent: true,
+      },
+      {
+        source: '/blogs/mobile-optimization-digital-marketing',
+        destination: '/blogs/mobile-optimization-for-digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/blogs/peekay-steels-brand-campaign-kerala',
+        destination: '/blogs/dostudio-digital-branding-peekay',
+        permanent: true,
+      },
+      {
+        source: '/blogs/seo-keywords-for-marketing',
+        destination: '/blogs/keywords-for-marketing-agency-website',
+        permanent: true,
+      },
     ];
   },
+
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
-      },
-      {
-        protocol: "https",
-        hostname: "dostudio.co.in",
-      },
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.pexels.com',
-      },
+      { protocol: 'https', hostname: 'cdn.sanity.io' },
+      { protocol: 'https', hostname: 'dostudio.co.in' },
+      { protocol: 'https', hostname: 'res.cloudinary.com' },
+      { protocol: 'https', hostname: 'images.pexels.com' },
       {
         protocol: 'http',
         hostname: 'localhost',
         port: '1337',
         pathname: '/uploads/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io'
-
-      }
     ],
   },
+
   eslint: {
     ignoreDuringBuilds: true,
   },
-
 };
 
 export default nextConfig;

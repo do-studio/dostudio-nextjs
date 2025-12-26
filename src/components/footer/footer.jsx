@@ -141,9 +141,15 @@ const Footer = () => {
               </Link>
               <Link
                 className="text-black  foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
-                href={"/our-works/creatives"}
+                href={"/our-works/creative-posters"}
               >
-                Creatives
+                Creative Posters
+              </Link>
+              <Link
+                className="text-black  foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
+                href={"/our-works/motion-creatives"}
+              >
+                Motion Creatives
               </Link>
               <Link
                 className="text-black  foot-underline-hover-effect w-fit hover:text-gray-700 duration-200"
