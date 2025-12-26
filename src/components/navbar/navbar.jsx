@@ -109,8 +109,13 @@ const Navbar = () => {
       delay: 0.2,
     },
     {
-      title: `CREATIVES`,
-      url: `/our-works/creatives`,
+      title: `CREATIVE POSTERS`,
+      url: `/our-works/creative-posters`,
+      delay: 0.2,
+    },
+    {
+      title: `MOTION CREATIVES`,
+      url: `/our-works/motion-creatives`,
       delay: 0.2,
     },
     {
@@ -208,7 +213,10 @@ const Navbar = () => {
                       <Link href="/our-works/branding" className={`block px-4 py-2 foot-underline-hover-effect transition uppercase  `}>Branding</Link>
                     </li>
                     <li>
-                      <Link href="/our-works/creatives" className="block px-4 py-2 foot-underline-hover-effect transition uppercase">Creatives</Link>
+                      <Link href="/our-works/motion-creatives" className="block px-4 py-2 foot-underline-hover-effect transition uppercase">Motion Creatives</Link>
+                    </li>
+                    <li>
+                      <Link href="/our-works/creative-posters" className="block px-4 py-2 foot-underline-hover-effect transition uppercase">Creative Posters</Link>
                     </li>
                     <li>
                       <Link href="/our-works/web-design" className="block px-4 py-2 foot-underline-hover-effect transition uppercase">Web Design</Link>

@@ -14,6 +14,11 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/7fce67df721768fae624ff1f543fd8b6d4b43a3a-8000x5713.webp",
         },
+        altText:[
+            "Social Media Marketing Agency in Bangalore",
+            "Social Media Marketing in Bangalore",
+            "Social Media Marketing services in Bangalore"
+        ],
         services: {
             heading: "Social Media Marketing Services by ",
             highlight: "Do Studio",
@@ -136,6 +141,13 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/c1b48ca7b5484e8d7e0c4a5ac0223458e397fb35-1280x800.webp",
         },
+        altText:[
+           "Branding Agency In Bangalore",
+           "Branding company in Bangalore",
+           "Branding services in Bangalore",
+           "Creative branding agency in Bangalore",
+           "Best Branding Agency in Bangalore"
+        ],
         services: {
             heading: "Branding Services by",
             highlight: "Do Studio",
@@ -279,6 +291,12 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/7fce67df721768fae624ff1f543fd8b6d4b43a3a-8000x5713.webp",
         },
+        altText:[
+            "Digital Marketing Agency in Bangalore",
+            "Digital Marketing Company in Bangalore",
+            "Digital Marketing Companies in Bangalore",
+            "Digital Marketing Agency in Bangalore",
+        ],
         services: {
             heading: "Digital Marketing Services by",
             highlight: "Do Studio",
@@ -429,6 +447,11 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/cc4b62618e0865d82b392b37f388584fd38475dc-8000x5333.webp",
         },
+        altText:[
+           "Video Production Company in Bangalore",
+           "Video production services in Bangalore",
+           "Video Production Companies in Bangalore"
+        ],
         services: {
             heading: "Video Production Services by ",
             highlight: "Do Studio",
@@ -580,6 +603,11 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/27d09461b7b19a6efb2884fa20df96d5bda22e55-4015x2745.webp",
         },
+        altText:[
+          "Web Development Company in Bangalore",
+          "web development agency in Bangalore",
+          "web development services in Bangalore"
+        ],
         services: {
             heading: "Web Development Services ",
             highlight: " in Bangalore",
@@ -715,6 +743,11 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/fd93d87f0cbd670facb5ada8e431454ff527a497-3000x2001.webp",
         },
+        altText:[
+            "SEO Company in Bangalore",
+            "SEO services in Bangalore",
+            "SEO agency in Bangalore"
+        ],
         services: {
             heading: "SEO Solutions by  ",
             highlight: " Do Studio",

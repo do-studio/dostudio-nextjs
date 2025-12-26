@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { imgarrw } from '../../../../public/images/index';
 import { HiArrowSmallDown } from "react-icons/hi2";
+import Link from 'next/link';
 
 const Aboutus = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -33,7 +34,13 @@ const Aboutus = () => {
             </button>
           )}
         </p>
-        <a href="#serivesect">
+        <div className="md:hidden py-7 flex justify-center">
+
+
+          <Link className="bg-primarygreen text-black px-8 py-4 rounded-full " href="/our-works">Our Works</Link>
+        </div>
+
+        <a className='hidden md:block' href="#serivesect">
           <div className='relative flex justify-end'>
             <motion.div
               animate={{ rotate: 360 }} // Rotate 360 degrees
