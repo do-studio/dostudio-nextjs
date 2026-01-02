@@ -10,6 +10,9 @@ import wrk4 from './medias/work4.webp'
 import wrk5 from './medias/work5.webp'
 import DigitalMarketingCardPhoto from "../images/medias/services/digital-marketing/digital-marketing.webp"
 import WebsiteServiceBanner from "../images/medias/services/web/website-service-banner.webp"
+import CreativePosters from "../images/medias/services/digital-marketing/creative-posters.webp"
+import MotionCreatives from "../images/medias/services/digital-marketing/motion-creatives.jpg"
+
 
 import Seo1 from '../images/medias/landing/seo.webp'
 import Seo2 from '../images/medias/landing/seo2.webp'
@@ -181,6 +184,8 @@ export {
     DigitalMarketingCardPhoto,
     BrandingCardImage,
     DigitalMarketingBannerImage,
+    CreativePosters,
+    MotionCreatives,
     WebsiteServiceBanner,
     Seo1,
     Seo2
