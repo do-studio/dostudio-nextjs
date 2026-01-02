@@ -8,8 +8,6 @@ import {
   WRK1,
   BrandingCardImage,
   servicewebbg, DigitalMarketingCardPhoto,
-  CreativePosters,
-  MotionCreatives
 } from "../../../../public/images/index";
 import Image from "next/image";
 import Link from "next/link";
@@ -44,14 +42,14 @@ const serviceData = [
   {
     id: 2,
     title: "creative posters",
-    img: CreativePosters,
+    img: DigitalMarketingCardPhoto,
     alt: `Best digital marketing agency in Calicut`,
     url: `/our-works/creative-posters`,
   },
   {
     id: 3,
     title: "motion creatives",
-    img: MotionCreatives,
+    img: DigitalMarketingCardPhoto,
     alt: `Best digital marketing agency in Calicut`,
     url: `/our-works/motion-creatives`,
   },
