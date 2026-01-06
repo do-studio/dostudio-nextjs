@@ -25,7 +25,7 @@ export default function WorkSlider({ works, link }) {
 
                 {/* 🔥 Button to Visit All Branding Works Page */}
                 <Link
-                    href="/projects"
+                    href={link}
                     className="
     relative overflow-hidden 
     text-sm md:text-base font-medium 
