@@ -61,8 +61,14 @@ const Production = () => {
 
   return (
     <main className="min-h-screen w-full bg-white pt-20 xl:pt-32 text-black font-light">
-      <div className="w-full flex justify-center p-5 uppercase">
-        <h1 className="font-medium">Videos</h1>
+      <div className="w-fit mx-auto flex justify-between text-center rounded-full  md:text-4xl h-10 text-gray-500 font-light">
+        <div
+          className={`w-full flex justify-center items-center duration-300 uppercase  p-5 -translate-y-1 md:-translate-y-2  scale-110 text-black`}
+        >
+          <h1 className={`pb-1  font-medium foot-underline-hover-effect-black`}>
+            production videos
+          </h1>
+        </div>
       </div>
 
       <div className="w-11/12 xl:w-9/12 mx-auto py-20 grid grid-cols-3 gap-0">
@@ -94,18 +100,15 @@ const Production = () => {
                   className="relative w-full bg-black overflow-hidden"
                   style={{ aspectRatio: data.ratio || "9/16" }}
                 >
-                  {/* VIDEO */}
+                  {/* NATIVE HTML5 VIDEO - Automatically kills audio on unmount */}
                   {shouldPlay && (
-                    <ReactPlayer
-                      url={data.video.asset.url}
-                      playing
+                    <video
+                      src={data.video.asset.url}
+                      autoPlay
                       loop
+                      playsInline
                       muted={false} // VERY IMPORTANT for Android
-                      controls={false}
-                      playsinline
-                      width="100%"
-                      height="100%"
-                      className="absolute inset-0"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   )}
 
