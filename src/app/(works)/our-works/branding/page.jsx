@@ -60,7 +60,7 @@ const Branding = () => {
 
   return (
     <main className="min-h-screen w-full bg-white">
-      <div className="w-11/12 xl:w-9/12 mx-auto pt-20 xl:pt-24 py-20 grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="w-11/12 xl:w-9/12 mx-auto pt-20 xl:pt-24 py-20 grid grid-cols-2 md:grid-cols-2 gap-10">
         {loading ? (
           // Responsive and visually accurate skeletons:
           Array.from({ length: SKELETON_COUNT }).map((_, i) => (
@@ -89,6 +89,7 @@ const Branding = () => {
                       loading="lazy"
                       src={data.thumbnail.asset?.url}
                       fill={true}
+                      
                       className="object-cover rounded-xl"
                       alt={data.title}
                     />
