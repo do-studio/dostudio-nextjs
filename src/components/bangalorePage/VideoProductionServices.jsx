@@ -74,7 +74,7 @@ const VideoProductionServices = ({ videos }) => {
                     <div className="flex-none flex items-center justify-center w-[60vw] sm:w-[40vw] md:w-[30vw] lg:w-[20vw]">
 
                         <Link
-                            href="/our-works"
+                            href="/our-works/production"
                             // 1. Added 'relative' and 'overflow-hidden'. Removed the hover:bg class.
                             className="group relative flex flex-col items-center justify-center gap-4 w-full max-w-[220px] h-full rounded-[2.5rem] border border-gray-200 bg-black overflow-hidden transition-all duration-500 shadow-lg hover:shadow-2xl hover:border-primarygreen"
                         >
@@ -85,33 +85,20 @@ const VideoProductionServices = ({ videos }) => {
 
 
                             {/* 3. The Inner Button */}
-
                             {/* Added 'relative z-10' so it stays above the expanding background */}
-
                             <div className="relative z-10 w-16 h-16 rounded-full bg-primarygreen text-black flex items-center justify-center group-hover:scale-110 group-hover:bg-black group-hover:text-white transition-all duration-500 shadow-md">
-
                                 <svg className="w-7 h-7 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-
                                 </svg>
-
                             </div>
 
 
-
                             {/* 4. The Text */}
-
                             {/* Added 'relative z-10' to keep it visible, and a slight delay for a smoother color swap */}
-
                             <span className="relative z-10 text-lg font-semibold text-white group-hover:text-black transition-colors duration-300 delay-100">
-
                                 See More
-
                             </span>
-
                         </Link>
-
                     </div>
                     <div className="flex-none w-2 md:w-8 lg:w-16"></div>
                 </div>
