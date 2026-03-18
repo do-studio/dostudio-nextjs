@@ -14,7 +14,7 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/7fce67df721768fae624ff1f543fd8b6d4b43a3a-8000x5713.webp",
         },
-        altText:[
+        altText: [
             "Social Media Marketing Agency in Bangalore",
             "Social Media Marketing in Bangalore",
             "Social Media Marketing services in Bangalore"
@@ -141,12 +141,12 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/c1b48ca7b5484e8d7e0c4a5ac0223458e397fb35-1280x800.webp",
         },
-        altText:[
-           "Branding Agency In Bangalore",
-           "Branding company in Bangalore",
-           "Branding services in Bangalore",
-           "Creative branding agency in Bangalore",
-           "Best Branding Agency in Bangalore"
+        altText: [
+            "Branding Agency In Bangalore",
+            "Branding company in Bangalore",
+            "Branding services in Bangalore",
+            "Creative branding agency in Bangalore",
+            "Best Branding Agency in Bangalore"
         ],
         services: {
             heading: "Branding Services by",
@@ -291,7 +291,7 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/7fce67df721768fae624ff1f543fd8b6d4b43a3a-8000x5713.webp",
         },
-        altText:[
+        altText: [
             "Digital Marketing Agency in Bangalore",
             "Digital Marketing Company in Bangalore",
             "Digital Marketing Companies in Bangalore",
@@ -447,10 +447,42 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/cc4b62618e0865d82b392b37f388584fd38475dc-8000x5333.webp",
         },
-        altText:[
-           "Video Production Company in Bangalore",
-           "Video production services in Bangalore",
-           "Video Production Companies in Bangalore"
+        altText: [
+            "Video Production Company in Bangalore",
+            "Video production services in Bangalore",
+            "Video Production Companies in Bangalore"
+        ],
+        videos: [
+            {
+                src: "https://cdn.sanity.io/files/0hjyj1bs/production/2dc7fc0bfd1aa95fe361ca166318621187109d23.mp4",
+                thumb: "https://cdn.sanity.io/files/0hjyj1bs/production/2dc7fc0bfd1aa95fe361ca166318621187109d23.mp4",
+                type: "portrait",
+            },
+            {
+                src: "https://cdn.sanity.io/files/0hjyj1bs/production/bb0e7b7ee39ebe9a302cb340439184360cc0268b.mp4",
+                thumb: "https://cdn.sanity.io/files/0hjyj1bs/production/bb0e7b7ee39ebe9a302cb340439184360cc0268b.mp4",
+                type: "landscape",
+            },
+            {
+                src: "https://cdn.sanity.io/files/0hjyj1bs/production/4f7728cb570e8193ae779e2bbfe3877734d656ba.mp4",
+                thumb: "https://cdn.sanity.io/files/0hjyj1bs/production/4f7728cb570e8193ae779e2bbfe3877734d656ba.mp4",
+                type: "portrait",
+            },
+            {
+                src: "https://cdn.sanity.io/files/0hjyj1bs/production/b2913967ee6fa5d4696e68195ff98aa3af5134a6.mp4",
+                thumb: "https://cdn.sanity.io/files/0hjyj1bs/production/b2913967ee6fa5d4696e68195ff98aa3af5134a6.mp4",
+                type: "landscape",
+            },
+            {
+                src: "https://cdn.sanity.io/files/0hjyj1bs/production/7c70922b5e5ca7e22e14136b0ebda569f0e4085b.mp4",
+                thumb: "https://cdn.sanity.io/files/0hjyj1bs/production/7c70922b5e5ca7e22e14136b0ebda569f0e4085b.mp4",
+                type: "portrait",
+            },
+            {
+                src: "https://cdn.sanity.io/files/0hjyj1bs/production/dc9b6de9edebd6da858dc645fc754588c732c916.mp4",
+                thumb: "https://cdn.sanity.io/files/0hjyj1bs/production/dc9b6de9edebd6da858dc645fc754588c732c916.mp4",
+                type: "landscape",
+            },
         ],
         services: {
             heading: "Video Production Services by ",
@@ -579,7 +611,7 @@ export const data = {
             },
 
         ],
-        
+
 
         letsStarted: {
             heading: "Maximize Your Brand Impact – Let’s Get Started",
@@ -603,10 +635,10 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/27d09461b7b19a6efb2884fa20df96d5bda22e55-4015x2745.webp",
         },
-        altText:[
-          "Web Development Company in Bangalore",
-          "web development agency in Bangalore",
-          "web development services in Bangalore"
+        altText: [
+            "Web Development Company in Bangalore",
+            "web development agency in Bangalore",
+            "web development services in Bangalore"
         ],
         services: {
             heading: "Web Development Services ",
@@ -743,7 +775,7 @@ export const data = {
             image:
                 "https://cdn.sanity.io/images/0hjyj1bs/production/fd93d87f0cbd670facb5ada8e431454ff527a497-3000x2001.webp",
         },
-        altText:[
+        altText: [
             "SEO Company in Bangalore",
             "SEO services in Bangalore",
             "SEO agency in Bangalore"
@@ -770,9 +802,6 @@ export const data = {
                     title: "E-Commerce SEO",
                     desc: "We increase product visibility, drive targeted traffic, and boost sales for online stores through tailored SEO strategies.",
                 },
-
-
-
             ],
         },
         whyChoose: {

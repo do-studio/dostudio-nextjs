@@ -7,6 +7,7 @@ import Faq from "../../components/bangalorePage/Faq";
 import GetsStartedSocialMedia from "../../components/bangalorePage/GetStartedSocialMedia";
 import { data } from "../../datas/bangalorePageData";
 import WorkSection from "../../components/bangalorePage/WorkSection";
+import VideoProductionServices from "../../components/bangalorePage/VideoProductionServices";
 
 // ✅ Generate dynamic metadata for SEO
 export async function generateMetadata({ params }) {
@@ -57,13 +58,14 @@ const Page = async ({ params }) => {
     );
   }
 
-  const { hero, services, whyChoose, boostUrBrand, works, faqs, letsStarted, altText } =
+  const { hero, services, whyChoose, boostUrBrand, works, videos,faqs, letsStarted, altText } =
     selectedService;
 
   return (
     <main className="bg-white w-full flex flex-col">
       <HeroSocialMedia {...hero} />
       <SocialMediaServices services={services} />
+      <VideoProductionServices videos={videos}/>
       <WhyChooseSocialMedia {...whyChoose} altText={altText}/>
       <BoostsBrandSocialMedia {...boostUrBrand} />
       <WorkSection {...works} />
