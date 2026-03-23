@@ -438,7 +438,7 @@ export const data = {
         metaTitle: " Video Production Company in Bangalore | Do Studio",
         metaDescription: " Partner with Do Studio, leading Video Production Company in Bangalore for high‑impact brand films, corporate videos, and ads. Strategy to final edit - done right.",
         hero: {
-            title: "Video Production Company in Bangalore |  ",
+            title: "Video Production Company in Bangalore",
             highlight: "Do Studio",
             description:
                 "Do Studio is a top-rated video production company in Bangalore, creating high-quality videos that help businesses communicate their story effectively. We specialize in producing corporate videos, promotional content, and engaging visual media to enhance brand visibility and audience engagement.",
