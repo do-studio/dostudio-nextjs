@@ -14,7 +14,7 @@ const ourWorks3 = () => {
                     <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://cdn.sanity.io/images/0hjyj1bs/production/eaff9bdd2cee8ffb211f182b8fffcbc4e5ff1bd5-2528x2250.webp'} alt='Best advertising agency in Calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://cdn.sanity.io/images/0hjyj1bs/production/398b92390f82d7b2ed950ad27114130d0e480ecb-2048x2048.webp'} alt='Digital marketing agency in Calicut' />
+                    <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://cdn.sanity.io/images/0hjyj1bs/production/12c8481a2db6f7d046a7d8b714dd2c6dc63b3ab5-1080x1080.jpg'} alt='Digital marketing agency in Calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
                     <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://cdn.sanity.io/images/0hjyj1bs/production/cca6d0d67136baa99ea68e1cf4a09f96b9d41f0e-2235x2235.webp'} alt='Branding company in calicut' />
