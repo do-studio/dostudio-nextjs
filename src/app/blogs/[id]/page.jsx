@@ -60,7 +60,9 @@ export async function generateMetadata({ params }) {
     keywords:
       blog.metakeywords || "digital marketing, SEO, branding, marketing blogs",
     metadataBase: new URL("https://dostudio.co.in"), // Base domain
-
+    alternates: {
+      canonical: `/blogs/${params.id}`,
+    },
 
     openGraph: {
       title: blog.metatitle || "Default Blog Title",
