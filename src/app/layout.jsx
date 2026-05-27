@@ -47,7 +47,7 @@ export const metadata = {
   other: {
     "google-site-verification": "K-0KPQ78AmDrdt3Dtqtln-KygEAHUAR0c5Qo_m4cZkU",
     "pixel:payload": "TEST88229",
-    "facebook-domain-verification": "8obnherhfzfpv5unpmsdv4k4bdqsm0",
+    "facebook-domain-verification": "9q6jpn3s5dw615nx4zydgv6qsmkp6q",
     "msvalidate.01": "1DE072A42AC32FB2D1849B5B3285ED22", 
   },
 };
