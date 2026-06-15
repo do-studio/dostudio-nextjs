@@ -55,33 +55,34 @@ const serviceData = [
     alt: `Best digital marketing agency in Calicut`,
     url: `/our-works/motion-creatives`,
   },
-  {
+   {
     id: 4,
+    title: "Production",
+    img: wrk4,
+    alt: ``,
+    url: `/our-works/production`,
+  },
+  {
+    id: 5,
     title: "web design",
     img: servicewebbg,
     alt: `SEO company in calicut`,
     url: `/our-works/web-design`,
   },
   {
-    id: 5,
+    id: 6,
     title: "package design",
     img: wrk3,
     alt: `Socialmedia marketing agency in Calicut`,
     url: `/our-works/package-design`,
   },
+ 
   {
-    id: 6,
+    id: 7,
     title: "print design",
     img: wrk1,
     alt: ``,
     url: `/our-works/print-design`,
-  },
-  {
-    id: 7,
-    title: "Production",
-    img: wrk4,
-    alt: ``,
-    url: `/our-works/production`,
   },
 ];
 
