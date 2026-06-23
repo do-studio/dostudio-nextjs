@@ -11,7 +11,7 @@ const ourWorks3 = () => {
             {/* Bottom three squares */}
             <div className='grid grid-cols-3 gap-1 xl:gap-5'>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
-                    <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://cdn.sanity.io/images/0hjyj1bs/production/eaff9bdd2cee8ffb211f182b8fffcbc4e5ff1bd5-2528x2250.webp'} alt='Best advertising agency in Calicut' />
+                    <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://cdn.sanity.io/images/0hjyj1bs/production/26263b2fb09094b6ea0e74a98e205f52db4ab6fc-3143x2200.webp'} alt='Best advertising agency in Calicut' />
                 </div>
                 <div className='aspect-square relative rounded-xl xl:rounded-3xl overflow-hidden border-2 xl:border-8 border-gray-200'>
                     <Image className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={'https://cdn.sanity.io/images/0hjyj1bs/production/12c8481a2db6f7d046a7d8b714dd2c6dc63b3ab5-1080x1080.jpg'} alt='Digital marketing agency in Calicut' />
