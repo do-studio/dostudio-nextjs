@@ -29,6 +29,9 @@ export const metadata = {
 
     type: "article",
   },
+   alternates: {
+    canonical: "https://dostudio.co.in/services",
+  },
 };
 
 const serviceData = [
