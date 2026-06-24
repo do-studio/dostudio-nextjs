@@ -20,6 +20,9 @@ export const metadata = {
 
     type: "article",
   },
+   alternates: {
+    canonical: "https://dostudio.co.in/contact",
+  },
 };
 
 const Contact = () => {
