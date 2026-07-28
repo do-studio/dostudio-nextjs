@@ -3,6 +3,9 @@ import HeroSocialMedia from "../../components/bangalorePage/HeroSocialMedia";
 import SocialMediaServices from "../../components/bangalorePage/SocialMediaServices";
 import WhyChooseSocialMedia from "../../components/bangalorePage/WhyChooseSocialMedia";
 import BoostsBrandSocialMedia from "../../components/bangalorePage/BoostsBrandSocialMedia";
+import ShowOffSection from "../../components/bangalorePage/ShowOffSection";
+import InstagramSection from "../../components/bangalorePage/InstagramSection";
+import ReviewsSection from "../../components/bangalorePage/ReviewsSection";
 import Faq from "../../components/bangalorePage/Faq";
 import GetsStartedSocialMedia from "../../components/bangalorePage/GetStartedSocialMedia";
 import { data } from "../../datas/bangalorePageData";
@@ -58,16 +61,19 @@ const Page = async ({ params }) => {
     );
   }
 
-  const { hero, services, whyChoose, boostUrBrand, works, videos,faqs, letsStarted, altText } =
+  const { hero, services, whyChoose, boostUrBrand, showOff, instagramSection, reviewsSection, works, videos, faqs, letsStarted, altText } =
     selectedService;
 
   return (
     <main className="bg-white w-full flex flex-col">
       <HeroSocialMedia {...hero} />
       <SocialMediaServices services={services} />
+      {showOff && <ShowOffSection {...showOff} />}
       <VideoProductionServices videos={videos}/>
       <WhyChooseSocialMedia {...whyChoose} altText={altText}/>
+      {instagramSection && <InstagramSection {...instagramSection} />}
       <BoostsBrandSocialMedia {...boostUrBrand} />
+      {reviewsSection && <ReviewsSection {...reviewsSection} />}
       <WorkSection {...works} />
       <Faq faqs={faqs} />
       <GetsStartedSocialMedia {...letsStarted} altText={altText} />
