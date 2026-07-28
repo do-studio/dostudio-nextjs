@@ -81,6 +81,57 @@ export const data = {
             buttonLink: "https://wa.me/918590855541",
         },
 
+        showOff: {
+            title: "Why Brands Partner With Us",
+            content: "What matters most when choosing a digital marketing agency? Real, measurable growth.",
+            highlight: "digital marketing agency",
+            cards: [
+                {
+                    id: 1,
+                    type: "number",
+                    value: "6+",
+                    line1: "Years of",
+                    line2: "experience",
+                },
+                {
+                    id: 2,
+                    type: "award",
+                    value: "100+",
+                    line1: "Received best",
+                    line2: "web design award",
+                },
+                {
+                    id: 3,
+                    type: "number",
+                    value: "100+",
+                    line1: "Projects",
+                    line2: "Completed",
+                },
+                {
+                    id: 4,
+                    type: "rating",
+                    value: "(4.8)",
+                    line1: "Rated in",
+                    line2: "Google",
+                },
+            ],
+        },
+
+        instagramSection: {
+            title: "Creative Content, Real Results",
+            description: "A look at the high-converting social media creatives we’ve crafted for brands.",
+            instagramUrl: "https://www.instagram.com/dostudio.agency/",
+            buttonText: "Connect to Instagram",
+        },
+
+        reviewsSection: {
+            title: "Real Stories, Real Results",
+            description: "See how we’ve helped brands grow through our client reviews",
+            rating: "4.8",
+            totalReviews: "100+",
+            gmbUrl: "https://share.google/2qPhjmmyeXHxWn6Vz",
+        },
+
 
 
         faqs: [
