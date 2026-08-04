@@ -28,6 +28,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  
 
   return {
     title: selectedService?.metaTitle,
