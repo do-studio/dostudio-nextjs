@@ -892,6 +892,61 @@ export const data = {
             buttonText: "Get a Quote",
             buttonLink: "https://wa.me/918590855541",
         },
+        searchStrategy: {
+            title: "How We Keep You Visible Across All Search Engines",
+            heading: "SEO + AEO + GEO: It’s a Complete Search Strategy",
+            description:
+                "Search has evolved beyond traditional keywords. Here is how we combine SEO, AI Search, and Generative Optimization to keep your brand visible everywhere.",
+            rowLabels: [
+                "Primary Goal",
+                "Optimization Focus",
+                "User Intent",
+                "Content Format",
+                "Outcome",
+            ],
+            columns: [
+                {
+                    title: "Traditional SEO",
+                    points: [
+                        "Ranking top on Google SERPs",
+                        "Target high-intent keywords",
+                        "Driving web traffic & clicks",
+                        "Optimized blogs & web pages",
+                        "Higher search rankings & organic traffic",
+                    ],
+                },
+                {
+                    title: "AEO (Answer Engine Optimization)",
+                    points: [
+                        "Direct answers in voice search & snippets",
+                        "Schema markup & FAQ formatting",
+                        "Immediate, quick answers",
+                        "Question-based Q&A content",
+                        "Featured snippets & voice answers",
+                    ],
+                },
+                {
+                    title: "GEO (Generative Engine Optimization)",
+                    points: [
+                        "Citations in AI models (ChatGPT, Gemini)",
+                        "Entity authority & authoritative sources",
+                        "AI summaries & recommendations",
+                        "Deep, structured brand insights",
+                        "AI platform citations & brand mentions",
+                    ],
+                },
+            ],
+            footNote:
+                "While SEO brings users to your website, AEO answers their immediate questions, and GEO ensures AI engines recommend your business when customers ask for recommendations.",
+        },
+        blogsSection: {
+            title: "Latest SEO Insights from Our Blog",
+            description:
+                "Practical SEO tips, strategies, and case studies from the Do Studio team to help your business stay ahead in search.",
+            limit: 6,
+            buttonText: "View All Blogs",
+            buttonLink: "/blogs",
+        },
         faqs: [
             {
                 question:

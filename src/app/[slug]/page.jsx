@@ -11,6 +11,8 @@ import GetsStartedSocialMedia from "../../components/bangalorePage/GetStartedSoc
 import { data } from "../../datas/bangalorePageData";
 import WorkSection from "../../components/bangalorePage/WorkSection";
 import VideoProductionServices from "../../components/bangalorePage/VideoProductionServices";
+import SearchStrategySection from "../../components/bangalorePage/SearchStrategySection";
+import BlogsSection from "../../components/bangalorePage/BlogsSection";
 
 // ✅ Generate dynamic metadata for SEO
 export async function generateMetadata({ params }) {
@@ -27,9 +29,7 @@ export async function generateMetadata({ params }) {
       robots: "noindex, nofollow",
     };
   }
-
   
-
   return {
     title: selectedService?.metaTitle,
     description:
@@ -62,7 +62,7 @@ const Page = async ({ params }) => {
     );
   }
 
-  const { hero, services, whyChoose, boostUrBrand, showOff, instagramSection, reviewsSection, works, videos, faqs, letsStarted, altText } =
+  const { hero, services, whyChoose, boostUrBrand, showOff, instagramSection, reviewsSection, searchStrategy, blogsSection, works, videos, faqs, letsStarted, altText } =
     selectedService;
 
   return (
@@ -72,10 +72,12 @@ const Page = async ({ params }) => {
       {showOff && <ShowOffSection {...showOff} />}
       <VideoProductionServices videos={videos}/>
       <WhyChooseSocialMedia {...whyChoose} altText={altText}/>
+      {searchStrategy && <SearchStrategySection {...searchStrategy} />}
       {instagramSection && <InstagramSection {...instagramSection} />}
       <BoostsBrandSocialMedia {...boostUrBrand} />
       {reviewsSection && <ReviewsSection {...reviewsSection} />}
       <WorkSection {...works} />
+      {blogsSection && <BlogsSection {...blogsSection} />}
       <Faq faqs={faqs} />
       <GetsStartedSocialMedia {...letsStarted} altText={altText} />
     </main>
