@@ -676,6 +676,17 @@ export const data = {
         slug: 'web-development-company-in-bangalore',
         metaTitle: "Web Development Company in Bangalore | Do Studio",
         metaDescription: "Team up with a Web Development Company in Bangalore that pairs UX, speed, CRO, and CMS. Do Studio builds high‑performing websites. Get a custom quote.",
+        sectionOrder: [
+            "hero",
+            "services",
+            "whyChoose",
+            "howWeWork",
+            "boostUrBrand",
+            "showOff",
+            "works",
+            "faqs",
+            "letsStarted",
+        ],
         hero: {
             title: "Web Development Company in Bangalore |  ",
             highlight: "Do Studio",
@@ -758,6 +769,29 @@ export const data = {
             buttonLink: "tel:+918590855541",
         },
 
+        howWeWork: {
+            title: "How Our Web Development Works?",
+            description: "We build websites for real people first, ensuring they are smooth, intuitive, and engaging, while naturally satisfying search engine algorithms.",
+            cards: [
+                {
+                    icon: "user",
+                    title: "Human-First Design",
+                },
+                {
+                    icon: "chart",
+                    title: "Seamless & Responsive",
+                },
+                {
+                    icon: "scale",
+                    title: "Scalable Frameworks",
+                },
+                {
+                    icon: "check",
+                    title: "Conversion Ready",
+                },
+            ],
+        },
+
         boostUrBrand: {
             heading: "Build a Powerful   ",
             highlight: "Online Identity",
@@ -765,6 +799,63 @@ export const data = {
             buttonText: "Get a Quote",
             buttonLink: "https://wa.me/918590855541",
         },
+
+        showOff: {
+            title: "Why Brands Partner With DO Studio",
+            content: "What do you look for a Website Development company in Bangalore? Numbers.",
+            cards: [
+                {
+                    id: 1,
+                    type: "number",
+                    value: "6+",
+                    line1: "Years of",
+                    line2: "experience",
+                },
+                {
+                    id: 2,
+                    type: "award",
+                    value: "100+",
+                    line1: "Received best",
+                    line2: "web design award",
+                },
+                {
+                    id: 3,
+                    type: "number",
+                    value: "100+",
+                    line1: "Projects",
+                    line2: "Completed",
+                },
+                {
+                    id: 4,
+                    type: "rating",
+                    value: "(4.8)",
+                    line1: "Rated in",
+                    line2: "Google",
+                },
+            ],
+        },
+
+        works: {
+            title: "Designed for People. Built to Perform.",
+            description: "A showcase of custom-designed websites engineered for effortless navigation, high engagement, and maximum search visibility.",
+            buttonText: "FIND MORE",
+            link: "/our-works/web-design",
+            works: [
+                {
+                    image: "https://cdn.sanity.io/images/0hjyj1bs/production/415ef0a5e87926c90a7a80a89f4ac2c76d62f836-2561x11214.webp",
+                    link: "https://exxude.in",
+                },
+                {
+                    image: "https://cdn.sanity.io/images/0hjyj1bs/production/fa3b0ceef29cbe5802328ccb253ad98ad6ef1d1a-2940x7142.webp",
+                    link: "https://bfcsoccerschoolsqatar.com",
+                },
+                {
+                    image: "https://cdn.sanity.io/images/0hjyj1bs/production/d8a24d7e39e2e11af7f187a9d04bbda9891814f0-1920x7212.webp",
+                    link: "https://ztartvisa.com",
+                },
+            ],
+        },
+
         faqs: [
             {
                 question:
