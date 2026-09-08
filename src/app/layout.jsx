@@ -27,7 +27,7 @@ export const metadata = {
     url: "https://dostudio.co.in",
     images: [
       {
-        url: "https://cdn.sanity.io/images/0hjyj1bs/production/fd0e406fac5be662e3a12297817597b3b9c25080-8161x2283.png",
+        url: "https://cdn.sanity.io/images/0hjyj1bs/production/88a820889366024cefb0e05045fc37dadc7e7d1f-333x197.svg",
         width: 1200,
         height: 630,
         alt: "Do Studio - Digital Marketing and Branding Agency",
@@ -41,7 +41,7 @@ export const metadata = {
     description:
       "Digital Marketing and Branding agency in Calicut, Kerala...",
     images: [
-      "https://cdn.sanity.io/images/0hjyj1bs/production/fd0e406fac5be662e3a12297817597b3b9c25080-8161x2283.png",
+      "https://cdn.sanity.io/images/0hjyj1bs/production/88a820889366024cefb0e05045fc37dadc7e7d1f-333x197.svg",
     ],
   },
   other: {
