@@ -3,7 +3,7 @@ import FadeUp from "../../components/motions/fadeUp";
 import Head from "next/head";
 import DynamicWorkwithUs from "../../components/home/designs/workWithUs"
 
-import { LogoDO } from "../../../public/images";
+import { LogoDO, LogoFav } from "../../../public/images";
 
 export const metadata = {
   title: "Your Digital Marketing Solutions begins: Contact Do Studio",
@@ -29,8 +29,8 @@ const Contact = () => {
         <div className="w-11/12 xl:w-10/12 mx-auto pt-32 py-20">
           <div className="bg-white relative" >
             <img
-              className=" w-60 xl:h-full xl:w-full absolute top-[50%] left-[50%] -translate-x-[50%] object-contain -translate-y-[50%] opacity-5 z-10"
-              src={LogoDO.src}
+              className=" w-60 xl:h-full xl:w-full absolute top-[50%] left-[50%] -translate-x-[50%] object-contain -translate-y-[50%] opacity-[0.001] z-10"
+              src={LogoFav.src}
               alt=""
             />
             <DynamicWorkwithUs />

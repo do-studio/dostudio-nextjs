@@ -4,7 +4,7 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { LogoDO } from "../../../../public/images";
+import { LogoDO,LogoFav,LogoGreen } from "../../../../public/images";
 
 // CircleTimer Component (unchanged)
 const CircleTimer = ({ duration, onComplete }) => {
@@ -180,7 +180,7 @@ const PopupForm = () => {
               <div className={`${isClosing ? 'opacity-0 transition-opacity duration-500' : 'opacity-100'} w-full h-full flex flex-col items-center justify-center`}>
                 <img
                   className="h-60 w-60 xl:h-[350px] xl:w-[350px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-5 z-10"
-                  src={LogoDO.src}
+                  src={LogoFav.src}
                   alt=""
                 />
                 <div className="absolute top-3 right-5">

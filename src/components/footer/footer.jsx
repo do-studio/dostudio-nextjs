@@ -9,6 +9,7 @@ import {
   insatgramlogo,
   dologo,
   Logoblack,
+  LogoGreen
 } from "../../../public/images";
 import Image from "next/image";
 import Link from "next/link";
@@ -80,8 +81,8 @@ const Footer = () => {
           <div className=" flex flex-col">
             <Link href={"/"}>
               <Image
-                className="object-cover w-40 -mt-10 h-40 "
-                src={dologo}
+                className="object-cover w-40 -mt-10 "
+                src={Logoblack}
                 alt="dostudio"
               />
             </Link>
