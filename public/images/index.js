@@ -1,5 +1,7 @@
 import Logowhite from './logo/dologowht.svg';
-import Logoblack from './logo/dologoblb.svg';
+import Logoblack from './logo/DoLgBL.svg';
+import LogoGreen from './logo/DoLgBY.svg';
+import LogoFav from './logo/do_fav.svg';
 import LogoDO from './logo/do-icon-bl.svg';
 import LogoLoader from './logo/loader.gif'
 
@@ -105,6 +107,8 @@ import DigitalMarketingBannerImage from "./medias/services/digital-marketing/dig
 
 export {
     LogoDO,
+    LogoGreen,
+    LogoFav,
     LogoLoader,
     imgarrw,
     dologo,
