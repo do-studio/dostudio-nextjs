@@ -81,6 +81,57 @@ export const data = {
             buttonLink: "https://wa.me/918590855541",
         },
 
+        showOff: {
+            title: "Why Brands Partner With Us",
+            content: "What matters most when choosing a digital marketing agency? Real, measurable growth.",
+            highlight: "digital marketing agency",
+            cards: [
+                {
+                    id: 1,
+                    type: "number",
+                    value: "6+",
+                    line1: "Years of",
+                    line2: "experience",
+                },
+                {
+                    id: 2,
+                    type: "award",
+                    value: "100+",
+                    line1: "Received best",
+                    line2: "web design award",
+                },
+                {
+                    id: 3,
+                    type: "number",
+                    value: "100+",
+                    line1: "Projects",
+                    line2: "Completed",
+                },
+                {
+                    id: 4,
+                    type: "rating",
+                    value: "(4.8)",
+                    line1: "Rated in",
+                    line2: "Google",
+                },
+            ],
+        },
+
+        instagramSection: {
+            title: "Creative Content, Real Results",
+            description: "A look at the high-converting social media creatives we’ve crafted for brands.",
+            instagramUrl: "https://www.instagram.com/dostudio.agency/",
+            buttonText: "Connect to Instagram",
+        },
+
+        reviewsSection: {
+            title: "Real Stories, Real Results",
+            description: "See how we’ve helped brands grow through our client reviews",
+            rating: "4.8",
+            totalReviews: "100+",
+            gmbUrl: "https://share.google/2qPhjmmyeXHxWn6Vz",
+        },
+
 
 
         faqs: [
@@ -625,6 +676,17 @@ export const data = {
         slug: 'web-development-company-in-bangalore',
         metaTitle: "Web Development Company in Bangalore | Do Studio",
         metaDescription: "Team up with a Web Development Company in Bangalore that pairs UX, speed, CRO, and CMS. Do Studio builds high‑performing websites. Get a custom quote.",
+        sectionOrder: [
+            "hero",
+            "services",
+            "whyChoose",
+            "howWeWork",
+            "boostUrBrand",
+            "showOff",
+            "works",
+            "faqs",
+            "letsStarted",
+        ],
         hero: {
             title: "Web Development Company in Bangalore |  ",
             highlight: "Do Studio",
@@ -707,6 +769,29 @@ export const data = {
             buttonLink: "tel:+918590855541",
         },
 
+        howWeWork: {
+            title: "How Our Web Development Works?",
+            description: "We build websites for real people first, ensuring they are smooth, intuitive, and engaging, while naturally satisfying search engine algorithms.",
+            cards: [
+                {
+                    icon: "user",
+                    title: "Human-First Design",
+                },
+                {
+                    icon: "chart",
+                    title: "Seamless & Responsive",
+                },
+                {
+                    icon: "scale",
+                    title: "Scalable Frameworks",
+                },
+                {
+                    icon: "check",
+                    title: "Conversion Ready",
+                },
+            ],
+        },
+
         boostUrBrand: {
             heading: "Build a Powerful   ",
             highlight: "Online Identity",
@@ -714,6 +799,63 @@ export const data = {
             buttonText: "Get a Quote",
             buttonLink: "https://wa.me/918590855541",
         },
+
+        showOff: {
+            title: "Why Brands Partner With DO Studio",
+            content: "What do you look for a Website Development company in Bangalore? Numbers.",
+            cards: [
+                {
+                    id: 1,
+                    type: "number",
+                    value: "6+",
+                    line1: "Years of",
+                    line2: "experience",
+                },
+                {
+                    id: 2,
+                    type: "award",
+                    value: "100+",
+                    line1: "Received best",
+                    line2: "web design award",
+                },
+                {
+                    id: 3,
+                    type: "number",
+                    value: "100+",
+                    line1: "Projects",
+                    line2: "Completed",
+                },
+                {
+                    id: 4,
+                    type: "rating",
+                    value: "(4.8)",
+                    line1: "Rated in",
+                    line2: "Google",
+                },
+            ],
+        },
+
+        works: {
+            title: "Designed for People. Built to Perform.",
+            description: "A showcase of custom-designed websites engineered for effortless navigation, high engagement, and maximum search visibility.",
+            buttonText: "FIND MORE",
+            link: "/our-works/web-design",
+            works: [
+                {
+                    image: "https://cdn.sanity.io/images/0hjyj1bs/production/415ef0a5e87926c90a7a80a89f4ac2c76d62f836-2561x11214.webp",
+                    link: "https://exxude.in",
+                },
+                {
+                    image: "https://cdn.sanity.io/images/0hjyj1bs/production/fa3b0ceef29cbe5802328ccb253ad98ad6ef1d1a-2940x7142.webp",
+                    link: "https://bfcsoccerschoolsqatar.com",
+                },
+                {
+                    image: "https://cdn.sanity.io/images/0hjyj1bs/production/d8a24d7e39e2e11af7f187a9d04bbda9891814f0-1920x7212.webp",
+                    link: "https://ztartvisa.com",
+                },
+            ],
+        },
+
         faqs: [
             {
                 question:
@@ -840,6 +982,61 @@ export const data = {
             description: "Partner with Do Studio, a top SEO company in Bangalore, to enhance your website’s visibility. Our SEO solutions cater to small business websites and enterprise-level digital growth.",
             buttonText: "Get a Quote",
             buttonLink: "https://wa.me/918590855541",
+        },
+        searchStrategy: {
+            title: "How We Keep You Visible Across All Search Engines",
+            heading: "SEO + AEO + GEO: It’s a Complete Search Strategy",
+            description:
+                "Search has evolved beyond traditional keywords. Here is how we combine SEO, AI Search, and Generative Optimization to keep your brand visible everywhere.",
+            rowLabels: [
+                "Primary Goal",
+                "Optimization Focus",
+                "User Intent",
+                "Content Format",
+                "Outcome",
+            ],
+            columns: [
+                {
+                    title: "Traditional SEO",
+                    points: [
+                        "Ranking top on Google SERPs",
+                        "Target high-intent keywords",
+                        "Driving web traffic & clicks",
+                        "Optimized blogs & web pages",
+                        "Higher search rankings & organic traffic",
+                    ],
+                },
+                {
+                    title: "AEO (Answer Engine Optimization)",
+                    points: [
+                        "Direct answers in voice search & snippets",
+                        "Schema markup & FAQ formatting",
+                        "Immediate, quick answers",
+                        "Question-based Q&A content",
+                        "Featured snippets & voice answers",
+                    ],
+                },
+                {
+                    title: "GEO (Generative Engine Optimization)",
+                    points: [
+                        "Citations in AI models (ChatGPT, Gemini)",
+                        "Entity authority & authoritative sources",
+                        "AI summaries & recommendations",
+                        "Deep, structured brand insights",
+                        "AI platform citations & brand mentions",
+                    ],
+                },
+            ],
+            footNote:
+                "While SEO brings users to your website, AEO answers their immediate questions, and GEO ensures AI engines recommend your business when customers ask for recommendations.",
+        },
+        blogsSection: {
+            title: "Latest SEO Insights from Our Blog",
+            description:
+                "Practical SEO tips, strategies, and case studies from the Do Studio team to help your business stay ahead in search.",
+            limit: 6,
+            buttonText: "View All Blogs",
+            buttonLink: "/blogs",
         },
         faqs: [
             {

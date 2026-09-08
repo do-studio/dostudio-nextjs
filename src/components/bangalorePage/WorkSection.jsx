@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 
 import { Navigation } from 'swiper/modules';
 
-export default function WorkSlider({ works, link }) {
+export default function WorkSlider({ works, link, title = "Works", description, buttonText = "View All Works →" }) {
 
     if (!works || works.length === 0) {
         return null;
@@ -18,12 +18,19 @@ export default function WorkSlider({ works, link }) {
 
     return (
         <section className="bg-white py-12 md:py-24 overflow-hidden">
-            <div className="w-11/12 xl:w-10/12 mx-auto flex items-center justify-between mb-10">
-                <h4 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight uppercase text-black">
-                    Works
-                </h4>
+            <div className="w-11/12 xl:w-10/12 mx-auto flex items-end justify-between mb-10 gap-6">
+                <div>
+                    <h4 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight uppercase text-black">
+                        {title}
+                    </h4>
+                    {description && (
+                        <p className="text-gray-600 text-base md:text-lg mt-4 max-w-2xl normal-case">
+                            {description}
+                        </p>
+                    )}
+                </div>
 
-                {/* 🔥 Button to Visit All Branding Works Page */}
+                {/* 🔥 Button to Visit All Works Page */}
                 <Link
                     href={link}
                     className="
@@ -52,7 +59,7 @@ export default function WorkSlider({ works, link }) {
       group-hover:text-white
     "
                     >
-                        View All Works →
+                        {buttonText}
                     </span>
                 </Link>
 

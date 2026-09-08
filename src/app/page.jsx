@@ -47,6 +47,9 @@ export const metadata = {
       "https://cdn.sanity.io/images/0hjyj1bs/production/fd0e406fac5be662e3a12297817597b3b9c25080-8161x2283.png",
     ],
   },
+  alternates: {
+    canonical: "https://dostudio.co.in",
+  },
 };
 
 

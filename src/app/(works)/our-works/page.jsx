@@ -28,7 +28,6 @@ import Head from "next/head";
 //     description:
 //       "We specialize in SEO, social media marketing, content marketing, and website development to help your business thrive online.",
 //     url: `https://dostudio.co.in/services`,
-
 //     type: "article",
 //   },
 // };
