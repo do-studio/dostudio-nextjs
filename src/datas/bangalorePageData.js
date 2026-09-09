@@ -182,6 +182,17 @@ export const data = {
         slug: 'branding-agency-in-bangalore',
         metaTitle: "Branding Agency in Bangalore | Branding Company in Bangalore",
         metaDescription: "From strategy to identity, Do Studio - Branding Agency in Bangalore - creates brands that win hearts and market share. Guidelines, packaging, go‑to‑market.",
+        sectionOrder: [
+            "hero",
+            "services",
+            "whyChoose",
+            "approach",
+            "clientsCarousel",
+            "boostUrBrand",
+            "works",
+            "faqs",
+            "letsStarted",
+        ],
         hero: {
             title: "Branding Agency in Bangalore | ",
             highlight: "Do Studio",
@@ -258,6 +269,56 @@ export const data = {
             ],
             buttonText: "Contact Now",
             buttonLink: "tel:+918590855541",
+        },
+
+        approach: {
+            title: "Our Step-by-Step Approach",
+            steps: [
+                {
+                    title: "Understanding Your Goals",
+                    desc: "We sit down with you to learn about your business, target audience, and growth targets. This helps us align our strategy with what matters most to you.",
+                },
+                {
+                    title: "Market & Competitor Analysis",
+                    desc: "We study the local Bangalore market, research what your competitors are doing, and spot real opportunities for your brand to stand out.",
+                },
+                {
+                    title: "Creative Campaign Ideas",
+                    desc: "Our team brainstorms unique messaging and visual ideas that grab attention, tell your brand story, and get people to take action.",
+                },
+                {
+                    title: "Custom Marketing Strategies",
+                    desc: "We build a tailored strategy that covers SEO, social media, paid ads, and content designed specifically for your target audience.",
+                },
+                {
+                    title: "Open Collaboration",
+                    desc: "We keep you involved throughout every stage, sharing progress and gathering your input so the results always match your vision.",
+                },
+                {
+                    title: "Local Market Expertise",
+                    desc: "Based in Bangalore, we understand the local business environment and customer behavior, helping us shape content that feels relatable.",
+                },
+                {
+                    title: "Data-Backed Execution",
+                    desc: "Every decision we make—from keyword targeting to budget allocation—is based on real user data and clear performance metrics.",
+                },
+                {
+                    title: "Strict Quality Checks",
+                    desc: "Before anything goes live, we review all creatives, ad copies, and technical setups to ensure top-notch quality and consistency.",
+                },
+                {
+                    title: "Smooth Campaign Launch",
+                    desc: "We manage your campaign rollout carefully, making sure every digital channel is properly aligned to maximize reach from day one.",
+                },
+                {
+                    title: "Continuous Optimization",
+                    desc: "After launch, we track real-time performance and refine campaigns regularly to lower costs, boost conversions, and maximize your ROI.",
+                },
+            ],
+        },
+
+        clientsCarousel: {
+            title: "Our Clients",
         },
 
         boostUrBrand: {
@@ -488,6 +549,16 @@ export const data = {
         slug: 'video-production-company-in-bangalore',
         metaTitle: " Video Production Company in Bangalore | Do Studio",
         metaDescription: " Partner with Do Studio, leading Video Production Company in Bangalore for high‑impact brand films, corporate videos, and ads. Strategy to final edit - done right.",
+        sectionOrder: [
+            "hero",
+            "services",
+            "videos",
+            "featureBlocks",
+            "whyChoose",
+            "boostUrBrand",
+            "faqs",
+            "letsStarted",
+        ],
         hero: {
             title: "Video Production Company in Bangalore",
             highlight: "Do Studio",
@@ -535,6 +606,33 @@ export const data = {
                 type: "landscape",
             },
         ],
+        featureBlocks: {
+            title: "Scripting & Post-Production",
+            blocks: [
+                {
+                    subtitle: "Scriptwriting That Captures Attention",
+                    description: "A great video starts with a compelling message. We write high-converting scripts that tell your story, keep viewers hooked, and drive action.",
+                    points: [
+                        "Concept Development",
+                        "Audience-Centric Messaging",
+                        "Structured Storyboarding",
+                        "Platform-Optimized Copy",
+                        "Call-to-Action Integration",
+                    ],
+                },
+                {
+                    subtitle: "High-Impact Video Editing & Post-Production",
+                    description: "We take raw footage and transform it into sleek, high-quality visual content that elevates your brand.",
+                    points: [
+                        "Seamless Cutting & Pacing",
+                        "Color Grading & Correction",
+                        "Audio Clean-up & Sound Design",
+                        "Motion Graphics & Animations",
+                        "Multi-Format Exporting",
+                    ],
+                },
+            ],
+        },
         services: {
             heading: "Video Production Services by ",
             highlight: "Do Studio",

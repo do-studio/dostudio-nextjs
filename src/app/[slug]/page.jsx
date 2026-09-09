@@ -14,6 +14,9 @@ import VideoProductionServices from "../../components/bangalorePage/VideoProduct
 import SearchStrategySection from "../../components/bangalorePage/SearchStrategySection";
 import BlogsSection from "../../components/bangalorePage/BlogsSection";
 import HowWeWorkSection from "../../components/bangalorePage/HowWeWorkSection";
+import ApproachSection from "../../components/bangalorePage/ApproachSection";
+import ClientsCarouselSection from "../../components/bangalorePage/ClientsCarouselSection";
+import FeatureBlocksSection from "../../components/bangalorePage/FeatureBlocksSection";
 
 // Registry of all sections a bangalore page can render, keyed by name.
 // DEFAULT_SECTION_ORDER preserves the historical render order so existing
@@ -28,6 +31,11 @@ const SECTION_REGISTRY = {
     <WhyChooseSocialMedia key="whyChoose" {...s.whyChoose} altText={s.altText} />
   ),
   howWeWork: (s) => s.howWeWork && <HowWeWorkSection key="howWeWork" {...s.howWeWork} />,
+  approach: (s) => s.approach && <ApproachSection key="approach" {...s.approach} />,
+  clientsCarousel: (s) =>
+    s.clientsCarousel && <ClientsCarouselSection key="clientsCarousel" {...s.clientsCarousel} />,
+  featureBlocks: (s) =>
+    s.featureBlocks && <FeatureBlocksSection key="featureBlocks" {...s.featureBlocks} />,
   searchStrategy: (s) =>
     s.searchStrategy && <SearchStrategySection key="searchStrategy" {...s.searchStrategy} />,
   instagramSection: (s) =>
