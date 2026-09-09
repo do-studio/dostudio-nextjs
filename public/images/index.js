@@ -5,6 +5,9 @@ import LogoFav from './logo/do_fav.svg';
 import LogoDO from './logo/do-icon-bl.svg';
 import LogoLoader from './logo/loader.gif'
 
+import LogoFav1 from './logo/do_fav_1.svg'
+import LogoFav2 from './logo/do_fav_2.svg'
+
 import wrk1 from './medias/wrk1.webp'
 import wrk2 from './medias/work2.webp'
 import wrk3 from './medias/work3.webp'
@@ -109,6 +112,8 @@ export {
     LogoDO,
     LogoGreen,
     LogoFav,
+    LogoFav1,
+    LogoFav2,
     LogoLoader,
     imgarrw,
     dologo,
