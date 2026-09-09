@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Logoblack, Logowhite } from "../../../public/images";
+import { Logoblack, LogoGreen, Logowhite,LogoFav,LogoFav1,LogoFav2 } from "../../../public/images";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -168,12 +168,12 @@ const Navbar = () => {
 
 
       <nav
-        className={`px-5 fixed top-0 left-0 right-0 flex justify-between md:justify-center items-center z-40 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${isScrolled ? "" : "bg-transparent"}`}>
+        className={`px-5 fixed top-1 left-0 right-0 flex justify-between md:justify-center items-center z-40 w-full 2xl:max-w-[3500px] mx-auto h-[4.5rem] transition duration-300 ease-in-out ${isScrolled ? "" : "bg-transparent"}`}>
         {/* scroll active header */}
         <nav className={` text-black hidden md:block  `}>
           <div className="container mx-auto flex justify-center py-2">
             <ul className={`flex h-full  items-center space-x-6 bg-transparent  ${isScrolled ? "navbar " : "bg-white invert md:invert-0"
-              } backdrop-blur-md px-6 py-1 rounded-full     shadow-2xl `} >
+              } backdrop-blur-md px-5 py-2 rounded-full     shadow-2xl `} >
               <li>
                 <Link
                   href="/"
