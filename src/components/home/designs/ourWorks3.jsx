@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 import { wrk1, wrk2, wrk3, wrk4, wrk5, WRK1, WRK2 } from "../../../../public/images";
 import Image from "next/image";
 
-const THUMBNAIL_URL = "https://cdn.sanity.io/images/0hjyj1bs/production/0d28e89f73a2a367aac1e118ea01b5e57351d50b-2910x1642.webp";
-const VIDEO_URL = "https://cdn.sanity.io/files/0hjyj1bs/production/ab59f30ca814b5219de9031294041f1f0fc2bbe1.mp4";
+const THUMBNAIL_URL = "https://cdn.sanity.io/images/0hjyj1bs/production/2b55c42f3a2cfc2816c7dd83d79099da3959c07a-2920x1634.webp";
+const VIDEO_URL = "https://cdn.sanity.io/files/0hjyj1bs/production/53b0df08ef0a7647496fe7f01b59418478c8a606.mp4";
 
 const ourWorks3 = () => {
     const [videoLoaded, setVideoLoaded] = useState(false);
