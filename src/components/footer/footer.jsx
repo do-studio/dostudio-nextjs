@@ -52,7 +52,7 @@ const Footer = () => {
 
   useEffect(() => {
 
-    if (typeof window !== "undefined" && window.location.pathname === "/") {
+    if (typeof window !== "undefined" && window.location.pathname === "/home2") {
       setAnimationTrue(true)
     }
 
