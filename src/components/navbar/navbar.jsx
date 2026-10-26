@@ -64,7 +64,7 @@ const Navbar = () => {
 
   // change logo in home
   useEffect(() => {
-    setIsHome(pathname === '/');
+    setIsHome(pathname === '/home2');
   }, [pathname]);
 
 
@@ -159,6 +159,9 @@ const Navbar = () => {
     }
     return false; // Avoid errors during SSR
   };
+
+  // The home page ("/") renders its own nav inside the hero.
+  if (pathname === "/") return null;
 
   return (
     <>

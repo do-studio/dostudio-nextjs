@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion } from 'framer-motion';
 import ClipLoader from "react-spinners/DotLoader";
 
@@ -47,8 +48,13 @@ const LoadingMain = () => {
 
 
 
+// Pages that run their own intro animation instead of the global loader.
+const OWN_INTRO_ROUTES = ["/"];
+
 export default function RootClient({ children }) {
-  const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
+  const ownIntro = OWN_INTRO_ROUTES.includes(pathname);
+  const [loading, setLoading] = useState(!ownIntro);
 
   useEffect(() => {
     const handleComplete = () => {
@@ -66,8 +72,8 @@ export default function RootClient({ children }) {
 
   return (
     <>
-      {loading && <LoadingMain />}
-      <div className={` ${loading ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}>
+      {loading && !ownIntro && <LoadingMain />}
+      <div className={` ${loading && !ownIntro ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}>
         {children}
       </div>
     </>
