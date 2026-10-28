@@ -24,7 +24,7 @@ export default async function Clients() {
 
   return (
     <section className="mx-auto w-[89.5%] max-w-[1718px] pt-[clamp(4rem,5.31vw,6.375rem)]">
-      <SectionPill>Our Clients</SectionPill>
+      <SectionPill variant="shadow">Our Clients</SectionPill>
       <ClientsGrid logos={logos} />
     </section>
   );

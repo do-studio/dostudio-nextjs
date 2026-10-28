@@ -48,7 +48,7 @@ const STEPS = [
 export default function Process() {
   return (
     <section className="mx-auto w-[89.5%] max-w-[1718px] pt-[clamp(4rem,8.7vw,10.44rem)]">
-      <SectionPill>Our Process</SectionPill>
+      <SectionPill variant="shadow">Our Process</SectionPill>
 
       <ol className="mt-[clamp(2rem,4.48vw,5.375rem)]">
         {STEPS.map((step) => (
@@ -95,7 +95,10 @@ export default function Process() {
           </motion.li>
         ))}
       </ol>
+      <div className="w-full flex justify-end">
+
       <StrategyCall name=" Start Your Project" href="/contact" />
+      </div>
 
     </section>
   );

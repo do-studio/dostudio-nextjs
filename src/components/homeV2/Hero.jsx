@@ -7,6 +7,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { EASE_OUT, SPRING } from "./motion";
 import { useIntroReady } from "./IntroLoader";
+import HeroGreeting, { HeroBackdrop } from "./HeroGreeting";
+
+// The time-of-day background video. Set to true to bring it back (the greeting text shows either way).
+const SHOW_VIDEO = false;
 
 function getPeriod(hour) {
   if (hour >= 5 && hour < 12) return "morning";
@@ -86,12 +90,15 @@ export default function Hero() {
         variants={{ hidden: { scale: 1.14 }, show: { scale: 1 } }}
         transition={{ duration: 2.4, ease: EASE_OUT }}
       >
-        <img
-          src={poster}
-          alt="Do Studio banner"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        {video && (
+        {!SHOW_VIDEO && <HeroBackdrop />}
+        {SHOW_VIDEO && (
+          <img
+            src={poster}
+            alt="Do Studio banner"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        )}
+        {SHOW_VIDEO && video && (
           <video
             key={`${device}-${period}`}
             src={video}
@@ -107,6 +114,8 @@ export default function Hero() {
         )}
       </motion.div>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[25.5%] bg-gradient-to-b from-black/[0.78] to-transparent" />
+
+      <HeroGreeting period={period} ready={ready} delay={START} />
 
       <nav className="absolute inset-x-0 top-0 z-20 flex items-start justify-between px-[4.65%] pt-[clamp(0.75rem,3vw,3.625rem)] pr-[5.3%]">
         <motion.div
