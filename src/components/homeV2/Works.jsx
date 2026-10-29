@@ -19,7 +19,7 @@ const PINNED = {
   posterStory: "https://cdn.sanity.io/images/0hjyj1bs/production/e6f2044b8f679196d9cbfe2824c50abb508ff1c2-899x1600.jpg", // Poster 9:16 · tall right
   package: "https://cdn.sanity.io/images/0hjyj1bs/production/28e465edec5a4232ad8c67f5f6f453e48ded6ec1-3000x3000.webp", // Package design · small right
   branding: "https://cdn.sanity.io/images/0hjyj1bs/production/f7e1d881cfbeb5d00cae7491977bdba012836bc1-1000x1000.png", // Branding thumbnail · top row
-  website: "https://exxude.in/", // Web design (matched by the site's live link) · yellow tile
+  website: "https://uniqoncepts.com/", // Web design (matched by the site's live link) · yellow tile
   wideVideo: "https://cdn.sanity.io/files/0hjyj1bs/production/a3f3d40af18d7bd86370eb7c0af05001f0f17447.mp4", // Motion · wide bottom
   print: "https://cdn.sanity.io/images/0hjyj1bs/production/58cb2cf225ca6575076dcf3060291d359be5b84f-3840x2560.webp", // Print design
 };

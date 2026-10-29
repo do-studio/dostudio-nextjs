@@ -1,13 +1,17 @@
-import { MaskedWords, Reveal } from "./motion";
+import { Reveal, TypedText } from "./motion";
 import StrategyCall from "./StrategyCall";
 
 export default function Intro() {
   return (
     <section className="w-full bg-[#f6f561] pt-[clamp(2.5rem,3.96vw,4.75rem)] pb-[clamp(2.5rem,3.96vw,4.75rem)]">
       <div className="mx-auto w-[89.5%] max-w-[1718px]">
-        <h1 className="text-[clamp(1.875rem,3.889vw,4.666rem)] font-bold leading-[1.2] text-[#1c1c1e] md:leading-[1.444]">
-          <MaskedWords text="Best Digital Marketing Agency in Calicut, Kerala" stagger={0.05} />
-        </h1>
+        <TypedText
+          as="h1"
+          delay={0.2}
+          speed={45}
+          className="text-[clamp(1.875rem,3.889vw,4.666rem)] font-bold leading-[1.2] text-[#1c1c1e] md:leading-[1.444]"
+          text="Best Digital Marketing Agency in Calicut, Kerala"
+        />
         <Reveal
           as="p"
           delay={0.25}

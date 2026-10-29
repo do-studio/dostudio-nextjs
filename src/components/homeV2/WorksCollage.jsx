@@ -115,7 +115,7 @@ export default function WorksCollage({ media }) {
         <Reveal
           as="p"
           delay={0.15}
-          className="max-w-[min(806px,41.98vw)] text-[clamp(1rem,1.875vw,2.25rem)] leading-[1.361] text-[#3e3e3e] md:w-[46.9%]"
+          className="text-[clamp(1rem,1.875vw,2.25rem)] md:max-w-[min(806px,41.98vw)] leading-[1.361] text-[#3e3e3e] md:w-[46.9%]"
         >
           Our areas of expertise include Digital marketing services in Calicut, branding, production.
         </Reveal>

@@ -52,7 +52,7 @@ export default function Faq() {
       </Reveal>
 
       <motion.ul
-        className="max-w-[min(1195px,62.24vw)]"
+        className="md:max-w-[min(1195px,62.24vw)]"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
@@ -82,7 +82,7 @@ export default function Faq() {
                   isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                 }`}
               >
-                <p className="max-w-[min(1100px,57.3vw)] overflow-hidden text-[clamp(0.9rem,1.667vw,2rem)] font-medium leading-[1.375] text-[#3e3e3e]">
+                <p className="overflow-hidden md:max-w-[min(1100px,57.3vw)] text-[clamp(0.9rem,1.667vw,2rem)] font-medium leading-[1.375] text-[#3e3e3e]">
                   <span className={`block pb-[clamp(1rem,1.25vw,1.5rem)] transition-opacity duration-500 ${isOpen ? "opacity-100" : "opacity-0"}`}>
                     {item.a}
                   </span>
