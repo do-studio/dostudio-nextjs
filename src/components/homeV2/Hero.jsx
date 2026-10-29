@@ -83,39 +83,40 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-[100svh] min-h-[540px] md:h-[100vh] md:aspect-[1920/1302] overflow-hidden bg-black">
-      <motion.div
-        className="absolute inset-0"
-        initial="hidden"
-        animate={state}
-        variants={{ hidden: { scale: 1.14 }, show: { scale: 1 } }}
-        transition={{ duration: 2.4, ease: EASE_OUT }}
-      >
-        {!SHOW_VIDEO && <HeroBackdrop />}
-        {SHOW_VIDEO && (
+      {/* The gradient backdrop is not zoomed in: scaling a full-screen gradient layer is a heavy repaint on the first frames. */}
+      {!SHOW_VIDEO && <HeroBackdrop />}
+      {SHOW_VIDEO && (
+        <motion.div
+          className="absolute inset-0"
+          initial="hidden"
+          animate={state}
+          variants={{ hidden: { scale: 1.14 }, show: { scale: 1 } }}
+          transition={{ duration: 2.4, ease: EASE_OUT }}
+        >
           <img
             src={poster}
             alt="Do Studio banner"
             className="absolute inset-0 h-full w-full object-cover"
           />
-        )}
-        {SHOW_VIDEO && video && (
-          <video
-            key={`${device}-${period}`}
-            src={video}
-            poster={poster}
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls={false}
-            preload="auto"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        )}
-      </motion.div>
+          {video && (
+            <video
+              key={`${device}-${period}`}
+              src={video}
+              poster={poster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls={false}
+              preload="auto"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          )}
+        </motion.div>
+      )}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[25.5%] bg-gradient-to-b from-black/[0.78] to-transparent" />
 
-      <HeroGreeting period={period} ready={ready} delay={START} />
+      <HeroGreeting ready={ready} delay={START} />
 
       <nav className="absolute inset-x-0 top-0 z-20 flex items-start justify-between px-[4.65%] pt-[clamp(0.75rem,3vw,3.625rem)] pr-[5.3%]">
         <motion.div

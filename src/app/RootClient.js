@@ -49,7 +49,7 @@ const LoadingMain = () => {
 
 
 // Pages that run their own intro animation instead of the global loader.
-const OWN_INTRO_ROUTES = ["/"];
+const OWN_INTRO_ROUTES = ["/", "/posters"];
 
 export default function RootClient({ children }) {
   const pathname = usePathname();
