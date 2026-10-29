@@ -1,11 +1,11 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { EASE_OUT, MaskedWords, Reveal, SPRING } from "./motion";
+import { EASE_OUT, Reveal, SPRING, TypedText } from "./motion";
 
 // Same EmailJS config as components/home/designs/ContactForm.jsx
 const SERVICE_ID = "service_inkkj5n";
@@ -55,14 +55,14 @@ export default function Cta() {
         className="mx-auto grid w-[89.5%] max-w-[1719px] grid-cols-1 gap-8 rounded-[clamp(1rem,1.46vw,1.75rem)] bg-white pb-[clamp(2rem,5.57vw,6.69rem)] pl-[clamp(1.5rem,4.01vw,4.81rem)] pr-[clamp(1.5rem,3.125vw,3.75rem)] pt-[clamp(2rem,3.125vw,3.75rem)] md:grid-cols-[41.1%_1fr] md:gap-0"
       >
         <div className="flex flex-col gap-[clamp(1.5rem,2.29vw,2.75rem)]">
-          <h2 className="text-[clamp(2.5rem,6.917vw,8.3rem)] font-bold leading-[1.024] text-[#1c1c1e]">
-            {["Ready", "To Work", "With Us?"].map((line, i) => (
-              <Fragment key={line}>
-                <MaskedWords text={line} className="block" delay={0.25 + i * 0.12} />
-                {i < 2 && " "}
-              </Fragment>
-            ))}
-          </h2>
+          {/* Line breaks are kept (whitespace-pre-line), so it types out on three lines like the design. */}
+          <TypedText
+            as="h2"
+            delay={0.4}
+            speed={60}
+            className="whitespace-pre-line text-[clamp(2.5rem,6.917vw,8.3rem)] font-bold leading-[1.024] text-[#1c1c1e]"
+            text={"Ready\nTo Work\nWith Us?"}
+          />
           
         </div>
 
@@ -89,7 +89,7 @@ export default function Cta() {
               />
             </label>
             <label className={fieldClass}>
-              <span className={labelClass}>Ph No :</span>
+              <span className={labelClass}>Contact :</span>
               <input
                 type="tel"
                 name="msg_phn"

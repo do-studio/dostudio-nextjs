@@ -1,14 +1,28 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // A flexible sheet of paper blown off a wall by wind coming from the right.
 // CSS can't bend an element, so the sheet is built from thin vertical strips, each hinged to its left neighbour
 // (nested, with transform-origin on the left edge). Giving each strip a small rotateY makes the whole sheet curve:
 // curl concentrated at the free right edge looks like a peeling corner, and a travelling sine wave looks like wind ripples.
 
-// 64 strips keeps every joint under ~10° at the tightest curl, so the sheet reads as a smooth, floppy curve rather than creases.
-const STRIPS = 64;
+// More strips = a smoother, floppier curve (64 keeps every joint under ~10°), but every strip is its own copy of the card, so
+// the cost grows with it. The count is picked per device, and drops a step whenever a flight measurably stutters, so slower
+// laptops settle on a lighter sheet instead of lagging.
+const TIERS = [64, 40, 24, 16];
+let tier = null;
+const pickTier = () => {
+  if (tier === null) {
+    const cores = navigator.hardwareConcurrency || 4;
+    const memory = navigator.deviceMemory || 8;
+    tier = cores >= 10 && memory >= 8 ? 0 : cores >= 8 ? 1 : cores >= 6 ? 2 : 3;
+  }
+  return TIERS[tier];
+};
+const reportFrameTime = (avgMs) => {
+  if (avgMs > 24 && tier < TIERS.length - 1) tier += 1;
+};
 const clamp01 = (x) => Math.min(1, Math.max(0, x));
 const smooth = (a, b, x) => {
   const t = clamp01((x - a) / (b - a));
@@ -17,17 +31,22 @@ const smooth = (a, b, x) => {
 const easeOutCubic = (x) => 1 - Math.pow(1 - x, 3);
 
 // Curl is weighted towards the right edge (∝ position^1.6), so the free corner bends most and the left stays flatter.
-const CURL_WEIGHTS = (() => {
-  const raw = Array.from({ length: STRIPS }, (_, i) => ((i + 1) / STRIPS) ** 1.6);
-  const sum = raw.reduce((a, b) => a + b, 0);
-  return raw.map((v) => v / sum);
-})();
+const weightCache = new Map();
+const curlWeights = (n) => {
+  if (!weightCache.has(n)) {
+    const raw = Array.from({ length: n }, (_, i) => ((i + 1) / n) ** 1.6);
+    const sum = raw.reduce((a, b) => a + b, 0);
+    weightCache.set(n, raw.map((v) => v / sum));
+  }
+  return weightCache.get(n);
+};
 
 export default function PaperSheet({ width, height, direction = "out", duration, backColor, radius, renderFace, onDone }) {
   const sheetRef = useRef(null);
   const shadowRef = useRef(null);
   const stripRefs = useRef([]);
   const shadeRefs = useRef([]);
+  const [STRIPS] = useState(pickTier);
   const doneRef = useRef(onDone);
   doneRef.current = onDone;
 
@@ -40,6 +59,7 @@ export default function PaperSheet({ width, height, direction = "out", duration,
       const waveAmp = 50 * peel * (1 - 0.45 * smooth(0.8, 1, p)); // wind ripples (kept up while the sheet flies)
       const release = -22 * fly; // once free, the left part bends too
 
+      const weights = curlWeights(STRIPS);
       let cumulative = 0;
       for (let i = 0; i < STRIPS; i++) {
         const s = (i + 0.5) / STRIPS;
@@ -49,7 +69,7 @@ export default function PaperSheet({ width, height, direction = "out", duration,
         const ripple =
           rippleBase * Math.sin(2 * Math.PI * (1.9 * t + 1.1 * s)) +
           rippleBase * 0.5 * Math.sin(2 * Math.PI * (3.1 * t + 2.6 * s));
-        const angle = totalCurl * CURL_WEIGHTS[i] + ripple + (release * (1 - s)) / STRIPS * 2;
+        const angle = totalCurl * weights[i] + ripple + (release * (1 - s)) / STRIPS * 2;
         cumulative += angle;
         const strip = stripRefs.current[i];
         if (strip) strip.style.transform = `rotateY(${angle.toFixed(3)}deg)`;
@@ -79,17 +99,27 @@ export default function PaperSheet({ width, height, direction = "out", duration,
     const total = duration * 1000;
     const start = performance.now();
     let raf;
+    let last = start;
+    let frames = 0;
+    let slow = 0;
     const frame = (now) => {
+      // Skip the first frames (mounting the sheet is the slow part) and long pauses such as a hidden tab.
+      const dt = now - last;
+      last = now;
+      if (frames++ > 3 && dt < 250) slow += dt;
       const raw = clamp01((now - start) / total);
       const p = direction === "out" ? raw : 1 - easeOutCubic(raw);
       apply(p, (now - start) / 1000);
       if (raw < 1) raf = requestAnimationFrame(frame);
-      else doneRef.current?.();
+      else {
+        if (frames > 12) reportFrameTime(slow / (frames - 4));
+        doneRef.current?.();
+      }
     };
     apply(direction === "out" ? 0 : 1, 0);
     raf = requestAnimationFrame(frame);
     return () => cancelAnimationFrame(raf);
-  }, [direction, duration, width, height]);
+  }, [direction, duration, width, height, STRIPS]);
 
   const stripW = width / STRIPS;
 
