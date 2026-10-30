@@ -91,7 +91,6 @@ export default function Footer() {
             <motion.div className="col-span-2 sm:col-span-1" variants={column}>
               <h3 className={headingClass}>Office Address</h3>
               <a
-                href="https://goo.gl/maps/ku2aYUFJ78hSuSnb8?coh=178571&entry=tt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-[clamp(0.95rem,1.536vw,1.84rem)] leading-[1.356] text-white/85 transition-colors duration-300 hover:text-[#f6f561]"

@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import SiteNav from "../homeV2/SiteNav";
 
 // An endless wall of posters you drag, scroll or arrow-key through, in the style of garcy.studio/#/projects.
 //
@@ -17,11 +17,10 @@ const EASE = 0.16; // how quickly the wall catches up with the pointer (0-1 per 
 const CURVE = 0.2; // concave lens: how much bigger the cards get towards the screen edges (0 = flat)
 const LENS = 0.24; // zoom under the cursor: how far it pushes the nearby cards apart
 const LENS_REACH = 1.5; // size of the zoomed area, in card widths
-const DRIFT = 10; // px the poster images slide towards the cursor inside their cards
 
 const IMG = (url, w) => `${url}?w=${w}&auto=format`;
-const mod = (n, m) => ((n % m) + m) % m;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const mod = (n, m) => ((n % m) + m) % m;
 const clean = (s) => (s || "").trim();
 
 // The perspective transform that stretches a w×h box onto any four corners (top-left, top-right, bottom-right,
@@ -62,6 +61,7 @@ export default function PosterGallery({ posters }) {
   const raf = useRef(0);
   const lastTime = useRef(0);
   const reduceMotion = useRef(false);
+  const lowEnd = useRef(false); // 4 cores or fewer: skip the cursor zoom, keep the curve
   const viewerOpen = useRef(false);
   // The zoom under the cursor (mouse only): where it is (relative to the screen centre) and how strong (0-1).
   const cursor = useRef({ x: 0, y: 0 });
@@ -104,6 +104,14 @@ export default function PosterGallery({ posters }) {
       const { cw, ch, W, H } = dims.current;
       const sx = c * cw - pos.current.x;
       const sy = r * ch - pos.current.y;
+      // The ring of cards just outside the screen stays loaded and decoded but isn't painted or moved, which keeps the
+      // per-frame work to the cards you can actually see.
+      const near = sx > -cw && sx < W && sy > -ch && sy < H;
+      if (near === cell.hidden) {
+        cell.hidden = !near;
+        cell.el.style.visibility = near ? "visible" : "hidden";
+      }
+      if (!near) return;
       const g = GAP / 2;
       const corners = [
         warp(sx + g, sy + g),
@@ -112,15 +120,6 @@ export default function PosterGallery({ posters }) {
         warp(sx + g, sy + ch - g),
       ];
       cell.el.style.transform = quadMatrix(corners, cw - GAP, ch - GAP);
-      // The image leans towards the cursor inside its card while the zoom is on.
-      const l = lens.current;
-      if (cell.img && (l > 0.001 || cell.drifting)) {
-        const reach = cw * LENS_REACH;
-        const mx = clamp((cursor.current.x - (sx + cw / 2 - W / 2)) / reach, -1, 1) * DRIFT * l;
-        const my = clamp((cursor.current.y - (sy + ch / 2 - H / 2)) / reach, -1, 1) * DRIFT * l;
-        cell.img.style.transform = l > 0.001 ? `translate3d(${mx.toFixed(1)}px,${my.toFixed(1)}px,0) scale(${(1 + 0.05 * l).toFixed(3)})` : "";
-        cell.drifting = l > 0.001;
-      }
     },
     [warp]
   );
@@ -140,10 +139,7 @@ export default function PosterGallery({ posters }) {
       rangeRef.current = key;
       setRange(next);
     }
-    cellEls.current.forEach((cell, id) => {
-      const [c, r] = id.split(",").map(Number);
-      place(cell, c, r);
-    });
+    cellEls.current.forEach((cell) => place(cell, cell.c, cell.r));
   }, [place]);
 
   const tick = useCallback(
@@ -207,6 +203,7 @@ export default function PosterGallery({ posters }) {
   useEffect(() => {
     const stage = stageRef.current;
     reduceMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    lowEnd.current = (navigator.hardwareConcurrency || 8) <= 4;
     const measure = () => {
       const W = stage.clientWidth;
       const H = stage.clientHeight;
@@ -232,7 +229,7 @@ export default function PosterGallery({ posters }) {
     let down = null;
 
     const hover = (e) => {
-      if (reduceMotion.current || e.pointerType !== "mouse" || viewerOpen.current) return;
+      if (reduceMotion.current || lowEnd.current || e.pointerType !== "mouse" || viewerOpen.current) return;
       const { W, H, left, top } = dims.current;
       cursorTarget.current = { x: e.clientX - left - W / 2, y: e.clientY - top - H / 2 };
       // Coming in fresh, the zoom starts right under the cursor instead of sliding over from where it last was.
@@ -247,7 +244,11 @@ export default function PosterGallery({ posters }) {
 
     const onDown = (e) => {
       if (viewerOpen.current || (e.pointerType === "mouse" && e.button !== 0)) return;
-      stage.setPointerCapture(e.pointerId);
+      try {
+        stage.setPointerCapture(e.pointerId);
+      } catch {
+        // the pointer already ended; the drag still works without capture
+      }
       lensTarget.current = 0; // no zoom while dragging
       down = {
         id: e.pointerId,
@@ -346,6 +347,8 @@ export default function PosterGallery({ posters }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, count, nudge, reset, centerPoster]);
 
+  // Ask the image CDN for about the pixels the card needs, no more (the sources are 1080px wide).
+  const imgWidth = size ? clamp(Math.ceil((size.cw * Math.min(window.devicePixelRatio || 1, 1.5)) / 120) * 120, 360, 1080) : 480;
   const cells = [];
   if (size && range && count) {
     const stride = size.cols + 3; // the next row starts this many posters on, so neighbours never repeat on screen
@@ -360,9 +363,9 @@ export default function PosterGallery({ posters }) {
             key={id}
             ref={(el) => {
               if (el) {
-                const cell = { el, img: el.querySelector("img"), drifting: false };
+                const cell = { el, c, r, hidden: false };
                 // Decode the image now, off screen, so it is ready to paint the moment the card slides into view.
-                cell.img?.decode?.().catch(() => {});
+                el.querySelector("img")?.decode?.().catch(() => {});
                 cellEls.current.set(id, cell);
                 place(cell, c, r);
               } else {
@@ -370,7 +373,7 @@ export default function PosterGallery({ posters }) {
               }
             }}
             // Card-sized (the gap is left between the corners place() computes), stretched from its top-left corner.
-            className="absolute left-0 top-0 origin-top-left will-change-transform [backface-visibility:hidden]"
+            className="absolute left-0 top-0 origin-top-left"
             style={{ width: size.cw - GAP, height: size.ch - GAP }}
           >
             <div
@@ -379,7 +382,7 @@ export default function PosterGallery({ posters }) {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={IMG(p.src, size.cw > 520 ? 1080 : 720)}
+                src={IMG(p.src, imgWidth)}
                 alt={clean(p.alt) || clean(p.title) || "Creative poster"}
                 draggable={false}
                 className={`h-full w-full select-none ${cover ? "object-cover" : "object-contain"}`}
@@ -409,48 +412,8 @@ export default function PosterGallery({ posters }) {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(0,0,0,0.5)_100%)]" />
       </div>
 
-      {/* Top bar */}
-      <header className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between p-5 md:p-7">
-        <Link href="/" aria-label="Do Studio home" className="pointer-events-auto">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/home2/logo-white.svg" alt="Do Studio" width={103} height={61} className="h-auto w-[clamp(48px,5.4vw,96px)]" />
-        </Link>
-        <h1 className="pointer-events-none absolute left-1/2 top-5 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#1c1c1e]/85 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] max-md:sr-only md:top-7">
-          Creative Posters
-        </h1>
-        <nav className="pointer-events-auto flex gap-1.5 rounded-[18px] bg-[#1c1c1e]/85 p-1.5">
-          <Link
-            href="/our-works"
-            className="flex h-10 items-center rounded-[12px] bg-[#f6f561] px-4 text-sm font-semibold text-[#1c1c1e] transition-transform hover:-translate-y-0.5"
-          >
-            Works
-          </Link>
-          <Link
-            href="/contact"
-            className="flex h-10 items-center rounded-[12px] bg-black px-4 text-sm font-medium transition-transform hover:-translate-y-0.5"
-          >
-            Contact
-          </Link>
-        </nav>
-      </header>
-
-      {/* Bottom bar */}
-      <footer className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-4 p-5 font-mono text-[10px] uppercase tracking-[0.16em] text-white/75 md:p-7 md:text-[11px]">
-        <p className="whitespace-nowrap rounded-full bg-[#1c1c1e]/85 px-3.5 py-2.5 leading-relaxed">
-          <span className="md:hidden">Drag to explore</span>
-          <span className="hidden md:inline">Drag or scroll to explore · Arrow keys move · Home resets</span>
-        </p>
-        <button
-          type="button"
-          onClick={reset}
-          className="pointer-events-auto whitespace-nowrap rounded-full bg-[#1c1c1e]/85 px-4 py-2.5 transition-colors hover:bg-[#f6f561] hover:text-[#1c1c1e] max-md:order-last"
-        >
-          Reset view
-        </button>
-        <p className="hidden whitespace-nowrap rounded-full bg-[#1c1c1e]/85 px-3.5 py-2.5 text-right leading-relaxed md:block">
-          {count} posters
-        </p>
-      </footer>
+      <SiteNav />
+      <h1 className="sr-only">Creative Posters</h1>
 
       {/* Titles for search engines and screen readers (the wall itself is drawn from whatever is on screen). */}
       <ul className="sr-only">
