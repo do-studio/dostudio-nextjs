@@ -20,8 +20,7 @@ const TILES = [
   { l: "75.934%", t: "0%", w: "24.066%", h: "51.65%", slot: 4, fallback: "/images/home2/work-9.png" },
   { l: "75.934%", t: "53.65%", w: "24.066%", h: "19.82%", slot: 5, fallback: "/images/home2/work-5.png" },
   { l: "25.073%", t: "75.48%", w: "24.788%", h: "24.52%", slot: 8, color: "#ffa8f4" },
-  // On phones this wide tile spans both columns so the 2-column grid stays even.
-  { l: "51.289%", t: "75.48%", w: "48.711%", h: "24.52%", slot: 6, fallback: "/images/home2/work-7.png", sizes: "50vw", mobileWide: true },
+  { l: "51.289%", t: "75.48%", w: "48.711%", h: "24.52%", slot: 6, fallback: "/images/home2/work-7.png", sizes: "50vw" },
 ];
 
 const photoVariants = {
@@ -122,7 +121,7 @@ export default function WorksCollage({ media }) {
       </div>
 
       <motion.div
-        className="mt-[clamp(2rem,3.59vw,4.31rem)] grid grid-cols-2 gap-3 md:relative md:block md:aspect-[1718/1226]"
+        className="relative mt-[clamp(2rem,3.59vw,4.31rem)] aspect-[1718/1226]"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.15 }}
@@ -131,9 +130,9 @@ export default function WorksCollage({ media }) {
         {TILES.map((tile, i) => {
           const item = media[tile.slot];
           const position = { "--l": tile.l, "--t": tile.t, "--w": tile.w, "--h": tile.h };
-          const box = `relative overflow-hidden rounded-[clamp(1rem,2.05vw,2.45rem)] md:absolute md:aspect-auto md:left-[var(--l)] md:top-[var(--t)] md:w-[var(--w)] md:h-[var(--h)] ${
-            tile.mobileWide ? "col-span-2 aspect-[2/1]" : "aspect-square"
-          }`;
+          // Same layout at every screen size: each tile is placed by its Figma position as a % of the collage.
+          const box =
+            "absolute left-[var(--l)] top-[var(--t)] h-[var(--h)] w-[var(--w)] overflow-hidden rounded-[clamp(0.5rem,2.05vw,2.45rem)]";
 
           if (tile.color && !item) {
             return (
@@ -142,7 +141,7 @@ export default function WorksCollage({ media }) {
                 variants={colorVariants}
                 whileHover={{ rotate: -3, scale: 1.03, transition: SPRING }}
                 style={{ ...position, backgroundColor: tile.color }}
-                className={`${box} hidden md:block`}
+                className={box}
               />
             );
           }

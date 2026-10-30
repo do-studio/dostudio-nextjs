@@ -160,8 +160,8 @@ const Navbar = () => {
     return false; // Avoid errors during SSR
   };
 
-  // The home page ("/") renders its own nav inside the hero, and the poster gallery has its own header.
-  if (pathname === "/" || pathname === "/posters") return null;
+  // The home page ("/") renders its own nav inside the hero, and the poster gallery uses the same home header.
+  if (pathname === "/" || pathname === "/our-works/creative-posters") return null;
 
   return (
     <>
