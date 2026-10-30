@@ -17,8 +17,8 @@ const SERVICES = [
   { title: ["DIGITAL", "MARKETING"], href: "/services/digital-marketing-agency-in-calicut", Icon: PiChartBarBold },
   { title: ["WEBSITE", "DEVELOPMENT"], href: "/services/web-development-company-in-calicut", icon: "/images/home2/icon-web.svg" },
   { title: ["PRODUCTION"], href: "/our-works/production", icon: "/images/home2/icon-production.svg" },
-  { title: ["PRINT", "DESIGN"], href: "/services/print-design", Icon: LuPencilRuler },
-  { title: ["PACKAGE", "DESIGN"], href: "/services/package-design", icon: "/images/home2/icon-package.svg" },
+  { title: ["PRINT", "DESIGN"], href: "/our-works/print-design", Icon: LuPencilRuler },
+  { title: ["PACKAGE", "DESIGN"], href: "/our-works/package-design", icon: "/images/home2/icon-package.svg" },
 ];
 
 export default function Services() {
