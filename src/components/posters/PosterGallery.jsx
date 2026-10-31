@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SiteNav from "../homeV2/SiteNav";
+import MediaFrame from "../videos/MediaFrame";
 
 // An endless wall of posters you drag, scroll or arrow-key through, in the style of garcy.studio/#/projects.
 //
@@ -436,16 +437,21 @@ export default function PosterGallery({ posters }) {
             aria-modal="true"
             aria-label={clean(poster.title) || "Poster"}
           >
-            <motion.img
+            <motion.div
               key={poster._id}
-              src={IMG(poster.src, 1600)}
-              alt={clean(poster.alt) || clean(poster.title) || "Creative poster"}
-              className="max-h-[80svh] max-w-full rounded-[clamp(14px,1.6vw,26px)] object-contain"
               initial={{ opacity: 0, y: 24, scale: 0.94 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              onClick={(e) => e.stopPropagation()}
-            />
+            >
+              <MediaFrame
+                kind="image"
+                src={IMG(poster.src, 1600)}
+                alt={clean(poster.alt) || clean(poster.title) || "Creative poster"}
+                ratio={poster.ratio || "4/5"}
+                radius="clamp(14px,1.6vw,26px)"
+                maxHeight="80svh"
+              />
+            </motion.div>
             <div className="flex items-center gap-6 text-sm" onClick={(e) => e.stopPropagation()}>
               <button
                 type="button"

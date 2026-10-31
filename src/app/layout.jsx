@@ -10,6 +10,7 @@ import Script from "next/script";
 import ContactButton from "../components/home/designs/ContactButton";
 import React from "react";
 import FooterWrapper from "../components/FooterWrapper";
+import CursorPop from "../components/CursorPop";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -131,6 +132,7 @@ export default function RootLayout({ children }) {
         <div className="2xl:max-w-[3500px] mx-auto">
           {/* <CanonicalTag /> */}
 
+          <CursorPop />
           <RootClient>
             <Navbar />
             {children}

@@ -5,6 +5,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { AnimatePresence, motion } from "framer-motion";
 import SiteNav from "../homeV2/SiteNav";
+import MediaFrame from "./MediaFrame";
 
 // Production videos on one long roll of film in a dark room with a grid floor, in the spirit of jesperlandberg.com.
 // Each frame keeps its video's own shape. At rest the roll curves gently around you; scroll and it changes shape with
@@ -588,19 +589,7 @@ export default function VideoWall({ videos, title = "Production Videos" }) {
             aria-modal="true"
             aria-label={clean(current.title) || "Video"}
           >
-            <video
-              key={current._id}
-              src={current.src}
-              poster={`${current.thumb}?w=1200&auto=format`}
-              autoPlay
-              controls
-              loop
-              playsInline
-              onClick={(e) => e.stopPropagation()}
-              className="max-h-[82svh] max-w-full rounded-[clamp(10px,1.2vw,22px)] bg-black"
-              style={{ aspectRatio: parseRatio(current.ratio) }}
-            />
-            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-white/80">{clean(current.title) || clean(current.altText)}</p>
+            <MediaFrame key={current._id} kind="video" src={current.src} ratio={current.ratio} />
             <button
               type="button"
               aria-label="Close"
