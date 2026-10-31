@@ -161,7 +161,7 @@ const Navbar = () => {
   };
 
   // The home page ("/") renders its own nav inside the hero, and the poster gallery uses the same home header.
-  if (pathname === "/" || pathname === "/our-works/creative-posters") return null;
+  if (pathname === "/" || pathname === "/our-works/creative-posters" || pathname === "/videos") return null;
 
   return (
     <>
