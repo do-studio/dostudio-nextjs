@@ -322,7 +322,7 @@ function Rig({ motionRef, shared, frames, onActive, onHeading, onSlow, reduceMot
   return null;
 }
 
-export default function VideoWall({ videos }) {
+export default function VideoWall({ videos, title = "Production Videos" }) {
   const count = videos.length;
   const rootRef = useRef(null);
   // The strip starts with the first frame in the middle of the screen.
@@ -401,7 +401,7 @@ export default function VideoWall({ videos }) {
     [count]
   );
 
-  // Moves the strip by `du` world units, then settles on the nearest frame once it stops being pushed.
+  /// Moves the strip by `du` world units, then settles on the nearest frame once it stops being pushed.
   const push = useCallback(
     (du, settleAfter = 140) => {
       const m = motionRef.current;
@@ -553,7 +553,7 @@ export default function VideoWall({ videos }) {
       </div>
 
       <SiteNav />
-      <h1 className="sr-only">Production Videos</h1>
+      <h1 className="sr-only">{title}</h1>
 
       {/* Same look as the "Enquire Now" button and nav links on the home page: grotesque type, white text with no background, yellow on hover. */}
       <footer className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex items-center justify-center gap-[clamp(0.5rem,1vw,1.25rem)] px-[4.65%] pb-[clamp(0.75rem,1.5vw,1.75rem)] text-white">

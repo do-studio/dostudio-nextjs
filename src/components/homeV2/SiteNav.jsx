@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { WorksDropdown, WorksMobileList } from "./WorksMenu";
 
 const NAV = [
   { label: "Home", href: "/" },
@@ -34,13 +35,14 @@ export default function SiteNav() {
 
         <ul className="hidden items-center gap-[clamp(1.5rem,2.9vw,3.5rem)] pt-[clamp(0.25rem,1.22vw,1.47rem)] md:flex">
           {NAV.map((item) => (
-            <li key={item.label}>
+            <li key={item.label} className={item.label === "Works" ? "group relative" : undefined}>
               <Link
                 href={item.href}
                 className="relative text-[clamp(1rem,1.446vw,1.736rem)] font-medium leading-[1.3] tracking-[-0.005em] text-white after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#f6f561] after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {item.label}
               </Link>
+              {item.label === "Works" && <WorksDropdown />}
             </li>
           ))}
         </ul>
@@ -63,6 +65,9 @@ export default function SiteNav() {
               <Link href={item.href} onClick={() => setOpen(false)} className="block py-3 text-lg font-medium text-white">
                 {item.label}
               </Link>
+              {item.label === "Works" && (
+                <WorksMobileList onNavigate={() => setOpen(false)} linkClass="block py-2 text-base text-white/80" />
+              )}
             </li>
           ))}
         </ul>

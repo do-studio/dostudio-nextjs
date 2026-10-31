@@ -8,6 +8,7 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { EASE_OUT, SPRING } from "./motion";
 import { useIntroReady } from "./IntroLoader";
 import HeroGreeting, { HeroBackdrop } from "./HeroGreeting";
+import { WorksDropdown, WorksMobileList } from "./WorksMenu";
 
 // The time-of-day background video. Set to true to bring it back (the greeting text shows either way).
 const SHOW_VIDEO = false;
@@ -147,6 +148,7 @@ export default function Hero() {
               key={item.label}
               variants={{ hidden: { opacity: 0, y: -20 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.6, ease: EASE_OUT }}
+              className={item.label === "Works" ? "group relative" : undefined}
             >
               <Link
                 href={item.href}
@@ -154,6 +156,7 @@ export default function Hero() {
               >
                 {item.label}
               </Link>
+              {item.label === "Works" && <WorksDropdown />}
             </motion.li>
           ))}
         </motion.ul>
@@ -193,6 +196,9 @@ export default function Hero() {
                 >
                   {item.label}
                 </Link>
+                {item.label === "Works" && (
+                  <WorksMobileList onNavigate={() => setOpen(false)} linkClass="block py-2 text-base text-white/80" />
+                )}
               </li>
             ))}
           </motion.ul>
