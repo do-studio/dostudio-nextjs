@@ -22,13 +22,24 @@ const WINDOW = 4; // frames built either side of the one in front (the rest are 
 const EASE = 0.12; // how quickly the strip catches up with the pointer (0-1 per frame)
 const FOV = 35;
 const WAVE_MAX = 0.6; // how far the frames swing in and out at full speed
-const START_DELAY = 250; // ms a frame stays on screen before its video starts
+const START_DELAY = 100; // ms the strip must be heading for a frame before its video starts loading
 
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+// How sharp to draw. The picture is limited by how many pixels the GPU fills per frame, not by the screen's pixel
+// density, so a small screen (a phone) can be drawn at 2-3x per pixel cheaply while a big laptop screen stays at 1x.
+// `budget` is the most pixels to fill; ordinary laptops get a smaller one than strong machines, and a machine that
+// lags gets it cut again.
+function qualityFor(budget) {
+  const css = Math.max(1, window.innerWidth * window.innerHeight);
+  const dpr = clamp(Math.sqrt(budget / css), 1, Math.min(window.devicePixelRatio || 1, 2));
+  return { dpr: Math.round(dpr * 100) / 100, aa: css * dpr * dpr < 1.6e6 };
+}
+const BUDGET_MODEST = 1.4e6; // 4 cores or fewer, or little memory
+const BUDGET_STRONG = 2.6e6;
 const clean = (s) => (s || "").trim();
-// Thumbnails come from the image CDN already sized to the frame (about 640px on the long side, never more).
+// Thumbnails come from the image CDN already sized to the frame (about 900px on the long side, never more).
 const THUMB = (url, ratio) => {
-  const w = ratio >= 1 ? 640 : Math.round(640 * ratio);
+  const w = ratio >= 1 ? 900 : Math.round(900 * ratio);
   return `${url}?w=${w}&h=${Math.round(w / ratio)}&fit=crop&auto=format`;
 };
 const parseRatio = (r) => {
@@ -231,10 +242,11 @@ function Panel({ video, frame, playing, soundRef, audioRef, shared, geometry }) 
 }
 
 // Moves the strip towards its target, keeps the camera framing the front frame, and reports which frame is in front.
-function Rig({ motionRef, shared, frames, onActive, onSlow, reduceMotion }) {
+function Rig({ motionRef, shared, frames, onActive, onHeading, onSlow, reduceMotion }) {
   const { camera, size, invalidate } = useThree();
   const last = useRef(0);
   const timing = useRef({ sum: 0, n: 0 });
+  const lastHead = useRef(0);
 
   useEffect(() => {
     // Fit one frame to about 56% of the height, and the widest frame never wider than 86% of the screen.
@@ -278,6 +290,14 @@ function Rig({ motionRef, shared, frames, onActive, onSlow, reduceMotion }) {
       last.current = active;
       onActive(active);
     }
+    // The frame the strip is heading for (where it will stop). Its video starts loading now, while the strip is still
+    // sliding in, so it is already playing by the time the frame arrives in the middle.
+    let head = lastHead.current;
+    for (let i = 0; i < frames.length; i++) if (Math.abs(frames[i].c - m.target) < Math.abs(frames[head].c - m.target)) head = i;
+    if (head !== lastHead.current) {
+      lastHead.current = head;
+      onHeading(head);
+    }
     // Watch how long frames take while the strip is moving; if the machine is struggling, ask for a lighter picture.
     if (next !== m.target) {
       const t = timing.current;
@@ -309,7 +329,9 @@ export default function VideoWall({ videos }) {
   // Picture quality, chosen once the page is on the client: ordinary laptops (4 cores or fewer, or little memory) draw at
   // normal resolution without edge smoothing; stronger machines get a sharper picture. It steps down by itself if it lags.
   const [quality, setQuality] = useState(null);
+  const budget = useRef(BUDGET_MODEST);
   const [active, setActive] = useState(0);
+  const [heading, setHeading] = useState(0); // the frame the strip is heading for; this one plays
   const audioRef = useRef(null); // the video element that is playing
   const soundRef = useRef(true); // sound is always on; the browser may hold it back until the first touch or key press
   const [modal, setModal] = useState(null);
@@ -340,9 +362,23 @@ export default function VideoWall({ videos }) {
   useEffect(() => {
     setReduceMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
     const modest = (navigator.hardwareConcurrency || 4) <= 4 || (navigator.deviceMemory || 8) <= 4;
-    setQuality(modest ? { dpr: 1, aa: false } : { dpr: 1.25, aa: true });
+    // iPhones hide their core count (it reads as 4), so judge them by their small screen instead: the budget below
+    // already gives a phone full sharpness.
+    budget.current = modest ? BUDGET_MODEST : BUDGET_STRONG;
+    const update = () => setQuality((q) => {
+      const next = qualityFor(budget.current);
+      return q && q.dpr === next.dpr && q.aa === next.aa ? q : next;
+    });
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
-  const stepDown = useCallback(() => setQuality((q) => (q && q.dpr > 1 ? { ...q, dpr: 1 } : q)), []);
+  // If frames are slow, cut the pixel budget (once) and redraw lighter.
+  const stepDown = useCallback(() => {
+    if (budget.current <= BUDGET_MODEST * 0.6) return;
+    budget.current = Math.max(BUDGET_MODEST * 0.6, budget.current * 0.6);
+    setQuality(qualityFor(budget.current));
+  }, []);
 
   const onActive = useCallback(
     (i) => {
@@ -478,7 +514,7 @@ export default function VideoWall({ videos }) {
   const panels = [];
   for (let i = from; i <= to; i++) {
     panels.push(
-      <Panel key={videos[i]._id} video={videos[i]} frame={frames[i]} playing={i === active && modal === null} soundRef={soundRef} audioRef={audioRef} shared={shared} geometry={geometryFor(frames[i].w)} />
+      <Panel key={videos[i]._id} video={videos[i]} frame={frames[i]} playing={i === heading && modal === null} soundRef={soundRef} audioRef={audioRef} shared={shared} geometry={geometryFor(frames[i].w)} />
     );
   }
 
@@ -497,7 +533,7 @@ export default function VideoWall({ videos }) {
             <color attach="background" args={["#000000"]} />
             <fog attach="fog" args={["#000000", 4, 16]} />
             <gridHelper args={[40, 40, "#3a3a3a", "#262626"]} position={[0, -0.72, 0]} />
-            <Rig motionRef={motionRef} shared={shared} frames={frames} onActive={onActive} onSlow={stepDown} reduceMotion={reduceMotion} />
+            <Rig motionRef={motionRef} shared={shared} frames={frames} onActive={onActive} onHeading={setHeading} onSlow={stepDown} reduceMotion={reduceMotion} />
             {panels}
           </Canvas>
         )}
