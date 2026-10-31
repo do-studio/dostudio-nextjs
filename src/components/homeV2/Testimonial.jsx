@@ -63,7 +63,7 @@ const AUTOPLAY_MS = 6000;
 // Every card is the same size, so longer quotes get a smaller font. At 1920px the quote area is 952px wide and has
 // ~585px of height; this keeps the text inside that, capped at the design's 72px (which Ar. Siraj's quote uses).
 function quoteFontSize(text) {
-  const px = Math.min(72, Math.sqrt(801900 / (text.length + 2)) * 0.95);
+  const px = Math.min(72, Math.sqrt(801900 / (text.length + 2)) * 0.8);
   return `clamp(1.25rem, ${(px / 19.2).toFixed(3)}vw, ${(px / 16).toFixed(3)}rem)`;
 }
 
@@ -105,9 +105,9 @@ function Card({ t, index, total, hidden = false }) {
     <figure
       aria-hidden={hidden || undefined}
       style={{ backgroundColor: color }}
-      className="relative flex h-full flex-col rounded-[clamp(1rem,1.6vw,1.9rem)] pb-[clamp(2rem,3.49vw,4.19rem)] pl-[clamp(1.5rem,5.47vw,6.56rem)] pr-[clamp(1.5rem,5.05vw,6.06rem)] pt-[clamp(2rem,4.58vw,5.5rem)] md:min-h-[clamp(22rem,46.9vw,56.25rem)]"
+      className="relative flex h-full flex-col rounded-[clamp(1rem,1.6vw,1.9rem)] pb-[clamp(2rem,3vw,3.6rem)] pl-[clamp(1.5rem,4.6vw,5.5rem)] pr-[clamp(1.5rem,4.3vw,5.2rem)] pt-[clamp(2rem,3.8vw,4.6rem)] md:min-h-[clamp(20rem,37.5vw,45rem)]"
     >
-      <h3 className="mb-[clamp(0.75rem,1.15vw,1.4rem)] max-w-[min(952px,49.58vw)] text-[clamp(0.8rem,1.46vw,1.75rem)] font-semibold uppercase leading-[1.3] tracking-[0.02em] text-[#1c1c1e]/60 max-md:max-w-none">
+      <h3 className="mb-[clamp(0.75rem,1.15vw,1.4rem)] max-w-[min(952px,49.58vw)] text-[clamp(0.75rem,1.25vw,1.5rem)] font-semibold uppercase leading-[1.3] tracking-[0.02em] text-[#1c1c1e]/60 max-md:max-w-none">
         {t.title}
       </h3>
       <blockquote
@@ -117,17 +117,17 @@ function Card({ t, index, total, hidden = false }) {
         “{t.quote}”
       </blockquote>
       {/* Pinned to the bottom-right corner as in the design; the quote column stays clear of it. */}
-      <figcaption className="mt-8 self-end md:absolute md:bottom-[clamp(2rem,3.49vw,4.19rem)] md:right-[clamp(1.5rem,5.05vw,6.06rem)] md:mt-0 md:w-[min(364px,18.96vw)]">
+      <figcaption className="mt-8 self-end md:absolute md:bottom-[clamp(2rem,3vw,3.6rem)] md:right-[clamp(1.5rem,4.3vw,5.2rem)] md:mt-0 md:w-[min(364px,18.96vw)]">
         <a
           href={t.link}
           target="_blank"
           rel="noopener noreferrer"
           tabIndex={hidden ? -1 : undefined}
-          className="text-[clamp(1.5rem,3.333vw,4rem)] font-semibold leading-[1.1] text-[#3e3e3e] decoration-2 underline-offset-[0.15em] hover:underline"
+          className="text-[clamp(1.4rem,2.8vw,3.4rem)] font-semibold leading-[1.1] text-[#3e3e3e] decoration-2 underline-offset-[0.15em] hover:underline"
         >
           {t.name}
         </a>
-        <p className="mt-[clamp(0.25rem,0.5vw,0.6rem)] text-[clamp(0.875rem,1.667vw,2rem)] leading-[1.15] text-[#3e3e3e]">
+        <p className="mt-[clamp(0.25rem,0.5vw,0.6rem)] text-[clamp(0.8rem,1.4vw,1.7rem)] leading-[1.15] text-[#3e3e3e]">
           {t.role}
         </p>
       </figcaption>
@@ -268,7 +268,7 @@ export default function Testimonial() {
         </div>
 
         {/* Controls: below the stack on phones, overlaid on the card's bottom-left corner from tablet up. */}
-        <div className="z-10 mt-5 flex items-center gap-3 md:absolute md:bottom-[clamp(2rem,3.49vw,4.19rem)] md:left-[clamp(1.5rem,5.47vw,6.56rem)] md:mt-0">
+        <div className="z-10 mt-5 flex items-center gap-3 md:absolute md:bottom-[clamp(2rem,3vw,3.6rem)] md:left-[clamp(1.5rem,4.6vw,5.5rem)] md:mt-0">
           {[
             { dir: -1, label: "Previous testimonial", Icon: GoArrowLeft },
             { dir: 1, label: "Next testimonial", Icon: GoArrowRight },
