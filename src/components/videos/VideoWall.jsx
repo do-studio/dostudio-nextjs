@@ -22,7 +22,7 @@ const WINDOW = 4; // frames built either side of the one in front (the rest are 
 const EASE = 0.12; // how quickly the strip catches up with the pointer (0-1 per frame)
 const FOV = 35;
 const WAVE_MAX = 0.6; // how far the frames swing in and out at full speed
-const START_DELAY = 100; // ms the strip must be heading for a frame before its video starts loading
+const SETTLE = 100; // ms the strip must be heading for a frame before its video starts
 
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 // How sharp to draw. The picture is limited by how many pixels the GPU fills per frame, not by the screen's pixel
@@ -115,7 +115,7 @@ const FRAGMENT = /* glsl */ `
 `;
 
 // One frame of the strip.
-function Panel({ video, frame, playing, soundRef, audioRef, shared, geometry }) {
+function Panel({ video, frame, mode, soundRef, audioRef, shared, geometry }) {
   const invalidate = useThree((s) => s.invalidate);
   const gl = useThree((s) => s.gl);
   const uniforms = useMemo(
@@ -158,81 +158,87 @@ function Panel({ video, frame, playing, soundRef, audioRef, shared, geometry }) 
     };
   }, [video.thumb, frame, uniforms, invalidate, gl]);
 
-  // The video, once this frame is in front and the strip has settled. The thumbnail stays until the first frame is ready.
+  // The video element. The frame in front plays it; the frames either side keep one loaded but paused ("warm"), so that
+  // when the strip reaches them they start at once instead of waiting for a large file to download.
+  const elRef = useRef(null);
+  const wanted = mode !== "off";
   useEffect(() => {
-    if (!playing) return;
-    let cleanup = () => {};
-    // A frame has to stay on screen for a moment before its video starts, so ones flicked past never load.
-    const timer = setTimeout(() => {
-      cleanup = start();
-    }, START_DELAY);
+    if (!wanted) return;
+    const el = document.createElement("video");
+    el.crossOrigin = "anonymous";
+    el.src = video.src;
+    el.muted = true;
+    el.loop = true;
+    el.playsInline = true;
+    el.preload = "auto";
+    elRef.current = el;
     return () => {
-      clearTimeout(timer);
-      cleanup();
+      el.pause();
+      el.removeAttribute("src");
+      el.load();
+      elRef.current = null;
     };
+  }, [wanted, video.src]);
 
-    function start() {
-      const el = document.createElement("video");
-      el.crossOrigin = "anonymous";
-      el.src = video.src;
-      el.muted = !soundRef.current;
-      el.loop = true;
-      el.playsInline = true;
-      el.preload = "auto";
-      const tex = new THREE.VideoTexture(el);
-      tex.colorSpace = THREE.NoColorSpace; // decoded in the shader
-      let stopped = false;
-      let handle = 0;
-      const redraw = () => {
-        if (stopped) return;
-        invalidate();
-        handle = el.requestVideoFrameCallback ? el.requestVideoFrameCallback(redraw) : setTimeout(redraw, 33);
-      };
-      const onReady = () => {
-        if (stopped) return;
-        uniforms.uMap.value = tex;
-        uniforms.uTexAspect.value = (el.videoWidth || 16) / (el.videoHeight || 9);
-        uniforms.uHasMap.value = 1;
-        uniforms.uIsVideo.value = 1;
-        redraw();
-      };
-      el.addEventListener("playing", onReady, { once: true });
-      audioRef.current = el;
-      // Switching tabs or minimising the window pauses the video; coming back resumes it.
-      const onVisibility = () => {
-        if (document.hidden) el.pause();
-        else el.play().catch(() => {});
-      };
-      document.addEventListener("visibilitychange", onVisibility);
-      // Browsers only allow sound after the visitor has interacted with the page; if it's refused, play muted and let
-      // the first tap or key press switch the sound on.
+  // Playing: show the video on the frame; the thumbnail stays until the first video frame is ready.
+  const playing = mode === "play";
+  useEffect(() => {
+    const el = elRef.current;
+    if (!playing || !el) return;
+    const tex = new THREE.VideoTexture(el);
+    tex.colorSpace = THREE.NoColorSpace; // decoded in the shader
+    let stopped = false;
+    let handle = 0;
+    const redraw = () => {
+      if (stopped) return;
+      invalidate();
+      handle = el.requestVideoFrameCallback ? el.requestVideoFrameCallback(redraw) : setTimeout(redraw, 33);
+    };
+    const show = () => {
+      if (stopped) return;
+      uniforms.uMap.value = tex;
+      uniforms.uTexAspect.value = (el.videoWidth || 16) / (el.videoHeight || 9);
+      uniforms.uHasMap.value = 1;
+      uniforms.uIsVideo.value = 1;
+      redraw();
+    };
+    el.addEventListener("playing", show, { once: true });
+    audioRef.current = el;
+    // Switching tabs or minimising the window pauses the video; coming back resumes it.
+    const onVisibility = () => {
       if (document.hidden) el.pause();
-      else el.play().catch(() => {
+      else el.play().catch(() => {});
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    // Browsers only allow sound after the visitor has interacted with the page; if it's refused, play muted and let
+    // the first tap or key press switch the sound on.
+    el.muted = !soundRef.current;
+    if (document.hidden) el.pause();
+    else
+      el.play().catch(() => {
         if (stopped) return;
         el.muted = true;
         el.play().catch(() => {});
       });
-      return () => {
-        stopped = true;
-        document.removeEventListener("visibilitychange", onVisibility);
-        if (audioRef.current === el) audioRef.current = null;
-        if (el.cancelVideoFrameCallback && handle) el.cancelVideoFrameCallback(handle);
-        else clearTimeout(handle);
-        el.pause();
-        el.removeAttribute("src");
-        el.load();
-        // Back to the thumbnail.
-        if (uniforms.uMap.value === tex) {
-          uniforms.uMap.value = thumbRef.current;
-          uniforms.uTexAspect.value = frame.w;
-          uniforms.uHasMap.value = thumbRef.current ? 1 : 0;
-          uniforms.uIsVideo.value = 0;
-        }
-        tex.dispose();
-        invalidate();
-      };
-    }
-  }, [playing, video.src, frame, uniforms, invalidate, soundRef, audioRef]);
+    return () => {
+      stopped = true;
+      document.removeEventListener("visibilitychange", onVisibility);
+      el.removeEventListener("playing", show);
+      if (audioRef.current === el) audioRef.current = null;
+      if (el.cancelVideoFrameCallback && handle) el.cancelVideoFrameCallback(handle);
+      else clearTimeout(handle);
+      el.pause();
+      // Back to the thumbnail.
+      if (uniforms.uMap.value === tex) {
+        uniforms.uMap.value = thumbRef.current;
+        uniforms.uTexAspect.value = frame.w;
+        uniforms.uHasMap.value = thumbRef.current ? 1 : 0;
+        uniforms.uIsVideo.value = 0;
+      }
+      tex.dispose();
+      invalidate();
+    };
+  }, [playing, wanted, frame, uniforms, invalidate, soundRef, audioRef]);
 
   return (
     <mesh geometry={geometry} frustumCulled={false}>
@@ -331,7 +337,8 @@ export default function VideoWall({ videos }) {
   const [quality, setQuality] = useState(null);
   const budget = useRef(BUDGET_MODEST);
   const [active, setActive] = useState(0);
-  const [heading, setHeading] = useState(0); // the frame the strip is heading for; this one plays
+  const [heading, setHeading] = useState(0); // the frame the strip is heading for
+  const [settled, setSettled] = useState(0); // the same, once it has stayed put for a moment: this one plays
   const audioRef = useRef(null); // the video element that is playing
   const soundRef = useRef(true); // sound is always on; the browser may hold it back until the first touch or key press
   const [modal, setModal] = useState(null);
@@ -358,6 +365,11 @@ export default function VideoWall({ videos }) {
     },
     [frames]
   );
+
+  useEffect(() => {
+    const t = setTimeout(() => setSettled(heading), SETTLE);
+    return () => clearTimeout(t);
+  }, [heading]);
 
   useEffect(() => {
     setReduceMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -514,7 +526,7 @@ export default function VideoWall({ videos }) {
   const panels = [];
   for (let i = from; i <= to; i++) {
     panels.push(
-      <Panel key={videos[i]._id} video={videos[i]} frame={frames[i]} playing={i === heading && modal === null} soundRef={soundRef} audioRef={audioRef} shared={shared} geometry={geometryFor(frames[i].w)} />
+      <Panel key={videos[i]._id} video={videos[i]} frame={frames[i]} mode={i === settled ? (modal === null ? "play" : "warm") : Math.abs(i - settled) === 1 ? "warm" : "off"} soundRef={soundRef} audioRef={audioRef} shared={shared} geometry={geometryFor(frames[i].w)} />
     );
   }
 
