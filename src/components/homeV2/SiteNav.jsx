@@ -15,13 +15,16 @@ const NAV = [
 
 // The home page's header (white logo on the left, links on the right, yellow underline on hover) for pages that
 // sit on a dark background, like the poster gallery. It has the same sizing as the nav inside Hero.jsx.
-export default function SiteNav() {
+// `onLight`: for pages with a light background, the logo and links are dark instead of white.
+export default function SiteNav({ onLight = false }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
       {/* Same dark fade the home hero has behind its header, so the white links stay readable over bright images. */}
+      {!onLight && (
       <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[clamp(5rem,12vw,9rem)] bg-gradient-to-b from-black/[0.78] to-transparent" />
+      )}
       <nav className="absolute inset-x-0 top-0 z-20 flex items-start justify-between px-[4.65%] pt-[clamp(0.75rem,3vw,3.625rem)] pr-[5.3%]">
         <Link href="/" aria-label="Do Studio home">
           <Image
@@ -29,7 +32,7 @@ export default function SiteNav() {
             alt="Do Studio"
             width={103}
             height={61}
-            className="h-auto w-[clamp(48px,5.36vw,103px)]"
+            className={`h-auto w-[clamp(48px,5.36vw,103px)] ${onLight ? "invert" : ""}`}
           />
         </Link>
 
@@ -38,7 +41,7 @@ export default function SiteNav() {
             <li key={item.label} className={item.label === "Works" ? "group relative" : undefined}>
               <Link
                 href={item.href}
-                className="relative text-[clamp(1rem,1.446vw,1.736rem)] font-medium leading-[1.3] tracking-[-0.005em] text-white after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#f6f561] after:transition-transform after:duration-300 hover:after:scale-x-100"
+                className={`relative text-[clamp(1rem,1.446vw,1.736rem)] font-medium leading-[1.3] tracking-[-0.005em] ${onLight ? "text-[#1c1c1e]" : "text-white"} after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#f6f561] after:transition-transform after:duration-300 hover:after:scale-x-100`}
               >
                 {item.label}
               </Link>
@@ -50,7 +53,7 @@ export default function SiteNav() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="text-3xl text-white md:hidden"
+          className={`text-3xl md:hidden ${onLight ? "text-[#1c1c1e]" : "text-white"}`}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >

@@ -11,6 +11,7 @@ import ContactButton from "../components/home/designs/ContactButton";
 import React from "react";
 import FooterWrapper from "../components/FooterWrapper";
 import CursorPop from "../components/CursorPop";
+import SmoothScroll from "../components/SmoothScroll";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -133,6 +134,7 @@ export default function RootLayout({ children }) {
           {/* <CanonicalTag /> */}
 
           <CursorPop />
+          <SmoothScroll />
           <RootClient>
             <Navbar />
             {children}
