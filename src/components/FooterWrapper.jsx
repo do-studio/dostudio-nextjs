@@ -4,7 +4,7 @@ import Footer from "./footer/footer";
 
 export default function FooterWrapper() {
   const pathname = usePathname();
-  const hiddenRoutes = ["/test", "/scene", "/preview", "/", "/our-works/creative-posters", "/our-works/production", "/our-works/motion-creatives"];
+  const hiddenRoutes = ["/test", "/scene", "/preview", "/", "/our-works/creative-posters", "/our-works/production", "/our-works/motion-creatives", "/our-works/branding", "/our-works/package-design", "/package-design-2", "/package-design-3"];
 
   if (hiddenRoutes.includes(pathname)) return null;
 
