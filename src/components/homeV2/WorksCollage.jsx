@@ -110,7 +110,7 @@ export default function WorksCollage({ media }) {
   return (
     <section className="mx-auto w-[89.5%] max-w-[1718px] pt-[clamp(3rem,5.16vw,6.19rem)]">
       <div className="flex flex-col items-start gap-5 md:flex-row md:justify-between">
-        <SectionPill variant="outline">WORKS</SectionPill>
+        <SectionPill variant="outline" href="/our-works">WORKS</SectionPill>
         <Reveal
           as="p"
           delay={0.15}
