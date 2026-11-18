@@ -9,6 +9,7 @@ import Testimonial from "../components/homeV2/Testimonial";
 import Faq from "../components/homeV2/Faq";
 import Cta from "../components/homeV2/Cta";
 import Footer from "../components/homeV2/Footer";
+import HomePopup from "../components/homeV2/HomePopup";
 import { MotionProvider } from "../components/homeV2/motion";
 import IntroLoader, { IntroProvider } from "../components/homeV2/IntroLoader";
 
@@ -77,6 +78,7 @@ export default function Page() {
           <Faq />
           <Cta />
           <Footer />
+          <HomePopup />
         </IntroProvider>
       </MotionProvider>
     </main>
