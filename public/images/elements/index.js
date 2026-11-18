@@ -10,3 +10,4 @@ import misc3 from './star3.svg'
 
 
 export {orbit,arrow,star,star1,arrow1,arrow2,misc1,misc2,misc3}
+

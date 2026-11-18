@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import { EASE_OUT } from "./motion";
 
 const PAGES = [
@@ -20,6 +21,16 @@ const WORKS = [
   { label: "Package Design", href: "/our-works/package-design" },
   { label: "Print Design", href: "/our-works/print-design" },
   { label: "Production", href: "/our-works/production" },
+];
+
+// The same social profiles and contact links as the previous footer.
+const SOCIALS = [
+  { label: "Instagram", href: "https://www.instagram.com/dostudio.agency/", Icon: FaInstagram },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100063901933314", Icon: FaFacebookF },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/do-studi0", Icon: FaLinkedinIn },
+  { label: "WhatsApp", href: "https://api.whatsapp.com/send?phone=919746155541", Icon: FaWhatsapp },
+  { label: "Email", href: "mailto:info@dostudio.co.in", Icon: FaEnvelope },
+  { label: "Find us on Google Maps", href: "https://goo.gl/maps/ku2aYUFJ78hSuSnb8?coh=178571&entry=tt", Icon: FaMapMarkerAlt },
 ];
 
 const headingClass = "text-[clamp(1rem,1.578vw,1.89rem)] font-medium uppercase leading-[1.32] text-white";
@@ -130,6 +141,25 @@ export default function Footer() {
             className="h-px w-full origin-left bg-white/40"
             variants={{ hidden: { scaleX: 0 }, show: { scaleX: 1, transition: { duration: 1, ease: EASE_OUT } } }}
           />
+          {/* Social links */}
+          <motion.ul className="flex flex-wrap items-center gap-[clamp(0.6rem,0.9vw,1.1rem)]" aria-label="Social media" variants={column}>
+            {SOCIALS.map(({ label, href, Icon }) => {
+              const external = href.startsWith("http");
+              return (
+                <li key={label}>
+                  <a
+                    href={href}
+                    aria-label={label}
+                    title={label}
+                    {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="flex h-[clamp(2.5rem,2.9vw,3.4rem)] w-[clamp(2.5rem,2.9vw,3.4rem)] items-center justify-center rounded-full border border-white/60 text-[clamp(1rem,1.2vw,1.45rem)] text-white transition-[transform,background-color,border-color,color] duration-300 hover:-translate-y-1 hover:border-[#f6f561] hover:bg-[#f6f561] hover:text-[#1c1c1e] focus-visible:-translate-y-1 focus-visible:border-[#f6f561] focus-visible:bg-[#f6f561] focus-visible:text-[#1c1c1e]"
+                  >
+                    <Icon aria-hidden="true" />
+                  </a>
+                </li>
+              );
+            })}
+          </motion.ul>
         </motion.div>
       </div>
     </footer>
